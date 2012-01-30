@@ -1,5 +1,23 @@
 KwPortalffa::Application.routes.draw do
 
+  namespace(:admin){ resources :gallery_images }
+
+  namespace(:admin){ resources :galleries }
+
+  namespace(:admin){ resources :movies }
+
+  namespace(:admin){ resources :contents }
+
+  namespace(:admin){ resources :subcategories }
+
+  namespace(:admin){ resources :categories }
+
+  namespace(:admin){ resources :modules }
+
+  namespace(:admin){ resources :webparts }
+
+  namespace(:admin){ resources :templates }
+
   resources :user_sessions
   resources :users
   resources :password_resets

@@ -1,0 +1,28 @@
+<%= form_for [:admin, @module] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :template_id %><br />
+    <%= f.text_field :template_id %>
+  </p>
+  <p>
+    <%= f.label :webpart_id %><br />
+    <%= f.text_field :webpart_id %>
+  </p>
+  <p>
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </p>
+  <p>
+    <%= f.label :module_key %><br />
+    <%= f.text_area :module_key %>
+  </p>
+  <p>
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </p>
+  <p>
+    <%= f.label :published %><br />
+    <%= f.check_box :published %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

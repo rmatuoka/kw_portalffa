@@ -1,0 +1,13 @@
+one:
+  name: MyString
+  encoding: MyText
+  type: MyString
+  active: false
+  published: false
+
+two:
+  name: MyString
+  encoding: MyText
+  type: MyString
+  active: false
+  published: false

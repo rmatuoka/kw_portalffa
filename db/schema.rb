@@ -10,7 +10,72 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111004192741) do
+ActiveRecord::Schema.define(:version => 20120125142316) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "contents", :force => true do |t|
+    t.integer  "subcategory_id"
+    t.integer  "template_id"
+    t.text     "content"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "galleries", :force => true do |t|
+    t.integer  "content_id"
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gallery_images", :force => true do |t|
+    t.integer  "gallery_id"
+    t.string   "name"
+    t.string   "legend"
+    t.text     "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "modules", :force => true do |t|
+    t.integer  "template_id"
+    t.integer  "webpart_id"
+    t.integer  "position"
+    t.text     "module_key"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "movies", :force => true do |t|
+    t.integer  "content_id"
+    t.string   "name"
+    t.string   "link"
+    t.text     "description"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name",              :limit => 40
@@ -23,6 +88,24 @@ ActiveRecord::Schema.define(:version => 20111004192741) do
   create_table "roles_users", :id => false, :force => true do |t|
     t.integer  "user_id"
     t.integer  "role_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subcategories", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "template_id"
+    t.string   "name"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "templates", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +130,16 @@ ActiveRecord::Schema.define(:version => 20111004192741) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "webparts", :force => true do |t|
+    t.string   "name"
+    t.text     "encoding"
+    t.string   "type"
+    t.boolean  "active"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

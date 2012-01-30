@@ -1,0 +1,27 @@
+<% title "Admin/Movies" %>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>Name</th>
+    <th>Link</th>
+    <th>Description</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for movie in @movies %>
+    <tr>
+      <td><%= movie.content_id %></td>
+      <td><%= movie.name %></td>
+      <td><%= movie.link %></td>
+      <td><%= movie.description %></td>
+      <td><%= movie.active %></td>
+      <td><%= movie.published %></td>
+      <td><%= link_to "Show", [:admin, movie] %></td>
+      <td><%= link_to "Edit", edit_admin_movie_path(movie) %></td>
+      <td><%= link_to "Destroy", [:admin, movie], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Movie", new_admin_movie_path %></p>

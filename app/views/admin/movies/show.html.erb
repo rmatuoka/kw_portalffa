@@ -1,0 +1,32 @@
+<% title "Admin/Movie" %>
+
+<p>
+  <strong>Content:</strong>
+  <%= @movie.content_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @movie.name %>
+</p>
+<p>
+  <strong>Link:</strong>
+  <%= @movie.link %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @movie.description %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @movie.active %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @movie.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_movie_path(@movie) %> |
+  <%= link_to "Destroy", [:admin, @movie], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_movies_path %>
+</p>

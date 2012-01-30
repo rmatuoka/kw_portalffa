@@ -1,0 +1,25 @@
+<% title "Admin/Webparts" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Encoding</th>
+    <th>Type</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for webpart in @webparts %>
+    <tr>
+      <td><%= webpart.name %></td>
+      <td><%= webpart.encoding %></td>
+      <td><%= webpart.type %></td>
+      <td><%= webpart.active %></td>
+      <td><%= webpart.published %></td>
+      <td><%= link_to "Show", [:admin, webpart] %></td>
+      <td><%= link_to "Edit", edit_admin_webpart_path(webpart) %></td>
+      <td><%= link_to "Destroy", [:admin, webpart], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Webpart", new_admin_webpart_path %></p>

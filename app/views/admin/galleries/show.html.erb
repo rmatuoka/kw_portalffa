@@ -1,0 +1,28 @@
+<% title "Admin/Gallery" %>
+
+<p>
+  <strong>Content:</strong>
+  <%= @gallery.content_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @gallery.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @gallery.description %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @gallery.active %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @gallery.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_gallery_path(@gallery) %> |
+  <%= link_to "Destroy", [:admin, @gallery], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_galleries_path %>
+</p>

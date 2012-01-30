@@ -1,0 +1,13 @@
+one:
+  subcategory_id: 1
+  template_id: 1
+  content: MyText
+  active: false
+  published: false
+
+two:
+  subcategory_id: 1
+  template_id: 1
+  content: MyText
+  active: false
+  published: false

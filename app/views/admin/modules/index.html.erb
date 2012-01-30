@@ -1,0 +1,27 @@
+<% title "Admin/Modules" %>
+
+<table>
+  <tr>
+    <th>Template</th>
+    <th>Webpart</th>
+    <th>Position</th>
+    <th>Module Key</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for module in @modules %>
+    <tr>
+      <td><%= module.template_id %></td>
+      <td><%= module.webpart_id %></td>
+      <td><%= module.position %></td>
+      <td><%= module.module_key %></td>
+      <td><%= module.active %></td>
+      <td><%= module.published %></td>
+      <td><%= link_to "Show", [:admin, module] %></td>
+      <td><%= link_to "Edit", edit_admin_module_path(module) %></td>
+      <td><%= link_to "Destroy", [:admin, module], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Module", new_admin_module_path %></p>

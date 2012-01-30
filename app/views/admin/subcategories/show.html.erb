@@ -1,0 +1,28 @@
+<% title "Admin/Subcategory" %>
+
+<p>
+  <strong>Category:</strong>
+  <%= @subcategory.category_id %>
+</p>
+<p>
+  <strong>Template:</strong>
+  <%= @subcategory.template_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @subcategory.name %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @subcategory.active %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @subcategory.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_subcategory_path(@subcategory) %> |
+  <%= link_to "Destroy", [:admin, @subcategory], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_subcategories_path %>
+</p>

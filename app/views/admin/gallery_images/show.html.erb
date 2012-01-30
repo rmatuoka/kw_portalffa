@@ -1,0 +1,48 @@
+<% title "Admin/Gallery Image" %>
+
+<p>
+  <strong>Gallery:</strong>
+  <%= @gallery_image.gallery_id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @gallery_image.name %>
+</p>
+<p>
+  <strong>Legend:</strong>
+  <%= @gallery_image.legend %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @gallery_image.description %>
+</p>
+<p>
+  <strong>Image File Name:</strong>
+  <%= @gallery_image.image_file_name %>
+</p>
+<p>
+  <strong>Image Content Type:</strong>
+  <%= @gallery_image.image_content_type %>
+</p>
+<p>
+  <strong>Image File Size:</strong>
+  <%= @gallery_image.image_file_size %>
+</p>
+<p>
+  <strong>Image Updated At:</strong>
+  <%= @gallery_image.image_updated_at %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @gallery_image.active %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @gallery_image.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_gallery_image_path(@gallery_image) %> |
+  <%= link_to "Destroy", [:admin, @gallery_image], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_gallery_images_path %>
+</p>

@@ -1,0 +1,25 @@
+<% title "Admin/Contents" %>
+
+<table>
+  <tr>
+    <th>Subcategory</th>
+    <th>Template</th>
+    <th>Content</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for content in @contents %>
+    <tr>
+      <td><%= content.subcategory_id %></td>
+      <td><%= content.template_id %></td>
+      <td><%= content.content %></td>
+      <td><%= content.active %></td>
+      <td><%= content.published %></td>
+      <td><%= link_to "Show", [:admin, content] %></td>
+      <td><%= link_to "Edit", edit_admin_content_path(content) %></td>
+      <td><%= link_to "Destroy", [:admin, content], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Content", new_admin_content_path %></p>

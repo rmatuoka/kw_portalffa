@@ -1,0 +1,21 @@
+<% title "Admin/Templates" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for template in @templates %>
+    <tr>
+      <td><%= template.name %></td>
+      <td><%= template.active %></td>
+      <td><%= template.published %></td>
+      <td><%= link_to "Show", [:admin, template] %></td>
+      <td><%= link_to "Edit", edit_admin_template_path(template) %></td>
+      <td><%= link_to "Destroy", [:admin, template], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Template", new_admin_template_path %></p>

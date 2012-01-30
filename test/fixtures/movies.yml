@@ -1,0 +1,15 @@
+one:
+  content_id: 1
+  name: MyString
+  link: MyString
+  description: MyText
+  active: false
+  published: false
+
+two:
+  content_id: 1
+  name: MyString
+  link: MyString
+  description: MyText
+  active: false
+  published: false

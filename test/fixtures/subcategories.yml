@@ -1,0 +1,13 @@
+one:
+  category_id: 1
+  template_id: 1
+  name: MyString
+  active: false
+  published: false
+
+two:
+  category_id: 1
+  template_id: 1
+  name: MyString
+  active: false
+  published: false

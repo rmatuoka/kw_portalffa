@@ -1,0 +1,15 @@
+one:
+  template_id: 1
+  webpart_id: 1
+  position: 1
+  module_key: MyText
+  active: false
+  published: false
+
+two:
+  template_id: 1
+  webpart_id: 1
+  position: 1
+  module_key: MyText
+  active: false
+  published: false
