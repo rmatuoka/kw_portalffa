@@ -1,25 +1,29 @@
-<% title "Admin/Webparts" %>
+<% title "WebParts" %>
 
-<table>
+<h1>WebParts</h1><br />
+<p>Verifique abaixo a lista dos webparts cadastrados no sistema.</p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag "+ Criar novo",:type=>"button",:onclick=>"window.open('"+new_admin_webpart_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+  <thead> 
   <tr>
-    <th>Name</th>
-    <th>Encoding</th>
-    <th>Type</th>
-    <th>Active</th>
-    <th>Published</th>
-  </tr>
+    <th style="width:30%;">Nome</th>
+    <th style="width:15%;">Publicado ?</th>
+    <th style="width:25%;">Tipo </th>
+    <th colspan="3" style="width:30%;">Ações</th>
+</tr>
+</thead> 
+<tbody>
   <% for webpart in @webparts %>
     <tr>
       <td><%= webpart.name %></td>
-      <td><%= webpart.encoding %></td>
+      <td><%= print_active(webpart.published) %></td>
       <td><%= webpart.type %></td>
-      <td><%= webpart.active %></td>
-      <td><%= webpart.published %></td>
-      <td><%= link_to "Show", [:admin, webpart] %></td>
-      <td><%= link_to "Edit", edit_admin_webpart_path(webpart) %></td>
-      <td><%= link_to "Destroy", [:admin, webpart], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Visualizar", [:admin, webpart] %></td>
+      <td><%= link_to "Editar", edit_admin_webpart_path(webpart) %></td>
+      <td><%= link_to "Excluir", [:admin, webpart], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
-
-<p><%= link_to "New Admin/Webpart", new_admin_webpart_path %></p>

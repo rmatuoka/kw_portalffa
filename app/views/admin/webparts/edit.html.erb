@@ -1,8 +1,9 @@
-<% title "Edit Admin/Webpart" %>
+<% title @webpart.name %>
+
+<h1><%= @webpart.name %></h1><br />
+<br />
+<p>Utilize os campos abaixo para editar as informações.</p><br />
+<br />
 
 <%= render 'form' %>
 
-<p>
-  <%= link_to "Show", [:admin, @webpart] %> |
-  <%= link_to "View All", admin_webparts_path %>
-</p>

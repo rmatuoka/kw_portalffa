@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Festa de flores e Morangos de Atibaia</title> 
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.pack.js"></script>
+<script src="js/portal.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.jcarousel_gallery_home.css" />
+<link rel="stylesheet" type="text/css" href="css/skin_gallery_home.css" />
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<link rel="stylesheet" media="screen" href="css/template.css" />
+<link rel="stylesheet" media="screen and (max-width:768px)" href="css/template_screen_768.css" />
+<link rel="stylesheet" media="screen and (max-width:480px)" href="css/template_screen_480.css" />
+<script>
+$(function() {
+    $("img.Swap")
+        .mouseover(function() { 
+            var src = $(this).attr("src").match(/[^\.]+/) + "_color.jpg";
+            $(this).attr("src", src);
+        })
+        .mouseout(function() {
+            var src = $(this).attr("src").replace("_color", "");
+            $(this).attr("src", src);
+        });
+});
+</script>	
+	<script>
+	$(document).ready(function () {
+		
+		//jCarousel Plugin
+	    $('#carousel').jcarousel({
+			scroll: 1,
+			auto: 2,
+			wrap: 'last',
+			initCallback: mycarousel_initCallback
+	   	});
+
+	//Front page Carousel - Initial Setup
+   	$('div#slideshow-carousel a img').css({'opacity': '0.5'});
+   	$('div#slideshow-carousel a img:first').css({'opacity': '1.0'});
+   	$('div#slideshow-carousel li a:first').append('<span class="arrow"></span>')
+
+  
+  	//Combine jCarousel with Image Display
+    $('div#slideshow-carousel li a').hover(
+       	function () {
+        		
+       		if (!$(this).has('span').length) {
+        		$('div#slideshow-carousel li a img').stop(true, true).css({'opacity': '0.5'});
+   	    		$(this).stop(true, true).children('img').css({'opacity': '1.0'});
+       		}		
+       	},
+       	function () {
+        		
+       		$('div#slideshow-carousel li a img').stop(true, true).css({'opacity': '0.5'});
+       		$('div#slideshow-carousel li a').each(function () {
+
+       			if ($(this).has('span').length) $(this).children('img').css({'opacity': '1.0'});
+
+       		});
+        		
+       	}
+	).click(function () {
+
+	      	$('span.arrow').remove();        
+		$(this).append('<span class="arrow"></span>');
+       	$('div#slideshow-main li').removeClass('active');        
+       	$('div#slideshow-main li.' + $(this).attr('rel')).addClass('active');	
+        	
+       	return false;
+	});
+
+
+});
+
+
+//Carousel Tweaking
+
+function mycarousel_initCallback(carousel) {
+	
+	// Pause autoscrolling if the user moves with the cursor over the clip.
+	carousel.clip.hover(function() {
+		carousel.stopAuto();
+	}, function() {
+		carousel.startAuto();
+	});
+}
+	
+</script>
+</head>
+<body>
+<div id="General">
+<div id="Bg_general">
+	<div class="Shadow">
+	</div>
+    <div id="Header">
+    	<div class="Shadow">
+		</div>
+    	<div class="Header_top">
+        	<div class="Logo"><img src="images/logo_ffa.png" width="253" height="77"></div>
+        	<div class="Menu">
+                <ul>
+                    <li>
+                    	<a href="#" class="Afesta">A FESTA</a>
+                        <div class="Submenu_afesta Submenu_show">
+                             <span class="Img_arrow_afesta"></span>
+                             <div class="Content_submenu_top"><!-- start Content_submenu_top-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_green">Atibaia</h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">História</h2>
+                                </div>
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_green"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">História</h2>
+                                </div>    
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_green"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Alimentação</h2>
+                                </div>   
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_green"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Como chegar?</h2>
+                                </div>                                                                                
+                             </div><!-- end Content_submenu_top-->
+                             <div class="Content_submenu_bottom"><!-- start Content_submenu_bottom-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_green"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Colaboradores</h2>
+                                </div>   
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_green"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Programação</h2>
+                                </div> 
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_green"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Expositores</h2>
+                                </div>                                                                               
+                             </div><!-- end Content_submenu_bottom-->
+                        </div>  
+                    </li>
+                    <li>
+                    	<a href="#" class="Flores">FLORES</a>
+                        <div class="Submenu_flores Submenu_show">
+                          <span class="Img_arrow_flores"></span>
+                             <div class="Content_submenu_top"><!-- start Content_submenu_top-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_orange">Jardinagem</h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Orquideas</h2>
+                                </div>                                                                                  
+                             </div><!-- end Content_submenu_top-->
+                             <div class="Content_submenu_bottom"><!-- start Content_submenu_bottom-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_orange">Flores</h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Rosa</h2>
+                                </div>   
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_orange"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Copo de Leite</h2>
+                                </div> 
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_orange"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Margarida</h2>
+                                </div>    
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_orange"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Ver todas</h2>
+                                </div>                                                                                                            
+                             </div><!-- end Content_submenu_bottom-->
+                        </div>                          
+                    </li>
+                    <li>
+                    	<a class="Morangos">MORANGOS</a>
+                        <div class="Submenu_morangos Submenu_show">
+                          <span class="Img_arrow_morangos"></span>
+ 							<div class="Content_submenu_top"><!-- start Content_submenu_top-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_red">Espécies</h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Fragaria chiloensis</h2>
+                                </div>
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_red"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Fragaria daltoniana</h2>
+                                </div>    
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_red"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Fragaria moschata</h2>
+                                </div>   
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_red"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Fragaria vesca</h2>
+                                </div>                                                                                                                 
+                             </div><!-- end Content_submenu_top-->
+                             <div class="Content_submenu_bottom"><!-- start Content_submenu_bottom-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_red">Receitas</h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Torta de Morango</h2>
+                                </div>   
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_red"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Geléia de Morango</h2>
+                                </div> 
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_red"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Ver todas</h2>
+                                </div>                                                                               
+                             </div><!-- end Content_submenu_bottom-->                          
+                        </div>                      
+                    </li>
+                    <li>
+                    	<a href="#" class="Imprensa">IMPRENSA</a>
+                        <div class="Submenu_imprensa Submenu_show">
+                          	<span class="Img_arrow_imprensa"></span>
+ 							<div class="Content_submenu_top"><!-- start Content_submenu_top-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_blue"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Releases</h2>
+                                </div>
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_blue"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Material Gráfico</h2>
+                                </div>                                                                                                                 
+                             </div><!-- end Content_submenu_top-->
+                             <div class="Content_submenu_bottom"><!-- start Content_submenu_bottom-->
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_blue"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Fotos</h2>
+                                </div>   
+                                <div class="Submenu_box">
+                                    <h1 class="Title_submenubox_blue"></h1>
+                                    <div class="Image_submenubox"></div>
+                                    <h2 class="Text_submenubox">Assessoria de Imprensa</h2>
+                                </div>                                                                               
+                             </div><!-- end Content_submenu_bottom-->                                                        
+                        </div>                          
+                    </li>
+                    <li><a href="./noticia.html" class="Noticias">NOTICIAS</a></li>
+                    <li><a href="#" class="Areadeguias">AREA DE GUIAS</a></li>
+                    <li><a href="#" class="Ingressos">INGRESSOS</a></li>
+                <ul>
+            </div>
+         
+        </div>
+    </div><!-- end Header -->
+    <div id="Container">
+    
+        <div id="Box_left">
+        	 <div class="Content_top">
+        		 <div class="Highlights_top">
+                 	 <div class="Content_highlights_top">
+                     	DESTAQUE
+                     </div>
+                 </div>
+                 <div class="Tabs_top">
+                 	<div class="Item_tabs_top">
+                    	<h1 class="Title_item_orange">Noticias</h1>
+                        <h2 class="Title_2_item_red">Do you see any Teletubbies in here?</h2>
+                        <p class="Text_item_tabs">Do you see a slender plastic tag clipped to my shirt with my name printed on it? </p>
+                    </div>
+                 	<div class="Item_tabs_top">
+                    	<h1 class="Title_item_green">Área de Guias</h1>
+                        <h2 class="Title_2_item_green">Do you see any Teletubbies in here?</h2>
+                        <p class="Text_item_tabs">Do you see a slender plastic tag clipped to my shirt with my name printed on it? </p>
+                    </div>  
+                 	<div class="Item_tabs_top">
+                    	<h1 class="Title_item_blue">A Festa</h1>
+                        <h2 class="Title_2_item_blue">Do you see any Teletubbies in here?</h2>
+                        <p class="Text_item_tabs">Do you see a slender plastic tag clipped to my shirt with my name printed on it? </p>
+                    </div>                                      
+                 </div>
+        	 </div>
+        	 <div class="Content_midle">
+             
+        		 <div class="Box_midle">
+                 	<h1 class="Title_boxmidle_blue">Flores<span class="Img_h1_boxmidle_1"></span></h1>
+					<p class="Text_boz_midle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod commodo consequat.</p>
+                 </div>
+        		 <div class="Box_midle">
+                 	<h1 class="Title_boxmidle_blue">Morango<span class="Img_h1_boxmidle_2"></span></h1>
+                    <p class="Text_boz_midle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod commodo consequat.</p>
+                 </div>
+        		 <div class="Box_midle">
+                 	<h1 class="Title_boxmidle_blue">Receitas<span class="Img_h1_boxmidle_3"></span></h1>
+                    <p class="Text_boz_midle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod commodo consequat.</p>
+                 </div>                                  
+        	 </div>
+        	 <div class="Content_bottom">
+                 <div class="C_bot_left_box">
+                    <div class="Newsletter_bottom">
+                    	<h1 class="Title_newa_red">Newslwtter<span class="Img_h1_news_1"></span></h1>
+                        <a class="Btn_news_send"></a> 
+                        <p class="Text_news">Do you see a slender plastic tag clipped to my shirt with my name printed on it? </p>
+                        <input name="campo" type="text"></input>
+                        
+                        
+                        
+                    </div>
+                    <div class="Item_pub_bottom">
+                    	Publicidade
+                    </div>  
+                    <div class="Item_pub_bottom">
+                    	Publicidade
+                    </div>                                       
+                 </div>   
+                 <div class="C_bot_gallery_box">
+                 	<h1 class="Title_gal_red">Galeria<span class="Img_h1_gal_1"></span></h1>           
+                    <div id="Gallery_home_box">	<!--start Gallery_home_box-->
+                        <div id="slideshow-main">
+                            <ul>
+                                <li class="p1 active">
+                                    <a href="#">
+                                        <img src="images/1_big.gif" width="476" height="312" alt=""/>
+                                        <span class="opacity"></span>
+                                        <span class="content"><h1></h1><p></p></span>
+                                    </a>
+                                </li>
+                                <li class="p2">
+                                    <a href="#">
+                                        <img src="images/2_big.gif" width="476" height="312" alt=""/>
+                                        <span class="opacity"></span>
+                                        <span class="content"><h1></h1><p></p></span>
+                                    </a>
+                                </li>
+                                <li class="p3">
+                                    <a href="#">
+                                        <img src="images/3_big.gif" width="476" height="312" alt=""/>
+                                        <span class="opacity"></span>
+                                        <span class="content"><h1></h1><p></p></span>
+                                    </a>
+                                </li>
+                                <li class="p4">
+                                    <a href="#">
+                                        <img src="images/4_big.gif" width="476" height="312" alt=""/>
+                                        <span class="opacity"></span>
+                                        <span class="content"><h1></h1><p></p></span>
+                                    </a>
+                                </li>
+                                <li class="p5">
+                                    <a href="#">
+                                        <img src="images/5_big.gif" width="476" height="312" alt=""/>
+                                        <span class="opacity"></span>
+                                        <span class="content"><h1></h1><p></p></span>
+                                    </a>
+                                </li>
+                                <li class="p6">
+                                    <a href="#">
+                                        <img src="images/6_big.gif" width="476" height="312" alt=""/>
+                                        <span class="opacity"></span>
+                                        <span class="content"><h1></h1><p></p></span>
+                                    </a>
+                                </li>
+                                <li class="p7">
+                                    <a href="#">
+                                        <img src="images/7_big.gif" width="476" height="312" alt=""/>
+                                        <span class="opacity"></span>
+                                        <span class="content"><h1></h1><p></p></span>
+                                    </a>
+                                </li>
+                            </ul>										
+                        </div>                                
+                        <div id="slideshow-carousel">				
+                              <ul id="carousel" class="jcarousel jcarousel-skin-tango">
+                                <li><a href="#" rel="p1"><img src="images/1.gif" width="106" height="71" alt="#"/></a></li>
+                                <li><a href="#" rel="p2"><img src="images/2.gif" width="106" height="71" alt="#"/></a></li>
+                                <li><a href="#" rel="p3"><img src="images/3.gif" width="106" height="71" alt="#"/></a></li>
+                                <li><a href="#" rel="p4"><img src="images/4.gif" width="106" height="71" alt="#"/></a></li>
+                                <li><a href="#" rel="p5"><img src="images/5.gif" width="106" height="71" alt="#"/></a></li>
+                                <li><a href="#" rel="p6"><img src="images/6.gif" width="106" height="71" alt="#"/></a></li>
+                                <li><a href="#" rel="p7"><img src="images/7.gif" width="106" height="71" alt="#"/></a></li>
+                              </ul>
+                        </div>            
+                        <div class="clear"></div>
+                    </div> <!--End Gallery_home_box-->  
+                                       
+                 </div>
+        	 </div> 
+             <div class="clear"></div>                             
+        </div><!-- end Box_left --> 
+        <div id="Box_right">        
+             <div class="Content_pub">
+        		public 
+        	 </div>
+             <div class="Content_pub">
+        		public 
+        	 </div>             
+             <div class="Content_pull">
+        		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
+                <div class="Pull_item_box">
+                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+                    <div class="clear"></div>
+                </div>   
+                <div class="Pull_item_box">    
+                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam </p>  
+                    <div class="clear"></div>                                
+                </div>   
+                <div class="Pull_item_box">
+                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+                    <div class="clear"></div>
+                </div>   
+                <a class="Btn_pull_send"></a>      	
+             </div> 
+             <div class="Content_weather">
+        		<h1 class="Title_weat_red">Previsão do Tempo</h1>
+        	 </div>   
+             <div class="clear"></div>                         
+        </div><!-- end Box_right --> 
+        
+        
+    <div id="Box_employees_1">
+        <div class="Content_realization">
+        	<div class="Content_title_emp_1"><h1 class="Title_emp_1">Realização</h1></div>
+        	<img src="images/logo_real_assiciacaohortolandiaatibaia.jpg" class="Swap Item_employees_1_logos">
+        </div> 
+        <div class="Content_support">
+        	<div class="Content_title_emp_1"><h1 class="Title_emp_1">Apoio</h1></div>
+            <img src="images/logo_ap_prefeituraatibaia.jpg" class="Swap Item_employees_1_logos">
+        </div>
+        <div class="Content_sponsors">
+        	<div class="Content_title_emp_1"><h1 class="Title_emp_1">Patrocinadores</h1></div>
+            <img src="images/logo_pat_novaschin.jpg" class="Swap Item_employees_1_logos">
+            <img src="images/logo_pat_santander.jpg" class="Swap Item_employees_1_logos">
+        </div>    
+        <div class="clear"></div>              
+    </div><!-- end Box_employees_1 -->             
+    <div id="Box_employees_2">
+    	<div class="Content_title_emp_1"><h1 class="Title_emp_2">Colaboradores</h1></div>
+        <img src="images/logo_col_acenbra.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_sindicatoruralatibaia.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_assprodutoresmorangoatibaia.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_proflor.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_saaeatibaia.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_kicor.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_cielo.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_cvc.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_govestadosaopaulo.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_caminhodamoda.jpg" class="Swap Item_employees_2_logos">
+        <img src="images/logo_col_graal.jpg" class="Swap Item_employees_2_logos">
+        
+        <div class="clear"></div>
+    </div><!-- end Box_employees_2 -->  
+    <div class="clear"></div>   
+    </div><!-- end Container -->
+    <div id="Footer">
+        <div class="Content_footer">
+            <div class="Left_footer">
+                <span class="Text_f_1">2012®  Festa de Flores e Morangos de Atibaia</span><br /><span class="Text_f_2">Parque Edmundo Zanoni. Avenida Horácio Neto, - Atibaia - SP</span>
+            </div>
+            <div class="Center_footer">
+            <span class="Text_f_3">Central de Atendimento</span><br />
+                <span class="Text_f_1">0800 555 979 </span><br />
+                <span class="Text_f_3">8h às 12h e 13:30h às 17:30h</span>
+            </div>
+            <div class="Right_footer">
+                <span class="Text_f_3" >Siga-nos</span><br />
+                <p class="Cont_buttons"><a href="#" class="Img_twitter"></a><a href="#" class="Img_facebook"></a><a href="#" class="Img_youtube"></a></p>
+            </div>  
+        </div>           
+    </div><!-- end Footer -->
+</div><!-- end Bg_general -->
+</div><!-- end General -->
+</body>
+</html>

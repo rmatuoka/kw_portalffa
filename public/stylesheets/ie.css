@@ -1,0 +1,248 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'DaxCompactMedium';
+    src: url('daxcompm_0-webfont.eot');
+    src: url('daxcompm_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('daxcompm_0-webfont.woff') format('woff'),
+         url('daxcompm_0-webfont.ttf') format('truetype'),
+         url('daxcompm_0-webfont.svg#DaxCompactMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body 
+{
+	position:relative;
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #e6eff9;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+img {
+	max-width: 100%;
+	padding: 0 0 1.6em 0;
+}
+
+#General
+{
+	position:absolute;
+	width:100%;
+	height:auto;
+	margin:0 auto;
+}
+#Bg_general
+{
+	position:relative;
+	border:#FF0000 1px dashed;
+	opacity:;
+}
+#Header 
+{
+	position:relative;
+	width:100%;
+	height:414px;
+	background: #CCC;
+	margin: 0 auto;
+	border-bottom:#88b747 solid 5px;
+	z-index:1000;
+}
+	 .Header_top
+	 {
+		 position:relative;
+		 background:#f4f5f6;
+		 width:983px;
+		 height:87px;
+		 margin:0 auto;
+		 
+	 }
+	 .Logo
+	 {
+		 position:absolute;
+		 top:5px;	
+		 left:43px;
+	 }
+	 .Menu
+	 {
+		 position:absolute;
+		 bottom:0px;
+		 right:0px;
+		 width:641px;
+		 height:31px;
+		 border-bottom:#FF0000 6px solid;
+		 z-index:20000;
+	 }
+		 ul
+		 {
+			 position:absolute;
+			 left:26px;
+			 width:641px;
+			 height:22px;
+			 list-style:none;
+		 }	 
+		 ul li
+		 {
+			 position:relative;
+			 font-family:DaxCompactMedium;
+			 font-size:16px;
+			 font-weight:normal;
+			 color:#5e5e5e;
+			 margin-right:26px;
+			 float:left;
+			 z-index:0;
+		 }	
+			 ul li a
+			 {
+				 text-decoration:none !important;
+			 }	
+				 ul li a:hover
+				 {
+				   text-decoration:underline !important;
+				 }		 		 		 
+#Container 
+{
+	position:relative;
+	width: 980px;
+	height:auto;
+	background:;
+	margin: 0 auto;
+	border:#0CC 1px dashed;
+	z-index:1000;
+}
+	.First_cont_box
+	{
+		position:relative;
+		display: table;
+		width:969px;
+		height:390px;
+		margin:0 auto;
+	}
+		.First_box_left_content
+		{
+			position:relative;
+			width:747px;
+			height:390px;
+			float:left;
+		}	
+			.First_img_left_content
+			{
+				position:relative;
+				width:345px;
+				height:362px;
+				background:#fff;
+				float:left;
+				padding:14px 14px 14px 14px;
+			}
+			.First_right_content
+			{
+				position:relative;
+				width:355px;
+				height:125px;
+				background:#fff;
+				float:left;
+				margin-left:12px;
+				margin-bottom:8px;
+			}	
+		.First_box_right_cont_pub
+		{
+			position:relative;
+			display:block;
+			width:222px;
+			background:#fff;
+			height:192px;
+			float:left;	
+			margin-bottom:8px;	
+		}	
+	
+	.Second_cont_box
+	{
+		position:relative;
+		display: table;
+		width:969px;
+		height:534px;
+		margin:0 auto;
+	}
+		.Second_box_left_content
+		{
+			position:relative;
+			width:747px;
+			height:534px;
+			float:left;
+		}	
+			.Second_items_left_cont_1
+			{
+				position:relative;
+				width:744px;
+				height:136px;
+				float:left;
+			}
+				.Second_item
+				{
+					position:relative;
+					width:241px;
+					height:134px;
+					background:#000;
+					float:left;
+					margin-right:7px;
+				}			
+			.Second_items_left_cont_2
+			{
+				position:relative;
+				width:744px;
+				height:357px;
+				float:left;	
+				padding-top:46px;	
+			}	
+				.Second_newsletter
+				{
+					position:relative;
+					float:left;
+					width:241px;
+					height:354px;
+					background:#666666;
+					margin-right:7px;
+				}
+				.Second_galeria
+				{
+					position:relative;
+					float:left;
+					width:490px;
+					height:354px;
+					background:#09C;
+				}
+
+		.Second_box_right_cont_enquete
+		{
+			position:relative;
+			display:block;
+			width:222px;
+			background:#fff;
+			height:279px;
+			float:left;	
+			margin-bottom:31px;	
+		}	
+		.Second_box_right_cont_prevtemp
+		{
+			position:relative;
+			display:block;
+			width:222px;
+			background:#fff;
+			height:226px;
+			float:left;	
+			margin-bottom:8px;	
+		}		
+	
+
+#Footer## 
+{
+	position:fixed;
+	bottom:0;
+	width: 100%;
+	height:93px;
+	border:#CCCCCC 1px dashed;
+	background:#06F;
+	z-index:1000;
+}
+.clear { clear: both; }	

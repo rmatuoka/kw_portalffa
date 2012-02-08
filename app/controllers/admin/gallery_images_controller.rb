@@ -1,4 +1,8 @@
 class Admin::GalleryImagesController < ApplicationController
+  access_control do
+      allow :admin, :all
+  end  
+  layout "inadmin"
   def index
     @gallery_images = GalleryImage.all
   end

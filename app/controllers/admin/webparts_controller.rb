@@ -1,6 +1,10 @@
 class Admin::WebpartsController < ApplicationController
+  access_control do
+      allow :admin, :all
+  end  
+  layout "inadmin"    
   def index
-    @webparts = Webpart.all
+    @webparts = Webpart.all_active #Alteração Importante
   end
 
   def show
@@ -8,11 +12,12 @@ class Admin::WebpartsController < ApplicationController
   end
 
   def new
-    @webpart = Webpart.new
+    @webpart = Webpart.new(:published => true)#Alteração Importante
   end
 
   def create
     @webpart = Webpart.new(params[:webpart])
+    @webpart.active = true #Alteração Importante define o item como ativo
     if @webpart.save
       redirect_to [:admin, @webpart], :notice => "Successfully created webpart."
     else
@@ -35,7 +40,7 @@ class Admin::WebpartsController < ApplicationController
 
   def destroy
     @webpart = Webpart.find(params[:id])
-    @webpart.destroy
+    @webpart.newdestroy #Alteração Importante
     redirect_to admin_webparts_url, :notice => "Successfully destroyed webpart."
   end
 end

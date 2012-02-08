@@ -1,28 +1,24 @@
-<% title "Admin/Webpart" %>
+<% title @webpart.name %>
 
+<h1><%= @webpart.name %></h1><br />
+<br />
+<p>Verifique se as informações abaixo estão corretas.</p><br />
+<br />
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @webpart.name %>
 </p>
 <p>
-  <strong>Encoding:</strong>
-  <%= @webpart.encoding %>
+  <strong>Publicado:</strong>
+  <%= print_active(@webpart.published) %>
 </p>
 <p>
-  <strong>Type:</strong>
+  <strong>Tipo:</strong>
   <%= @webpart.type %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Active:</strong>
-  <%= @webpart.active %>
-</p>
-<p>
-  <strong>Published:</strong>
-  <%= @webpart.published %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_admin_webpart_path(@webpart) %> |
-  <%= link_to "Destroy", [:admin, @webpart], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_webparts_path %>
+	<%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_webparts_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

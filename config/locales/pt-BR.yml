@@ -182,8 +182,21 @@
       less_than_or_equal_to: "deve ser menor ou igual a %{count}"
       odd: "deve ser ímpar"
       even: "deve ser par"
-
+# Campos que são comuns para todas as tabelas       
+  attributes:
+    created_at: "Data de criação"
+    updated_at: "Data de atualização" 
+    name: "Nome"
+    published: "Publicado"    
+#Fim dos campos comuns
   activerecord:
+    attributes:
+        #Campos especificos de acordo com cada tabela
+        webpart:
+            encoding: "Codificação"
+            type: "Tipo"
+        
+        #Fim dos campos especificos
     errors:
       template:
         header:

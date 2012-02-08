@@ -1,4 +1,8 @@
 class Admin::MoviesController < ApplicationController
+  access_control do
+      allow :admin, :all
+  end  
+  layout "inadmin"
   def index
     @movies = Movie.all
   end

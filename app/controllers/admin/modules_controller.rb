@@ -1,4 +1,8 @@
 class Admin::ModulesController < ApplicationController
+  access_control do
+      allow :admin, :all
+  end  
+  layout "inadmin"
   def index
     @modules = Module.all
   end

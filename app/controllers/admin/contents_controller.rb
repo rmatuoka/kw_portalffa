@@ -1,4 +1,8 @@
 class Admin::ContentsController < ApplicationController
+  access_control do
+      allow :admin, :all
+  end  
+  layout "inadmin"
   def index
     @contents = Content.all
   end

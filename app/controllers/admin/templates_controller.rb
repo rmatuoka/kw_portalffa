@@ -1,4 +1,9 @@
 class Admin::TemplatesController < ApplicationController
+  access_control do
+      allow :admin, :all
+  end  
+  layout "inadmin"
+  
   def index
     @templates = Template.all
   end

@@ -1,41 +1,34 @@
 KwPortalffa::Application.routes.draw do
 
-  namespace(:admin){ resources :gallery_images }
-
-  namespace(:admin){ resources :galleries }
-
-  namespace(:admin){ resources :movies }
-
-  namespace(:admin){ resources :contents }
-
-  namespace(:admin){ resources :subcategories }
-
-  namespace(:admin){ resources :categories }
-
-  namespace(:admin){ resources :modules }
-
-  namespace(:admin){ resources :webparts }
-
-  namespace(:admin){ resources :templates }
-
+  get "home/index"
   resources :user_sessions
   resources :users
   resources :password_resets
   resources :atualizar
   #Inicio do namespace Admin
   namespace(:admin){
+    resources :templates 
+    resources :webparts
+    resources :modules            
+    resources :categories
+    resources :subcategories
+    resources :contents
+    resources :galleries                 
+    resources :gallery_images 
+    resources :movies 
+    #Inicio do Padrão Administrador
     resources :static_contents
     resources :users do
       collection do
         get 'search'
       end
     end
-    
+    #Fim do Padrão Administrador
     root :to => "static_contents#index"
   }
   #Final do namespace Admin
   
-  root :to => "user_sessions#new"
+  root :to => "home#index"
   match 'cadastro' => "users#new"
   match 'login' => 'user_sessions#new'  
   match 'logout' => 'user_sessions#destroy'  

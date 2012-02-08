@@ -14,7 +14,6 @@ jQuery.noConflict();
 <script>
 jQuery(document).ready(function() 
     { 
-	//	jQuery("li:first.parent > a").trigger('click');
         jQuery("table").tablesorter(); 
     } 
 );
@@ -36,7 +35,7 @@ jQuery(document).ready(function()
 				</div>
 			</div>
 			<div id="Logo">
-				<%= image_tag("logo_default.png", :width=>"148", :height=>"83")%>
+				<%= image_tag("logo_ffa.png", :width=>"253", :height=>"77")%>
 			</div>
 		</div>
 		<div id="Content">
@@ -44,13 +43,11 @@ jQuery(document).ready(function()
 				<div id="Item_category" >
 					<div id="Item_content">
 						<ul id="menu">
-							<li class="parent aberto"><a href="#" title=""><h3>Empresas</h3></a>
+							<li class="parent aberto"><a href="#" title=""><h3>Templates</h3></a>
 								<ul class="sub-menu">
-									<li>Empresa 1</li>
-									<li>Empresa 2</li>
-									<li>Empresa 3</li>
-									<li>Empresa 4</li>
-									<li>Empresa 5</li>
+									<li><%= link_to "Gerenciar Templates",admin_templates_path%></li>									
+									<li><%= link_to "Gerenciar WebParts",admin_webparts_path%></li>
+									<li><%= link_to "Gerenciar Modulos",admin_modules_path%></li>									
 								</ul>
 							</li>
 							<%if User.find(current_user.id).has_role? :admin %>

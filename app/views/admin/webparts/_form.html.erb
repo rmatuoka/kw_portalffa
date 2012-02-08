@@ -1,24 +1,24 @@
+<div id="Box_form">
 <%= form_for [:admin, @webpart] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
   <p>
     <%= f.label :encoding %><br />
     <%= f.text_area :encoding %>
   </p>
+  <br />
   <p>
-    <%= f.label :type %><br />
+    <%= f.label :type %>
     <%= f.text_field :type %>
   </p>
   <p>
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
-  </p>
-  <p>
-    <%= f.label :published %><br />
+    <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
-  <p><%= f.submit %></p>
+  <br />
+  <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_webparts_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>
+</div>
