@@ -5,7 +5,7 @@ class Admin::TemplatesController < ApplicationController
   layout "inadmin"
   
   def index
-    @templates = Template.all
+    @templates = Template.all_active
   end
 
   def show
@@ -13,11 +13,12 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def new
-    @template = Template.new
+    @template = Template.new(:published => true)
   end
 
   def create
     @template = Template.new(params[:template])
+    @template.active = true
     if @template.save
       redirect_to [:admin, @template], :notice => "Successfully created template."
     else
@@ -40,7 +41,7 @@ class Admin::TemplatesController < ApplicationController
 
   def destroy
     @template = Template.find(params[:id])
-    @template.destroy
+    @template.newdestroy
     redirect_to admin_templates_url, :notice => "Successfully destroyed template."
   end
 end

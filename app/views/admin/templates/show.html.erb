@@ -1,20 +1,20 @@
-<% title "Admin/Template" %>
+<% title @template.name %>
 
+<h1><%= @template.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.webpart.messages.show')%></p><br />
+<br />
 <p>
-  <strong>Name:</strong>
+  <strong><%=t 'attributes.name' %>:</strong>
   <%= @template.name %>
 </p>
 <p>
-  <strong>Active:</strong>
-  <%= @template.active %>
+  <strong><%=t 'attributes.published' %>:</strong>
+  <%= print_active(@template.published) %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Published:</strong>
-  <%= @template.published %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_admin_template_path(@template) %> |
-  <%= link_to "Destroy", [:admin, @template], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_templates_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_templates_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

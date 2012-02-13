@@ -22,7 +22,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_admin_content_path(@content) %> |
-  <%= link_to "Destroy", [:admin, @content], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to t('attributes.editing'), edit_admin_content_path(@content) %> |
+  <%= link_to t('attributes.exclude'), [:admin, @content], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
   <%= link_to "View All", admin_contents_path %>
 </p>

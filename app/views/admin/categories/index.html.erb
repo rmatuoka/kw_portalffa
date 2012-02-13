@@ -1,21 +1,28 @@
-<% title "Admin/Categories" %>
+<% title show_model_name(Category, true) %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Active</th>
-    <th>Published</th>
-  </tr>
-  <% for category in @categories %>
-    <tr>
-      <td><%= category.name %></td>
-      <td><%= category.active %></td>
-      <td><%= category.published %></td>
-      <td><%= link_to "Show", [:admin, category] %></td>
-      <td><%= link_to "Edit", edit_admin_category_path(category) %></td>
-      <td><%= link_to "Destroy", [:admin, category], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
+<h1><%= show_model_name(Category, true) %></h1><br />
+<p><%= t('activerecord.attributes.category.messages.index')%></p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_category_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+	<thead> 
+		<tr>
+			<th style="width:30%;"><%=t 'attributes.name' %></th>
+			<th style="width:20%;"><%=t 'attributes.published' %> ?</th>
+			<th colspan="4" style="width:50%;"><%=t 'attributes.actions' %></th>
+		</tr>
+	</thead> 
+	<tbody>
+	<% for category in @categories %>
+	<tr <%='class=notactive' if !category.published%>>
+		<td><%= category.name %></td>
+		<td><%= print_active(category.published) %></td>
+		<td><%= link_to t('attributes.showing'), [:admin, category] %></td>
+		<td><%= link_to t('attributes.editing'), edit_admin_category_path(category) %></td>
+		<td><%= link_to t('attributes.exclude'), [:admin, category], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+		<td><%#= link_to t('activerecord.models.category'), admin_template_webmodules_path(template.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
 </table>
-
-<p><%= link_to "New Admin/Category", new_admin_category_path %></p>

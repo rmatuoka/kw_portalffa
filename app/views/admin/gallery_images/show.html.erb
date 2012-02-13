@@ -42,7 +42,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_admin_gallery_image_path(@gallery_image) %> |
-  <%= link_to "Destroy", [:admin, @gallery_image], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to t('attributes.editing'), edit_admin_gallery_image_path(@gallery_image) %> |
+  <%= link_to t('attributes.exclude'), [:admin, @gallery_image], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
   <%= link_to "View All", admin_gallery_images_path %>
 </p>

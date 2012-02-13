@@ -149,9 +149,9 @@
       prompt: "Por favor selecione"
 
     submit:
-      create: 'Criar %{model}'
-      update: 'Atualizar %{model}'
-      submit: 'Salvar %{model}'
+      create: 'Salvar'
+      update: 'Alterar'
+      submit: 'Salvar'
 
   errors:
     format: "%{attribute} %{message}"
@@ -182,20 +182,101 @@
       less_than_or_equal_to: "deve ser menor ou igual a %{count}"
       odd: "deve ser ímpar"
       even: "deve ser par"
-# Campos que são comuns para todas as tabelas       
+# Campos que são comuns para todas as tabelas e atributos de form  
   attributes:
     created_at: "Data de criação"
     updated_at: "Data de atualização" 
     name: "Nome"
-    published: "Publicado"    
+    published: "Publicado"  
+    actions: "Ações"  
+    showing: "Visualizar"
+    editing: "Editar"
+    exclude: "Excluir"
+    create_new: "+ Criar novo"
+    go_back: "Voltar"
+    new: "Novo"
+    newf: "Nova"
+    edit: "Editar"
+    titleadmin: "Administrador Korewa "    
+    greeting: "Bem Vindo"
+    manage: "Gerenciar " 
+    policy: "Politica de privacidade"
+    terms_of_use: "Termos de Uso"
+    help: "Ajuda"
+    support: "Suporte"
+    menuadmin:
+        structure: "Estrutura"
+        content: "Conteúdos"
+        manage: "Administrador do Site"
+    
 #Fim dos campos comuns
+
   activerecord:
+    models:
+        category: 
+            one: "Categoria"
+            other: "Categorias" 
+        content:
+            one: "Conteúdo"  
+            other: "Conteúdos"  
+        gallery:
+            one: "Galeria"  
+            other: "Galerias"
+        gallery_image:
+            one: "Galeria de Imagens"  
+            other: "Galerias de Imagens"   
+        movie: 
+            one: "Video" 
+            other: "Videos"
+        subcategory: 
+            one: "Subcategoria"
+            other: "Subcategorias"         
+        template: 
+            one: "Template" 
+            other: "Templates"
+        user: 
+            one: "Usuário"
+            other: "Usuários"            
+        webmodule: 
+            one: "Módulo"
+            other: "Módulos"
+
+        webpart: 
+            one: "WebPart"
+            other: "WebParts"
     attributes:
         #Campos especificos de acordo com cada tabela
+        template:
+            messages:
+                index: "Verifique abaixo a lista dos templates cadastrados no sistema."
+                new: "Utilize os campos abaixo para cadastrar um novo template."
+                show: "Verifique se as informações abaixo estão corretas."
+        user:
+            messages:
+                index: "Verifique abaixo a lista dos usuários cadastrados no sistema."       
+                new: "Utilize os campos abaixo para cadastrar um novo usuário." 
+                show: "Verifique se as informações abaixo estão corretas."
+        webmodule:
+            webpart_id: "WebPart"
+            position: "Posição"
+            module_key: "Chave do Módulo"
+            messages:
+                index: "Verifique abaixo a lista dos módulos cadastrados no sistema."
+                new: "Utilize os campos abaixo para cadastrar um novo módulo."
+                show: "Verifique se as informações abaixo estão corretas."
+                
         webpart:
             encoding: "Codificação"
             type: "Tipo"
-        
+            messages:
+                index: "Verifique abaixo a lista dos webparts cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar um novo webpart." 
+                show: "Verifique se as informações abaixo estão corretas."  
+        category:
+            messages:
+                index: "Verifique abaixo a lista das categorías cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar uma nova categoría." 
+                show: "Verifique se as informações abaixo estão corretas."               
         #Fim dos campos especificos
     errors:
       template:
@@ -234,3 +315,10 @@
           email: "Email"
           password: "Senha"
           remember_me: "Lembrar me"
+
+#Mensagens do Sitema
+  system_messages:
+      notice_to_delete: "Esta operação não poderá ser desfeita, deseja continuar?"
+      edit_form: "Utilize os campos abaixo para editar as informações."
+      index_form: "Verifique abaixo a lista dos %{model} cadastrados no sistema."
+#Fim Mensagens do sistema          

@@ -1,6 +1,6 @@
-class CreateModules < ActiveRecord::Migration
+class CreateWebmodules < ActiveRecord::Migration
   def self.up
-    create_table :modules do |t|
+    create_table :webmodules do |t|
       t.integer :template_id
       t.integer :webpart_id
       t.integer :position
@@ -12,6 +12,6 @@ class CreateModules < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :modules
+    drop_table :webmodules
   end
 end

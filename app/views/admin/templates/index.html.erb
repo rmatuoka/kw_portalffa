@@ -1,21 +1,28 @@
-<% title "Admin/Templates" %>
+<% title show_model_name(::Template, true) %>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Active</th>
-    <th>Published</th>
-  </tr>
-  <% for template in @templates %>
-    <tr>
-      <td><%= template.name %></td>
-      <td><%= template.active %></td>
-      <td><%= template.published %></td>
-      <td><%= link_to "Show", [:admin, template] %></td>
-      <td><%= link_to "Edit", edit_admin_template_path(template) %></td>
-      <td><%= link_to "Destroy", [:admin, template], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
+<h1><%= show_model_name(::Template, true) %></h1><br />
+<p><%= t('activerecord.attributes.template.messages.index')%></p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_template_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+	<thead> 
+		<tr>
+			<th style="width:30%;"><%=t 'attributes.name' %></th>
+			<th style="width:20%;"><%=t 'attributes.published' %> ?</th>
+			<th colspan="4" style="width:50%;"><%=t 'attributes.actions' %></th>
+		</tr>
+	</thead> 
+	<tbody>
+	<% for template in @templates %>
+	<tr <%='class=notactive' if !template.published%>>
+		<td><%= template.name %></td>
+		<td><%= print_active(template.published) %></td>
+		<td><%= link_to t('attributes.showing'), [:admin, template] %></td>
+		<td><%= link_to t('attributes.editing'), edit_admin_template_path(template) %></td>
+		<td><%= link_to t('attributes.exclude'), [:admin, template], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+		<td><%= link_to show_model_name(::Webmodule, true) , admin_template_webmodules_path(template.id) %></td>
+	</tr>
+	<% end %>
+	</tbody>
 </table>
-
-<p><%= link_to "New Admin/Template", new_admin_template_path %></p>

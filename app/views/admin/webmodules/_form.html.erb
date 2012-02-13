@@ -1,0 +1,23 @@
+<div id="Box_form">
+<%= form_for ([:admin, @template, @webmodule]) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :webpart_id %>
+	<%= f.collection_select :webpart_id,@webparts,:id,:name %> 
+  </p>
+  <p>
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </p>
+  <p>
+    <%= f.label :module_key %><br />
+    <%= f.text_area :module_key %>
+  </p>
+  <p>
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </p>
+  <br />
+  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_template_webmodules_path(@template)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+<% end %>
+</div>

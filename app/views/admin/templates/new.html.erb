@@ -1,5 +1,8 @@
-<% title "New Admin/Template" %>
+<% title t('attributes.new') +" "+show_model_name(::Template) %>
+
+<h1><%= t('attributes.new') +" "+show_model_name(::Template) %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.template.messages.new')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p><%= link_to "Back to List", admin_templates_path %></p>

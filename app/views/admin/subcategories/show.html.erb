@@ -22,7 +22,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_admin_subcategory_path(@subcategory) %> |
-  <%= link_to "Destroy", [:admin, @subcategory], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to t('attributes.editing'), edit_admin_subcategory_path(@subcategory) %> |
+  <%= link_to t('attributes.exclude'), [:admin, @subcategory], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
   <%= link_to "View All", admin_subcategories_path %>
 </p>

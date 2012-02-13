@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125142316) do
+ActiveRecord::Schema.define(:version => 20120208203226) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -130,6 +130,17 @@ ActiveRecord::Schema.define(:version => 20120125142316) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "webmodules", :force => true do |t|
+    t.integer  "template_id"
+    t.integer  "webpart_id"
+    t.integer  "position"
+    t.text     "module_key"
+    t.boolean  "active"
+    t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

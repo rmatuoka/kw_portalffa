@@ -4,7 +4,7 @@ class Admin::ContentsController < ApplicationController
   end  
   layout "inadmin"
   def index
-    @contents = Content.all
+    @contents = Content.all_active
   end
 
   def show
@@ -12,11 +12,12 @@ class Admin::ContentsController < ApplicationController
   end
 
   def new
-    @content = Content.new
+    @content = Content.new(:published => true)
   end
 
   def create
     @content = Content.new(params[:content])
+    @content.active = true
     if @content.save
       redirect_to [:admin, @content], :notice => "Successfully created content."
     else
@@ -39,7 +40,7 @@ class Admin::ContentsController < ApplicationController
 
   def destroy
     @content = Content.find(params[:id])
-    @content.destroy
+    @content.newdestroy
     redirect_to admin_contents_url, :notice => "Successfully destroyed content."
   end
 end

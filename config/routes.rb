@@ -7,9 +7,10 @@ KwPortalffa::Application.routes.draw do
   resources :atualizar
   #Inicio do namespace Admin
   namespace(:admin){
-    resources :templates 
-    resources :webparts
-    resources :modules            
+    resources :templates do
+      resources :webmodules 
+    end
+    resources :webparts               
     resources :categories
     resources :subcategories
     resources :contents

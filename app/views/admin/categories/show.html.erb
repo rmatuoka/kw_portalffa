@@ -1,20 +1,20 @@
-<% title "Admin/Category" %>
+<% title @category.name %>
 
+<h1><%= @category.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.webpart.messages.show')%></p><br />
+<br />
 <p>
-  <strong>Name:</strong>
+  <strong><%=t 'attributes.name' %>:</strong>
   <%= @category.name %>
 </p>
 <p>
-  <strong>Active:</strong>
-  <%= @category.active %>
+  <strong><%=t 'attributes.published' %>:</strong>
+  <%= print_active(@category.published) %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Published:</strong>
-  <%= @category.published %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_admin_category_path(@category) %> |
-  <%= link_to "Destroy", [:admin, @category], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_categories_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_categories_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

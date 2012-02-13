@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   end  
   layout "inadmin"
   def index
-    @categories = Category.all
+    @categories = Category.all_active
   end
 
   def show
@@ -12,11 +12,12 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new
+    @category = Category.new(:published => true)
   end
 
   def create
     @category = Category.new(params[:category])
+    @category.active = true
     if @category.save
       redirect_to [:admin, @category], :notice => "Successfully created category."
     else
@@ -39,7 +40,7 @@ class Admin::CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
+    @category.newdestroy
     redirect_to admin_categories_url, :notice => "Successfully destroyed category."
   end
 end

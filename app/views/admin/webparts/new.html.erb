@@ -1,8 +1,8 @@
-<% title "Novo WebPart" %>
+<% title t('attributes.new') +" "+ show_model_name(Webpart) %>
 
-<h1>Novo WebPart</h1><br />
+<h1><%= t('attributes.new') +" "+ show_model_name(Webpart)%></h1><br />
 <br />
-<p>Utilize os campos abaixo para cadastrar um novo webpart.</p><br />
+<p><%= t('activerecord.attributes.webpart.messages.new')%></p><br />
 <br />
 
 <%= render 'form' %>

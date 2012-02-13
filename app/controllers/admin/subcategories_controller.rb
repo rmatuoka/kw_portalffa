@@ -4,7 +4,7 @@ class Admin::SubcategoriesController < ApplicationController
   end  
   layout "inadmin"
   def index
-    @subcategories = Subcategory.all
+    @subcategories = Subcategory.all_active
   end
 
   def show
@@ -12,11 +12,12 @@ class Admin::SubcategoriesController < ApplicationController
   end
 
   def new
-    @subcategory = Subcategory.new
+    @subcategory = Subcategory.new(:published => true)
   end
 
   def create
     @subcategory = Subcategory.new(params[:subcategory])
+    @subcategory.active = true
     if @subcategory.save
       redirect_to [:admin, @subcategory], :notice => "Successfully created subcategory."
     else
@@ -39,7 +40,7 @@ class Admin::SubcategoriesController < ApplicationController
 
   def destroy
     @subcategory = Subcategory.find(params[:id])
-    @subcategory.destroy
+    @subcategory.newdestroy
     redirect_to admin_subcategories_url, :notice => "Successfully destroyed subcategory."
   end
 end

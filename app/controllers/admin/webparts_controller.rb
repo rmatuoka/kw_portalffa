@@ -2,7 +2,8 @@ class Admin::WebpartsController < ApplicationController
   access_control do
       allow :admin, :all
   end  
-  layout "inadmin"    
+  layout "inadmin"  
+
   def index
     @webparts = Webpart.all_active #Alteração Importante
   end

@@ -25,9 +25,9 @@
       <td><%= gallery_image.image_updated_at %></td>
       <td><%= gallery_image.active %></td>
       <td><%= gallery_image.published %></td>
-      <td><%= link_to "Show", [:admin, gallery_image] %></td>
-      <td><%= link_to "Edit", edit_admin_gallery_image_path(gallery_image) %></td>
-      <td><%= link_to "Destroy", [:admin, gallery_image], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t('attributes.showing'), [:admin, gallery_image] %></td>
+      <td><%= link_to t('attributes.editing'), edit_admin_gallery_image_path(gallery_image) %></td>
+      <td><%= link_to t('attributes.exclude'), [:admin, gallery_image], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

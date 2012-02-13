@@ -1,4 +1,4 @@
-<% title "Admin/Subcategories" %>
+
 
 <table>
   <tr>
@@ -15,9 +15,9 @@
       <td><%= subcategory.name %></td>
       <td><%= subcategory.active %></td>
       <td><%= subcategory.published %></td>
-      <td><%= link_to "Show", [:admin, subcategory] %></td>
-      <td><%= link_to "Edit", edit_admin_subcategory_path(subcategory) %></td>
-      <td><%= link_to "Destroy", [:admin, subcategory], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t('attributes.showing'), [:admin, subcategory] %></td>
+      <td><%= link_to t('attributes.editing'), edit_admin_subcategory_path(subcategory) %></td>
+      <td><%= link_to t('attributes.exclude'), [:admin, subcategory], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
     </tr>
   <% end %>
 </table>

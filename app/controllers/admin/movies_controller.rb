@@ -4,7 +4,7 @@ class Admin::MoviesController < ApplicationController
   end  
   layout "inadmin"
   def index
-    @movies = Movie.all
+    @movies = Movie.all_active
   end
 
   def show
@@ -12,11 +12,12 @@ class Admin::MoviesController < ApplicationController
   end
 
   def new
-    @movie = Movie.new
+    @movie = Movie.new(:published => true)
   end
 
   def create
     @movie = Movie.new(params[:movie])
+    @movie.active = true
     if @movie.save
       redirect_to [:admin, @movie], :notice => "Successfully created movie."
     else
@@ -39,7 +40,7 @@ class Admin::MoviesController < ApplicationController
 
   def destroy
     @movie = Movie.find(params[:id])
-    @movie.destroy
+    @movie.newdestroy
     redirect_to admin_movies_url, :notice => "Successfully destroyed movie."
   end
 end

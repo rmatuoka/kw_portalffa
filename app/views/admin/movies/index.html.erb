@@ -17,9 +17,9 @@
       <td><%= movie.description %></td>
       <td><%= movie.active %></td>
       <td><%= movie.published %></td>
-      <td><%= link_to "Show", [:admin, movie] %></td>
-      <td><%= link_to "Edit", edit_admin_movie_path(movie) %></td>
-      <td><%= link_to "Destroy", [:admin, movie], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t('attributes.showing'), [:admin, movie] %></td>
+      <td><%= link_to t('attributes.editing'), edit_admin_movie_path(movie) %></td>
+      <td><%= link_to t('attributes.exclude'), [:admin, movie], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

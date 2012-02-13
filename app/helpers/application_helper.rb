@@ -18,4 +18,14 @@ module ApplicationHelper
       end
       return retorno
   end
+  
+  #Metodo que exibe o nome do Model, se true vai mostrar o nome no plural obtendo a informação do locales/xx.yml  
+  def show_model_name(modelshow, plural = false)
+    if (plural)
+      return modelshow.model_name.human(:count => 2)
+    else
+      return modelshow.model_name.human
+    end
+    puts "Foi"
+  end
 end

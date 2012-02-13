@@ -1,8 +1,8 @@
-<% title "Edit Admin/Template" %>
+<% title @template.name %>
+
+<h1><%= @template.name %></h1><br />
+<br />
+<p><%= t('system_messages.edit_form')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p>
-  <%= link_to "Show", [:admin, @template] %> |
-  <%= link_to "View All", admin_templates_path %>
-</p>

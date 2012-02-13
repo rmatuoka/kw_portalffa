@@ -4,7 +4,7 @@ class Admin::GalleryImagesController < ApplicationController
   end  
   layout "inadmin"
   def index
-    @gallery_images = GalleryImage.all
+    @gallery_images = GalleryImage.all_active
   end
 
   def show
@@ -12,11 +12,12 @@ class Admin::GalleryImagesController < ApplicationController
   end
 
   def new
-    @gallery_image = GalleryImage.new
+    @gallery_image = GalleryImage.new(:published => true)
   end
 
   def create
     @gallery_image = GalleryImage.new(params[:gallery_image])
+    @gallery_image.active = true
     if @gallery_image.save
       redirect_to [:admin, @gallery_image], :notice => "Successfully created gallery image."
     else
@@ -39,7 +40,7 @@ class Admin::GalleryImagesController < ApplicationController
 
   def destroy
     @gallery_image = GalleryImage.find(params[:id])
-    @gallery_image.destroy
+    @gallery_image.newdestroy
     redirect_to admin_gallery_images_url, :notice => "Successfully destroyed gallery image."
   end
 end

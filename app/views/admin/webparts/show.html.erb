@@ -2,23 +2,23 @@
 
 <h1><%= @webpart.name %></h1><br />
 <br />
-<p>Verifique se as informações abaixo estão corretas.</p><br />
+<p><%= t('activerecord.attributes.category.messages.show')%></p><br />
 <br />
 <p>
-  <strong>Nome:</strong>
+  <strong><%=t 'attributes.name' %>:</strong>
   <%= @webpart.name %>
 </p>
 <p>
-  <strong>Publicado:</strong>
+  <strong><%=t 'attributes.published' %>:</strong>
   <%= print_active(@webpart.published) %>
 </p>
 <p>
-  <strong>Tipo:</strong>
+  <strong><%=t 'activerecord.attributes.webpart.type' %>:</strong>
   <%= @webpart.type %>
 </p>
 <br />
 <br />
 <br />
 <p>
-	<%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_webparts_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_webparts_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

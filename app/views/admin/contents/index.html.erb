@@ -15,9 +15,9 @@
       <td><%= content.content %></td>
       <td><%= content.active %></td>
       <td><%= content.published %></td>
-      <td><%= link_to "Show", [:admin, content] %></td>
-      <td><%= link_to "Edit", edit_admin_content_path(content) %></td>
-      <td><%= link_to "Destroy", [:admin, content], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to t('attributes.showing'), [:admin, content] %></td>
+      <td><%= link_to t('attributes.editing'), edit_admin_content_path(content) %></td>
+      <td><%= link_to t('attributes.exclude'), [:admin, content], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
