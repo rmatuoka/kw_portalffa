@@ -1,8 +1,8 @@
-<% title "Edit Admin/Subcategory" %>
+<% title @subcategory.name %>
+
+<h1><%= @subcategory.name %></h1><br />
+<br />
+<p><%= t('system_messages.edit_form')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p>
-  <%= link_to t('attributes.showing'), [:admin, @subcategory] %> |
-  <%= link_to "View All", admin_subcategories_path %>
-</p>

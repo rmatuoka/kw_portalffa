@@ -619,7 +619,10 @@
 				}
 				.notactive { 
  					background-color:red;
-				}				
+				}
+			.p_index{
+				margin-top:10px;
+			}				
 	
 									
 	#General #Footer
@@ -671,5 +674,17 @@
 					font-weight:normal;
 					color:#CCCCCC;					
 				}	
+	.div_show_textarea
+	{
+		width: 380px;
+		min-height: 143px;
+		height: auto;		
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 12px;
+		font-weight: normal;
+		color: #999;
+		background: #EEE;
+		padding: 10px 10px 5px 10px;				
+	}
 				
 .clear{clear:both;}				

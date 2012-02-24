@@ -1,5 +1,8 @@
-<% title "New Admin/Subcategory" %>
+<% title t('attributes.newf') +" "+show_model_name(::Subcategory, true) %>
+
+<h1><%= t('attributes.newf') +" "+show_model_name(::Subcategory)%></h1><br />
+<br />
+<p><%= t('activerecord.attributes.subcategory.messages.new')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p><%= link_to "Back to List", admin_subcategories_path %></p>

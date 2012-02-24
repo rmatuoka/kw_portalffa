@@ -9,12 +9,19 @@
   <%= @webpart.name %>
 </p>
 <p>
-  <strong><%=t 'attributes.published' %>:</strong>
-  <%= print_active(@webpart.published) %>
-</p>
-<p>
   <strong><%=t 'activerecord.attributes.webpart.type' %>:</strong>
   <%= @webpart.type %>
+</p>
+
+<p>
+  <strong><%=t 'activerecord.attributes.webpart.encoding' %>:</strong>	
+</p>
+<div class="div_show_textarea">
+	<%=raw @webpart.encoding %>
+</div>
+<p>
+  <strong><%=t 'attributes.published' %>:</strong>
+  <%= print_active(@webpart.published) %>
 </p>
 <br />
 <br />

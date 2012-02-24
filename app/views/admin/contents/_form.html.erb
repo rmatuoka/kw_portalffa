@@ -1,21 +1,25 @@
-<%= form_for [:admin, @content] do |f| %>
+<%= include_tiny_mce_if_needed %>
+<div id="Box_form">
+<%= form_for ([:admin, @category, @subcategory, @content]) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :subcategory_id %><br />
-    <%= f.text_field :subcategory_id %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :template_id %><br />
-    <%= f.text_field :template_id %>
+    <%= f.label :template_id %>
+	<%= f.collection_select :template_id,@templates,:id,:name, :include_blank => true%> 
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => "mceEditor"%>
   </p>
 
   <p>
-    <%= f.label :published %><br />
+    <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
-  <p><%= f.submit %></p>
+  <br />
+  <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_category_subcategory_contents_path(@category, @subcategory)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>
+</div>

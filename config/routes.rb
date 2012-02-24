@@ -11,12 +11,16 @@ KwPortalffa::Application.routes.draw do
       resources :webmodules 
     end
     resources :webparts               
-    resources :categories
-    resources :subcategories
-    resources :contents
-    resources :galleries                 
-    resources :gallery_images 
-    resources :movies 
+    resources :categories do
+      resources :subcategories do
+        resources :contents do
+          resources :galleries do
+            resources :gallery_images
+          end #Fim do galleries  
+          resources :movies 
+        end #Fim do contents  
+      end #Fim do subcategories  
+    end #Fim do categories    
     #Inicio do Padrão Administrador
     resources :static_contents
     resources :users do

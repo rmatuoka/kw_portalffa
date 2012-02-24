@@ -1,21 +1,19 @@
-<%= form_for [:admin, @subcategory] do |f| %>
+<div id="Box_form">
+<%= form_for ([:admin, @category, @subcategory]) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :category_id %><br />
-    <%= f.text_field :category_id %>
+    <%= f.label :template_id %>
+	<%= f.collection_select :template_id,@templates,:id,:name, :include_blank => true%> 
   </p>
   <p>
-    <%= f.label :template_id %><br />
-    <%= f.text_field :template_id %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
-
   <p>
-    <%= f.label :published %><br />
+    <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
-  <p><%= f.submit %></p>
+  <br />
+  <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_category_subcategories_path(@category)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>
+</div>

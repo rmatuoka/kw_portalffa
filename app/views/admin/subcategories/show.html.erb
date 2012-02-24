@@ -1,28 +1,24 @@
-<% title "Admin/Subcategory" %>
+<% title @category.name+" / "+ @subcategory.name%>
 
+<h1><%= @category.name+"  / "+ @subcategory.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.subcategory.messages.show')%></p><br />
+<br />
 <p>
-  <strong>Category:</strong>
-  <%= @subcategory.category_id %>
+  <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
+  <%= @subcategory.template.name if !@subcategory.template.blank?%>
 </p>
 <p>
-  <strong>Template:</strong>
-  <%= @subcategory.template_id %>
-</p>
-<p>
-  <strong>Name:</strong>
+  <strong><%=t('attributes.name') %>:</strong>
   <%= @subcategory.name %>
 </p>
 <p>
-  <strong>Active:</strong>
-  <%= @subcategory.active %>
+  <strong><%=t 'attributes.published' %>:</strong>
+  <%= print_active(@subcategory.published) %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Published:</strong>
-  <%= @subcategory.published %>
-</p>
-
-<p>
-  <%= link_to t('attributes.editing'), edit_admin_subcategory_path(@subcategory) %> |
-  <%= link_to t('attributes.exclude'), [:admin, @subcategory], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
-  <%= link_to "View All", admin_subcategories_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategories_path(@category)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

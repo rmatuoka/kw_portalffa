@@ -246,6 +246,22 @@
             other: "WebParts"
     attributes:
         #Campos especificos de acordo com cada tabela
+        category:
+            messages:
+                index: "Verifique abaixo a lista das categorías cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar uma nova categoría." 
+                show: "Verifique se as informações abaixo estão corretas."
+        content:
+            content: "Conteúdo"
+            messages:
+                index: "Verifique abaixo a lista dos conteúdos cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar um novo conteúdo." 
+                show: "Verifique se as informações abaixo estão corretas."                
+        subcategory:
+            messages:
+                index: "Verifique abaixo a lista das sub-categorías cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar uma nova sub-categoría." 
+                show: "Verifique se as informações abaixo estão corretas."                        
         template:
             messages:
                 index: "Verifique abaixo a lista dos templates cadastrados no sistema."
@@ -272,11 +288,7 @@
                 index: "Verifique abaixo a lista dos webparts cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar um novo webpart." 
                 show: "Verifique se as informações abaixo estão corretas."  
-        category:
-            messages:
-                index: "Verifique abaixo a lista das categorías cadastrados no sistema."  
-                new: "Utilize os campos abaixo para cadastrar uma nova categoría." 
-                show: "Verifique se as informações abaixo estão corretas."               
+              
         #Fim dos campos especificos
     errors:
       template:

@@ -1,6 +1,6 @@
-<% title show_model_name(Category, true) %>
+<% title show_model_name(::Category, true) %>
 
-<h1><%= show_model_name(Category, true) %></h1><br />
+<h1><%= show_model_name(::Category, true) %></h1><br />
 <p><%= t('activerecord.attributes.category.messages.index')%></p><br />
 <br />
 <p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_category_path+"','_self');", :class => "Bt_enviar"%> </p>
@@ -21,7 +21,7 @@
 		<td><%= link_to t('attributes.showing'), [:admin, category] %></td>
 		<td><%= link_to t('attributes.editing'), edit_admin_category_path(category) %></td>
 		<td><%= link_to t('attributes.exclude'), [:admin, category], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
-		<td><%#= link_to t('activerecord.models.category'), admin_template_webmodules_path(template.id) %></td>
+		<td><%= link_to show_model_name(Subcategory, true), admin_category_subcategories_path(category) %></td>
 	</tr>
 	<% end %>
 	</tbody>

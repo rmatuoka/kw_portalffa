@@ -1,28 +1,30 @@
-<% title "Admin/Content" %>
+<% title @category.name+" / "+ @content.name%>
 
+<h1><%= @category.name+"  / "+ @content.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.content.messages.show')%></p><br />
+<br />
 <p>
-  <strong>Subcategory:</strong>
-  <%= @content.subcategory_id %>
+  <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
+  <%= @content.template.name if !@content.template.blank?%>
 </p>
 <p>
-  <strong>Template:</strong>
-  <%= @content.template_id %>
+  <strong><%=t('attributes.name') %>:</strong>
+  <%= @content.name %>
 </p>
 <p>
-  <strong>Content:</strong>
-  <%= @content.content %>
+  <strong><%=t('activerecord.attributes.content.content') %>:</strong>
 </p>
+<div class="div_show_textarea">
+  <%=raw @content.content %>	
+</div>
 <p>
-  <strong>Active:</strong>
-  <%= @content.active %>
+  <strong><%=t 'attributes.published' %>:</strong>
+  <%= print_active(@content.published) %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Published:</strong>
-  <%= @content.published %>
-</p>
-
-<p>
-  <%= link_to t('attributes.editing'), edit_admin_content_path(@content) %> |
-  <%= link_to t('attributes.exclude'), [:admin, @content], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
-  <%= link_to "View All", admin_contents_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategory_contents_path(@category, @subcategory)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

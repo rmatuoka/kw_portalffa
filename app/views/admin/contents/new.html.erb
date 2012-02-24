@@ -1,5 +1,8 @@
-<% title "New Admin/Content" %>
+<% title t('attributes.new') +" "+show_model_name(::Content, true) %>
+
+<h1><%= t('attributes.new') +" "+show_model_name(::Content)%></h1><br />
+<br />
+<p><%= t('activerecord.attributes.content.messages.new')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p><%= link_to "Back to List", admin_contents_path %></p>
