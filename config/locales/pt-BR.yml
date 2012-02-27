@@ -283,7 +283,7 @@
                 
         webpart:
             encoding: "Codificação"
-            type: "Tipo"
+            webtype: "Tipo"
             messages:
                 index: "Verifique abaixo a lista dos webparts cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar um novo webpart." 
