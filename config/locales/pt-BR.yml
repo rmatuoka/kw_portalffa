@@ -253,6 +253,7 @@
                 show: "Verifique se as informações abaixo estão corretas."
         content:
             content: "Conteúdo"
+            summary: "Resumo"
             messages:
                 index: "Verifique abaixo a lista dos conteúdos cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar um novo conteúdo." 

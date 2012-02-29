@@ -370,14 +370,15 @@ img {
 		{
 			position:relative;
 			width: 741px;
-			min-height: 200px;
+			/* min-height: 200px; */
 			float:left;
 		}
 			.Highlights_top
 			{
 				position:relative;
 				width: 373px;
-				height: 390px;
+			    height: 390px;
+				height:auto;
 				float:left;
 				background:#fff;
 			}	
@@ -388,13 +389,12 @@ img {
 					left:14px;				
 					width: 345px;
 					height: 365px;
-					background:#;
 				}
 			.Tabs_top
 			{
 				position:relative;
 				width: 367px;
-				height: 390px;
+				/* height: 390px; */
 				float:left;
 			}	
 				.Item_tabs_top

@@ -1,4 +1,14 @@
-<%= include_tiny_mce_if_needed %>
+<%content_for :head do%>
+	<%= include_tiny_mce_if_needed %>
+	<%= javascript_include_tag "jquery.limit-1.2.source.js" %>
+	<script>
+		jQuery(document).ready(function() 
+		    { 
+		        jQuery('#text_summary').limit('140','#left');
+		    } 
+		);
+	</script>
+<%end%>
 <div id="Box_form">
 <%= form_for ([:admin, @category, @subcategory, @content]) do |f| %>
   <%= f.error_messages %>
@@ -15,6 +25,13 @@
     <%= f.text_area :content, :class => "mceEditor"%>
   </p>
 
+  <p>
+    <%= f.label :summary %><br />
+    <%= f.text_area :summary, :id=>"text_summary" %>
+  </p>
+  <p>
+	Ainda restam <span id="left"></span> caracteres a serem digitados.
+  </p>
   <p>
     <%= f.label :published %>
     <%= f.check_box :published %>

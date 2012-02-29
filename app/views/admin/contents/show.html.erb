@@ -19,6 +19,10 @@
   <%=raw @content.content %>	
 </div>
 <p>
+  <strong><%=t('activerecord.attributes.content.summary') %>:</strong><br />
+  <%= @content.summary%>
+</p>
+<p>
   <strong><%=t 'attributes.published' %>:</strong>
   <%= print_active(@content.published) %>
 </p>
