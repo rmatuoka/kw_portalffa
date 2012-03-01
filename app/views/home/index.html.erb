@@ -165,15 +165,8 @@
 
 
 
-
-
-
-
-
-
-
-
-    <div id="Box_right">        
+    <div id="Box_right">  
+		 <% if (!@Position12.blank? or !@Position13.blank? or !@Position14.blank? or !@Position15.blank?)%>	      
          <div class="Content_pub">
     		public 
     	 </div>
@@ -199,6 +192,7 @@
          <div class="Content_weather">
     		<h1 class="Title_weat_red">Previsão do Tempo</h1>
     	 </div>   
+		 <% end %>
          <div class="clear"></div>                         
     </div><!-- end Box_right --> 
     

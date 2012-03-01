@@ -705,7 +705,7 @@ img {
 	{
 		position:relative;
 		width: 227px;
-		height: 994px;	
+		height: auto;	
 		float:right;	
 	}
 		.Content_pub

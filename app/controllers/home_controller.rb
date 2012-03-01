@@ -13,6 +13,10 @@ class HomeController < ApplicationController
     @Position9 = nil
     @Position10 = nil
     @Position11 = nil
+    @Position12 = nil
+    @Position13 = nil
+    @Position14 = nil
+    @Position15 = nil    
         
     @Template = ::Template.all
     if @Template.count > 0
@@ -38,13 +42,21 @@ class HomeController < ApplicationController
             when 7
               @Position7 = modulo
             when 8
-              @Position8 = "aaaaaaaaaaaaa"
+              @Position8 = modulo
             when 9
-              @Position9 = "bbbbbbbbbbb"
+              @Position9 = modulo
             when 10
-              @Position10 = "cccccccccccccc"
+              @Position10 = modulo
             when 11
               @Position11 = modulo
+            when 12
+              @Position12 = modulo
+            when 13
+              @Position13 = modulo                            
+            when 14
+              @Position14 = modulo
+            when 15
+              @Position15 = modulo                            
             else
               puts "Fodeu"
           end
