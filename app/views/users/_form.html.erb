@@ -11,10 +11,6 @@
                 required: true,
                 minlength: 2
             },
-			"user[last_name]": {
-                required: true,
-                minlength: 2
-            },
 			"user[email]": {
                 required: true,
                 email: true
@@ -33,10 +29,6 @@
         messages: {
             "user[name]":{
 				required: "Preencha o seu nome",
-				minlength: 	"Mínimo de 2 caracteres"
-			},
-			"user[last_name]":{
-				required: "Preencha o seu sobrenome",
 				minlength: 	"Mínimo de 2 caracteres"
 			},
 			"user[email]":{
@@ -65,10 +57,6 @@
 		<div class="field">
 			<%= f.label :name, "Nome" %>
 			<%= f.text_field :name %>
-		</div>
-		<div class="field">
-			<%= f.label :last_name, "Sobrenome" %>
-			<%= f.text_field :last_name %>
 		</div>
 		<div class="field">
 			<%= f.label :email, "E-mail" %>

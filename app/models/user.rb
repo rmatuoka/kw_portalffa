@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   scoped_search :on => [:name, :last_name, :email]
   
   validates_presence_of :name, :message=> " - preencha o campo!"
-  validates_presence_of :last_name, :message=> " - preencha o campo!"
+  #validates_presence_of :last_name, :message=> " - preencha o campo!" 
+  #Campo last_name está sendo desativado para manter os dados do cadastro do antigo sistema de venda
   validates_presence_of :email, :message=> " - preencha o campo!"
   
   attr_writer :role

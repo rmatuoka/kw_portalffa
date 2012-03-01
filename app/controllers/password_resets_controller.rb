@@ -25,7 +25,8 @@ class PasswordResetsController < ApplicationController
 	    flash[:temerro] = " "
 			flash[:error] = "O link expirou! Tente novamente."
 			redirect_to login_path
-		end
+	  end
+	  @user.reset_persistence_token
 	end
 
 	def update
@@ -33,7 +34,7 @@ class PasswordResetsController < ApplicationController
 	  if !@user
 	      flash[:error] = "Ocorreu um erro!Tente novamente!"
   			render :action => :edit
-	  else
+	  else 
     		@user.password = params[:user][:password]
     		@user.password_confirmation = params[:user][:password_confirmation]
     		if (@user.password != @user.password_confirmation)
@@ -47,7 +48,7 @@ class PasswordResetsController < ApplicationController
           else
             @sucess = false
             flash[:temerro] = " "
-            flash[:error] = "Ocorreu um erro tente novamente!"
+            flash[:error] = "Ocorreu um erro ao salvar tente novamente!"
 	          redirect_to login_path
           end
     	  end
