@@ -1,5 +1,9 @@
 KwPortalffa::Application.routes.draw do
 
+  get "ver/index"
+
+  namespace(:admin){ resources :complement_menus }
+
   get "home/index"
   resources :user_sessions
   resources :users
@@ -34,9 +38,11 @@ KwPortalffa::Application.routes.draw do
   #Final do namespace Admin
   
   root :to => "home#index"
+
   match 'cadastro' => "users#new"
   match 'login' => 'user_sessions#new'  
   match 'logout' => 'user_sessions#destroy'  
+  match ':category(/:subcategory(/:content))' => 'ver#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

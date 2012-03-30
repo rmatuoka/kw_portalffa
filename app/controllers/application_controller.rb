@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
       redirect_to atualizar_index_path
     end 
   end
+  
+  def load_menu
+    @Categorias = Category.all_published
+    @Complementos_menu = ComplementMenu.all_published
+  end
      
   private
   

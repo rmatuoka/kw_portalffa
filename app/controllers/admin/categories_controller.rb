@@ -13,6 +13,7 @@ class Admin::CategoriesController < ApplicationController
 
   def new
     @category = Category.new(:published => true)
+    @templates = Template.all_published
   end
 
   def create
@@ -27,6 +28,7 @@ class Admin::CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+    @templates = Template.all_published    
   end
 
   def update

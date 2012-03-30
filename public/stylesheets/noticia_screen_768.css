@@ -361,6 +361,10 @@ img {
 			margin-top:47px;
 			margin-left:5px;
 		}
+			.Content_midle a
+			{
+				text-decoration:none;
+			}
 			.Box_midle
 			{
 				position:relative;

@@ -9,24 +9,11 @@
 <link rel="stylesheet" media="screen" href="css/noticia.css" />
 <link rel="stylesheet" media="screen and (max-width:768px)" href="css/noticia_screen_768.css" />
 <link rel="stylesheet" media="screen and (max-width:480px)" href="css/noticia_screen_480.css" />
-<script>
-$(function() {
-    $("img.Swap")
-        .mouseover(function() { 
-            var src = $(this).attr("src").match(/[^\.]+/) + "_color.jpg";
-            $(this).attr("src", src);
-        })
-        .mouseout(function() {
-            var src = $(this).attr("src").replace("_color", "");
-            $(this).attr("src", src);
-        });
-});
-</script>	
-	<script>
-	$(document).ready(function () {
+<script>	
+	jQuery(document).ready(function () {
 		
 		//jCarousel Plugin
-	    $('#carousel').jcarousel({
+	    jQuery('#carousel').jcarousel({
 			scroll: 1,
 			auto: 2,
 			wrap: 'last',
@@ -34,36 +21,36 @@ $(function() {
 	   	});
 
 	//Front page Carousel - Initial Setup
-   	$('div#slideshow-carousel a img').css({'opacity': '0.5'});
-   	$('div#slideshow-carousel a img:first').css({'opacity': '1.0'});
-   	$('div#slideshow-carousel li a:first').append('<span class="arrow"></span>')
+   	jQuery('div#slideshow-carousel a img').css({'opacity': '0.5'});
+   	jQuery('div#slideshow-carousel a img:first').css({'opacity': '1.0'});
+   	jQuery('div#slideshow-carousel li a:first').append('<span class="arrow"></span>')
 
   
   	//Combine jCarousel with Image Display
-    $('div#slideshow-carousel li a').hover(
+    jQuery('div#slideshow-carousel li a').hover(
        	function () {
         		
-       		if (!$(this).has('span').length) {
-        		$('div#slideshow-carousel li a img').stop(true, true).css({'opacity': '0.5'});
-   	    		$(this).stop(true, true).children('img').css({'opacity': '1.0'});
+       		if (!jQuery(this).has('span').length) {
+        		jQuery('div#slideshow-carousel li a img').stop(true, true).css({'opacity': '0.5'});
+   	    		jQuery(this).stop(true, true).children('img').css({'opacity': '1.0'});
        		}		
        	},
        	function () {
         		
-       		$('div#slideshow-carousel li a img').stop(true, true).css({'opacity': '0.5'});
-       		$('div#slideshow-carousel li a').each(function () {
+       		jQuery('div#slideshow-carousel li a img').stop(true, true).css({'opacity': '0.5'});
+       		jQuery('div#slideshow-carousel li a').each(function () {
 
-       			if ($(this).has('span').length) $(this).children('img').css({'opacity': '1.0'});
+       			if (jQuery(this).has('span').length) jQuery(this).children('img').css({'opacity': '1.0'});
 
        		});
         		
        	}
 	).click(function () {
 
-	      	$('span.arrow').remove();        
-		$(this).append('<span class="arrow"></span>');
-       	$('div#slideshow-main li').removeClass('active');        
-       	$('div#slideshow-main li.' + $(this).attr('rel')).addClass('active');	
+	    jQuery('span.arrow').remove();        
+		jQuery(this).append('<span class="arrow"></span>');
+       	jQuery('div#slideshow-main li').removeClass('active');        
+       	jQuery('div#slideshow-main li.' + jQuery(this).attr('rel')).addClass('active');	
         	
        	return false;
 	});
@@ -72,17 +59,7 @@ $(function() {
 });
 
 
-//Carousel Tweaking
 
-function mycarousel_initCallback(carousel) {
-	
-	// Pause autoscrolling if the user moves with the cursor over the clip.
-	carousel.clip.hover(function() {
-		carousel.stopAuto();
-	}, function() {
-		carousel.startAuto();
-	});
-}
 	
 </script>
 </head>

@@ -52,8 +52,7 @@ jQuery(document).ready(function()
 							<li class="parent aberto"><a href="#" title=""><h3><%= t('attributes.menuadmin.content')%></h3></a>
 								<ul class="sub-menu">
 									<li><%= link_to t('attributes.manage')+ show_model_name(Category, true),admin_categories_path%></li>
-									<li><%#= link_to "Gerenciar Templates",admin_templates_path%></li>									
-									<li><%#= link_to "Gerenciar WebParts",admin_webparts_path%></li>									
+									<li><%= link_to t('attributes.manage')+ show_model_name(ComplementMenu, true),admin_complement_menus_path%></li>									
 								</ul>
 							</li>							
 							<%if User.find(current_user.id).has_role? :admin %>

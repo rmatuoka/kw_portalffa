@@ -10,10 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120301144233) do
+ActiveRecord::Schema.define(:version => 20120329143717) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "color"
+    t.integer  "template_id"
+  end
+
+  create_table "complement_menus", :force => true do |t|
+    t.string   "name"
+    t.string   "destination"
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"
@@ -85,7 +96,6 @@ ActiveRecord::Schema.define(:version => 20120301144233) do
 
   create_table "subcategories", :force => true do |t|
     t.integer  "category_id"
-    t.integer  "template_id"
     t.string   "name"
     t.boolean  "active"
     t.boolean  "published"

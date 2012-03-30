@@ -1,18 +1,18 @@
 
 var submenuoff = true;
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
     var pageHeight;
-	$(window).resize(function(){calculateLightboxwidth()});
+	jQuery(window).resize(function(){calculateLightboxwidth()});
 	
     calculateLightboxHeight();
     calculateLightboxwidth();
     function calculateLightboxHeight() {
-        pageHeight = $(document).height()+"px";
-        $('.Shadow').height(pageHeight);
+        pageHeight = jQuery(document).height()+"px";
+        jQuery('.Shadow').height(pageHeight);
     }
     function calculateLightboxwidth() {
-		if($(window).width()>768) {
+		if(jQuery(window).width()>768) {
 			submenuoff = true;
 		}
 		else{
@@ -22,13 +22,13 @@ $(document).ready(function() {
 	
 	(function() {
 
-	         var navlinks = $('#Menu li:lt(4) a');
+	         var navlinks = jQuery('#Menu li:lt(4) a');
 	         var openDropdown = false;
 	         navlinks.mouseenter(
 	             function(e){
 	                 if(submenuoff) {	                 				 
 							 if(!openDropdown) {
-									 $('.Shadow').addClass('ShadowShow');	                  
+									 jQuery('.Shadow').addClass('ShadowShow');	                  
 									 openDropdown = true;
 							 }
 						}	
@@ -36,17 +36,17 @@ $(document).ready(function() {
 	         );
 			
 			function removeShadow(){
-				$('.Shadow').removeClass('ShadowShow');
+				jQuery('.Shadow').removeClass('ShadowShow');
 				if(openDropdown) {
 					 openDropdown = false;
 				}
 			};				
-	         $('#Menu').mouseleave(
+	         jQuery('#Menu').mouseleave(
 	            function(e){
 					removeShadow();
 	            }
 	         );
-	      	$('.Shadow_off').mouseenter(
+	      	jQuery('.Shadow_off').mouseenter(
 				function(e){
 					removeShadow();
 				}
@@ -59,15 +59,29 @@ $(document).ready(function() {
  
  
 /*  efeito logos  branco e preto*/
-$(function() {
-    $("img.Swap")
+jQuery(function() {
+    jQuery("img.Swap")
         .mouseover(function() { 
-            var src = $(this).attr("src").match(/[^\.]+/) + "_color.jpg";
-            $(this).attr("src", src);
+            var src = jQuery(this).attr("src").match(/[^\.]+/) + "_color.jpg";
+            jQuery(this).attr("src", src);
         })
         .mouseout(function() {
-            var src = $(this).attr("src").replace("_color", "");
-            $(this).attr("src", src);
+            var src = jQuery(this).attr("src").replace("_color", "");
+            jQuery(this).attr("src", src);
         });
 });
 /*  efeito logos  branco e preto*/
+
+
+
+//Carousel Tweaking
+
+function mycarousel_initCallback(carousel) {
+	
+	// Pause autoscrolling if the user moves with the cursor over the clip.
+	carousel.clip.hover(function() {
+		carousel.stopAuto();
+	}, function() {
+		carousel.startAuto();
+	});
+}

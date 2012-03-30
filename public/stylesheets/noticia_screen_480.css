@@ -334,6 +334,11 @@ img {
 			float:left;
 			background:#fff;
 		}
+			.Content_midle a
+			{
+				text-decoration:none;
+			}
+			
 			.Title_field_bmidle
 			{
 				position:relative;

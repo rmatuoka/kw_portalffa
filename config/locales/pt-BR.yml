@@ -206,7 +206,7 @@
     support: "Suporte"
     menuadmin:
         structure: "Estrutura"
-        content: "Conteúdos"
+        content: "Menu"
         manage: "Administrador do Site"
     
 #Fim dos campos comuns
@@ -228,6 +228,9 @@
         movie: 
             one: "Video" 
             other: "Videos"
+        complement_menu:
+            one: "Menu Complementar"
+            other: "Menus Complementares"                
         subcategory: 
             one: "Subcategoria"
             other: "Subcategorias"         
@@ -247,6 +250,7 @@
     attributes:
         #Campos especificos de acordo com cada tabela
         category:
+            color: "Cor"
             messages:
                 index: "Verifique abaixo a lista das categorías cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar uma nova categoría." 
@@ -257,7 +261,13 @@
             messages:
                 index: "Verifique abaixo a lista dos conteúdos cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar um novo conteúdo." 
-                show: "Verifique se as informações abaixo estão corretas."                
+                show: "Verifique se as informações abaixo estão corretas."  
+        complement_menu:
+            destination: "Destino"
+            messages:
+                index: "Verifique abaixo a lista dos complementos cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar um novo complemento." 
+                show: "Verifique se as informações abaixo estão corretas."                        
         subcategory:
             messages:
                 index: "Verifique abaixo a lista das sub-categorías cadastrados no sistema."  

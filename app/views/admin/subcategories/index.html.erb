@@ -8,17 +8,15 @@
 <table cellspacing="0" class="tablesorter" width="80%">
 	<thead> 
 		<tr>
-			<th style="width:25%;"><%=t('attributes.name') %></th>
-			<th style="width:25%;"><%=show_model_name(::Template)+" "+t('attributes.name') %></th>			
-			<th style="width:15%;"><%=t('attributes.published') %> ?</th>
-			<th colspan="4" style="width:35%;"><%=t 'attributes.actions' %></th>
+			<th style="width:35%;"><%=t('attributes.name') %></th>		
+			<th style="width:25%;"><%=t('attributes.published') %> ?</th>
+			<th colspan="4" style="width:40%;"><%=t 'attributes.actions' %></th>
 		</tr>
 	</thead> 
 	<tbody>
 	  <% for subcategory in @subcategories %>
 	<tr <%='class=notactive' if !subcategory.published%>>
 	      <td><%= subcategory.name %></td>
-		  <td><%= subcategory.template.name if !subcategory.template.blank? %></td>
 	      <td><%= print_active(subcategory.published) %></td>
 	      <td><%= link_to t('attributes.showing'), admin_category_subcategory_path(@category, subcategory) %></td>
 	      <td><%= link_to t('attributes.editing'), edit_admin_category_subcategory_path(@category,subcategory) %></td>

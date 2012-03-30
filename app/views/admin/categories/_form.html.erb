@@ -1,15 +1,69 @@
+<%content_for :head do%>
+<%= javascript_include_tag "colorpicker.js" %>
+<%= stylesheet_link_tag "colorpicker"%>
+<% 	if @category.color.blank?
+		@cor = 'ffffff'
+	else
+		@cor = @category.color
+	end
+%>
+<script>
+	jQuery(document).ready(function() {
+/*		jQuery('#category_color').ColorPicker({
+            onSubmit: function(hsb, hex, rgb, el) {
+                jQuery(el).val(hex);
+                jQuery(el).ColorPickerHide();
+            },
+            onBeforeShow: function () {
+                jQuery(this).ColorPickerSetColor(this.value);
+            }
+        }) */
+		jQuery('#colorSelector').ColorPicker({
+            color: '<%= @cor %>',	
+			onSubmit: function(hsb, hex, rgb, el) {
+                jQuery(el).val(hex);
+                jQuery(el).ColorPickerHide();
+            },
+            onShow: function (colpkr) {
+                jQuery(colpkr).fadeIn(500);
+                return false;
+            },
+            onHide: function (colpkr) {
+                jQuery(colpkr).fadeOut(500);
+                return false;
+            },
+            onChange: function (hsb, hex, rgb) {
+                jQuery('#colorSelector div').css('backgroundColor','#' + hex);
+				jQuery('#category_color').val(hex);
+            }
+        });
+	});
+</script>
+<% end %>
 <div id="Box_form">
 <%= form_for [:admin, @category] do |f| %>
   <%= f.error_messages %>
   <p>
+    <%= f.label :template_id %>
+	<%= f.collection_select :template_id,@templates,:id,:name, :include_blank => true%> 
+  </p>
+  <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
-
   <p>
     <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
+  <div style="position: relative; height: 40px;">
+	<div id="colorSelector">
+		<div style="background-color: #<%= @cor %>; "></div>
+	</div>
+	<div id="colorLabel">
+		<%= f.label :color, :style=>"position: absolute; top: 10px; left: 5px;"%>
+	</div>
+	<%= f.hidden_field :color, :value=>@cor%>
+  </div>
   <br />
   <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_categories_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit "Salvar", :class => "Bt_enviar" %></p>
 <% end %>

@@ -14,7 +14,6 @@ class Admin::SubcategoriesController < ApplicationController
 
   def new
     @subcategory = @category.subcategories.build(:published => true)
-    @templates = Template.all_published
   end
 
   def create
@@ -29,7 +28,6 @@ class Admin::SubcategoriesController < ApplicationController
 
   def edit
     @subcategory = @category.subcategories.find(params[:id])
-    @templates = Template.all_published
   end
 
   def update

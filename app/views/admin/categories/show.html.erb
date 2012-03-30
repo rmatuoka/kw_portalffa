@@ -5,6 +5,10 @@
 <p><%= t('activerecord.attributes.webpart.messages.show')%></p><br />
 <br />
 <p>
+  <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
+  <%= @category.template.name if !@category.template.blank?%>
+</p>
+<p>
   <strong><%=t 'attributes.name' %>:</strong>
   <%= @category.name %>
 </p>
@@ -12,6 +16,10 @@
   <strong><%=t 'attributes.published' %>:</strong>
   <%= print_active(@category.published) %>
 </p>
+<p>
+  <strong><%=t 'activerecord.attributes.category.color' %>:</strong>
+</p>
+<div style="width:18px; height:18px; background-color:#<%= @category.color %>; border:1px solid"></div>
 <br />
 <br />
 <br />

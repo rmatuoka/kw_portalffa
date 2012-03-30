@@ -5,10 +5,6 @@
 <p><%= t('activerecord.attributes.subcategory.messages.show')%></p><br />
 <br />
 <p>
-  <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
-  <%= @subcategory.template.name if !@subcategory.template.blank?%>
-</p>
-<p>
   <strong><%=t('attributes.name') %>:</strong>
   <%= @subcategory.name %>
 </p>

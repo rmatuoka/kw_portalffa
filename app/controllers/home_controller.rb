@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
-  layout "templatehome"    
+  layout "template2012" 
+  before_filter :load_menu   
  
   def index
+    
     @Position1 = nil
     @Position2 = nil
     @Position3 = nil
@@ -18,7 +20,7 @@ class HomeController < ApplicationController
     @Position14 = nil
     @Position15 = nil    
         
-    @Template = ::Template.all
+    @Template = ::Template.find(:all,:conditions => "`templates`.`id` = 3")
     if @Template.count > 0
         @WebModules = @Template.first.webmodules.all_published
     

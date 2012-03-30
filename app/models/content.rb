@@ -3,4 +3,9 @@ class Content < ActiveRecord::Base
   belongs_to :subcategory
   belongs_to :template 
   has_many :webmodules 
+  
+  def url_slug()
+    "#{id}-#{name.parameterize}"
+  end
+  
 end

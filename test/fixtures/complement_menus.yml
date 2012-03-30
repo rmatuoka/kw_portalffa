@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  destination: MyString
+  active: false
+  published: false
+
+two:
+  name: MyString
+  destination: MyString
+  active: false
+  published: false

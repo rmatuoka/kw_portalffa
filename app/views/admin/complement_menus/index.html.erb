@@ -1,0 +1,29 @@
+<% title show_model_name(::ComplementMenu, true) %>
+
+<h1><%= show_model_name(::ComplementMenu, true) %></h1><br />
+<p><%= t('activerecord.attributes.complement_menu.messages.index')%></p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_complement_menu_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+	<thead> 
+		<tr>
+			<th style="width:20%;"><%=t 'attributes.name' %></th>
+			<th style="width:40%;"><%=t 'activerecord.attributes.complement_menu.destination' %></th>				
+			<th style="width:15%;"><%=t 'attributes.published' %> ?</th>
+			<th colspan="3" style="width:25%;"><%=t 'attributes.actions' %></th>
+		</tr>
+	</thead> 
+	<tbody>
+	<% for complement_menu in @complement_menus %>
+	<tr <%='class=notactive' if !complement_menu.published%>>
+		<td><%= complement_menu.name %></td>
+		<td><%= complement_menu.destination %></td>	
+		<td><%= print_active(complement_menu.published) %></td>
+		<td><%= link_to t('attributes.showing'), [:admin, complement_menu] %></td>
+		<td><%= link_to t('attributes.editing'), edit_admin_complement_menu_path(complement_menu) %></td>
+		<td><%= link_to t('attributes.exclude'), [:admin, complement_menu], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+	</tr>
+	<% end %>
+	</tbody>
+</table>

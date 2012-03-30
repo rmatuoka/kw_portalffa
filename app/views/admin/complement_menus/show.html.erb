@@ -1,0 +1,24 @@
+<% title @complement_menu.name %>
+
+<h1><%= @complement_menu.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.webpart.messages.show')%></p><br />
+<br />
+<p>
+  <strong><%=t 'attributes.name' %>:</strong>
+  <%= @complement_menu.name %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.complement_menu.destination' %>:</strong>
+  <%= @complement_menu.destination %>
+</p>
+<p>
+  <strong><%=t 'attributes.published' %>:</strong>
+  <%= print_active(@complement_menu.published) %>
+</p>
+<br />
+<br />
+<br />
+<p>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_complement_menus_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+</p>

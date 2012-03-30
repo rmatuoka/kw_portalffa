@@ -676,7 +676,7 @@
 				}	
 	.div_show_textarea
 	{
-		width: 380px;
+		width: 100%;
 		min-height: 143px;
 		height: auto;		
 		font-family: Verdana, Geneva, sans-serif;
