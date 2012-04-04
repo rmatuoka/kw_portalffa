@@ -8,11 +8,12 @@
 <%= javascript_include_tag "carousel_principal.js" %>
 <%= javascript_include_tag "jquery.lightbox-0.5.js" %>
 <%end%>
+<% cor = @conteudo.first.subcategory.category.color %>
 <div id="Box_left">
     <div class="Content_top">            
-        <h1 class="Title_item_orange"><%= @conteudo.first.subcategory.name %></h1>	
-        <h2 class="Title_2_item_red"><%= @conteudo.first.name %></h2>
-        <h3 class="Date_content_top"><%= I18n.localize(@conteudo.first.created_at, :format => :pdate) %></h3>
+        <div class="Bg_title_big" style="background-color:#<%= cor %>;"><h1 class="Title_item"  style="color:#<%= cor %>;" ><%= @conteudo.first.subcategory.name %></h1></div>
+        <h2 class="Title_2_item" style="color:#<%= cor %>;"><%= @conteudo.first.name %></h2>
+        <h3 class="Date_content_top" style="color:#<%= cor %>;"><%= I18n.localize(@conteudo.first.created_at, :format => :pdate) %></h3>
 		<div id="Content_top_Box_Conteudo">
         	<%=raw @conteudo.first.content %>
 		</div>
