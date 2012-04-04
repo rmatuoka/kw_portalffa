@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def load_menu
-    @Categorias = Category.all_published
+    @Categorias_menu = Category.all_published
     @Complementos_menu = ComplementMenu.all_published
   end
      

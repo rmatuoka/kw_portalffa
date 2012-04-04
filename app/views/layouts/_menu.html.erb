@@ -1,7 +1,7 @@
 <div id="Menu" >
     <ul>
-		<% if @Categorias.count > 0
-		   	@Categorias.each do |categoria|
+		<% if @Categorias_menu.count > 0
+		   	@Categorias_menu.each do |categoria|
 		   		subcategorias = categoria.subcategories.all_published%>
         <li>
 			<% if !(subcategorias.count > 0)%>

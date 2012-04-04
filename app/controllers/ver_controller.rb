@@ -9,7 +9,7 @@ class VerController < ApplicationController
     category = params[:category].split("-") if !params[:category].blank?
     subcategory = params[:subcategory].split("-") if !params[:subcategory].blank?
     content = params[:content].split("-") if !params[:content].blank?    
-    @content = Content.all( :joins=> "inner join `subcategories` on `contents`.`subcategory_id` = `subcategories`.`id`
+    @conteudo = Content.all( :joins=> "inner join `subcategories` on `contents`.`subcategory_id` = `subcategories`.`id`
   		inner join `categories` on `subcategories`.`category_id` = `categories`.`id`",
                             :conditions=>[
                               '`contents`.`id` = ? and `subcategories`.`id` = ? and `categories`.`id` = ? 
@@ -19,7 +19,7 @@ class VerController < ApplicationController
                                           ]      
                           )
                           
-    if @content.count > 0 
+    if @conteudo.count > 0 
       #Se existe um conteudo que atende aos requisitos então carregue o show
       @mostrarshow = true
     else

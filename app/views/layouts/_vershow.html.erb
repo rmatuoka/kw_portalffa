@@ -10,24 +10,22 @@
 <%end%>
 <div id="Box_left">
     <div class="Content_top">            
-        <h1 class="Title_item_orange">Notícias</h1>	
-        <h2 class="Title_2_item_red">Do you see any Teletubbies in here?</h2>
-        <h3 class="Date_content_top">02/12/2011</h3>
-            <p class="Text_top_box">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p><br/>
-            <p class="Text_top_box">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p><br/>
-            <p class="Text_top_box">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p><br/>
-            <p class="Text_top_box">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p><br/>
-            <p class="Text_top_box">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p><br/>
-            <p class="Text_top_box">Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.</p><br/>                
-        
+        <h1 class="Title_item_orange"><%= @conteudo.first.subcategory.name %></h1>	
+        <h2 class="Title_2_item_red"><%= @conteudo.first.name %></h2>
+        <h3 class="Date_content_top"><%= I18n.localize(@conteudo.first.created_at, :format => :pdate) %></h3>
+		<div id="Content_top_Box_Conteudo">
+        	<%=raw @conteudo.first.content %>
+		</div>
     </div>
+	<% @teste = 0
+	if (@teste > 0) %>
     <div class="Content_midle">
 		<span class="Title_field_bmidle"><span class="Img_h1_gal_int_1"></span><h1 class="Title_gal_orange">Do you believe that shit? It actually says that in the little book that comes with it: the most </h1></span>	                      
        <div class="clear"></div> 
         <div id="Gallery_internal_box">	       
             <div id="slideshow-carousel">				
                   <ul id="carousel" class="jcarousel jcarousel-skin-tango">
-                    <li><a href="images/5_big.gif" rel="p1"><img src="images/1.gif" width="129" height="141" alt="#"/></a></li>
+                    
                     <li><a href="images/5_big.gif" rel="p2"><img src="images/2.gif" width="129" height="141" alt="#"/></a></li>
                     <li><a href="images/5_big.gif" rel="p3"><img src="images/3.gif" width="129" height="141" alt="#"/></a></li>
                     <li><a href="images/5_big.gif" rel="p4"><img src="images/4.gif" width="129" height="141" alt="#"/></a></li>
@@ -67,9 +65,12 @@
                 <span class="Date_box_bot_videos">02/12/2011</span>
             </div>                                         
         </div>        
-    </div>            
+    </div>     
+	<% end %>       
 </div><!-- end Box_left --> 
-<div id="Box_right">        
+
+<div id="Box_right">      
+	<% if (!@Position1.blank? or !@Position2.blank? or !@Position3.blank? or !@Position4.blank?)%>  	  
      <div class="Content_pub">
 		public 
 	 </div>
@@ -95,5 +96,6 @@
      <div class="Content_weather">
 		<h1 class="Title_weat_red">Previsão do Tempo</h1>
 	 </div>   
+	<% end %>	
      <div class="clear"></div>                         
 </div><!-- end Box_right --> 
