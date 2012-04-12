@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Buttons</title>
+</head>
+<style>
+/*Container*/				 	 		 		 
+#Container 
+{
+	position:relative;
+	width: 100%;
+	min-width:280px;
+	height:auto;
+	margin: 0 auto;
+	z-index:1000;
+}
+button
+{
+	background:#ccc;
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+	font-size:12px;
+	color:#F00
+}
+	button:hover
+	{
+		border:#FF0000 1px solid;
+	}
+	button:active
+	{
+		background:#999;
+	}	
+	/*Box_left*/	
+	#Box_left
+	{
+		position:relative;
+		width: 77%;
+		height: auto;
+		float:left;
+	}	
+		.Content_top
+		{
+			position:relative;
+			width: 100%;
+			float:left;
+		}	
+			.Highlights_top
+			{
+				position:relative;
+				width: 51.3%;
+				height: 398px;
+				min-height:398px;
+				float:left;
+			}
+				.Content_highlights_top
+				{
+					position:relative;
+					top:3%;
+					left:1%;
+					height: 390px;
+					min-height:390px;				
+					width: 48%;
+				}
+
+		.Tabs_top
+		{
+			position:relative;
+			width: 48%;
+			float:left;
+			left:0.5%;
+		}	
+			.Item_tabs_top
+			{
+				position:relative;				
+				width: 100%;
+				height: 124px;
+				min-height:124px;
+				margin-bottom:13px;
+			}	
+			
+		.Content_midle
+		{
+			position:relative;
+			width: 100%;/*741PX*/
+			min-width: 77%;
+			height:147px;
+			float:left;
+		}
+			.Box_midle
+			{
+				position:relative;
+				float:left;
+				width: 32%;
+				height: 133px;
+				margin-right:1.7%;
+			}
+			.Btn7_class
+			{
+				margin-right:0%;	
+			}			
+				
+		.Content_bottom
+		{
+			position:relative;
+			display:inline-block;
+			*display:block;
+			*float:left;			
+			width: 100%;/*741*/
+			min-height: 200px;
+			float:left;
+		}
+		.C_bot_left_box
+		{
+			position:relative;
+			float:left;
+			width:32%;
+			height:358px;
+		}
+			.Newsletter_bottom
+			{
+				position:relative;				
+				width: 100%;
+				height: 162px;
+				margin-bottom:17px;
+				padding-top:3%;
+			}	
+		.Item_pub_bottom
+		{
+			position:relative;				
+			width: 100%;
+			height: 80px;
+			margin-right:1.4%;
+			margin-bottom:2%;
+		}				
+		.C_bot_gallery_box
+		{
+			position:relative;
+			float:left;
+			width:66%;
+			height:340px;
+			margin-left:1.2%;
+			padding-top:3%;
+		}	
+		
+	#Box_right
+	{
+		position:relative;
+		width: 21%;
+		height: auto;	
+		float:right;	
+	}
+		.Content_pub
+		{
+			position:relative;
+			width:100%;
+			height:148px;
+			margin-bottom:5px;		
+		}	
+		.Content_pull
+		{
+			position:relative;				
+			width: 100%;
+			height: 282px;
+			margin-right:5px;
+			margin-bottom:8px;
+			padding-top:2%;
+			margin-top:20px;			
+		}
+		.Content_weather
+		{
+			position:relative;				
+			width: 100%;
+			height: 281px;
+			padding-top:2%;
+			margin-right:5px;
+			margin-bottom:5px;		
+		}								
+											
+</style>
+<div id="Container">
+    <div id="Box_left">
+        <div class="Content_top">
+             <button type="button"class="Highlights_top" id="Btn1">Botão 1</button>
+             <div class="Tabs_top">
+                 <button type="button"class="Item_tabs_top" id="Btn2">Botão 2</button>
+                 <button type="button"class="Item_tabs_top" id="Btn3">Botão 3</button>
+                 <button type="button"class="Item_tabs_top" id="Btn4">Botão 4</button>                           
+             </div>
+         </div> 
+         
+         
+                <div class="Content_midle">
+                     <button type="button"class="Box_midle" id="Btn5">Botão 5</button>
+                     <button type="button"class="Box_midle" id="Btn6">Botão 6</button>
+                     <button type="button"class="Box_midle Btn7_class" id="Btn7">Botão 7</button>        		                        
+                 </div>
+                 <div class="Content_bottom">
+                     <div class="C_bot_left_box">
+                        <button type="button"class="Newsletter_bottom" id="Btn8">Botão 8</button>
+                        <button type="button"class="Item_pub_bottom" id="Btn9">Botão 9</button>
+                        <button type="button"class="Item_pub_bottom" id="Btn10">Botão 10</button>                                     
+                     </div>   
+                     <button type="button"class="C_bot_gallery_box" id="Btn11">Botão 11</button>
+    
+                 </div>         
+    </div><!-- end Box_left --> 
+    
+    <div id="Box_right">   
+                <button type="button"class="Content_pub" id="Btn12">Botão 12</button>     
+                <button type="button"class="Content_pub" id="Btn13">Botão 13</button>            
+                <button type="button"class="Content_pull" id="Btn14">Botão 14</button> 
+                <button type="button"class="Content_weather" id="Btn15">Botão 15</button>                         
+    </div><!-- end Box_right --> 
+</div><!-- end Container --> 
+<body>
+</body>
+</html>
