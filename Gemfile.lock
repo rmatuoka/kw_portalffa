@@ -56,7 +56,7 @@ GEM
       daemons (>= 1.0.3)
       fastthread (>= 1.0.1)
       gem_plugin (>= 0.2.3)
-    mysql2 (0.2.18)
+    mysql2 (0.2.7)
     nifty-generators (0.4.6)
     polyglot (0.3.3)
     rack (1.2.5)
@@ -98,7 +98,7 @@ DEPENDENCIES
   mail
   mocha
   mongrel
-  mysql2 (< 0.3)
+  mysql2 (= 0.2.7)
   nifty-generators
   rails (= 3.0.10)
   tiny_mce
