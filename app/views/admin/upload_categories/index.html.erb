@@ -1,0 +1,21 @@
+<% title "Admin/Upload Categories" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for upload_category in @upload_categories %>
+    <tr>
+      <td><%= upload_category.name %></td>
+      <td><%= upload_category.active %></td>
+      <td><%= upload_category.published %></td>
+      <td><%= link_to "Show", [:admin, upload_category] %></td>
+      <td><%= link_to "Edit", edit_admin_upload_category_path(upload_category) %></td>
+      <td><%= link_to "Destroy", [:admin, upload_category], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Upload Category", new_admin_upload_category_path %></p>

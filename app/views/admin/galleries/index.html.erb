@@ -1,25 +1,28 @@
 <% title "Admin/Galleries" %>
 
-<table>
+<table cellspacing="0" class="tablesorter" width="80%">
+  <thead> 
   <tr>
-    <th>Content</th>
     <th>Name</th>
     <th>Description</th>
     <th>Active</th>
     <th>Published</th>
   </tr>
+  </thead> 
+  <tbody>
   <% for gallery in @galleries %>
     <tr>
-      <td><%= gallery.content_id %></td>
       <td><%= gallery.name %></td>
       <td><%= gallery.description %></td>
       <td><%= gallery.active %></td>
       <td><%= gallery.published %></td>
-      <td><%= link_to t('attributes.showing'), [:admin, gallery] %></td>
-      <td><%= link_to t('attributes.editing'), edit_admin_gallery_path(gallery) %></td>
-      <td><%= link_to t('attributes.exclude'), [:admin, gallery], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %></td>
+	  <td><%= link_to "Imagens", admin_gallery_gallery_images_path(gallery) %></td>
+      <td><%= link_to "Show", [:admin, gallery] %></td>
+      <td><%= link_to "Edit", edit_admin_gallery_path(gallery) %></td>
+      <td><%= link_to "Destroy", [:admin, gallery], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
 <p><%= link_to "New Admin/Gallery", new_admin_gallery_path %></p>

@@ -1,0 +1,11 @@
+one:
+  description: MyString
+  upload_category_id: 1
+  active: false
+  published: false
+
+two:
+  description: MyString
+  upload_category_id: 1
+  active: false
+  published: false

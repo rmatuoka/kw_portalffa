@@ -1,0 +1,24 @@
+<% title "Admin/Ticket Type" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ticket_type.name %>
+</p>
+<p>
+  <strong>Discount:</strong>
+  <%= @ticket_type.discount %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @ticket_type.active %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @ticket_type.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_ticket_type_path(@ticket_type) %> |
+  <%= link_to "Destroy", [:admin, @ticket_type], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_ticket_types_path %>
+</p>

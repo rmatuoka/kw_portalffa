@@ -5,32 +5,12 @@
   <%= @gallery_image.gallery_id %>
 </p>
 <p>
-  <strong>Name:</strong>
-  <%= @gallery_image.name %>
-</p>
-<p>
   <strong>Legend:</strong>
   <%= @gallery_image.legend %>
 </p>
 <p>
-  <strong>Description:</strong>
-  <%= @gallery_image.description %>
-</p>
-<p>
-  <strong>Image File Name:</strong>
-  <%= @gallery_image.image_file_name %>
-</p>
-<p>
-  <strong>Image Content Type:</strong>
-  <%= @gallery_image.image_content_type %>
-</p>
-<p>
-  <strong>Image File Size:</strong>
-  <%= @gallery_image.image_file_size %>
-</p>
-<p>
-  <strong>Image Updated At:</strong>
-  <%= @gallery_image.image_updated_at %>
+  <strong>Upload:</strong>
+  <%= @gallery_image.upload_id %>
 </p>
 <p>
   <strong>Active:</strong>
@@ -42,7 +22,7 @@
 </p>
 
 <p>
-  <%= link_to t('attributes.editing'), edit_admin_gallery_image_path(@gallery_image) %> |
-  <%= link_to t('attributes.exclude'), [:admin, @gallery_image], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
-  <%= link_to "View All", admin_gallery_images_path %>
+  <%= link_to "Edit", edit_admin_gallery_gallery_image_path(@gallery, @gallery_image) %> |
+  <%= link_to "Destroy", [:admin,@gallery, @gallery_image], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_gallery_gallery_images_path(@gallery) %>
 </p>

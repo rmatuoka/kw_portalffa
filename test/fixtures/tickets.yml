@@ -1,0 +1,21 @@
+one:
+  name: MyString
+  ticket_date: 2012-04-16
+  price: 9.99
+  ticket_type_id: 1
+  ticket_category_id: 1
+  above: 1
+  discount: 9.99
+  active: false
+  published: false
+
+two:
+  name: MyString
+  ticket_date: 2012-04-16
+  price: 9.99
+  ticket_type_id: 1
+  ticket_category_id: 1
+  above: 1
+  discount: 9.99
+  active: false
+  published: false

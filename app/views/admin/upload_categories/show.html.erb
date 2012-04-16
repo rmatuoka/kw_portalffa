@@ -1,0 +1,20 @@
+<% title "Admin/Upload Category" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @upload_category.name %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @upload_category.active %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @upload_category.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_upload_category_path(@upload_category) %> |
+  <%= link_to "Destroy", [:admin, @upload_category], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_upload_categories_path %>
+</p>

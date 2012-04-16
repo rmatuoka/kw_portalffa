@@ -3,44 +3,50 @@ class Admin::GalleryImagesController < ApplicationController
       allow :admin, :all
   end  
   layout "inadmin"
+  before_filter :load_gallery
+  
   def index
-    @gallery_images = GalleryImage.all_active
+    @gallery_images = @gallery.gallery_images.all
   end
 
   def show
-    @gallery_image = GalleryImage.find(params[:id])
+    @gallery_image = @gallery.gallery_images.find(params[:id])
   end
 
   def new
-    @gallery_image = GalleryImage.new(:published => true)
+    @gallery_image = @gallery.gallery_images.build
   end
 
   def create
-    @gallery_image = GalleryImage.new(params[:gallery_image])
-    @gallery_image.active = true
+    @gallery_image = @gallery.gallery_images.new(params[:gallery_image])
     if @gallery_image.save
-      redirect_to [:admin, @gallery_image], :notice => "Successfully created gallery image."
+      redirect_to [:admin, @gallery, @gallery_image], :notice => "Successfully created gallery image."
     else
       render :action => 'new'
     end
   end
 
   def edit
-    @gallery_image = GalleryImage.find(params[:id])
+    @gallery_image = @gallery.gallery_images.find(params[:id])
   end
 
   def update
-    @gallery_image = GalleryImage.find(params[:id])
+    @gallery_image = @gallery.gallery_images.find(params[:id])
     if @gallery_image.update_attributes(params[:gallery_image])
-      redirect_to [:admin, @gallery_image], :notice  => "Successfully updated gallery image."
+      redirect_to [:admin, @gallery, @gallery_image], :notice  => "Successfully updated gallery image."
     else
       render :action => 'edit'
     end
   end
 
   def destroy
-    @gallery_image = GalleryImage.find(params[:id])
-    @gallery_image.newdestroy
-    redirect_to admin_gallery_images_url, :notice => "Successfully destroyed gallery image."
+    @gallery_image = @gallery.gallery_images.find(params[:id])
+    @gallery_image.destroy
+    redirect_to admin_gallery_gallery_images_path(@gallery), :notice => "Successfully destroyed gallery image."
+  end
+  
+  def load_gallery
+    @gallery = Gallery.find(params[:gallery_id])
+    @upload_images = Upload.all_images
   end
 end

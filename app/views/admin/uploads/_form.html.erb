@@ -1,0 +1,20 @@
+<%= form_for ([:admin, @upload], :html => { :multipart => :true }) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :upload_category_id %><br />
+    <%= f.select :upload_category_id, @upload_categories, :prompt => "Escolha a categoria" %> <%=link_to "[Adicionar Nova]", new_admin_upload_category_path%>
+  </p>
+  <p>
+    <%= f.label :file %><br />
+    <%= f.file_field :file %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :published %><br />
+    <%= f.check_box :published %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,35 +1,27 @@
 <% title "Admin/Gallery Images" %>
 
-<table>
+<table cellspacing="0" class="tablesorter" width="80%">
+  <thead> 
   <tr>
-    <th>Gallery</th>
-    <th>Name</th>
-    <th>Legend</th>
-    <th>Description</th>
-    <th>Image File Name</th>
-    <th>Image Content Type</th>
-    <th>Image File Size</th>
-    <th>Image Updated At</th>
-    <th>Active</th>
-    <th>Published</th>
+    <th>Galeria</th>
+    <th>Legenda</th>
+    <th>Arquivo</th>
+    <th>Publicado?</th>
   </tr>
+  </thead>
+  <tbody>
   <% for gallery_image in @gallery_images %>
     <tr>
-      <td><%= gallery_image.gallery_id %></td>
-      <td><%= gallery_image.name %></td>
+      <td><%= gallery_image.gallery.name %></td>
       <td><%= gallery_image.legend %></td>
-      <td><%= gallery_image.description %></td>
-      <td><%= gallery_image.image_file_name %></td>
-      <td><%= gallery_image.image_content_type %></td>
-      <td><%= gallery_image.image_file_size %></td>
-      <td><%= gallery_image.image_updated_at %></td>
-      <td><%= gallery_image.active %></td>
+      <td><%= image_tag gallery_image.upload.file(:thumb) %></td>
       <td><%= gallery_image.published %></td>
-      <td><%= link_to t('attributes.showing'), [:admin, gallery_image] %></td>
-      <td><%= link_to t('attributes.editing'), edit_admin_gallery_image_path(gallery_image) %></td>
-      <td><%= link_to t('attributes.exclude'), [:admin, gallery_image], :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %></td>
+      <td><%= link_to "Show", [:admin, @gallery, gallery_image] %></td>
+      <td><%= link_to "Edit", edit_admin_gallery_gallery_image_path(@gallery, gallery_image) %></td>
+      <td><%= link_to "Destroy", [:admin, @gallery, gallery_image], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+  </tbody>
 </table>
 
-<p><%= link_to "New Admin/Gallery Image", new_admin_gallery_image_path %></p>
+<p><%= link_to "New Admin/Gallery Image", new_admin_gallery_gallery_image_path(@gallery) %></p>

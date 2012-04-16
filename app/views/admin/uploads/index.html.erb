@@ -1,0 +1,27 @@
+<% title "Admin/Uploads" %>
+
+<table cellspacing="0" class="tablesorter" width="80%">
+  <thead> 
+  <tr>
+    <th>Descrição</th>
+    <th>Categoria</th>
+    <th>Tipo</th>
+    <th>Publicado?</th>
+  </tr>
+  </thead> 
+  <tbody>
+  <% for upload in @uploads %>
+    <tr>
+      <td><%= upload.description %></td>
+      <td><%= upload.upload_category.name %></td>
+      <td><%= upload.file_content_type %></td>
+	  <td><%= upload.published %></td>
+      <td><%= link_to "Show", [:admin, upload] %></td>
+      <td><%= link_to "Edit", edit_admin_upload_path(upload) %></td>
+      <td><%= link_to "Destroy", [:admin, upload], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "New Admin/Upload", new_admin_upload_path %></p>

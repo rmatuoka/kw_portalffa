@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  discount: 9.99
+  active: false
+  published: false
+
+two:
+  name: MyString
+  discount: 9.99
+  active: false
+  published: false

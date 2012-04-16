@@ -1,13 +1,11 @@
 one:
-  content_id: 1
   name: MyString
-  description: MyText
+  description: MyString
   active: false
   published: false
 
 two:
-  content_id: 1
   name: MyString
-  description: MyText
+  description: MyString
   active: false
   published: false

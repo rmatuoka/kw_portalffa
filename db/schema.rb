@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329143717) do
+ActiveRecord::Schema.define(:version => 20120416162445) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -44,9 +44,8 @@ ActiveRecord::Schema.define(:version => 20120329143717) do
   end
 
   create_table "galleries", :force => true do |t|
-    t.integer  "content_id"
     t.string   "name"
-    t.text     "description"
+    t.string   "description"
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"
@@ -55,13 +54,8 @@ ActiveRecord::Schema.define(:version => 20120329143717) do
 
   create_table "gallery_images", :force => true do |t|
     t.integer  "gallery_id"
-    t.string   "name"
     t.string   "legend"
-    t.text     "description"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.integer  "upload_id"
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"
@@ -109,6 +103,59 @@ ActiveRecord::Schema.define(:version => 20120329143717) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "ticket_categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "order"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ticket_types", :force => true do |t|
+    t.string   "name"
+    t.decimal  "discount",   :precision => 10, :scale => 0
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.string   "name"
+    t.date     "ticket_date"
+    t.decimal  "price",              :precision => 10, :scale => 0
+    t.integer  "ticket_type_id"
+    t.integer  "ticket_category_id"
+    t.integer  "above"
+    t.decimal  "discount",           :precision => 10, :scale => 0
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "upload_categories", :force => true do |t|
+    t.string   "name"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "uploads", :force => true do |t|
+    t.string   "description"
+    t.integer  "upload_category_id"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "user_sessions", :force => true do |t|

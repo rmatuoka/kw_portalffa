@@ -1,0 +1,9 @@
+one:
+  name: MyString
+  active: false
+  published: false
+
+two:
+  name: MyString
+  active: false
+  published: false

@@ -1,23 +1,13 @@
 one:
   gallery_id: 1
-  name: MyString
   legend: MyString
-  description: MyText
-  image_file_name: MyString
-  image_content_type: MyString
-  image_file_size: 1
-  image_updated_at: 2012-01-25 12:23:16
+  upload_id: 1
   active: false
   published: false
 
 two:
   gallery_id: 1
-  name: MyString
   legend: MyString
-  description: MyText
-  image_file_name: MyString
-  image_content_type: MyString
-  image_file_size: 1
-  image_updated_at: 2012-01-25 12:23:16
+  upload_id: 1
   active: false
   published: false

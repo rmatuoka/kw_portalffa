@@ -1,9 +1,7 @@
 KwPortalffa::Application.routes.draw do
 
+
   get "ver/index"
-
-  namespace(:admin){ resources :complement_menus }
-
   get "home/index"
   resources :user_sessions
   resources :users
@@ -11,6 +9,18 @@ KwPortalffa::Application.routes.draw do
   resources :atualizar
   #Inicio do namespace Admin
   namespace(:admin){
+    resources :uploads
+    resources :upload_categories
+    
+    resources :galleries do
+      resources :gallery_images
+    end
+    
+    resources :tickets
+    resources :ticket_types
+    resources :ticket_categories
+    
+    resources :complement_menus
     resources :templates do
       resources :webmodules 
     end
@@ -18,9 +28,6 @@ KwPortalffa::Application.routes.draw do
     resources :categories do
       resources :subcategories do
         resources :contents do
-          resources :galleries do
-            resources :gallery_images
-          end #Fim do galleries  
           resources :movies 
         end #Fim do contents  
       end #Fim do subcategories  

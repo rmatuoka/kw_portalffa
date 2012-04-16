@@ -1,0 +1,33 @@
+<% title "Admin/Tickets" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Ticket Date</th>
+    <th>Price</th>
+    <th>Ticket Type</th>
+    <th>Ticket Category</th>
+    <th>Above</th>
+    <th>Discount</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for ticket in @tickets %>
+    <tr>
+      <td><%= ticket.name %></td>
+      <td><%= ticket.ticket_date %></td>
+      <td><%= ticket.price %></td>
+      <td><%= ticket.ticket_type_id %></td>
+      <td><%= ticket.ticket_category_id %></td>
+      <td><%= ticket.above %></td>
+      <td><%= ticket.discount %></td>
+      <td><%= ticket.active %></td>
+      <td><%= ticket.published %></td>
+      <td><%= link_to "Show", [:admin, ticket] %></td>
+      <td><%= link_to "Edit", edit_admin_ticket_path(ticket) %></td>
+      <td><%= link_to "Destroy", [:admin, ticket], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Ticket", new_admin_ticket_path %></p>

@@ -1,0 +1,23 @@
+<% title "Admin/Ticket Categories" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Order</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for ticket_category in @ticket_categories %>
+    <tr>
+      <td><%= ticket_category.name %></td>
+      <td><%= ticket_category.order %></td>
+      <td><%= ticket_category.active %></td>
+      <td><%= ticket_category.published %></td>
+      <td><%= link_to "Show", [:admin, ticket_category] %></td>
+      <td><%= link_to "Edit", edit_admin_ticket_category_path(ticket_category) %></td>
+      <td><%= link_to "Destroy", [:admin, ticket_category], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Ticket Category", new_admin_ticket_category_path %></p>
