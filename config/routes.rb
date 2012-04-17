@@ -9,6 +9,17 @@ KwPortalffa::Application.routes.draw do
   resources :atualizar
   #Inicio do namespace Admin
   namespace(:admin){
+    resources :searchs do
+      collection do
+        get 'results'
+        get 'resend'  
+      end
+      
+      member do
+        get 'baixa'
+      end
+    end
+    
     resources :uploads
     resources :upload_categories
     

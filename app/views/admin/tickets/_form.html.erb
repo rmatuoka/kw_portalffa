@@ -14,11 +14,11 @@
   </p>
   <p>
     <%= f.label :ticket_type_id %><br />
-    <%= f.text_field :ticket_type_id %>
+    <%= f.select :ticket_type_id, @ticket_types, :prompt => "Escolha o tipo" %> <%=link_to "[Adicionar Novo]", new_admin_ticket_type_path%>
   </p>
   <p>
     <%= f.label :ticket_category_id %><br />
-    <%= f.text_field :ticket_category_id %>
+    <%= f.select :ticket_category_id, @ticket_categories, :prompt => "Escolha a categoria" %> <%=link_to "[Adicionar Nova]", new_admin_ticket_category_path%>
   </p>
   <p>
     <%= f.label :above %><br />
@@ -27,10 +27,6 @@
   <p>
     <%= f.label :discount %><br />
     <%= f.text_field :discount %>
-  </p>
-  <p>
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
   </p>
   <p>
     <%= f.label :published %><br />

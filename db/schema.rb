@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120416162445) do
+ActiveRecord::Schema.define(:version => 20120417183707) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -69,6 +69,27 @@ ActiveRecord::Schema.define(:version => 20120416162445) do
     t.text     "description"
     t.boolean  "active"
     t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_tickets", :force => true do |t|
+    t.integer  "order_id"
+    t.integer  "ticket_id"
+    t.integer  "amount"
+    t.decimal  "price",      :precision => 10, :scale => 0
+    t.boolean  "used"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "status"
+    t.string   "payment_type"
+    t.string   "pagseguro_id"
+    t.boolean  "completed"
+    t.boolean  "order_send_email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

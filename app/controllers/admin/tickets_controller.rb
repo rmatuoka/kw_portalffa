@@ -3,6 +3,7 @@ class Admin::TicketsController < ApplicationController
       allow :admin, :all
   end  
   layout "inadmin"
+  before_filter :load_combos
   
   def index
     @tickets = Ticket.all
@@ -42,5 +43,10 @@ class Admin::TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
     redirect_to admin_tickets_url, :notice => "Successfully destroyed ticket."
+  end
+  
+  def load_combos
+    @ticket_categories = TicketCategory.all.collect { |c| [c.name, c.id] }
+    @ticket_types = TicketType.all.collect { |c| [c.name, c.id] }
   end
 end
