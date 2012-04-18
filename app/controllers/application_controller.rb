@@ -11,9 +11,13 @@ class ApplicationController < ActionController::Base
   end
   
   def load_menu
-    @Categorias_menu = Category.all_published
+    @Categorias_menu = Category.all_published_menu
     @Complementos_menu = ComplementMenu.all_published
   end
+
+  def load_template
+    @templates = Template.all_published_type($load_template_id)
+  end  
      
   private
   

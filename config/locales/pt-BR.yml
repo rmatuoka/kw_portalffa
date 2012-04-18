@@ -155,13 +155,13 @@
       submit: 'Salvar'
 
   errors:
-    format: "%{attribute} %{message}"
-
-    template:
+    template: &errors_template
       header:
-        one: "Não foi possível gravar %{model}: 1 erro"
-        other: "Não foi possível gravar %{model}: %{count} erros."
-      body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+        one: "Não foi possível gravar! Existe um erro."
+        other: "Não foi possível gravar! Existe alguns erros."
+      body: 
+        one: "Por favor, verifique o seguinte campo:"
+        other: "Por favor, verifique os seguintes campos:"
 
     messages: &errors_messages
       inclusion: "não está incluído na lista"
@@ -189,6 +189,7 @@
     updated_at: "Data de atualização" 
     name: "Nome"
     published: "Publicado"  
+    menu_display: "Mostrar no Menu"
     actions: "Ações"  
     showing: "Visualizar"
     editing: "Editar"
@@ -275,10 +276,16 @@
                 new: "Utilize os campos abaixo para cadastrar uma nova sub-categoría." 
                 show: "Verifique se as informações abaixo estão corretas."                        
         template:
+            template_type: "Tipo de Template"
             messages:
                 index: "Verifique abaixo a lista dos templates cadastrados no sistema."
                 new: "Utilize os campos abaixo para cadastrar um novo template."
                 show: "Verifique se as informações abaixo estão corretas."
+            types:
+                selection: "Selecione um tipo"
+                one: "Home"
+                two: "Interna"
+                three: "Conteudo"
         user:
             messages:
                 index: "Verifique abaixo a lista dos usuários cadastrados no sistema."       
@@ -304,10 +311,7 @@
         #Fim dos campos especificos
     errors:
       template:
-        header:
-          one: "Não foi possível gravar %{model}: 1 erro"
-          other: "Não foi possível gravar %{model}: %{count} erros."
-        body: "Por favor, verifique o(s) seguinte(s) campo(s):"
+        <<: *errors_template
 
       messages:
         taken: "já está em uso"

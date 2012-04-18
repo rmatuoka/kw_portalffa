@@ -17,6 +17,10 @@
   <%= print_active(@category.published) %>
 </p>
 <p>
+  <strong><%=t 'attributes.menu_display' %>:</strong>
+  <%= print_active(@category.menu_display) %>
+</p>
+<p>
   <strong><%=t 'activerecord.attributes.category.color' %>:</strong>
 </p>
 <div style="width:18px; height:18px; background-color:#<%= @category.color %>; border:1px solid"></div>

@@ -15,5 +15,8 @@ class ActiveRecord::Base
   def self.all_published
     all(:conditions => ['active =  true and published = true'])
   end  
+  def self.all_published_menu
+    all(:conditions => ['active =  true and published = true and menu_display = true'])
+  end
 
 end
