@@ -9,8 +9,9 @@
 	<thead> 
 		<tr>
 			<th style="width:30%;"><%=t 'attributes.name' %></th>
-			<th style="width:20%;"><%=t 'attributes.published' %> ?</th>
-			<th colspan="4" style="width:50%;"><%=t 'attributes.actions' %></th>
+			<th style="width:15%;"><%=t 'attributes.published' %> ?</th>
+			<th style="width:20%;"><%=t 'activerecord.attributes.template.template_type' %> </th>			
+			<th colspan="4" style="width:35%;"><%=t 'attributes.actions' %></th>
 		</tr>
 	</thead> 
 	<tbody>
@@ -18,6 +19,7 @@
 	<tr <%='class=notactive' if !template.published%>>
 		<td><%= template.name %></td>
 		<td><%= print_active(template.published) %></td>
+		<td><%= traduz_template(template.template_type) %></td>		
 		<td><%= link_to t('attributes.showing'), [:admin, template] %></td>
 		<td><%= link_to t('attributes.editing'), edit_admin_template_path(template) %></td>
 		<td><%= link_to t('attributes.exclude'), [:admin, template], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>

@@ -8,8 +8,9 @@
 <table cellspacing="0" class="tablesorter" width="80%">
 	<thead> 
 		<tr>
-			<th style="width:35%;"><%=t('attributes.name') %></th>		
-			<th style="width:25%;"><%=t('attributes.published') %> ?</th>
+			<th style="width:20%;"><%=t('attributes.name') %></th>		
+			<th style="width:20%;"><%=t('attributes.published') %> ?</th>
+			<th style="width:20%;"><%=t 'attributes.menu_display' %> ?</th>
 			<th colspan="4" style="width:40%;"><%=t 'attributes.actions' %></th>
 		</tr>
 	</thead> 
@@ -18,6 +19,7 @@
 	<tr <%='class=notactive' if !subcategory.published%>>
 	      <td><%= subcategory.name %></td>
 	      <td><%= print_active(subcategory.published) %></td>
+		  <td><%= print_active(subcategory.menu_display) %></td>
 	      <td><%= link_to t('attributes.showing'), admin_category_subcategory_path(@category, subcategory) %></td>
 	      <td><%= link_to t('attributes.editing'), edit_admin_category_subcategory_path(@category,subcategory) %></td>
 	      <td><%= link_to t('attributes.exclude'), admin_category_subcategory_path(@category, subcategory), :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>

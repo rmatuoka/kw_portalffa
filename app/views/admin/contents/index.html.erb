@@ -8,10 +8,11 @@
 <table cellspacing="0" class="tablesorter" width="80%">
 	<thead> 
 		<tr>
-			<th style="width:30%;"><%=t('attributes.name') %></th>
-			<th style="width:25%;"><%=show_model_name(::Template)+" "+t('attributes.name') %></th>			
-			<th style="width:15%;"><%=t('attributes.published') %> ?</th>
-			<th colspan="3" style="width:30%;"><%=t 'attributes.actions' %></th>
+			<th style="width:20%;"><%=t('attributes.name') %></th>
+			<th style="width:20%;"><%=show_model_name(::Template)+" "+t('attributes.name') %></th>			
+			<th style="width:16%;"><%=t('attributes.published') %> ?</th>
+			<th style="width:18%;"><%=t 'attributes.menu_display' %> ?</th>			
+			<th colspan="3" style="width:26%;"><%=t 'attributes.actions' %></th>
 		</tr>
 	</thead> 
 	<tbody>
@@ -20,6 +21,7 @@
 	      <td><%= content.name %></td>
 		  <td><%= content.template.name if !content.template.blank? %></td>
 	      <td><%= print_active(content.published) %></td>
+		  <td><%= print_active(content.menu_display) %></td>
 	      <td><%= link_to t('attributes.showing'), admin_category_subcategory_content_path(@category, @subcategory, content) %></td>
 	      <td><%= link_to t('attributes.editing'), edit_admin_category_subcategory_content_path(@category,@subcategory, content) %></td>
 	      <td><%= link_to t('attributes.exclude'), admin_category_subcategory_content_path(@category, @subcategory, content), :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>	

@@ -10,6 +10,12 @@
     <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
+
+  <p>
+    <%= f.label :template_type %>
+	<%= f.select :template_type,([[t('activerecord.attributes.template.types.selection'), ""], [t('activerecord.attributes.template.types.one'), "1"],[t('activerecord.attributes.template.types.two'), "2"],[t('activerecord.attributes.template.types.three'), "3"]]), :class => 'genForm_dropBox' %>
+  </p>
+
   <br />
   <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_templates_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>

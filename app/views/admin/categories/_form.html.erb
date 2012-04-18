@@ -45,7 +45,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :template_id %>
-	<%= f.collection_select :template_id,@templates,:id,:name, :include_blank => true%> 
+	<%= f.collection_select :template_id,@templates,:id,:name%> 
   </p>
   <p>
     <%= f.label :name %>
@@ -54,6 +54,10 @@
   <p>
     <%= f.label :published %>
     <%= f.check_box :published %>
+  </p>
+  <p>
+    <%= f.label :menu_display %>
+    <%= f.check_box :menu_display %>
   </p>
   <div style="position: relative; height: 40px;">
 	<div id="colorSelector">

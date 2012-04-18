@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417183707) do
+ActiveRecord::Schema.define(:version => 20120417225354) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120417183707) do
     t.datetime "updated_at"
     t.string   "color"
     t.integer  "template_id"
+    t.boolean  "menu_display"
   end
 
   create_table "complement_menus", :force => true do |t|
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120417183707) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "summary"
+    t.boolean  "menu_display"
   end
 
   create_table "galleries", :force => true do |t|
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(:version => 20120417183707) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "menu_display"
   end
 
   create_table "templates", :force => true do |t|
@@ -124,6 +127,7 @@ ActiveRecord::Schema.define(:version => 20120417183707) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "template_type"
   end
 
   create_table "ticket_categories", :force => true do |t|

@@ -3,6 +3,9 @@ class Admin::ContentsController < ApplicationController
       allow :admin, :all
   end  
   layout "inadmin"
+  $load_template_id = 3
+  before_filter :load_template, :only => [:new, :edit]  
+  before_filter :load_subcategories
   uses_tiny_mce :options => {
                               :theme => 'advanced',
                               :theme_advanced_resizing => true,
@@ -16,7 +19,7 @@ class Admin::ContentsController < ApplicationController
                               :width =>"100%",
                             	:height =>"400"
                             }  
-  before_filter :load_subcategories
+
   def index
     @contents = @subcategory.contents.all_active
   end
@@ -26,8 +29,7 @@ class Admin::ContentsController < ApplicationController
   end
 
   def new
-    @content = @subcategory.contents.build(:published => true)
-    @templates = Template.all_published    
+    @content = @subcategory.contents.buildnew(:published=> true, :menu_display => true)
   end
 
   def create
@@ -41,8 +43,7 @@ class Admin::ContentsController < ApplicationController
   end
 
   def edit
-    @content = Content.find(params[:id])
-    @templates = Template.all_published    
+    @content = Content.find(params[:id])  
   end
 
   def update
@@ -64,4 +65,5 @@ class Admin::ContentsController < ApplicationController
     @category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.find(params[:subcategory_id])
   end
+  
 end

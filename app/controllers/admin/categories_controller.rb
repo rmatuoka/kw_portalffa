@@ -3,6 +3,9 @@ class Admin::CategoriesController < ApplicationController
       allow :admin, :all
   end  
   layout "inadmin"
+  $load_template_id = 2
+  before_filter :load_template, :only => [:new, :edit]
+
   def index
     @categories = Category.all_active
   end
@@ -12,8 +15,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new(:published => true)
-    @templates = Template.all_published
+    @category = Category.new(:published=> true, :menu_display => true)
   end
 
   def create
@@ -27,8 +29,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
-    @templates = Template.all_published    
+    @category = Category.find(params[:id]) 
   end
 
   def update
@@ -45,4 +46,5 @@ class Admin::CategoriesController < ApplicationController
     @category.newdestroy
     redirect_to admin_categories_url, :notice => "Successfully destroyed category."
   end
+  
 end

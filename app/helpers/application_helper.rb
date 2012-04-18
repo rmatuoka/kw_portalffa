@@ -28,4 +28,13 @@ module ApplicationHelper
     end
     puts "Foi"
   end
+  
+  def traduz_template(type_template)
+    case type_template
+      when 1 then return t('activerecord.attributes.template.types.one')
+      when 2 then return t('activerecord.attributes.template.types.two')
+      when 3 then return t('activerecord.attributes.template.types.three')
+    end
+  end
+  
 end
