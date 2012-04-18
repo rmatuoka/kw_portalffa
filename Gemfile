@@ -14,6 +14,7 @@ gem 'jquery-rails', '>= 1.0.12'
 gem "browser"
 gem 'tiny_mce'
 gem 'paperclip'
+gem "pagseguro", "~> 0.1.12"
 
 # Use unicorn as the web server
 # gem 'unicorn'

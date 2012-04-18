@@ -1,0 +1,2 @@
+module Ingressos::ConfiraHelper
+end

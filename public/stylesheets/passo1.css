@@ -1,0 +1,222 @@
+	#box_compra{
+		width:342px;
+		height:124px;
+		background-color:#f3f3f3;
+		text-align:center;
+		}
+	
+	#box_compra_p2{
+		width:451px;
+		height:124px;
+		background-color:#f3f3f3;
+		text-align:center;
+		}
+	
+	#dia{
+		float:left;
+		margin-top:8px;
+		margin-left:7px;
+		}
+	
+	#preco{
+		margin-top:8px;
+		float:left;
+		}
+	
+	#qtde{
+		margin-top:8px;
+		float:left;
+		}
+	
+	#total{
+		margin-top:8px;
+		float:left;
+		}
+	
+	#btn_add_cart{
+		margin-top:8px;
+		float:left;
+		}
+	
+	#btn_rem_cart{
+		margin-top:8px;
+		float:left;
+		}
+	
+	.dia_um{
+		font-family:DaxCompactMedium;
+		font-size:15px;
+		font-weight:bold;
+		color:#e57100;
+		height:25px;
+		padding-top:5px;
+		width:80px;
+		background-color:#fcf1e5;
+		}
+	
+	.dia_dois{
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:19px;
+		color:#8e8e8e;
+		height:48px;
+		width:80px;
+		background-color:#f2e6da;
+		display:table-cell;
+		vertical-align:middle;
+		}
+	
+	.dia_tres{
+		font-family:DaxCompactMedium;
+		font-size:11px;
+		font-weight:bold;
+		color:#8e8e8e;
+		height:22px;
+		width:80px;
+		padding-top:8px;
+		background-color:#e0dbc4;
+		}
+	
+	.preco_um{
+		background-color:#e5eff6;
+		font-family:DaxCompactMedium;
+		font-size:15px;
+		font-weight:bold;
+		color:#0061ab;
+		height:25px;
+		width:80px;
+		padding-top:5px;
+		}
+	
+	.preco_dois{
+		background-color:#dae4ec;
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:15px;
+		color:#8e8e8e;
+		height:48px;
+		width:80px;
+		display:table-cell;
+		vertical-align:middle;
+		}
+	
+	.preco_tres{
+		background-color:#cbd9d4;
+		font-family:DaxCompactMedium;
+		font-size:11px;
+		font-weight:bold;
+		color:#0061ab;
+		height:22px;
+		width:80px;
+		padding-top:8px;
+		}
+	
+	.qtde_um{
+		background-color:#ecf1e5;
+		font-family:DaxCompactMedium;
+		font-size:15px;
+		font-weight:bold;
+		color:#447600;
+		height:25px;
+		padding-top:5px;
+		width:80px;
+		}
+	
+	.qtde_dois{
+		background-color:#e1e6da;
+		height:73px;
+		padding-top:5px;
+		}
+	
+	.qtde_tres{
+		width:66px;
+		height:69px;
+		margin:0 auto;
+		background-color:#FFFFFF;
+		}
+	
+	.total_um{
+		background-color:#ffffff;
+		font-family:DaxCompactMedium;
+		font-size:15px;
+		font-weight:bold;
+		color:#e60000;
+		height:25px;
+		padding-top:5px;
+		width:110px;
+		}
+	
+	.total_dois{
+		background-color:#e1e6da;
+		height:73px;
+		padding-top:5px;
+		}
+	
+	.btn_add_cart{
+		height:107px !important;
+		width:91px !important;
+		}
+	
+	.btn_rem_cart{
+		height:107px !important;
+		width:91px !important;
+		border:1px solid red;
+		}
+	
+	#total_compra{
+		background-color:#f3f3f3;
+		width:223px;
+		height:125px;
+		text-align:center;
+		padding-top:4px;
+		padding-left:4px
+		}
+	
+	#tit_total_compra{
+		background-color:#f4dada;
+		width:218px;
+		height:30px;
+		color:#e60000;
+		font-family:DaxCompactMedium;
+		font-size:15px;
+		font-weight:bold;
+		}
+	
+	#valor_total_compra{
+		background-color:#fff;
+		width:218px;
+		height:68px;
+		color:#8e8e8e;
+		font-family:DaxCompactMedium;
+		font-size:25px;
+		font-weight:bold;
+		padding-top:20px;
+		}
+	
+	#btn_total_compra{
+		margin-top:-20px;
+		}
+	
+	#tit_total_final{
+		background-color:#88b747;
+		width:218px;
+		height:30px;
+		color:#fff;
+		font-family:DaxCompactMedium;
+		font-size:15px;
+		font-weight:bold;
+		}
+	
+	#valor_total_final{
+		background-color:#fff;
+		width:218px;
+		height:68px;
+		color:#8e8e8e;
+		font-family:DaxCompactMedium;
+		font-size:25px;
+		font-weight:bold;
+		padding-top:20px;
+		}
+	
+	#btn_total_final{
+		margin-top:-20px;
+		}
+		

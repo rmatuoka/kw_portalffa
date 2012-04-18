@@ -8,7 +8,8 @@ class VerController < ApplicationController
     content = 0 
     category = params[:category].split("-") if !params[:category].blank?
     subcategory = params[:subcategory].split("-") if !params[:subcategory].blank?
-    content = params[:content].split("-") if !params[:content].blank?    
+    content = params[:content].split("-") if !params[:content].blank?   
+     
     @conteudo = Content.all( :joins=> "inner join `subcategories` on `contents`.`subcategory_id` = `subcategories`.`id`
   		inner join `categories` on `subcategories`.`category_id` = `categories`.`id`",
                             :conditions=>[

@@ -7,6 +7,16 @@ KwPortalffa::Application.routes.draw do
   resources :users
   resources :password_resets
   resources :atualizar
+  
+  #-----------------------------------------------INGRESSOS
+  namespace(:ingressos){
+    resources :selecione
+    resources :confira
+    resources :pagamento
+    resources :retorno
+  }
+  #-----------------------------------------------INGRESSOS
+  
   #Inicio do namespace Admin
   namespace(:admin){
     resources :searchs do
@@ -14,23 +24,19 @@ KwPortalffa::Application.routes.draw do
         get 'results'
         get 'resend'  
       end
-      
       member do
         get 'baixa'
       end
     end
-    
+    resources :reports
     resources :uploads
     resources :upload_categories
-    
     resources :galleries do
       resources :gallery_images
     end
-    
     resources :tickets
     resources :ticket_types
     resources :ticket_categories
-    
     resources :complement_menus
     resources :templates do
       resources :webmodules 
@@ -43,6 +49,7 @@ KwPortalffa::Application.routes.draw do
         end #Fim do contents  
       end #Fim do subcategories  
     end #Fim do categories    
+    
     #Inicio do Padrão Administrador
     resources :static_contents
     resources :users do
@@ -50,13 +57,13 @@ KwPortalffa::Application.routes.draw do
         get 'search'
       end
     end
+    
     #Fim do Padrão Administrador
     root :to => "static_contents#index"
   }
   #Final do namespace Admin
   
   root :to => "home#index"
-
   match 'cadastro' => "users#new"
   match 'login' => 'user_sessions#new'  
   match 'logout' => 'user_sessions#destroy'  
