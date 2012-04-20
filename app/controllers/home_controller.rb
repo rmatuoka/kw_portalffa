@@ -20,23 +20,29 @@ class HomeController < ApplicationController
     @Position14 = nil
     @Position15 = nil    
         
-    @Template = ::Template.find(:all,:conditions => "`templates`.`id` = 3")
+    @Template = ::Template.find(:all,:conditions => "`templates`.`id` = 1")
     if @Template.count > 0
         @WebModules = @Template.first.webmodules.all_published
     
         @WebModules.each do |modulo|
           case modulo.position
             when 1
-              @Position1 = "<div style='width: 345px; height: 341px;background-color:red;'>Position 1!</div>"
+              @Position1 = "<div style='width: 345px; height: 341px'>"+modulo.module_key+"</div>"
             when 2
               @Position2 = modulo.webpart.encoding
               @Dados = Content.find(modulo.module_key)
               @Position2.gsub!("[Title]",@Dados.name)
               @Position2.gsub!("[Description]", @Dados.summary)
             when 3
-              @Position3 = modulo
+              @Position3 = modulo.webpart.encoding
+              @Dados = Content.find(modulo.module_key)
+              @Position3.gsub!("[Title]",@Dados.name)
+              @Position3.gsub!("[Description]", @Dados.summary)
             when 4
-              @Position4 = modulo
+              @Position4 = modulo.webpart.encoding
+              @Dados = Content.find(modulo.module_key)
+              @Position4.gsub!("[Title]",@Dados.name)
+              @Position4.gsub!("[Description]", @Dados.summary)
             when 5
               @Position5 = modulo
             when 6
