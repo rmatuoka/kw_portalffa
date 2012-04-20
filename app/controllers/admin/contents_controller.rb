@@ -29,7 +29,7 @@ class Admin::ContentsController < ApplicationController
   end
 
   def new
-    @content = @subcategory.contents.buildnew(:published=> true, :menu_display => true)
+    @content = @subcategory.contents.build(:published=> true, :menu_display => true)
   end
 
   def create
