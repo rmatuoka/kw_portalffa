@@ -13,7 +13,7 @@ class Admin::SubcategoriesController < ApplicationController
   end
 
   def new
-    @subcategory = @category.subcategories.buildnew(:published=> true, :menu_display => true)
+    @subcategory = @category.subcategories.build(:published=> true, :menu_display => true)
   end
 
   def create
