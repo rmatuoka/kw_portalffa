@@ -50,5 +50,9 @@ class Admin::WebmodulesController < ApplicationController
   def load_template
     @template = Template.find(params[:template_id])
   end
+  
+  def buttoms
+    
+  end
     
 end

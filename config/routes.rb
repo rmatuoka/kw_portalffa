@@ -39,7 +39,11 @@ KwPortalffa::Application.routes.draw do
     resources :ticket_categories
     resources :complement_menus
     resources :templates do
-      resources :webmodules 
+      resources :webmodules do
+        collection do
+          get 'buttoms'
+        end
+      end
     end
     resources :webparts               
     resources :categories do
