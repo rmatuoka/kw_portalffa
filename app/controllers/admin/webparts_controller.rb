@@ -9,6 +9,7 @@ class Admin::WebpartsController < ApplicationController
                               :theme_advanced_resize_horizontal => false,
                               :theme_advanced_buttons1 => %w{ table fullscreen save  },
                               #:plugins => %w{ table fullscreen }
+                              :extended_valid_elements => "iframe[src|width|height|name|align]",
                               :plugins => %w{ table fullscreen save  },
                               :width =>"100%",
                             	:height =>"400"
