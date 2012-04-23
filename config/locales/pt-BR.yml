@@ -307,7 +307,17 @@
                 index: "Verifique abaixo a lista dos webparts cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar um novo webpart." 
                 show: "Verifique se as informações abaixo estão corretas."  
-              
+            types:
+               selection: "Selecione um tipo"
+               one: "Noticias" 
+               two: "HTML Customizado"
+               three: "Imagem"
+               four: "Newsletter"
+               five: "Galeria"
+               six: "Banners Publicos"
+               seven: "Enquete"
+               eight: "Previsão Tempo"
+               nine: "Nada Ainda"
         #Fim dos campos especificos
     errors:
       template:

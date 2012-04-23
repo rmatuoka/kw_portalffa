@@ -1,6 +1,8 @@
 KwPortalffa::Application.routes.draw do
 
 
+  namespace(:admin){ resources :footer_sites }
+
   get "ver/index"
   get "home/index"
   resources :user_sessions

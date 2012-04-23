@@ -37,6 +37,20 @@ module ApplicationHelper
     end
   end
   
+  def traduz_webpart(type_webpart)
+    case type_template
+      when 1 then return t('activerecord.attributes.webpart.types.one')
+      when 2 then return t('activerecord.attributes.webpart.types.two')
+      when 3 then return t('activerecord.attributes.webpart.types.three')
+      when 4 then return t('activerecord.attributes.webpart.types.four')
+      when 5 then return t('activerecord.attributes.webpart.types.five')
+      when 6 then return t('activerecord.attributes.webpart.types.six')
+      when 7 then return t('activerecord.attributes.webpart.types.seven')
+      when 8 then return t('activerecord.attributes.webpart.types.eight')
+      when 9 then return t('activerecord.attributes.webpart.types.nine')                
+    end
+  end  
+  
   
   #------------------------------------------------------------------------------ HELPERS WEBPARTS
   def render_webpart(modulo)
