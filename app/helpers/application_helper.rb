@@ -51,8 +51,10 @@ module ApplicationHelper
       puts "RENDER NOTICIA"
       @Encoding = @Webpart.encoding
       @Dados = Content.find(modulo.module_key)
-      @Encoding = @Encoding.gsub("[subcategoria]", @Dados.subcategory.name)
-      @Encoding = @Encoding.gsub("[setarcor]", @Dados.subcategory.category.color)      
+      @Url = "/#{@Dados.subcategory.category.url_slug}/#{@Dados.subcategory.url_slug}/#{@Dados.url_slug}"
+      @Encoding = @Encoding.gsub("[goto]", @Url)
+      @Encoding = @Encoding.gsub("[category]", @Dados.subcategory.category.name)
+      @Encoding = @Encoding.gsub("[setcolor]", @Dados.subcategory.category.color)      
       @Encoding = @Encoding.gsub("[title]",@Dados.name)
       @Encoding = @Encoding.gsub("[description]", @Dados.summary)      
       return raw(@Encoding)

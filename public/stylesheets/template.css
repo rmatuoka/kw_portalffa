@@ -132,6 +132,10 @@ img {
 					background:#fff;
 					margin-bottom:9px;
 				}
+				.Item_tabs_top a
+				{
+					text-decoration:none;					
+				}
 				.Bg_title_big
 				{
 					position:relative;
@@ -171,6 +175,10 @@ img {
 					font-weight:normal;
 					color:#a0a0a0;
 					margin-left:15px;
+				}
+				p.Text_item_tabs a
+				{
+					color:#a0a0a0;
 				}										
 		.Content_midle
 		{
