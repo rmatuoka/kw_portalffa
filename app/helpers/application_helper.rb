@@ -45,15 +45,16 @@ module ApplicationHelper
     puts @Webpart.webtype
     #------------------VERIFICA O TIPO DO WEBPART
     case @Webpart.webtype.to_i
+      
     when 1
       #----------NOTICIAS
       puts "RENDER NOTICIA"
       @Encoding = @Webpart.encoding
       @Dados = Content.find(modulo.module_key)
-      
-      @Encoding = @Encoding.gsub("[Title]",@Dados.name)
-      @Encoding = @Encoding.gsub("[Description]", @Dados.summary)
-      
+      @Encoding = @Encoding.gsub("[subcategoria]", @Dados.subcategory.name)
+      @Encoding = @Encoding.gsub("[setarcor]", @Dados.subcategory.category.color)      
+      @Encoding = @Encoding.gsub("[title]",@Dados.name)
+      @Encoding = @Encoding.gsub("[description]", @Dados.summary)      
       return raw(@Encoding)
       
     when 2

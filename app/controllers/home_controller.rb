@@ -2,23 +2,7 @@ class HomeController < ApplicationController
   layout "template2012" 
   before_filter :load_menu   
  
-  def index
-    
-    @Position1 = nil
-    @Position2 = nil
-    @Position3 = nil
-    @Position4 = nil
-    @Position5 = nil
-    @Position6 = nil
-    @Position7 = nil
-    @Position8 = nil
-    @Position9 = nil
-    @Position10 = nil
-    @Position11 = nil
-    @Position12 = nil
-    @Position13 = nil
-    @Position14 = nil
-    @Position15 = nil    
+  def index 
         
     @Template = ::Template.find(:all,:conditions => "`templates`.`id` = 1")
     if @Template.count > 0
@@ -28,7 +12,6 @@ class HomeController < ApplicationController
           case modulo.position
             when 1
               @Position1 = modulo
-              #@Position1 = "<div style='width: 345px; height: 341px'>"+modulo.module_key+"</div>"
             when 2
               @Position2 = modulo
             when 3

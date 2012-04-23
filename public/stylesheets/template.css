@@ -103,7 +103,7 @@ img {
 			{
 				position:relative;
 				width: 373px;
-			    height: 390px;
+			    height: 390px !important;
 				height:auto;
 				float:left;
 				background:#fff;
@@ -118,7 +118,7 @@ img {
 				}
 			.Tabs_top
 			{
-				position:relative;
+				position:rela	tive;
 				width: 367px;
 				/* height: 390px; */
 				float:left;
@@ -132,81 +132,37 @@ img {
 					background:#fff;
 					margin-bottom:9px;
 				}
-				h1.Title_item_orange
+				.Bg_title_big
 				{
 					position:relative;
-					top:11px;
-					left:0px;					
-					font-family:DaxCompactMedium;
-					font-size:16px;
-					font-weight:normal;
-					color:#e57100;	
-					background-image:url(../images/bg_title_item_orange356.jpg);
-					background-repeat:no-repeat;
-					background-position:center left;
-					padding-left:9px;	
-					margin-bottom:11px;					
-				}
-				h2.Title_2_item_red
-				{
-					position:relative;			
-					font-family:DaxCompactMedium;
-					font-size:20px;
-					font-weight:normal;
-					color:#df1a22;	
-					margin-left:15px;
-					margin-top:17px;						
-				}				
-				h1.Title_item_green
-				{
-					position:relative;
-					top:11px;
+					top:20px;
 					left:0px;
-					font-family:DaxCompactMedium;
-					font-size:16px;
-					font-weight:normal;
-					color:#88b747;	
-					background-image:url(../images/bg_title_item_green356.jpg);
+					width:342px;
+					height:17px;
+					background-image:url(../images/bg_box_title_item_trans.png);
 					background-repeat:no-repeat;
-					background-position:center left;
-					padding-left:9px;
-					margin-bottom:11px;												
-				}
-				h2.Title_2_item_green
-				{
-					position:relative;			
-					font-family:DaxCompactMedium;
-					font-size:20px;
-					font-weight:normal;
-					color:#447600;	
-					margin-left:15px;
-					margin-top:17px;						
-				}							
-				h1.Title_item_blue
+					background-position:0px 0px;
+					padding-left:9px;	
+					margin-bottom:11px;		
+				}				
+				h1.Title_item
 				{
 					position:relative;
-					top:11px;
-					left:0px;					
+					top:-2px;
+					height:17px;
 					font-family:DaxCompactMedium;
 					font-size:16px;
 					font-weight:normal;
-					color:#3099ea;	
-					background-image:url(../images/bg_title_item_blue356.jpg);
-					background-repeat:no-repeat;
-					background-position:center left;
-					padding-left:9px;	
-					margin-bottom:11px;											
-				}	
-				h2.Title_2_item_blue
+				}
+				h2.Title_2_item
 				{
 					position:relative;			
 					font-family:DaxCompactMedium;
 					font-size:20px;
 					font-weight:normal;
-					color:#0061ab;	
 					margin-left:15px;
 					margin-top:17px;						
-				}					
+				}									
 				p.Text_item_tabs
 				{
 					font-family:Tahoma, Geneva, sans-serif;
