@@ -27,23 +27,14 @@ class HomeController < ApplicationController
         @WebModules.each do |modulo|
           case modulo.position
             when 1
-              @Position1 = "<div style='width: 345px; height: 341px'>"+modulo.module_key+"</div>"
+              @Position1 = modulo
+              #@Position1 = "<div style='width: 345px; height: 341px'>"+modulo.module_key+"</div>"
             when 2
-              @Position2 = modulo.webpart.encoding
-              @Dados = Content.find(modulo.module_key)
-              @Position2 = @Position2.gsub("[Title]",@Dados.name)
-              @Position2 = @Position2.gsub("[Description]", @Dados.summary)
-            when 3         
-              @Position3 = modulo.webpart.encoding
-              @Dados = Content.find(modulo.module_key)
-              @Position3 = @Position3.gsub("[Title]",@Dados.name)
-              @Position3 = @Position3.gsub("[Description]", @Dados.summary)
-            when 4             
-              @Position4 = modulo.webpart.encoding
-              @Dados = Content.find(modulo.module_key)
-              @Position4.gsub("[Title]",@Dados.name)
-              @Position4.gsub("[Description]", @Dados.summary)
-              
+              @Position2 = modulo
+            when 3
+              @Position3 = modulo    
+            when 4      
+              @Position4 = modulo                    
             when 5
               @Position5 = modulo
             when 6

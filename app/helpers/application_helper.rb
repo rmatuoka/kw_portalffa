@@ -37,4 +37,34 @@ module ApplicationHelper
     end
   end
   
+  
+  #------------------------------------------------------------------------------ HELPERS WEBPARTS
+  def render_webpart(modulo)
+    @Webpart = modulo.webpart
+    puts "RENDER WEBPART"
+    puts @Webpart.webtype
+    #------------------VERIFICA O TIPO DO WEBPART
+    case @Webpart.webtype.to_i
+    when 1
+      #----------NOTICIAS
+      puts "RENDER NOTICIA"
+      @Encoding = @Webpart.encoding
+      @Dados = Content.find(modulo.module_key)
+      
+      @Encoding = @Encoding.gsub("[Title]",@Dados.name)
+      @Encoding = @Encoding.gsub("[Description]", @Dados.summary)
+      
+      return raw(@Encoding)
+      
+    when 2
+      #----------CURTOM HTML
+      puts "RENDER CUSTOM HTML"
+      return raw(modulo.module_key)
+    else
+      puts "Fodeu"
+    end
+    
+    
+  end
+  #------------------------------------------------------------------------------ HELPERS WEBPARTS
 end

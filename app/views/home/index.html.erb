@@ -11,7 +11,8 @@
 			 <% if (!@Position1.blank?)%>
     		 <div class="Highlights_top">
              	 <div class="Content_highlights_top">
-                 	<%=raw @Position1 %>
+                 	<%=render_webpart(@Position1)%>
+					<%#=raw @Position1 %>
                  </div>
              </div>
 			<% end %>
@@ -19,19 +20,20 @@
              <div class="Tabs_top">
 				<% if !@Position2.blank?%>
              	<div class="Item_tabs_top">
-					<%=raw @Position2 %>
+					<%=render_webpart(@Position2)%>
+					<%#=raw @Position2 %>
                 </div>
 				<% end %>
 				
 				<% if !@Position3.blank?%>
              	<div class="Item_tabs_top">
-					<%=raw @Position3 %>
+					<%=render_webpart(@Position3)%>
                 </div>
 				<% end %>
 				
 				<% if !@Position4.blank?%>
              	<div class="Item_tabs_top">
-					<%=raw @Position4 %>
+					<%=render_webpart(@Position4)%>
                 </div>
 				<% end %>								                                      
              </div>
