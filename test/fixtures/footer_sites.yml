@@ -1,0 +1,23 @@
+one:
+  name: MyString
+  legend: MyString
+  destination: MyString
+  link_target: MyString
+  image_file_name: MyString
+  image_content_type: MyString
+  image_file_size: 1
+  image_updated_at: 2012-04-23 18:41:38
+  active: false
+  published: false
+
+two:
+  name: MyString
+  legend: MyString
+  destination: MyString
+  link_target: MyString
+  image_file_name: MyString
+  image_content_type: MyString
+  image_file_size: 1
+  image_updated_at: 2012-04-23 18:41:38
+  active: false
+  published: false

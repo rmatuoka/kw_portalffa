@@ -13,7 +13,18 @@
   <br />
   <p>
     <%= f.label :webtype %>
-    <%= f.text_field :webtype %>
+	<%= f.select :webtype,([
+			[t('activerecord.attributes.webpart.types.selection'), ""], 
+			[t('activerecord.attributes.webpart.types.one'), "1"],
+			[t('activerecord.attributes.webpart.types.two'), "2"],
+			[t('activerecord.attributes.webpart.types.three'), "3"],
+			[t('activerecord.attributes.webpart.types.four'), "4"],
+			[t('activerecord.attributes.webpart.types.five'), "5"],
+			[t('activerecord.attributes.webpart.types.six'), "6"],
+			[t('activerecord.attributes.webpart.types.seven'), "7"],
+			[t('activerecord.attributes.webpart.types.eight'), "8"],
+			[t('activerecord.attributes.webpart.types.nine'), "9"]						
+			]), :class => 'genForm_dropBox' %>
   </p>
   <p>
     <%= f.label :published %>

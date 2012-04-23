@@ -1,0 +1,48 @@
+<% title "Admin/Footer Site" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @footer_site.name %>
+</p>
+<p>
+  <strong>Legend:</strong>
+  <%= @footer_site.legend %>
+</p>
+<p>
+  <strong>Destination:</strong>
+  <%= @footer_site.destination %>
+</p>
+<p>
+  <strong>Link Target:</strong>
+  <%= @footer_site.link_target %>
+</p>
+<p>
+  <strong>Image File Name:</strong>
+  <%= @footer_site.image_file_name %>
+</p>
+<p>
+  <strong>Image Content Type:</strong>
+  <%= @footer_site.image_content_type %>
+</p>
+<p>
+  <strong>Image File Size:</strong>
+  <%= @footer_site.image_file_size %>
+</p>
+<p>
+  <strong>Image Updated At:</strong>
+  <%= @footer_site.image_updated_at %>
+</p>
+<p>
+  <strong>Active:</strong>
+  <%= @footer_site.active %>
+</p>
+<p>
+  <strong>Published:</strong>
+  <%= @footer_site.published %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_footer_site_path(@footer_site) %> |
+  <%= link_to "Destroy", [:admin, @footer_site], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_footer_sites_path %>
+</p>

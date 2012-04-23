@@ -1,0 +1,35 @@
+<% title "Admin/Footer Sites" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Legend</th>
+    <th>Destination</th>
+    <th>Link Target</th>
+    <th>Image File Name</th>
+    <th>Image Content Type</th>
+    <th>Image File Size</th>
+    <th>Image Updated At</th>
+    <th>Active</th>
+    <th>Published</th>
+  </tr>
+  <% for footer_site in @footer_sites %>
+    <tr>
+      <td><%= footer_site.name %></td>
+      <td><%= footer_site.legend %></td>
+      <td><%= footer_site.destination %></td>
+      <td><%= footer_site.link_target %></td>
+      <td><%= footer_site.image_file_name %></td>
+      <td><%= footer_site.image_content_type %></td>
+      <td><%= footer_site.image_file_size %></td>
+      <td><%= footer_site.image_updated_at %></td>
+      <td><%= footer_site.active %></td>
+      <td><%= footer_site.published %></td>
+      <td><%= link_to "Show", [:admin, footer_site] %></td>
+      <td><%= link_to "Edit", edit_admin_footer_site_path(footer_site) %></td>
+      <td><%= link_to "Destroy", [:admin, footer_site], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Footer Site", new_admin_footer_site_path %></p>

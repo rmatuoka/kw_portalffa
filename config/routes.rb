@@ -26,7 +26,7 @@ KwPortalffa::Application.routes.draw do
         get 'baixa'
       end
     end
-    
+    resources :footer_sites   
     resources :banners
     resources :reports
     resources :uploads
