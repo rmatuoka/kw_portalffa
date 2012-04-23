@@ -1,13 +1,11 @@
 KwPortalffa::Application.routes.draw do
-
-
   get "ver/index"
   get "home/index"
   resources :user_sessions
   resources :users
   resources :password_resets
   resources :atualizar
-  
+  resources :banners
   #-----------------------------------------------INGRESSOS
   namespace(:ingressos){
     resources :selecione
@@ -28,6 +26,8 @@ KwPortalffa::Application.routes.draw do
         get 'baixa'
       end
     end
+    
+    resources :banners
     resources :reports
     resources :uploads
     resources :upload_categories
@@ -41,6 +41,7 @@ KwPortalffa::Application.routes.draw do
     resources :templates do
       resources :webmodules do
         collection do
+          get 'popula_ids'
           get 'buttoms'
         end
       end

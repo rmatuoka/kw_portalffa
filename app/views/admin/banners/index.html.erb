@@ -1,0 +1,23 @@
+<% title "Admin/Banners" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Link</th>
+    <th>Link Target</th>
+  </tr>
+  <% for banner in @banners %>
+    <tr>
+      <td><%= banner.name %></td>
+      <td><%= banner.description %></td>
+      <td><%= banner.link %></td>
+      <td><%= banner.link_target %></td>
+      <td><%= link_to "Show", [:admin, banner] %></td>
+      <td><%= link_to "Edit", edit_admin_banner_path(banner) %></td>
+      <td><%= link_to "Destroy", [:admin, banner], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Admin/Banner", new_admin_banner_path %></p>

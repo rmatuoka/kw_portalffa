@@ -10,7 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417225354) do
+ActiveRecord::Schema.define(:version => 20120423210515) do
+
+  create_table "banners", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "link"
+    t.string   "link_target"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.integer  "clicks"
+    t.boolean  "active"
+    t.boolean  "published"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"

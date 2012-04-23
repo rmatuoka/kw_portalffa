@@ -1,0 +1,24 @@
+<% title "Admin/Banner" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @banner.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @banner.description %>
+</p>
+<p>
+  <strong>Link:</strong>
+  <%= @banner.link %>
+</p>
+<p>
+  <strong>Link Target:</strong>
+  <%= @banner.link_target %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_admin_banner_path(@banner) %> |
+  <%= link_to "Destroy", [:admin, @banner], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_banners_path %>
+</p>

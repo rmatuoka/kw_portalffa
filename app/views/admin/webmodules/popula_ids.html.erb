@@ -1,0 +1,25 @@
+<%if @Webpart.webtype == "1"%>
+	<!-- NOTICIAS -->
+	<%Content.all_published.each do |n|%>
+		<%=radio_button_tag :module_key, n.id%> <%=n.name%> <i>(<%=n.subcategory.name%>)</i> <br/>
+	<%end%>
+
+<%elsif @Webpart.webtype == "2"%>
+	<!-- CUSTOM HTML -->
+	<label>Código HTML</label><br />
+    <%= text_area_tag :module_key %>
+
+<%elsif @Webpart.webtype == "3"%>
+	<!-- IMAGEM -->
+	<label>Escolha a imagem</label><br />
+    <%Upload.all_images.each do |n|%>
+		<%=radio_button_tag :module_key, n.id%> <%=n.file_file_name%> <i>(<%=n.description%>)</i> <br/>
+	<%end%>
+
+<%elsif @Webpart.webtype == "6"%>
+	<!-- BANNER -->
+	<label>Escolha o Banner</label><br />
+    <%Banner.all_published.each do |b|%>
+		<%=radio_button_tag :module_key, b.id%> <%=b.file_file_name%> <i>(<%=b.name%>)</i> <br/>
+	<%end%>
+<%end%>

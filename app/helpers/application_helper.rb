@@ -43,6 +43,7 @@ module ApplicationHelper
     @Webpart = modulo.webpart
     puts "RENDER WEBPART"
     puts @Webpart.webtype
+    
     #------------------VERIFICA O TIPO DO WEBPART
     case @Webpart.webtype.to_i
       
@@ -63,6 +64,21 @@ module ApplicationHelper
       #----------CURTOM HTML
       puts "RENDER CUSTOM HTML"
       return raw(modulo.module_key)
+      
+    when 3
+      #----------IMAGEM
+      puts "RENDER IMAGEM"
+      @Dados = Upload.find(modulo.module_key)
+      return image_tag @Dados.file.url
+    when 6
+      #----------BANNER
+      puts "RENDER BANNER"
+      @Dados = Banner.find(modulo.module_key)
+      return link_to(image_tag(@Dados.file.url), banner_path(@Dados), :target => @Dados.link_target)
+    when 8
+      #----------CLIMA TEMPO
+      puts "RENDER CLIMA TEMPO"    
+      return raw(@Webpart.encoding)
     else
       puts "Fodeu"
     end

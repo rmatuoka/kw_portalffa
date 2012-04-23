@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  description: MyString
+  link: MyString
+  link_target: MyString
+
+two:
+  name: MyString
+  description: MyString
+  link: MyString
+  link_target: MyString
