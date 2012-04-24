@@ -62,11 +62,11 @@ jQuery(document).ready(function() {
 jQuery(function() {
     jQuery("img.Swap")
         .mouseover(function() { 
-            var src = jQuery(this).attr("src").match(/[^\.]+/) + "_color.jpg";
+            var src = jQuery(this).attr("src").replace("pb/", "original/");
             jQuery(this).attr("src", src);
         })
         .mouseout(function() {
-            var src = jQuery(this).attr("src").replace("_color", "");
+            var src = jQuery(this).attr("src").replace("original/", "pb/");
             jQuery(this).attr("src", src);
         });
 });

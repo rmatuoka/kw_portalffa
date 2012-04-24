@@ -1,4 +1,4 @@
-<%= form_for [:admin, @footer_site] do |f| %>
+<%= form_for ([:admin, @footer_site], :html => { :multipart => :true }) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
@@ -17,28 +17,22 @@
     <%= f.text_field :link_target %>
   </p>
   <p>
-    <%= f.label :image_file_name %><br />
-    <%= f.text_field :image_file_name %>
-  </p>
-  <p>
-    <%= f.label :image_content_type %><br />
-    <%= f.text_field :image_content_type %>
-  </p>
-  <p>
-    <%= f.label :image_file_size %><br />
-    <%= f.text_field :image_file_size %>
-  </p>
-  <p>
-    <%= f.label :image_updated_at %><br />
-    <%= f.datetime_select :image_updated_at %>
-  </p>
-  <p>
-    <%= f.label :active %><br />
-    <%= f.check_box :active %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </p>
   <p>
     <%= f.label :published %><br />
     <%= f.check_box :published %>
+  </p>
+  <p>
+    <%= f.label :footer_type %>
+	<%= f.select :footer_type,([
+								[t('activerecord.attributes.footer_site.types.selection'), ""],
+							 	[t('activerecord.attributes.footer_site.types.one'), "1"],
+								[t('activerecord.attributes.footer_site.types.two'), "2"],
+								[t('activerecord.attributes.footer_site.types.three'), "3"],
+								[t('activerecord.attributes.footer_site.types.four'), "4"]								
+							  ]), :class => 'genForm_dropBox' %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

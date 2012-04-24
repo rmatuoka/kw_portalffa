@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   def load_menu
     @Categorias_menu = Category.all_published_menu
     @Complementos_menu = ComplementMenu.all_published
+    @Footer_site = FooterSite.all_published_order
   end
 
   def load_template

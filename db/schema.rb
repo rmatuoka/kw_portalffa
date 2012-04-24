@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423210515) do
+ActiveRecord::Schema.define(:version => 20120423221402) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(:version => 20120423210515) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
-    t.integer  "clicks"
-    t.boolean  "active"
-    t.boolean  "published"
+    t.integer  "clicks",            :default => 0
+    t.boolean  "active",            :default => true
+    t.boolean  "published",         :default => false
   end
 
   create_table "categories", :force => true do |t|
@@ -59,6 +59,22 @@ ActiveRecord::Schema.define(:version => 20120423210515) do
     t.string   "name"
     t.string   "summary"
     t.boolean  "menu_display"
+  end
+
+  create_table "footer_sites", :force => true do |t|
+    t.string   "name"
+    t.string   "legend"
+    t.string   "destination"
+    t.string   "link_target"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "footer_type"
   end
 
   create_table "galleries", :force => true do |t|

@@ -79,6 +79,7 @@ jQuery(document).ready(function()
 							<li class="parent aberto"><a href="#" title=""><h3><%= t('attributes.menuadmin.manage')%></h3></a>
 								<ul class="sub-menu">
 									<li><%= link_to t('attributes.manage')+ show_model_name(User, true),admin_users_path%></li>
+									<li><%= link_to t('attributes.manage')+ show_model_name(::FooterSite, true), admin_footer_sites_path %></li>
 								</ul>
 							</li>
 							<%end%>

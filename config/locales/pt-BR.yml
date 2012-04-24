@@ -220,7 +220,10 @@
             other: "Categorias" 
         content:
             one: "Conteúdo"  
-            other: "Conteúdos"  
+            other: "Conteúdos" 
+        footer_site:
+            one: "Rodapé Site"
+            other: "Rodapés Sites"
         gallery:
             one: "Galeria"  
             other: "Galerias"
@@ -274,7 +277,20 @@
             messages:
                 index: "Verifique abaixo a lista das sub-categorías cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar uma nova sub-categoría." 
-                show: "Verifique se as informações abaixo estão corretas."                        
+                show: "Verifique se as informações abaixo estão corretas."  
+        footer_site:
+            legend: "Legenda"
+            destination: "Destino"
+            link_target: "Abrir como"
+            image: "Imagem"
+            footer_type: "Tipo"
+            types:
+                selection: "Selecione um tipo"
+                one: "Realização"
+                two: "Apoio"
+                three: "Patrocinadores"
+                four: "Colaboradores"
+                                                  
         template:
             template_type: "Tipo de Template"
             messages:
