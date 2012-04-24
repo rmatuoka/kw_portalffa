@@ -71,14 +71,24 @@
 </div><!-- end Box_left --> 
 
 <div id="Box_right">      
-	<% if (!@Position1.blank? or !@Position2.blank? or !@Position3.blank? or !@Position4.blank?)%>  	  
-     <div class="Content_pub">
-		public 
+	<% if (!@Position1.blank? or !@Position2.blank? or !@Position3.blank? or !@Position4.blank?)%>  
+    <%if !@Position1.blank?%> 
+	<div class="Content_pub">
+		<%=render_webpart(@Position1)%> 
 	 </div>
-     <div class="Content_pub">
-		public 
-	 </div>             
-     <div class="Content_pull">
+	<%end%>
+
+    <%if !@Position2.blank?%> 
+	<div class="Content_pub">
+		<%=render_webpart(@Position2)%> 
+	</div>             
+    <%end%>
+
+	<!-- ENQUETE --> 
+	<%if !@Position3.blank?%> 
+	
+		<%=render_webpart(@Position3)%> 
+	<!-- <div class="Content_pull">
 		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
         <div class="Pull_item_box">
             <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
@@ -92,11 +102,17 @@
             <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
             <div class="clear"></div>
         </div>   
-        <a class="Btn_pull_send"></a>      	
-     </div>  
-     <div class="Content_weather">
-		<h1 class="Title_weat_red">Previsão do Tempo</h1>
-	 </div>   
+        <a class="Btn_pull_send"></a>     	
+     </div>  -->
+	<%end%>
+    <!-- ENQUETE --> 
+
+	<%if !@Position4.blank?%>
+		<%=render_webpart(@Position4)%>
+		<!-- <div class="Content_weather">
+    		<h1 class="Title_weat_red">Previsão do Tempo</h1>
+    	 </div> -->
+	<%end%> 
 	<% end %>	
      <div class="clear"></div>                         
 </div><!-- end Box_right --> 
