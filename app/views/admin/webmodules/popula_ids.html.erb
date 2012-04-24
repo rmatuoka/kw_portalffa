@@ -22,4 +22,11 @@
     <%Banner.all_published.each do |b|%>
 		<%=radio_button_tag :module_key, b.id%> <%=b.file_file_name%> <i>(<%=b.name%>)</i> <br/>
 	<%end%>
+
+<%elsif @Webpart.webtype == "4"%>
+	<!-- BANNER -->
+	<label>Escolha a Galeria</label><br />
+    <%Gallery.all_published.each do |g|%>
+		<%=radio_button_tag :module_key, g.id%> <%=g.name%> <i>(<%=g.description%>)</i> <br/>
+	<%end%>
 <%end%>

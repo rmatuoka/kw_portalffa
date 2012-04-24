@@ -93,6 +93,61 @@ module ApplicationHelper
       #----------CLIMA TEMPO
       puts "RENDER CLIMA TEMPO"    
       return raw(@Webpart.encoding)
+      
+    when 5
+      #----------NEWSLETTER
+      puts "RENDER NEWSLETTER"
+      
+      return raw(@Webpart.encoding)
+    
+    when 4
+      #----------GALERIA
+      puts "RENDER GALERIA"
+      
+      @Galeria = Gallery.find(modulo.module_key)
+      @GaleriaImagens = @Galeria.gallery_images.all
+      counter = 1
+      
+      retorno = ""
+      retorno += "<h1 class='Title_gal_red'>Galeria<span class='Img_h1_gal_1'></span></h1>"           
+      retorno +=                "<div id='Gallery_home_box'>	<!--start Gallery_home_box-->"
+      retorno +=                    "<div id='slideshow-main'>"
+      retorno +=                        "<ul>"
+      @GaleriaImagens.each do |image|
+        #-----INICIO LOOP 1
+        if counter == 1
+          retorno +=                            "<li class='p#{counter} active'>"
+        else
+          retorno +=                            "<li class='p#{counter}'>"
+        end
+        retorno +=                                "<a href='#'>"
+        #retorno +=                                    "<img src='images/1_big.gif' width='476' height='312' alt=''/>"
+        retorno +=                                    image_tag image.upload.file.url(:gallery)
+        retorno +=                                    "<span class='opacity'></span>"
+        retorno +=                                    "<span class='content'><h1></h1><p></p></span>"
+        retorno +=                                "</a>"
+        retorno +=                            "</li>"
+        #-----FIM LOOP 1
+        counter = counter + 1
+      end
+      counter = 1
+      
+      retorno +=                        "</ul>"										
+      retorno +=                    "</div> "                               
+      retorno +=                    "<div id='slideshow-carousel'>		"		
+      retorno +=                          "<ul id='carousel' class='jcarousel jcarousel-skin-tango'>"
+      @GaleriaImagens.each do |image|
+        #-----INICIO LOOP 2
+        retorno +=                            "<li><a href='#' rel='p#{counter}'>#{image_tag image.upload.file.url(:gallery_thumb)}</a></li>"
+        #-----FIM LOOP 2
+        counter = counter + 1
+      end
+      retorno +=                          "</ul>"
+      retorno +=                    "</div>     "       
+      retorno +=                   " <div class='clear'></div>"
+      retorno +=               "</div> <!--End Gallery_home_box-->"
+      
+      return raw(retorno)
     else
       puts "Fodeu"
     end

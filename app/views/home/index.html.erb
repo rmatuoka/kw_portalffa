@@ -71,96 +71,29 @@
 			 <% if ( !@Position8.blank? or !@Position9.blank? or !@Position10.blank?)%>	
              <div class="C_bot_left_box">
 				<% if !@Position8.blank?%>
-                <div class="Newsletter_bottom">
+					<%=render_webpart(@Position8)%>
+                <!-- <div class="Newsletter_bottom">
                 	<h1 class="Title_newa_red">Newslwtter<span class="Img_h1_news_1"></span></h1>
                     <a class="Btn_news_send"></a> 
                     <p class="Text_news">Do you see a slender plastic tag clipped to my shirt with my name printed on it? </p>
                     <input name="campo" type="text"></input>                    
-                </div>
+                </div>-->
 				<% end %>
 				<% if !@Position9.blank?%>
                 <div class="Item_pub_bottom">
-                	Publicidade
+                	<%=render_webpart(@Position10)%>
                 </div>  
 				<% end %>
 				<% if !@Position10.blank?%>
                 <div class="Item_pub_bottom">
-                	Publicidade
+                	<%=render_webpart(@Position10)%>
                 </div>   
                 <% end %>
              </div>   
 			 <% end %>
 		     <% if !@Position11.blank? %>				
              <div class="C_bot_gallery_box">
-             	<h1 class="Title_gal_red">Galeria<span class="Img_h1_gal_1"></span></h1>           
-                <div id="Gallery_home_box">	<!--start Gallery_home_box-->
-                    <div id="slideshow-main">
-                        <ul>
-                            <li class="p1 active">
-                                <a href="#">
-                                    <img src="images/1_big.gif" width="476" height="312" alt=""/>
-                                    <span class="opacity"></span>
-                                    <span class="content"><h1></h1><p></p></span>
-                                </a>
-                            </li>
-                            <li class="p2">
-                                <a href="#">
-                                    <img src="images/2_big.gif" width="476" height="312" alt=""/>
-                                    <span class="opacity"></span>
-                                    <span class="content"><h1></h1><p></p></span>
-                                </a>
-                            </li>
-                            <li class="p3">
-                                <a href="#">
-                                    <img src="images/3_big.gif" width="476" height="312" alt=""/>
-                                    <span class="opacity"></span>
-                                    <span class="content"><h1></h1><p></p></span>
-                                </a>
-                            </li>
-                            <li class="p4">
-                                <a href="#">
-                                    <img src="images/4_big.gif" width="476" height="312" alt=""/>
-                                    <span class="opacity"></span>
-                                    <span class="content"><h1></h1><p></p></span>
-                                </a>
-                            </li>
-                            <li class="p5">
-                                <a href="#">
-                                    <img src="images/5_big.gif" width="476" height="312" alt=""/>
-                                    <span class="opacity"></span>
-                                    <span class="content"><h1></h1><p></p></span>
-                                </a>
-                            </li>
-                            <li class="p6">
-                                <a href="#">
-                                    <img src="images/6_big.gif" width="476" height="312" alt=""/>
-                                    <span class="opacity"></span>
-                                    <span class="content"><h1></h1><p></p></span>
-                                </a>
-                            </li>
-                            <li class="p7">
-                                <a href="#">
-                                    <img src="images/7_big.gif" width="476" height="312" alt=""/>
-                                    <span class="opacity"></span>
-                                    <span class="content"><h1></h1><p></p></span>
-                                </a>
-                            </li>
-                        </ul>										
-                    </div>                                
-                    <div id="slideshow-carousel">				
-                          <ul id="carousel" class="jcarousel jcarousel-skin-tango">
-                            <li><a href="#" rel="p1"><img src="images/1.gif" width="106" height="71" alt="#"/></a></li>
-                            <li><a href="#" rel="p2"><img src="images/2.gif" width="106" height="71" alt="#"/></a></li>
-                            <li><a href="#" rel="p3"><img src="images/3.gif" width="106" height="71" alt="#"/></a></li>
-                            <li><a href="#" rel="p4"><img src="images/4.gif" width="106" height="71" alt="#"/></a></li>
-                            <li><a href="#" rel="p5"><img src="images/5.gif" width="106" height="71" alt="#"/></a></li>
-                            <li><a href="#" rel="p6"><img src="images/6.gif" width="106" height="71" alt="#"/></a></li>
-                            <li><a href="#" rel="p7"><img src="images/7.gif" width="106" height="71" alt="#"/></a></li>
-                          </ul>
-                    </div>            
-                    <div class="clear"></div>
-                </div> <!--End Gallery_home_box-->  
-                                   
+             	<%=render_webpart(@Position11)%>         
              </div>
 			 <% end %>
     	 </div>

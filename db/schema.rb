@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423221402) do
+ActiveRecord::Schema.define(:version => 20120423221912) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -103,6 +103,14 @@ ActiveRecord::Schema.define(:version => 20120423221402) do
     t.text     "description"
     t.boolean  "active"
     t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "newsletters", :force => true do |t|
+    t.string   "email"
+    t.boolean  "active",     :default => true
+    t.boolean  "published",  :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

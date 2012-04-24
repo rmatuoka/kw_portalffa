@@ -1,0 +1,9 @@
+one:
+  email: MyString
+  active: false
+  published: false
+
+two:
+  email: MyString
+  active: false
+  published: false

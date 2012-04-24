@@ -1,5 +1,5 @@
 class Upload < ActiveRecord::Base 
-  has_attached_file :file, :styles => { :thumb => "50x50>"}
+  has_attached_file :file, :styles => { :thumb => "50x50>", :gallery => "476x312>", :gallery_thumb => "106x71>"}
   
   belongs_to :upload_category
   has_many :gallery_images
