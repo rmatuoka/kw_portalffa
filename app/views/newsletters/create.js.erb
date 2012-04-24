@@ -1,0 +1,6 @@
+<%if @erro%>
+	alert("Erro ao gravar o e-mail. Tente novamente mais tarde");
+<%else%>
+	alert("E-mail gravado com sucesso! Obrigado!");
+	jQuery("#newsletter_email").val("");
+<%end%>

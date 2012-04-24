@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>	
+<%= stylesheet_link_tag "template"%>
+<%=javascript_include_tag :defaults%>
+</head>
+<body>
+	<div class="Newsletter_bottom">
+	<%=form_for @Newsletter, :remote => :true do |f|%>    
+		<h1 class="Title_newa_red">Newsletter<span class="Img_h1_news_1"></span></h1>
+        <a class="Btn_news_send" onclick="javascript:jQuery('#new_newsletter').submit();"></a> 
+        <p class="Text_news">Do you see a slender plastic tag clipped to my shirt with my name printed on it? </p>
+        <%=f.text_field :email%>                   
+    	<%#=f.submit%>
+	<%end%>
+	</div>	
+</body>
+</html>
