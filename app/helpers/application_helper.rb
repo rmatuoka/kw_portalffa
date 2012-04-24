@@ -94,13 +94,13 @@ module ApplicationHelper
       puts "RENDER CLIMA TEMPO"    
       return raw(@Webpart.encoding)
       
-    when 5
+    when 4
       #----------NEWSLETTER
       puts "RENDER NEWSLETTER"
       
       return raw(@Webpart.encoding)
     
-    when 4
+    when 5
       #----------GALERIA
       puts "RENDER GALERIA"
       
