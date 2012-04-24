@@ -23,7 +23,7 @@
 		<%=radio_button_tag :module_key, b.id%> <%=b.file_file_name%> <i>(<%=b.name%>)</i> <br/>
 	<%end%>
 
-<%elsif @Webpart.webtype == "4"%>
+<%elsif @Webpart.webtype == "5"%>
 	<!-- BANNER -->
 	<label>Escolha a Galeria</label><br />
     <%Gallery.all_published.each do |g|%>
