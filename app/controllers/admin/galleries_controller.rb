@@ -13,11 +13,12 @@ class Admin::GalleriesController < ApplicationController
   end
 
   def new
-    @gallery = Gallery.new
+    @gallery = Gallery.new(:published=> true)
   end
 
   def create
     @gallery = Gallery.new(params[:gallery])
+    @gallery.active = true
     if @gallery.save
       redirect_to [:admin, @gallery], :notice => "Successfully created gallery."
     else
@@ -40,7 +41,7 @@ class Admin::GalleriesController < ApplicationController
 
   def destroy
     @gallery = Gallery.find(params[:id])
-    @gallery.destroy
+    @gallery.newdestroy
     redirect_to admin_galleries_url, :notice => "Successfully destroyed gallery."
   end
 end

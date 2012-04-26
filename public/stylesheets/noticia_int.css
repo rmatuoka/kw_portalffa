@@ -423,7 +423,7 @@ img {
 		{
 			position:relative;				
 			width: 223px;
-			height: 447px;
+			height: auto;
 			background:#fff;
 			padding-top:11px;
 			margin-right:2px;
