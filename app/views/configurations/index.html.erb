@@ -1,0 +1,37 @@
+<% title "Configurations" %>
+
+<table>
+  <tr>
+    <th>Email Adm</th>
+    <th>Email Compras</th>
+    <th>Email Contato</th>
+    <th>Email Imprensa</th>
+    <th>Copyright</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Schedule</th>
+    <th>Twitter</th>
+    <th>Facebook</th>
+    <th>Youtube</th>
+  </tr>
+  <% for configuration in @configurations %>
+    <tr>
+      <td><%= configuration.email_adm %></td>
+      <td><%= configuration.email_compras %></td>
+      <td><%= configuration.email_contato %></td>
+      <td><%= configuration.email_imprensa %></td>
+      <td><%= configuration.copyright %></td>
+      <td><%= configuration.address %></td>
+      <td><%= configuration.phone %></td>
+      <td><%= configuration.schedule %></td>
+      <td><%= configuration.twitter %></td>
+      <td><%= configuration.facebook %></td>
+      <td><%= configuration.youtube %></td>
+      <td><%= link_to "Show", configuration %></td>
+      <td><%= link_to "Edit", edit_configuration_path(configuration) %></td>
+      <td><%= link_to "Destroy", configuration, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Configuration", new_configuration_path %></p>

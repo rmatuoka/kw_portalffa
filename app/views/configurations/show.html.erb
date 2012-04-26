@@ -1,0 +1,52 @@
+<% title "Configuration" %>
+
+<p>
+  <strong>Email Adm:</strong>
+  <%= @configuration.email_adm %>
+</p>
+<p>
+  <strong>Email Compras:</strong>
+  <%= @configuration.email_compras %>
+</p>
+<p>
+  <strong>Email Contato:</strong>
+  <%= @configuration.email_contato %>
+</p>
+<p>
+  <strong>Email Imprensa:</strong>
+  <%= @configuration.email_imprensa %>
+</p>
+<p>
+  <strong>Copyright:</strong>
+  <%= @configuration.copyright %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @configuration.address %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @configuration.phone %>
+</p>
+<p>
+  <strong>Schedule:</strong>
+  <%= @configuration.schedule %>
+</p>
+<p>
+  <strong>Twitter:</strong>
+  <%= @configuration.twitter %>
+</p>
+<p>
+  <strong>Facebook:</strong>
+  <%= @configuration.facebook %>
+</p>
+<p>
+  <strong>Youtube:</strong>
+  <%= @configuration.youtube %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_configuration_path(@configuration) %> |
+  <%= link_to "Destroy", @configuration, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", configurations_path %>
+</p>

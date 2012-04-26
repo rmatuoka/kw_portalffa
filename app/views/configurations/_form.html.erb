@@ -1,0 +1,48 @@
+<%= form_for @configuration do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :email_adm %><br />
+    <%= f.text_field :email_adm %>
+  </p>
+  <p>
+    <%= f.label :email_compras %><br />
+    <%= f.text_field :email_compras %>
+  </p>
+  <p>
+    <%= f.label :email_contato %><br />
+    <%= f.text_field :email_contato %>
+  </p>
+  <p>
+    <%= f.label :email_imprensa %><br />
+    <%= f.text_field :email_imprensa %>
+  </p>
+  <p>
+    <%= f.label :copyright %><br />
+    <%= f.text_field :copyright %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :schedule %><br />
+    <%= f.text_field :schedule %>
+  </p>
+  <p>
+    <%= f.label :twitter %><br />
+    <%= f.text_field :twitter %>
+  </p>
+  <p>
+    <%= f.label :facebook %><br />
+    <%= f.text_field :facebook %>
+  </p>
+  <p>
+    <%= f.label :youtube %><br />
+    <%= f.text_field :youtube %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,25 @@
+one:
+  email_adm: MyString
+  email_compras: MyString
+  email_contato: MyString
+  email_imprensa: MyString
+  copyright: MyString
+  address: MyString
+  phone: MyString
+  schedule: MyString
+  twitter: MyString
+  facebook: MyString
+  youtube: MyString
+
+two:
+  email_adm: MyString
+  email_compras: MyString
+  email_contato: MyString
+  email_imprensa: MyString
+  copyright: MyString
+  address: MyString
+  phone: MyString
+  schedule: MyString
+  twitter: MyString
+  facebook: MyString
+  youtube: MyString

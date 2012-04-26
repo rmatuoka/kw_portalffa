@@ -1,6 +1,8 @@
 KwPortalffa::Application.routes.draw do
 
 
+  resources :configurations
+
   get "ver/index"
   get "home/index"
   resources :user_sessions
