@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423221912) do
+ActiveRecord::Schema.define(:version => 20120426174812) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -44,6 +44,22 @@ ActiveRecord::Schema.define(:version => 20120423221912) do
     t.string   "destination"
     t.boolean  "active"
     t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "configurations", :force => true do |t|
+    t.string   "email_adm"
+    t.string   "email_compras"
+    t.string   "email_contato"
+    t.string   "email_imprensa"
+    t.string   "copyright"
+    t.string   "address"
+    t.string   "phone"
+    t.string   "schedule"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "youtube"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
