@@ -118,7 +118,7 @@ img {
 				}
 			.Tabs_top
 			{
-				position:rela	tive;
+				position:relative;
 				width: 367px;
 				/* height: 390px; */
 				float:left;
@@ -130,12 +130,19 @@ img {
 					width: 356px;
 					height: 124px;
 					background:#fff;
-					margin-bottom:9px;
+					margin-bottom:21px;
 				}
 				.Item_tabs_top a
 				{
 					text-decoration:none;					
 				}
+				
+				.Item_tabs_top:hover{
+					width: 356px;
+					height: 124px;
+					background-image:url('../images/hover_tab.png');
+					}
+				
 				.Bg_title_big
 				{
 					position:relative;
@@ -147,7 +154,8 @@ img {
 					background-repeat:no-repeat;
 					background-position:0px 0px;
 					padding-left:9px;	
-					margin-bottom:11px;		
+					margin-bottom:11px;
+					margin-top:-8px;		
 				}				
 				h1.Title_item
 				{
@@ -165,7 +173,7 @@ img {
 					font-size:20px;
 					font-weight:normal;
 					margin-left:15px;
-					margin-top:17px;						
+					margin-top:27px;						
 				}									
 				p.Text_item_tabs
 				{
@@ -280,6 +288,7 @@ img {
 				margin-right:2px;
 				margin-bottom:17px;
 				padding-top:11px;
+				
 			}
 				h1.Title_newa_red
 				{
@@ -312,7 +321,8 @@ img {
 					font-weight:normal;
 					color:#a0a0a0;
 					margin-left:12px;
-					margin-bottom:10px;					
+					margin-bottom:10px;
+					margin-top:-5px;					
 				}
 				.Newsletter_bottom input
 				{
@@ -326,7 +336,8 @@ img {
 					font-size:14px;
 					width:220px;
 					font-weight:normal;
-					color:#a0a0a0;					
+					color:#a0a0a0;	
+					margin-top:-10px;								
 				}				
 				.Btn_news_send
 				{
@@ -337,7 +348,8 @@ img {
 					background:url(../images/img_Imgbuttoms.png) no-repeat -5px -216px;
 					width:110px;
 					height:34px;	
-					cursor:pointer;		
+					cursor:pointer;
+					z-index:10000;		
 				}
 
 			.Item_pub_bottom

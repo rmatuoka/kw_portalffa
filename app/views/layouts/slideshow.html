@@ -1,0 +1,45 @@
+<script>
+$('#slideshow') 
+.before('<div id="nav">') 
+.cycle({ 
+    fx:     'turnDown', 
+    speed:  'fast', 
+    timeout: 0, 
+    pager:  '#nav' 
+});
+</script>
+<style>
+#nav a { border: 1px solid #ccc; background: #fc0; text-decoration: none; margin: 0 5px; padding: 3px 5px;  }
+#nav a.activeSlide { background: #ea0 }
+#nav a:focus { outline: none; }
+</style>
+
+<div id='slideshow'>
+	<div id='slide1'>
+    	<div id=''>
+        	<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra tellus ullamcorper nisi imperdiet eget feugiat enim scelerisque.</h1>	
+        </div>
+    </div>
+    <div id='slide2'>
+    	<div id=''>
+        	<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra tellus ullamcorper nisi imperdiet eget feugiat enim scelerisque.</h1>	
+        </div>
+    </div>
+    <div id='slide3'>
+    	<div id=''>
+        	<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra tellus ullamcorper nisi imperdiet eget feugiat enim scelerisque.</h1>	
+        </div>
+    </div>
+    <div id='slide4'>
+    	<div id=''>
+        	<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra tellus ullamcorper nisi imperdiet eget feugiat enim scelerisque.</h1>	
+        </div>
+    </div>
+    <div id='slide5'>
+    	<div id=''>
+        	<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pharetra tellus ullamcorper nisi imperdiet eget feugiat enim scelerisque.</h1>	
+        </div>
+    </div>
+</div>
+<div id='nav'>
+</div>
