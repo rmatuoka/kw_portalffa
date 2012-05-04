@@ -4,7 +4,7 @@ class CreateOrderTickets < ActiveRecord::Migration
       t.integer :order_id
       t.integer :ticket_id
       t.integer :amount
-      t.decimal :price
+      t.decimal :price, :precision => 10, :scale => 2
       t.boolean :used
 
       t.timestamps

@@ -1,0 +1,5 @@
+<%if !@erro%>
+	jQuery('#btn_<%=@cart.ticket_id%>').html("<%= escape_javascript(image_tag('btn_adicionado.jpg'))%>");
+<%else%>
+	alert("A quantidade deve ser maior que 0");
+<%end%>

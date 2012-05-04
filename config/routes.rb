@@ -1,6 +1,12 @@
 KwPortalffa::Application.routes.draw do
 
 
+  resources :carts do 
+    collection do 
+      get 'destroy_cart'
+    end
+  end
+
   get "ver/index"
   get "home/index"
   resources :user_sessions
@@ -15,9 +21,17 @@ KwPortalffa::Application.routes.draw do
     resources :confira
     resources :pagamento
     resources :retorno
+    root :to => "selecione#index"
   }
   #-----------------------------------------------INGRESSOS
   
+  #Inicio do namespace PagSeguro
+  
+  
+  
+  #Fim do namespace PagSeguro
+  get "pagseguro_developer/confirm", :to => "pag_seguro/developer#confirm"
+  post "pagseguro_developer", :to => "pag_seguro/developer#create"
   #Inicio do namespace Admin
   namespace(:admin){
     resources :searchs do
