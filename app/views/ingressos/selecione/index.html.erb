@@ -1,0 +1,187 @@
+<%content_for :head do%>
+	<%= stylesheet_link_tag "imprensa"%>
+	<%= stylesheet_link_tag "passo1"%>
+
+	<%if flash[:alert]%>
+		<script>alert('Para avançar, adicione ao menos um ingresso ao seu carrinho!')</script>
+	<%end%>
+	<%if flash[:destroy_cart]%>
+		<script>alert('Seu carrinho foi deletado!')</script>
+	<%end%>
+	<script>
+
+		function ShowDesconto(qtde)
+		{
+			alert("Desconto especial na compra de "+qtde+" ou mais ingressos!")
+		}
+
+	</script>
+	
+<%end%>
+<% 
+	atual = 0 
+	diatual = 0	
+	controle = 0
+	coluna = 1
+%>
+		<div id="Box_left">
+            <div class="Content_top">            
+                <h1 class="Title_item_orange">Ingressos</h1>	
+                <h3 class="Title_item_green">Passo 1 - Datas e Quantidades</h2>
+                <p class="Text_grey">Escolha a data e quantidade de ingressos que você deseja adquirir, adicione ao carrinho e clique "PRÓXIMO PASSO".</p>
+                <p class="Text_green">Para sua segurança, as compras de ingressos devem ser realizadas com, no mínimo, dois dias de antecedência da data desejada.<br>
+Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bilheteria da Festa de Flores e Morangos de Atibaia.</p>
+            </div>
+            <div class="Content_midle">
+	
+	
+	
+	
+	
+<% if @tickets.count > 0 %>
+	<%@tickets.each do |t|
+		if atual != t.ticket_category_id %>
+			<% if controle > 0 %>       
+				</table>
+				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
+				<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">					
+			<%else%>				
+				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
+				<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">
+			<%end%>
+		<%end%>
+					<tr>
+						<td>		
+							<%=form_for @cart, :remote => true do |f|%>
+							<div id='box_compra'>
+								<div id='dia'>
+									<div class="dia_um">
+										DIA
+									</div>
+									<div class="dia_dois">
+										<%=t.ticket_date.strftime('%d')%>
+									</div>
+									<div class="dia_tres">
+										<%= I18n.localize(t.ticket_date, :format => "%A") %>
+									</div>
+								</div>
+								<div id='preco'>
+									<div class="preco_um">
+										PREÇO
+									</div>
+									<div class="preco_dois">
+										<%=number_to_currency(t.price - t.ticket_type.discount)%>
+									</div>
+									<div class="preco_tres">
+										<%=t.ticket_type.name%>
+									</div>
+								</div>
+								<div id='qtde'>
+									<div class="qtde_um">
+										QTDE.
+									</div>
+									<div class="qtde_dois">
+										<div class="qtde_tres">
+											<%=f.hidden_field :price, :value => t.price - t.ticket_type.discount%>
+											<%=f.hidden_field :ticket_id, :value => t.id%>
+											<% if t.above > 0 %>
+												<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2", :onclick =>"ShowDesconto(#{t.above+1})"%>
+											<% else %>
+												<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2"%>
+											<% end %>
+										</div>
+									</div>
+								</div>
+								<div class='btn_add_cart' id="btn_<%=t.id%>">
+									<%if @carts_hash.values.include?(t.id)%>
+										<%=image_tag("btn_adicionado.jpg", :width=>"91", :height=>"107", :border=>"0")%>
+									<%else%>
+										<%=image_submit_tag('btn_add_cart.jpg', :width=>"91", :height=>"107", :border=>"0")%>
+									<%end%>
+								</div>
+							</div>
+							<%end%><!--Fim do Form-->
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+		<%if atual != t.ticket_category_id          
+			controle = controle +1
+		end%>
+		<% atual = t.ticket_category_id %>
+	<%end%>
+</table>
+<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">
+	<tr>
+		<td width="215"><%#=link_to(image_tag("btn_prev_cart.png", :width=>"160", :height=>"52", :border=>"0"),'#')%></td>
+		<td width="260"></td>
+		<td width="215" align="right"><%=link_to(image_tag("btn_next_cart.png", :width=>"160", :height=>"52", :border=>"0"),ingressos_confira_index_path)%></td>
+	</tr>
+</table>
+<%end%>
+
+
+
+
+
+
+
+
+           </div><!-- end Content_midle -->
+            <div class="Content_bottom">
+				<h1 class="Title_item_orange">Veja também</h1>	
+                <div class="Box_imprensa_content">
+                    <div class="Box_bottom_imprensa">
+                    	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
+                    	<div class="Content_box_bot_imprensa">
+         					<div class="Image_box_imprensa"> <%= image_tag("img_stand_imprensa.jpg", :width=>"109", :height=>"78" )%></div> 
+                            <div class="Text_info_box_imprensa">Me! I should've known way back when... You know why,</div>          
+                        </div>                        
+                        <span class="Date_box_bot_imprensa">02/12/2011</span>
+                    </div> 
+                    <div class="Box_bottom_imprensa">
+                    	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
+                    	<div class="Content_box_bot_imprensa">
+         					<div class="Image_box_imprensa"> <%= image_tag("img_stand_imprensa.jpg", :width=>"109", :height=>"78" )%></div> 
+                            <div class="Text_info_box_imprensa">Me! I should've known way back when... You know why,</div>          
+                        </div>                        
+                        <span class="Date_box_bot_imprensa">02/12/2011</span>
+                    </div> 
+                    <div class="Box_bottom_imprensa">
+                    	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
+                    	<div class="Content_box_bot_imprensa">
+         					<div class="Image_box_imprensa"> <%= image_tag("img_stand_imprensa.jpg", :width=>"109", :height=>"78" )%></div> 
+                            <div class="Text_info_box_imprensa">Me! I should've known way back when... You know why,</div>          
+                        </div>                        
+                        <span class="Date_box_bot_imprensa">02/12/2011</span>
+                    </div>                                        
+                </div>        
+            </div>            
+        </div><!-- end Box_left -->
+        <div id="Box_right">        
+             <div class="Content_pub">
+        		public 
+        	 </div>
+             <div class="Content_pub">
+        		public 
+        	 </div>             
+             <div class="Content_pull">
+        		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
+                <div class="Pull_item_box">
+                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+                    <div class="clear"></div>
+                </div>   
+                <div class="Pull_item_box">    
+                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam </p>  
+                    <div class="clear"></div>                                
+                </div>   
+                <div class="Pull_item_box">
+                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+                    <div class="clear"></div>
+                </div>   
+                <a class="Btn_pull_send"></a>      	
+             </div>  
+             <div class="Content_weather">
+        		<h1 class="Title_weat_red">Previsão do Tempo</h1>
+        	 </div>   
+             <div class="clear"></div>                         
+        </div><!-- end Box_right -->

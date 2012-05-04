@@ -10,7 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120426174812) do
+=======
+ActiveRecord::Schema.define(:version => 20120425224553) do
+>>>>>>> Zaba
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -26,6 +30,15 @@ ActiveRecord::Schema.define(:version => 20120426174812) do
     t.integer  "clicks",            :default => 0
     t.boolean  "active",            :default => true
     t.boolean  "published",         :default => false
+  end
+
+  create_table "carts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "ticket_id"
+    t.decimal  "price",      :precision => 10, :scale => 2
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "categories", :force => true do |t|
@@ -135,7 +148,7 @@ ActiveRecord::Schema.define(:version => 20120426174812) do
     t.integer  "order_id"
     t.integer  "ticket_id"
     t.integer  "amount"
-    t.decimal  "price",      :precision => 10, :scale => 0
+    t.decimal  "price",      :precision => 10, :scale => 2
     t.boolean  "used"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -207,11 +220,11 @@ ActiveRecord::Schema.define(:version => 20120426174812) do
   create_table "tickets", :force => true do |t|
     t.string   "name"
     t.date     "ticket_date"
-    t.decimal  "price",              :precision => 10, :scale => 0
+    t.decimal  "price",              :precision => 10, :scale => 2
     t.integer  "ticket_type_id"
     t.integer  "ticket_category_id"
     t.integer  "above"
-    t.decimal  "discount",           :precision => 10, :scale => 0
+    t.decimal  "discount",           :precision => 10, :scale => 2
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"

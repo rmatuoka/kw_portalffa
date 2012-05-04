@@ -9,10 +9,13 @@
 <div id="Box_left">
     <div class="Content_top">            
         <h1 class="Title_item_orange">Ingressos</h1>	
-        <h3 class="Title_item_green">Passo 2 - Confira seus ingressos</h2>
-        <p class="Text_grey">Confira seu pedido abaixo. Certifique-se de que a quantidade e data estão corretas. Caso algum dado não esteja correto, cancele a compra clicando no "X" à direita do pedido. Se as informações de seu carrinho estiverem corretas, clique em "próximo passo".</p>
+        <h3 class="Title_item_green">Passo 3 - Pagamento</h2>
+        <p class="Text_grey">Confira seus dados pessoais e informações de pagamento.  Caso suas informações estejam corretas, clique em "Efetuar pagamento".</p>
     </div>
     <div class="Content_midle">
+	  <h1 class="Title_item_orange_week">Dados Pessoais</h1>
+      	<p class="Text_grey" style="margin-top:20px;">N. do Pedido: 0001<br>Nome: Rafael Matuoka Chiocchetti<br>E-mail: rmatuoka@korewa.com.br<br>CPF: 32782928805</p>
+
 		<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">	
 			<tr>
 				<td>
@@ -73,7 +76,7 @@
 										</div>
 									</div>
 									<div id='btn_rem_cart'>
-										<%= link_to(image_tag("btn_remove_cart.jpg", :width=>"91", :height=>"107", :border=>"0"), c, :confirm => 'Deseja excluir este ingresso do seu carrinho?', :method => :delete) %>
+										<%#= link_to(image_tag("btn_remove_cart.jpg", :width=>"91", :height=>"107", :border=>"0"), c, :confirm => 'Deseja excluir este ingresso do seu carrinho?', :method => :delete) %>
 									</div>
 								</div>
 							</td>
@@ -95,7 +98,8 @@
 							<%=number_to_currency(@total_final)%>
 						</div>
 						<div id='btn_total_compra'>
-							<%= link_to(image_tag("btn_cancel_cart.png",:border=>"0"),destroy_cart_carts_path, :confirm => 'Deseja excluir o seu carrinho?')%>
+							<%= pagseguro_form @order_product, :submit => "" %>
+							<%#= link_to(image_tag("btn_cancel_cart.png",:border=>"0"),destroy_cart_carts_path, :confirm => 'Deseja excluir o seu carrinho?')%>
 						</div>
 					</div><a href="#"></a>
 				</td>
@@ -109,9 +113,9 @@
 
 			<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">
                <tr>
-				<td width="215"><%=link_to(image_tag("btn_prev_cart.png", :width=>"160", :height=>"52", :border=>"0"),ingressos_selecione_index_path)%></td>
+				<td width="215"><%=link_to(image_tag("btn_prev_cart.png", :width=>"160", :height=>"52", :border=>"0"),ingressos_confira_index_path)%></td>
 				<td width="260"></td>
-				<td width="215" align="right"><%=link_to(image_tag("btn_next_cart.png", :width=>"160", :height=>"52", :border=>"0"),ingressos_pagamento_index_path)%></td>
+				<td width="215"><%#=link_to(image_tag("btn_next_cart.png", :width=>"160", :height=>"52", :border=>"0"),ingressos_pagamento_index_path)%></td>
                </tr>
             </table>
 

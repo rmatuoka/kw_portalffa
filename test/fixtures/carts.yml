@@ -1,0 +1,11 @@
+one:
+  user_id: 1
+  ticket_id: 1
+  price: 9.99
+  amount: 1
+
+two:
+  user_id: 1
+  ticket_id: 1
+  price: 9.99
+  amount: 1

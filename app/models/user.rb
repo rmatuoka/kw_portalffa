@@ -6,11 +6,18 @@ class User < ActiveRecord::Base
   acts_as_authorization_subject
   
   scoped_search :on => [:name, :last_name, :email]
+  has_many :carts
+  has_many :orders
   
-  validates_presence_of :name, :message=> " - preencha o campo!"
-  #validates_presence_of :last_name, :message=> " - preencha o campo!" 
-  #Campo last_name está sendo desativado para manter os dados do cadastro do antigo sistema de venda
-  validates_presence_of :email, :message=> " - preencha o campo!"
+  
+  validates_presence_of :nome, :on => :save
+  validates_presence_of :cpf, :on => :save
+  validates_uniqueness_of :cpf
+  validates_presence_of :rg, :on => :save
+  validates_presence_of :cidade, :on => :save
+  validates_presence_of :estado, :on => :save
+  validates_presence_of :email
+
   
   attr_writer :role
   after_save :define_role

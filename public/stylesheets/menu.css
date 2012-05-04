@@ -50,7 +50,7 @@
 		 display:list-item;
 		 margin-right:0px;
 		 display:inline;
-		 z-index:10000;
+		 z-index:1000;
 	 }
 
 		#Menu ul li a
