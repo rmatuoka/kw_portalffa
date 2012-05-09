@@ -1,107 +1,246 @@
-<% 
-	content_for :title do "Login" end
-%>
 <%content_for :head do%>
-<%= stylesheet_link_tag "login"%>
-<script>
-	var htmlold = "";
-	
-	function novoConteudo(){
-		jQuery('#flash_error_cadastro').hide();
-		htmlold = jQuery('#box_login').html();
-		if (jQuery('#flash_error_cadastro').show){
-			jQuery('#flash_error_cadastro').hide();
-		}
-		jQuery.ajax({
-			url: '/password_resets/new',
-		    type:'get',
-			beforeSend: function (){
-				jQuery('#loading-forgot').show();
-			},
-		    success: function(response){
-				jQuery('#loading-forgot').hide();
-				jQuery('#box_login').html(response);
-		    },
-		    error: function(){ 
-				alert('Falha ao carregar a página!') ;
-				jQuery('#loading-forgot').hide();
+	<%= stylesheet_link_tag "cadastre_se"%>
+	<%= stylesheet_link_tag "cadastre_se_screen_768", :media=>"screen and (max-width:768px)"%>
+	<%= stylesheet_link_tag "cadastre_se_screen_480", :media=>"screen and (max-width:480px)"%>
+	<%#= javascript_include_tag "carousel_principal.js" %>
+	<script>
+		var htmlold = "";
+
+		function novoConteudo(){
+			if( jQuery('#Show_Box_Error_Login').is(':visible') ) {
+				jQuery('#Show_Box_Error_Login').hide();
 			}
-		  })
-	}
-	
-	function enviardaodos(obj){
-		if (jQuery('#flash_error_cadastro').show){
-			jQuery('#flash_error_cadastro').hide();
-		}		
-		jQuery(obj).hide();
-		jQuery('#loading-forgot').show();
-		jQuery("#frm_password_resets").submit();
-	}
+			htmlold = jQuery('#Box_cadastre_login').html();
+			jQuery.ajax({
+				url: '/password_resets/new',
+			    type:'get',
+				beforeSend: function (){
+					jQuery('#loading-forgot').show();
+				},
+			    success: function(response){
+					jQuery('#loading-forgot').hide();
+					jQuery('#Box_cadastre_login').html(response);
+			    },
+			    error: function(){ 
+					alert('Falha ao carregar a página!') ;
+					jQuery('#loading-forgot').hide();
+				}
+			  })
+		}
 
-	function voltaConteudo(){
-		jQuery('#box_login').html(htmlold); 
-		htmlold = "";		
-	}
+		function enviardaodos(obj){
+			if (jQuery('#flash_error_cadastro').show){
+				jQuery('#flash_error_cadastro').hide();
+			}		
+			jQuery(obj).hide();
+			jQuery('#loading-forgot').show();
+			jQuery("#frm_password_resets").submit();
+		}
 
-</script>
-<%end%>
-<div id="box_login">
-	<h1>Área Restrita</h1><br />
-	<p>Área Restrita. Para acessá-la faça seu login abaixo.</p><br />
-	<div id="flash_error_cadastro" style="display:none;"></div>
-	<%= form_for @user_session, :remote => true do |f| %>
-		<div id="flash_error_login" style="display:none;"></div>
-		<p>
-			<%= f.label :email, "Email" %><br />
-			<%= f.text_field :email %>
-		</p>
-		<p>
-			<%= f.label :password, "Senha" %><br />
-			<%= f.password_field :password %>
-		</p>
-		<br />
-		<p><%= f.submit "Enviar", :class => "Bt_enviar" %></p>
-		<%= image_tag "loading.gif", :style => 'display:none;', :id => 'loading-forgot' %>
-		<br />
-		<p class="EsqueciSenha">
-			<%= link_to "Esqueceu a senha? Clique aqui", "#", :onclick=>"novoConteudo()" %>
-		</p>
-	<% end %>
-</div>
-<%if !flash[:temerro] %>
-	<%if flash[:error] %>
-	<script>
-		//window.location.href = "<%= login_path %>";
-		jQuery('#flash_error_cadastro').removeClass('flash_ops').addClass('flash_ok');
-		jQuery('#flash_error_cadastro').show();
-		erro = "";
-		erro += "<%= escape_javascript(image_tag("img_ok.png", :id=>"Box_warning_img"))%>";	
-		erro += "<div class='Box_warning_text'>";
-		erro += "	<h2>Ok!</h2>";
-		erro += "	<p><%= flash[:error];%></p>";
-		erro += "<br /><br />"
-		erro +=	"</div>";
-		erro += "<div class='clear'></div>";	
-		jQuery('#flash_error_cadastro').html(erro);
-		jQuery('#loading-forgot').hide();
+		function voltaConteudo(){
+			jQuery('#Box_cadastre_login').html(htmlold); 
+			htmlold = "";		
+		}
+		
+		function check_text_onfocus(obj)
+		{
+			if( jQuery('#Show_Box_Error_Login').is(':visible') ) {
+				jQuery('#Show_Box_Error_Login').hide();
+			}
+		    if(obj.value == obj.defaultValue)
+		        obj.value = '';
+		}
+		function check_text_onblur(obj)
+		{
+		    if(obj.value=='')
+		        obj.value = obj.defaultValue;
+		}
 	</script>	
-	<%end%>
-<%else%>
-	<%if flash[:error] %>
-	<script>
-		jQuery('#flash_error_cadastro').removeClass('flash_ok').addClass('flash_ops');
-		jQuery('#flash_error_cadastro').show();
-		erro = "";
-		erro += "<%= escape_javascript(image_tag("img_ops.png", :id=>"Box_warning_img"))%>";	
-		erro += "<div class='Box_warning_text'>";
-		erro += "	<h2>Ops!</h2>";
-		erro += "	<p><%= flash[:error];%></p>";
-		erro += "<br /><br />"
-		erro +=	"</div>";
-		erro += "<div class='clear'></div>";
-		jQuery('#flash_error_cadastro').html(erro);
-		jQuery('#loading-forgot').hide();
-		jQuery('#btn_enviar_password').show();
-	</script>
-	<%end%>
-<%end%>
+<%end%>    
+<div id="Box_left">
+		<div class="Content_top">
+			<div class="Cadastre_content">
+				<h1 class="Title_cad_orange">Cadastre-se<span class="Social_networks"></h1>
+				<h2 class="Title_2_cad_green">Para realizar a compra dos ingressos, efetue seu login abaixo.</h2>
+				<p class="Text_cad_tabs">Se você ainda não é cadastrado, preencha os campos abaixo e cadastre-se.</p>
+
+
+
+				<div id="Box_cadastre_login"><!--  inicio box login jacadastrado -->
+					<div class="Tit_box_cad">
+						<h1 class="Tit_cad_green">Já sou cadastrado</h1>
+					</div>
+					<%= form_for @user_session, :remote => true do |f| %>
+					<div id="Show_Box_Error_Login">
+					
+					</div>
+					<div class="Field_box_cad">
+						<div class="Label_cad"><%= f.label :email, "E-mail:" %></div>
+						<div class="Bg_input">
+							<%= f.text_field :email, :value => "seu@email.com", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+						</div>
+					</div>      
+					<div class="Field_box_cad">
+						<div class="Label_cad"><%= f.label :password, "Senha:" %></div>
+						<div class="Bg_input">
+						    <%= f.password_field :password, :value => "Senha", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
+
+						</div>
+					</div> 
+					<div class="Buttom_box_cad">
+						<p><%= link_to "Esqueceu a senha?", "#", :onclick=>"novoConteudo()", :class =>"Txt_buttom_box" %></p>
+						<%=image_submit_tag("bt_ent_submt.png", :class => "Bt_submit", :width=>"160", :height=>"52", :onclick=>"javascript:void(0)")%>
+						<%= image_tag "loading.gif", :style => 'display:none;', :id => 'loading-forgot' %>
+					</div>   
+					<% end %>                                        
+				</div><!--  final box login jacadastrado -->
+				
+				
+				
+				
+				<div class="Box_cadastre"><!--  inicio box cadastrar -->
+					<div class="Tit_box_cad">
+						<h1 class="Tit_cad_orange">Não sou cadastrado</h1>
+					</div>    
+					<div class="Error_box_cad">
+						<p class="Text_error_box">* 1 Mensagem de ERRO !!!</p>
+						<p class="Text_error_box">* 2 Mensagem de ERRO !!!</p>
+						<p class="Text_error_box">* 3 Mensagem de ERRO !!!</p>
+						<p class="Text_error_box">* 4 Mensagem de ERRO !!!</p>
+						<p class="Text_error_box">* 5 Mensagem de ERRO !!!</p>
+						<p class="Text_error_box">* 6 Mensagem de ERRO !!!</p>
+						<p class="Text_error_box">* 7 Mensagem de ERRO !!!</p>
+					</div> 
+					<div class="Field_box_cad">
+						<div class="Label_cad">E-mail:</div>
+						<div class="Bg_input">
+							<input type="text" name="EMAIL" value="seu@email.com" class="Input_cad" />
+						</div>
+					</div>      
+					<div class="Field_box_cad">
+						<div class="Label_cad">Senha:</div>
+						<div class="Bg_input">
+							<input type="text" name="password" value="******" class="Input_cad" />
+						</div>
+					</div>  
+					<div class="Field_box_cad">
+						<div class="Label_cad">Confirme a  Senha:</div>
+						<div class="Bg_input">
+							<input type="text" name="Confirme a senha " value="******" class="Input_cad" />
+						</div>
+					</div>
+					<div class="Field_box_cad">
+						<div class="Label_cad">Cpf:</div>
+						<div class="Bg_input">
+							<input type="text" name="Confirme a senha " value="000.000.000-00" class="Input_cad" />
+						</div>
+					</div> 
+					<div class="Field_box_cad">
+						<div class="Label_cad">Rg:</div>
+						<div class="Bg_input">
+							<input type="text" name="Rg " value="00.000.000-0" class="Input_cad" />
+						</div>
+					</div>  
+					<div class="Field_box_cad">
+						<div class="Label_cad">Sexo:</div>
+						<div class="Checkbox_field">
+							<input type="checkbox" name="Masculino "class="Checkbox_cl" />
+							Masculino
+						</div>
+						<div class="Checkbox_field">
+							<input type="checkbox" name="Femninono "class="Checkbox_cl" />
+							Feminino
+						</div>                            
+					</div>                          
+					<div class="Field_box_cad">
+						<div class="Label_cad">Data de Nascimento:</div>
+						<div class="Bg_input">
+							<input type="text" name="Data de Nascimento " value="00/00/0000" class="Input_cad" />
+						</div>
+					</div> 
+					<div class="Field_box_cad">
+						<div class="Label_cad">Estado:</div>
+						<div class="Bg_input">
+							<input type="text" name="Estado" value="São Paulo" class="Input_cad" />
+						</div>
+					</div>   
+					<div class="Field_box_cad">
+						<div class="Label_cad">Cidade:</div>
+						<div class="Bg_input">
+							<input type="text" name="Cidade " value="Atibaia" class="Input_cad" />
+						</div>
+					</div> 
+					<div class="Field_box_cad">
+						<div class="Text_field_chk">
+						<input type="checkbox" name="Masculino " value="000.000.000-00" class="Checkbox_txt" />
+						<p>Desejo receber informativos da<br /> Festa de Flores e Morangos de Atibaia<br /> em meu e-mail.</p>
+						</div>                            
+					</div>  
+					<div class="Buttom_box_cad">                        	
+						<p class="Txt_buttom_box"></p>
+						<input type="image" src="images/bt_cad_submt.png" width="160" height="52" class="Bt_submit">
+					</div>                                                                                                                                                                                                                                                                                  	
+				</div><!--  final box login cadastrar -->
+				<div class="clear"></div><!--end clear_bottom -->  
+				
+				<div class="Content_see_also">
+					<h1 class="Title_see_also_orange">Área de Guias</h1>
+					<div class="Box_see_also_content">
+						<div class="Box_bottom_see_also">
+							<h2 class="Tit_box_bot_see_also">loren ipsum siamet</h2>
+							<div class="Content_box_bot_see_also">
+								<div class="Image_box_see_also"> <img src="images/img_stand_videos.jpg" width="109" height="78"></div> 
+								<div class="Text_info_box_see_also">Me! I should've known way back when... You know why,</div>          
+							</div>                        
+							<span class="Date_box_bot_see_also">02/12/2011</span>
+						</div> 
+						<div class="Box_bottom_see_also">
+							<h2 class="Tit_box_bot_see_also">loren ipsum siamet</h2>
+							<div class="Content_box_bot_see_also">
+								<div class="Image_box_see_also"> <img src="images/img_stand_videos.jpg" width="109" height="78"></div> 
+								<div class="Text_info_box_see_also">Me! I should've known way back when... You know why,</div>          
+							</div>                        
+							<span class="Date_box_bot_see_also">02/12/2011</span>
+						</div> 
+						<div class="Box_bottom_see_also">
+							<h2 class="Tit_box_bot_see_also">loren ipsum siamet</h2>
+							<div class="Content_box_bot_see_also">
+								<div class="Image_box_see_also"> <img src="images/img_stand_videos.jpg" width="109" height="78"></div> 
+								<div class="Text_info_box_see_also">Me! I should've known way back when... You know why,</div>          
+							</div>                        
+							<span class="Date_box_bot_see_also">02/12/2011</span>
+						</div>                                                                     
+					</div>        
+				</div>                               					
+			</div><!--end CADASTRE CONTENT --> 
+		</div><!--end Content_top--> 
+		<div class="clear"></div>                             
+</div><!-- end Box_left --> 
+<div id="Box_right">        
+     <div class="Content_pub">
+		public 
+	 </div>
+     <div class="Content_pub">
+		public 
+	 </div>             
+     <div class="Content_pull">
+		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
+        <div class="Pull_item_box">
+            <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+            <div class="clear"></div>
+        </div>   
+        <div class="Pull_item_box">    
+            <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam </p>  
+            <div class="clear"></div>                                
+        </div>   
+        <div class="Pull_item_box">
+            <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+            <div class="clear"></div>
+        </div>   
+        <a class="Btn_pull_send"></a>      	
+     </div>  
+     <div class="Content_weather">
+		<h1 class="Title_weat_red">Previsão do Tempo</h1>
+	 </div>   
+     <div class="clear"></div>                         
+</div><!-- end Box_right --> 

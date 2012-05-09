@@ -1,9 +1,11 @@
 class UserSessionsController < ApplicationController
-  before_filter :navegadorie6
-  layout "admin"
-  
+#  before_filter :navegadorie6
+#  layout "admin"
+  layout "template2012" 
+  before_filter :load_menu  
   def new
     @user_session = UserSession.new
+    @user = User.new
   end
  
   def create
