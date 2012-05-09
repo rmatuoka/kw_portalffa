@@ -10,11 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120426174812) do
-=======
-ActiveRecord::Schema.define(:version => 20120425224553) do
->>>>>>> Zaba
 
   create_table "banners", :force => true do |t|
     t.string   "name"
