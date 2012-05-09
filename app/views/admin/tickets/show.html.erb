@@ -1,44 +1,42 @@
-<% title "Admin/Ticket" %>
+<% title @ticket.name %>
 
+<h1><%= @ticket.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.ticket.messages.show')%></p><br />
+<br />
 <p>
-  <strong>Name:</strong>
+  <strong><%=t 'activerecord.attributes.ticket.name' %>:</strong>
   <%= @ticket.name %>
 </p>
 <p>
-  <strong>Ticket Date:</strong>
-  <%= @ticket.ticket_date %>
+  <strong><%=t 'activerecord.attributes.ticket.ticket_date' %>:</strong>
+  <%= I18n.localize(@ticket.ticket_date) %>
 </p>
 <p>
-  <strong>Price:</strong>
-  <%= @ticket.price %>
+  <strong><%=t 'activerecord.attributes.ticket.price' %>:</strong>
+  <%= number_to_currency(@ticket.price) %>
 </p>
 <p>
-  <strong>Ticket Type:</strong>
-  <%= @ticket.ticket_type_id %>
+  <strong><%=t 'activerecord.attributes.ticket.ticket_type_id' %>:</strong>
+  <%= @ticket.ticket_type.name %>
 </p>
 <p>
-  <strong>Ticket Category:</strong>
-  <%= @ticket.ticket_category_id %>
+  <strong><%=t 'activerecord.attributes.ticket.ticket_category_id' %>:</strong>
+  <%= @ticket.ticket_category.name %>
 </p>
 <p>
-  <strong>Above:</strong>
+  <strong><%=t 'activerecord.attributes.ticket.above' %>:</strong>
   <%= @ticket.above %>
+  <strong><%=t 'activerecord.attributes.ticket.discount' %>:</strong>
+  <%= number_to_currency(@ticket.discount) %>
 </p>
 <p>
-  <strong>Discount:</strong>
-  <%= @ticket.discount %>
+  <strong><%=t 'activerecord.attributes.ticket.published' %>:</strong>
+  <%= print_active(@ticket.published) %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Active:</strong>
-  <%= @ticket.active %>
-</p>
-<p>
-  <strong>Published:</strong>
-  <%= @ticket.published %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_admin_ticket_path(@ticket) %> |
-  <%= link_to "Destroy", [:admin, @ticket], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_tickets_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_tickets_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

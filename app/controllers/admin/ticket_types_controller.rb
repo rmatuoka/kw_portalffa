@@ -5,7 +5,7 @@ class Admin::TicketTypesController < ApplicationController
   layout "inadmin"
   
   def index
-    @ticket_types = TicketType.all
+    @ticket_types = TicketType.all_active
   end
 
   def show
@@ -13,11 +13,12 @@ class Admin::TicketTypesController < ApplicationController
   end
 
   def new
-    @ticket_type = TicketType.new
+    @ticket_type = TicketType.new(:published=> true)
   end
 
   def create
     @ticket_type = TicketType.new(params[:ticket_type])
+    @ticket_type.active = true
     if @ticket_type.save
       redirect_to [:admin, @ticket_type], :notice => "Successfully created ticket type."
     else
@@ -40,7 +41,7 @@ class Admin::TicketTypesController < ApplicationController
 
   def destroy
     @ticket_type = TicketType.find(params[:id])
-    @ticket_type.destroy
+    @ticket_type.newdestroy
     redirect_to admin_ticket_types_url, :notice => "Successfully destroyed ticket type."
   end
 end

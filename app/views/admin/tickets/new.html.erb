@@ -1,5 +1,8 @@
-<% title "New Admin/Ticket" %>
+<% title t('attributes.new') +" "+show_model_name(::Ticket, true) %>
+
+<h1><%= t('attributes.new') +" "+show_model_name(::Ticket)%></h1><br />
+<br />
+<p><%= t('activerecord.attributes.ticket.messages.new')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p><%= link_to "Back to List", admin_tickets_path %></p>

@@ -1,24 +1,24 @@
-<% title "Admin/Ticket Category" %>
+<% title @ticket_category.name %>
 
+<h1><%= @ticket_category.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.ticket_category.messages.show')%></p><br />
+<br />
 <p>
-  <strong>Name:</strong>
+  <strong><%=t 'activerecord.attributes.ticket_category.name' %>:</strong>
   <%= @ticket_category.name %>
 </p>
 <p>
-  <strong>Order:</strong>
+  <strong><%=t 'activerecord.attributes.ticket_category.order' %>:</strong>
   <%= @ticket_category.order %>
 </p>
 <p>
-  <strong>Active:</strong>
-  <%= @ticket_category.active %>
+  <strong><%=t 'activerecord.attributes.ticket_category.published' %>:</strong>
+  <%= print_active(@ticket_category.published) %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Published:</strong>
-  <%= @ticket_category.published %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_admin_ticket_category_path(@ticket_category) %> |
-  <%= link_to "Destroy", [:admin, @ticket_category], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_ticket_categories_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_ticket_categories_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

@@ -1,5 +1,8 @@
-<% title "New Admin/Ticket Category" %>
+<% title t('attributes.newf') +" "+show_model_name(::TicketCategory, true) %>
+
+<h1><%= t('attributes.newf') +" "+show_model_name(::TicketCategory)%></h1><br />
+<br />
+<p><%= t('activerecord.attributes.ticket_category.messages.new')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p><%= link_to "Back to List", admin_ticket_categories_path %></p>

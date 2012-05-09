@@ -6,7 +6,7 @@ class Admin::TicketsController < ApplicationController
   before_filter :load_combos
   
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.all_active
   end
 
   def show
@@ -14,11 +14,12 @@ class Admin::TicketsController < ApplicationController
   end
 
   def new
-    @ticket = Ticket.new
+    @ticket = Ticket.new(:published => true)
   end
 
   def create
     @ticket = Ticket.new(params[:ticket])
+    @ticket.active = true
     if @ticket.save
       redirect_to [:admin, @ticket], :notice => "Successfully created ticket."
     else
@@ -41,7 +42,7 @@ class Admin::TicketsController < ApplicationController
 
   def destroy
     @ticket = Ticket.find(params[:id])
-    @ticket.destroy
+    @ticket.newdestroy
     redirect_to admin_tickets_url, :notice => "Successfully destroyed ticket."
   end
   
