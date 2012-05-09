@@ -1,23 +1,31 @@
-<% title "Admin/Ticket Types" %>
+<% title show_model_name(::TicketType, true) %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Discount</th>
-    <th>Active</th>
-    <th>Published</th>
-  </tr>
-  <% for ticket_type in @ticket_types %>
-    <tr>
-      <td><%= ticket_type.name %></td>
-      <td><%= ticket_type.discount %></td>
-      <td><%= ticket_type.active %></td>
-      <td><%= ticket_type.published %></td>
-      <td><%= link_to "Show", [:admin, ticket_type] %></td>
-      <td><%= link_to "Edit", edit_admin_ticket_type_path(ticket_type) %></td>
-      <td><%= link_to "Destroy", [:admin, ticket_type], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
+<h1><%= show_model_name(::TicketType, true) %></h1><br />
+<p><%= t('activerecord.attributes.ticket_type.messages.index')%></p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_ticket_type_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+	<thead> 
+		<tr>
+			<th style="width:35%;"><%=t 'activerecord.attributes.ticket_type.name' %></th>	
+			<th style="width:20%;"><%=t 'activerecord.attributes.ticket_type.discount' %></th>			
+			<th style="width:15%;"><%=t 'activerecord.attributes.ticket_type.published' %></th>			
+
+			<th colspan="3" style="width:30%;"><%=t 'attributes.actions' %></th>
+		</tr>
+	</thead> 
+	<tbody>
+	<% for ticket_type in @ticket_types %>
+	<tr <%='class=notactive' if !ticket_type.published%>>
+		<td><%= ticket_type.name %></td>
+		<td><%= number_to_currency(ticket_type.discount) %></td>		
+		<td><%= print_active(ticket_type.published) %></td>
+		
+		<td><%= link_to t('attributes.showing'), [:admin, ticket_type] %></td>
+		<td><%= link_to t('attributes.editing'), edit_admin_ticket_type_path(ticket_type) %></td>
+		<td><%= link_to t('attributes.exclude'), [:admin, ticket_type], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+	</tr>
+	<% end %>
+	</tbody>
 </table>
-
-<p><%= link_to "New Admin/Ticket Type", new_admin_ticket_type_path %></p>

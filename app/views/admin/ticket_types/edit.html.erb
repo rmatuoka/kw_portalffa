@@ -1,8 +1,8 @@
-<% title "Edit Admin/Ticket Type" %>
+<% title @ticket_type.name %>
+
+<h1><%= @ticket_type.name %></h1><br />
+<br />
+<p><%= t('system_messages.edit_form')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p>
-  <%= link_to "Show", [:admin, @ticket_type] %> |
-  <%= link_to "View All", admin_ticket_types_path %>
-</p>

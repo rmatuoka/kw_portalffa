@@ -69,6 +69,6 @@
 	<%= f.hidden_field :color, :value=>@cor%>
   </div>
   <br />
-  <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_categories_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit "Salvar", :class => "Bt_enviar" %></p>
+  <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_categories_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>
 </div>

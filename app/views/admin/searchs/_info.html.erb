@@ -50,7 +50,7 @@
 	  <% for order in @Orders %>
 	    <tr>
 		  <td align="center"><%= order.id %></td>
-	      <td><%= order.user.nome if !order.user.nome.empty? %></td>
+	      <td><%= order.user.name if !order.user.name.empty? %></td>
 	      <td align="center"><%= traduz_status_do_pedido(order.status) %></td>
 	      <td align="center"><%= traduz_tipo_do_pagamento(order.payment_type) %></td>
 	      <td align="center"><%= link_to(order.pagseguro_id, '/admin/searchs/results?utf8=✓&keyword='+order.pagseguro_id+'&commit=Buscar') if !order.pagseguro_id.blank? %></td>

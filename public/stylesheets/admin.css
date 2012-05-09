@@ -451,6 +451,23 @@
 			background:#EEE;
 			padding:0px 5px 0px 5px;
 		}	
+		#General #Content #Right_box form .small_input
+		{
+			position:relative;
+			width:100px;
+			height:27px;
+			font-family:Verdana, Geneva, sans-serif;
+			font-size:12px;
+			font-weight:normal;
+			color:#999;
+			border:none;
+			border-radius: 10px; /* Implementação W3C */
+			-moz-border-radius: 10px; /* Implementação Mozilla */
+			-webkit-border-radius: 10px; /* Implementação para browsers que renderizam via webkit */
+			behavior: url(PIE.htc);/* Comportamento adicionado para renderização das prop no ie7 e 8*/
+			background:#EEE;
+			padding:0px 5px 0px 5px;
+		}		
 		#General #Content #Right_box form .input_radio
 		{
 			position:relative;

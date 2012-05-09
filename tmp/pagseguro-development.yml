@@ -20,3 +20,16 @@
   item_id_3: "3"
   item_descr_2: "Entrada s\xC3\xA1bado inteira 01/09/2012"
   cliente_nome: Bruno Vinicius da Silva
+"17": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "17"
+  item_valor_1: "1500"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "12"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  cliente_email: rmatuoka@korewa.com.br
+  item_id_1: "17"
+  item_descr_1: "Entrada s\xC3\xA1bado inteira 22/09/2012"
+  cliente_nome: Rafael Matuoka Chiocchetti

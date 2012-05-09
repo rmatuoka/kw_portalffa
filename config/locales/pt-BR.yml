@@ -184,11 +184,13 @@
       odd: "deve ser ímpar"
       even: "deve ser par"
 # Campos que são comuns para todas as tabelas e atributos de form  
-  attributes:
+  attributes: &active_model_default
     created_at: "Data de criação"
     updated_at: "Data de atualização" 
     name: "Nome"
-    published: "Publicado"  
+    published: "Publicado"
+    price: "Preço"  
+    discount: "Desconto"
     menu_display: "Mostrar no Menu"
     actions: "Ações"  
     showing: "Visualizar"
@@ -196,6 +198,8 @@
     exclude: "Excluir"
     create_new: "+ Criar novo"
     go_back: "Voltar"
+    add_new: "[Adicionar Novo]"
+    add_newf: "[Adicionar Nova]"    
     new: "Novo"
     newf: "Nova"
     edit: "Editar"
@@ -210,7 +214,10 @@
         structure: "Estrutura"
         content: "Menu"
         manage: "Administrador do Site"
-    
+        tickets: "Bilhetes"
+        orders: "Compras"
+        banners: "Propagandas"
+        newsletters: "Informativo"
 #Fim dos campos comuns
 
   activerecord:
@@ -242,6 +249,15 @@
         template: 
             one: "Template" 
             other: "Templates"
+        ticket:
+            one: "Bilhete" 
+            other: "Bilhetes"  
+        ticket_category:
+            one: "Categoria do Bilhete" 
+            other: "Categorias dos Bilhetes"    
+        ticket_type:
+            one: "Tipo de Bilhete" 
+            other: "Tipos de Bilhetes"                                                    
         user: 
             one: "Usuário"
             other: "Usuários"            
@@ -302,6 +318,30 @@
                 one: "Home"
                 two: "Interna"
                 three: "Conteudo"
+        ticket:
+            ticket_type_id: "Tipo de Bilhete"
+            ticket_category_id: "Categoria do Bilhete"
+            above: "Acima de"
+            discount: "Desconto adcional de"
+            ticket_date: "Data do Bilhete"
+            <<: *active_model_default
+            messages:
+                index: "Verifique abaixo a lista dos bilhetes cadastrados no sistema."       
+                new: "Utilize os campos abaixo para cadastrar um novo bilhete." 
+                show: "Verifique se as informações abaixo estão corretas." 
+        ticket_type:
+            <<: *active_model_default
+            messages:
+                index: "Verifique abaixo a lista dos tipos de bilhetes cadastrados no sistema."       
+                new: "Utilize os campos abaixo para cadastrar um novo tipo de bilhete." 
+                show: "Verifique se as informações abaixo estão corretas."  
+        ticket_category:
+            order: "Ordem"
+            <<: *active_model_default 
+            messages:
+                index: "Verifique abaixo a lista das categorias de bilhetes cadastrados no sistema."       
+                new: "Utilize os campos abaixo para cadastrar uma nova categoria de bilhete." 
+                show: "Verifique se as informações abaixo estão corretas."                              
         user:
             messages:
                 index: "Verifique abaixo a lista dos usuários cadastrados no sistema."       

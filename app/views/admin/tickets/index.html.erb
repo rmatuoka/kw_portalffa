@@ -1,33 +1,31 @@
-<% title "Admin/Tickets" %>
+<% title show_model_name(::Ticket, true) %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Ticket Date</th>
-    <th>Price</th>
-    <th>Ticket Type</th>
-    <th>Ticket Category</th>
-    <th>Above</th>
-    <th>Discount</th>
-    <th>Active</th>
-    <th>Published</th>
-  </tr>
-  <% for ticket in @tickets %>
-    <tr>
-      <td><%= ticket.name %></td>
-      <td><%= ticket.ticket_date %></td>
-      <td><%= ticket.price %></td>
-      <td><%= ticket.ticket_type.name %></td>
-      <td><%= ticket.ticket_category.name %></td>
-      <td><%= ticket.above %></td>
-      <td><%= ticket.discount %></td>
-      <td><%= ticket.active %></td>
-      <td><%= ticket.published %></td>
-      <td><%= link_to "Show", [:admin, ticket] %></td>
-      <td><%= link_to "Edit", edit_admin_ticket_path(ticket) %></td>
-      <td><%= link_to "Destroy", [:admin, ticket], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
+<h1><%= show_model_name(::Ticket, true) %></h1><br />
+<p><%= t('activerecord.attributes.ticket.messages.index')%></p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_ticket_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+	<thead> 
+		<tr>
+			<th style="width:35%;"><%=t 'attributes.name' %></th>	
+			<th style="width:20%;"><%=t 'activerecord.attributes.ticket.ticket_date' %></th>			
+			<th style="width:15%;"><%=t 'attributes.published' %></th>			
+			<!-- <th style="width:10%;"><%#=t 'activerecord.attributes.category.color' %></th> -->
+			<th colspan="3" style="width:30%;"><%=t 'attributes.actions' %></th>
+		</tr>
+	</thead> 
+	<tbody>
+	<% for ticket in @tickets %>
+	<tr <%='class=notactive' if !ticket.published%>>
+		<td><%= ticket.name %></td>
+		<td><%= I18n.localize(ticket.ticket_date) %></td>		
+		<td><%= print_active(ticket.published) %></td>
+		<!-- <td><div style="width:18px; height:18px; background-color:#<%#= category.color %>; border:1px solid"></div></td> -->
+		<td><%= link_to t('attributes.showing'), [:admin, ticket] %></td>
+		<td><%= link_to t('attributes.editing'), edit_admin_ticket_path(ticket) %></td>
+		<td><%= link_to t('attributes.exclude'), [:admin, ticket], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+	</tr>
+	<% end %>
+	</tbody>
 </table>
-
-<p><%= link_to "New Admin/Ticket", new_admin_ticket_path %></p>

@@ -1,24 +1,24 @@
-<% title "Admin/Ticket Type" %>
+<% title @ticket_type.name %>
 
+<h1><%= @ticket_type.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.ticket_type.messages.show')%></p><br />
+<br />
 <p>
-  <strong>Name:</strong>
+  <strong><%=t 'activerecord.attributes.ticket_type.name' %>:</strong>
   <%= @ticket_type.name %>
 </p>
 <p>
-  <strong>Discount:</strong>
-  <%= @ticket_type.discount %>
+  <strong><%=t 'activerecord.attributes.ticket_type.discount' %>:</strong>
+  <%= number_to_currency(@ticket_type.discount) %>
 </p>
 <p>
-  <strong>Active:</strong>
-  <%= @ticket_type.active %>
+  <strong><%=t 'activerecord.attributes.ticket_type.published' %>:</strong>
+  <%= print_active(@ticket_type.published) %>
 </p>
+<br />
+<br />
+<br />
 <p>
-  <strong>Published:</strong>
-  <%= @ticket_type.published %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_admin_ticket_type_path(@ticket_type) %> |
-  <%= link_to "Destroy", [:admin, @ticket_type], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_ticket_types_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_ticket_types_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>

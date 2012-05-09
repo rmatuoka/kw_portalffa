@@ -1,36 +1,38 @@
+<div id="Box_form">
 <%= form_for [:admin, @ticket] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :ticket_date %><br />
+    <%= f.label :ticket_date %>
     <%= f.date_select :ticket_date %>
   </p>
   <p>
-    <%= f.label :price %><br />
+    <%= f.label :price %>
     <%= f.text_field :price %>
   </p>
   <p>
-    <%= f.label :ticket_type_id %><br />
-    <%= f.select :ticket_type_id, @ticket_types, :prompt => "Escolha o tipo" %> <%=link_to "[Adicionar Novo]", new_admin_ticket_type_path%>
+    <%= f.label :ticket_type_id %>
+    <%= f.select :ticket_type_id, @ticket_types, :prompt => "Escolha o tipo" %> <%=link_to t('attributes.add_new'), new_admin_ticket_type_path%>
   </p>
   <p>
-    <%= f.label :ticket_category_id %><br />
-    <%= f.select :ticket_category_id, @ticket_categories, :prompt => "Escolha a categoria" %> <%=link_to "[Adicionar Nova]", new_admin_ticket_category_path%>
+    <%= f.label :ticket_category_id %>
+    <%= f.select :ticket_category_id, @ticket_categories, :prompt => "Escolha a categoria" %> <%=link_to t('attributes.add_newf'), new_admin_ticket_category_path%>
   </p>
   <p>
-    <%= f.label :above %><br />
-    <%= f.text_field :above %>
+    <%= f.label :above %>
+    <%= f.text_field :above, :class => "small_input" %>
+
+    <%= f.label :discount %>
+    <%= f.text_field :discount, :class => "small_input" %>
   </p>
   <p>
-    <%= f.label :discount %><br />
-    <%= f.text_field :discount %>
-  </p>
-  <p>
-    <%= f.label :published %><br />
+    <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
-  <p><%= f.submit %></p>
+  <br />
+  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_tickets_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>
+</div>
