@@ -183,6 +183,7 @@
       less_than_or_equal_to: "deve ser menor ou igual a %{count}"
       odd: "deve ser ímpar"
       even: "deve ser par"
+      
 # Campos que são comuns para todas as tabelas e atributos de form  
   attributes: &active_model_default
     created_at: "Data de criação"
@@ -343,6 +344,10 @@
                 new: "Utilize os campos abaixo para cadastrar uma nova categoria de bilhete." 
                 show: "Verifique se as informações abaixo estão corretas."                              
         user:
+            password: "Senha"
+            password_confirmation: "Confirmação de Senha"
+            gender: "Sexo"
+            date_of_birth: "Data de Nascimento"
             messages:
                 index: "Verifique abaixo a lista dos usuários cadastrados no sistema."       
                 new: "Utilize os campos abaixo para cadastrar um novo usuário." 
@@ -387,28 +392,27 @@
       full_messages:
         format: "%{attribute} %{message}"
         
-        
-    authlogic:
-      error_messages:
-        login_blank: "não pode ficar em branco"
-        login_not_found: "não é válido"
-        login_invalid: "deve usar somente letras, números, espaços e .-_@ por favor."
-        consecutive_failed_logins_limit_exceeded: "Consecutivos logins que falharam limite excedido, a conta está desativada."
-        email_invalid: "deve ser semelhante a um endereço de email."
-        password_blank: "não pode ficar em branco"
-        password_invalid: "não é válido"
-        not_active: "Sua conta não está ativa"
-        not_confirmed: "Sua conta não está confirmada"
-        not_approved: "Sua conta não foi aprovada"
-        no_authentication_details: "Você não forneceu nenhum detalhe para autenticação."
-      models:
-        user_session: "SessãoUsuário"
-      attributes:
-        user_session:
-          login: "Usuário"
-          email: "Email"
-          password: "Senha"
-          remember_me: "Lembrar me"
+  authlogic:
+    error_messages:
+      login_blank: "não pode ficar em branco"
+      login_not_found: "não é válido"
+      login_invalid: "deve usar somente letras, números, espaços e .-_@ por favor."
+      consecutive_failed_logins_limit_exceeded: "Consecutivos logins que falharam limite excedido, a conta está desativada."
+      email_invalid: "deve ser semelhante a um endereço de email."
+      password_blank: "não pode ficar em branco"
+      password_invalid: "não é válido"
+      not_active: "Sua conta não está ativa"
+      not_confirmed: "Sua conta não está confirmada"
+      not_approved: "Sua conta não foi aprovada"
+      no_authentication_details: "Você não forneceu nenhum detalhe para autenticação."
+    models:
+      user_session: "SessãoUsuário"
+    attributes:
+      user_session:
+        login: "Usuário"
+        email: "Email"
+        password: "Senha"
+        remember_me: "Lembrar me"        
 
 #Mensagens do Sitema
   system_messages:

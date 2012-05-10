@@ -10,7 +10,7 @@
 		</p>
 		<br />
 		<div class="Center">
-				<%= submit_tag "Voltar",:type=>"reset",:onclick=>"voltaConteudo()", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> 
+				<%= submit_tag t('attributes.go_back'),:type=>"reset",:onclick=>"voltaConteudo()", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> 
 				<%= submit_tag "Enviar",:type=>"reset",:onclick=>"enviardaodos(this)",:id=>"btn_enviar_password",:class => "Bt_enviar"  %><br /><br />
 				<%= image_tag "loading.gif", :style => 'display:none;', :id => 'loading-forgot' %>
 		</div>

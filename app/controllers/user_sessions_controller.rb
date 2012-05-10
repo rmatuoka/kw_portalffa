@@ -5,7 +5,7 @@ class UserSessionsController < ApplicationController
   before_filter :load_menu  
   def new
     @user_session = UserSession.new
-    @user = User.new
+    @user = User.new(:receber_info => true, :gender => false)
   end
  
   def create

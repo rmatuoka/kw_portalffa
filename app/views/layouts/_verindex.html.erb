@@ -56,23 +56,23 @@
      <div class="clear"></div>                             
 </div><!-- end Box_left --> 
 <div id="Box_right">
-	<% if (!@Position5.blank? or !@Position6.blank? or !@Position7.blank? or !@Position8.blank?)%>        
-    <%if !@Position5.blank?%> 
+	<% if (!@Position12.blank? or !@Position13.blank? or !@Position14.blank? or !@Position15.blank?)%>        
+    <%if !@Position12.blank?%> 
 	<div class="Content_pub">
-		<%=render_webpart(@Position5)%> 
+		<%=render_webpart(@Position12)%> 
 	 </div>
 	<%end%>
 
-    <%if !@Position6.blank?%> 
+    <%if !@Position13.blank?%> 
 	<div class="Content_pub">
-		<%=render_webpart(@Position6)%> 
+		<%=render_webpart(@Position13)%> 
 	</div>             
     <%end%>
 
 	<!-- ENQUETE --> 
-	<%if !@Position7.blank?%> 
+	<%if !@Position14.blank?%> 
 	
-		<%=render_webpart(@Position7)%> 
+		<%=render_webpart(@Position14)%> 
 	<!-- <div class="Content_pull">
 		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
         <div class="Pull_item_box">
@@ -92,8 +92,8 @@
 	<%end%>
     <!-- ENQUETE --> 
 
-	<%if !@Position8.blank?%>
-		<%=render_webpart(@Position8)%>
+	<%if !@Position15.blank?%>
+		<%=render_webpart(@Position15)%>
 		<!-- <div class="Content_weather">
     		<h1 class="Title_weat_red">Previsão do Tempo</h1>
     	 </div> -->
