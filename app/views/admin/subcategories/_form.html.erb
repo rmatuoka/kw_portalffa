@@ -42,6 +42,6 @@
     <%= f.check_box :menu_display %>
   </p>
   <br />
-  <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_category_subcategories_path(@category)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit "Salvar", :class => "Bt_enviar" %></p>
+  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategories_path(@category)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>
 </div>

@@ -10,13 +10,15 @@ class User < ActiveRecord::Base
   has_many :orders
   
   
-  validates_presence_of :nome, :on => :save
-  validates_presence_of :cpf, :on => :save
+  validates_presence_of :name
+  validates_length_of :name, :minimum => 5
+  validates_presence_of :cpf
   validates_uniqueness_of :cpf
-  validates_presence_of :rg, :on => :save
-  validates_presence_of :cidade, :on => :save
-  validates_presence_of :estado, :on => :save
+  validates_presence_of :rg
+  validates_presence_of :cidade
+  validates_presence_of :estado
   validates_presence_of :email
+  validates_presence_of :date_of_birth
 
   
   attr_writer :role

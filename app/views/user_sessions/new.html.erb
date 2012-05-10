@@ -47,6 +47,9 @@
 			if( jQuery('#Show_Box_Error_Login').is(':visible') ) {
 				jQuery('#Show_Box_Error_Login').hide();
 			}
+			if( jQuery('#Show_Box_Error_Cad').is(':visible') ) {
+				jQuery('#Show_Box_Error_Cad').hide();
+			}			
 		    if(obj.value == obj.defaultValue)
 		        obj.value = '';
 		}
@@ -84,11 +87,10 @@
 						<div class="Label_cad"><%= f.label :password, "Senha:" %></div>
 						<div class="Bg_input">
 						    <%= f.password_field :password, :value => "Senha", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)" %>
-
 						</div>
 					</div> 
 					<div class="Buttom_box_cad">
-						<p><%= link_to "Esqueceu a senha?", "#", :onclick=>"novoConteudo()", :class =>"Txt_buttom_box" %></p>
+						<p><%= link_to "Esqueceu a senha?", "javascript:void(0)", :onclick=>"novoConteudo()", :class =>"Txt_buttom_box" %></p>
 						<%=image_submit_tag("bt_ent_submt.png", :class => "Bt_submit", :width=>"160", :height=>"52", :onclick=>"javascript:void(0)")%>
 						<%= image_tag "loading.gif", :style => 'display:none;', :id => 'loading-forgot' %>
 					</div>   
@@ -101,86 +103,85 @@
 				<div class="Box_cadastre"><!--  inicio box cadastrar -->
 					<div class="Tit_box_cad">
 						<h1 class="Tit_cad_orange">Não sou cadastrado</h1>
-					</div>    
-					<div class="Error_box_cad">
-						<p class="Text_error_box">* 1 Mensagem de ERRO !!!</p>
-						<p class="Text_error_box">* 2 Mensagem de ERRO !!!</p>
-						<p class="Text_error_box">* 3 Mensagem de ERRO !!!</p>
-						<p class="Text_error_box">* 4 Mensagem de ERRO !!!</p>
-						<p class="Text_error_box">* 5 Mensagem de ERRO !!!</p>
-						<p class="Text_error_box">* 6 Mensagem de ERRO !!!</p>
-						<p class="Text_error_box">* 7 Mensagem de ERRO !!!</p>
+					</div>  
+					<%= form_for @user, :remote => true do |f| %>  
+					<div id="Show_Box_Error_Cad">
+					
+					</div>					
+					<div class="Field_box_cad">
+						<div class="Label_cad"><%= f.label :name, "Nome:" %></div>
+						<div class="Bg_input">
+							<%= f.text_field :name, :value => "nome", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
+						</div>
 					</div> 
 					<div class="Field_box_cad">
-						<div class="Label_cad">E-mail:</div>
+						<div class="Label_cad"><%= f.label :email, "E-mail:" %></div>
 						<div class="Bg_input">
-							<input type="text" name="EMAIL" value="seu@email.com" class="Input_cad" />
+							<%= f.text_field :email, :value => "seu@email", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
-					</div>      
+					</div>					     
 					<div class="Field_box_cad">
-						<div class="Label_cad">Senha:</div>
+						<div class="Label_cad"><%= f.label :password, "Senha:" %></div>
 						<div class="Bg_input">
-							<input type="text" name="password" value="******" class="Input_cad" />
+							<%= f.password_field :password, :value => "***", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div>  
 					<div class="Field_box_cad">
-						<div class="Label_cad">Confirme a  Senha:</div>
+						<div class="Label_cad"><%= f.label :password_confirmation, "Confirme a senha:" %></div>
 						<div class="Bg_input">
-							<input type="text" name="Confirme a senha " value="******" class="Input_cad" />
+							<%= f.password_field :password_confirmation, :value => "***", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div>
 					<div class="Field_box_cad">
-						<div class="Label_cad">Cpf:</div>
+						<div class="Label_cad"><%= f.label :cpf, "CPF:" %></div>
 						<div class="Bg_input">
-							<input type="text" name="Confirme a senha " value="000.000.000-00" class="Input_cad" />
+							<%= f.text_field :cpf, :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div> 
 					<div class="Field_box_cad">
-						<div class="Label_cad">Rg:</div>
+						<div class="Label_cad"><%= f.label :rg, "RG:" %></div>
 						<div class="Bg_input">
-							<input type="text" name="Rg " value="00.000.000-0" class="Input_cad" />
+							<%= f.text_field :rg, :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div>  
 					<div class="Field_box_cad">
-						<div class="Label_cad">Sexo:</div>
+						<div class="Label_cad"><%= f.label :gender, "Sexo:" %></div>
 						<div class="Checkbox_field">
-							<input type="checkbox" name="Masculino "class="Checkbox_cl" />
-							Masculino
+							<%= f.radio_button :gender, false %>Feminino
 						</div>
 						<div class="Checkbox_field">
-							<input type="checkbox" name="Femninono "class="Checkbox_cl" />
-							Feminino
+							<%= f.radio_button :gender, true %>Masculino				
 						</div>                            
 					</div>                          
 					<div class="Field_box_cad">
-						<div class="Label_cad">Data de Nascimento:</div>
-						<div class="Bg_input">
-							<input type="text" name="Data de Nascimento " value="00/00/0000" class="Input_cad" />
-						</div>
+						<div class="Label_cad"><%= f.label :date_of_birth, "Data de Nascimento:" %></div>
+							<%= f.date_select :date_of_birth, :start_year => 1910, :class=>"Input_cad"%>
 					</div> 
 					<div class="Field_box_cad">
-						<div class="Label_cad">Estado:</div>
+						<div class="Label_cad"><%= f.label :estado, "Estado:" %></div>
 						<div class="Bg_input">
-							<input type="text" name="Estado" value="São Paulo" class="Input_cad" />
+							<%= f.text_field :estado, :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div>   
 					<div class="Field_box_cad">
-						<div class="Label_cad">Cidade:</div>
+						<div class="Label_cad"><%= f.label :cidade, "Cidade:" %></div>
 						<div class="Bg_input">
-							<input type="text" name="Cidade " value="Atibaia" class="Input_cad" />
+							<%= f.text_field :cidade,:class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div> 
 					<div class="Field_box_cad">
 						<div class="Text_field_chk">
-						<input type="checkbox" name="Masculino " value="000.000.000-00" class="Checkbox_txt" />
-						<p>Desejo receber informativos da<br /> Festa de Flores e Morangos de Atibaia<br /> em meu e-mail.</p>
+							<%= f.check_box :receber_info, :class => "Checkbox_txt"%>
+							<p><%= f.label :receber_info, raw("Desejo receber informativos da<br /> Festa de Flores e Morangos de Atibaia<br /> em meu e-mail.") %></p>
 						</div>                            
 					</div>  
 					<div class="Buttom_box_cad">                        	
 						<p class="Txt_buttom_box"></p>
-						<input type="image" src="images/bt_cad_submt.png" width="160" height="52" class="Bt_submit">
-					</div>                                                                                                                                                                                                                                                                                  	
+						<%=image_submit_tag("bt_cad_submt.png", :width=>"160", :height=>"52", :class=>"Bt_submit")%>
+					</div>   
+					<% end %>					                                                                                                                                                                                                                                                                               	
 				</div><!--  final box login cadastrar -->
+
 				<div class="clear"></div><!--end clear_bottom -->  
 				
 				<div class="Content_see_also">

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.role = "user"    
     if !@user.save
-      @user.errors
+      @user
     end
   end
 
