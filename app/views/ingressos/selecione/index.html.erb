@@ -47,10 +47,10 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
 			<% if controle > 0 %>       
 				</table>
 				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
-				<table width="345" border="0" cellspacing="0" cellpadding="0">					
+				<table width="345" border="0" cellspacing="0" cellpadding="0" <%="style='display:inline-block;'" if Ticket.all(:conditions => ['ticket_date = ?', t.ticket_date]).count > 1 %>>					
 			<%else%>				
 				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
-				<table width="345" border="0" cellspacing="0" cellpadding="0">
+				<table width="345" border="0" cellspacing="0" cellpadding="0" <%="style='display:inline-block;'" if Ticket.all(:conditions => ['ticket_date = ?', t.ticket_date]).count > 1 %>>
 			<%end%>
 				<tr>
 					<td>

@@ -8,6 +8,6 @@ test:
   <<: *development
 
 production:
-  authenticity_token: 9CA8D46AF0C6177CB4C23D76CAF5E4B0
-  email: user@example.com
+  authenticity_token: F22635ADF1214D41A668B8671CCCA3C6
+  email: compras@festadasfloresdeatibaia.com.br
   return_to: "http://exemplo.com.br/pedido/efetuado"
