@@ -38,69 +38,83 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
 	
 	
 	
-<% if @tickets.count > 0 %>
+<% 
+	if @tickets.count > 0 
+	data_anterior = nil
+%>
 	<%@tickets.each do |t|
 		if atual != t.ticket_category_id %>
 			<% if controle > 0 %>       
 				</table>
 				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
-				<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">					
+				<table width="345" border="0" cellspacing="0" cellpadding="0">					
 			<%else%>				
 				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
-				<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">
+				<table width="345" border="0" cellspacing="0" cellpadding="0">
 			<%end%>
+				<tr>
+					<td>
 		<%end%>
-					<tr>
-						<td>		
-							<%=form_for @cart, :remote => true do |f|%>
-							<div id='box_compra'>
-								<div id='dia'>
-									<div class="dia_um">
-										DIA
-									</div>
-									<div class="dia_dois">
-										<%=t.ticket_date.strftime('%d')%>
-									</div>
-									<div class="dia_tres">
-										<%= I18n.localize(t.ticket_date, :format => "%A") %>
-									</div>
-								</div>
-								<div id='preco'>
-									<div class="preco_um">
-										PREÇO
-									</div>
-									<div class="preco_dois">
-										<%=number_to_currency(t.price - t.ticket_type.discount)%>
-									</div>
-									<div class="preco_tres">
-										<%=t.ticket_type.name%>
-									</div>
-								</div>
-								<div id='qtde'>
-									<div class="qtde_um">
-										QTDE.
-									</div>
-									<div class="qtde_dois">
-										<div class="qtde_tres">
-											<%=f.hidden_field :price, :value => t.price - t.ticket_type.discount%>
-											<%=f.hidden_field :ticket_id, :value => t.id%>
-											<% if t.above > 0 %>
-												<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2", :onclick =>"ShowDesconto(#{t.above+1})"%>
-											<% else %>
-												<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2"%>
-											<% end %>
+					
+							<table border="1" cellspacing="0" cellpadding="0" <%="style='display:inline-block;'" if Ticket.all(:conditions => ['ticket_date = ?', t.ticket_date]).count > 1 %>>
+								<tr>
+								<td>
+									<%=form_for @cart, :remote => true do |f|%>
+									<div id='box_compra'>
+										<div id='dia'>
+											<div class="dia_um">
+												DIA
+											</div>
+											<div class="dia_dois">
+												<%=t.ticket_date.strftime('%d')%>
+											</div>
+											<div class="dia_tres">
+												<%= I18n.localize(t.ticket_date, :format => "%A") %>
+											</div>
+										</div>
+										<div id='preco'>
+											<div class="preco_um">
+												PREÇO
+											</div>
+											<div class="preco_dois">
+												<%=number_to_currency(t.price - t.ticket_type.discount)%>
+											</div>
+											<div class="preco_tres">
+												<%=t.ticket_type.name%>
+											</div>
+										</div>
+										<div id='qtde'>
+											<div class="qtde_um">
+												QTDE.
+											</div>
+											<div class="qtde_dois">
+												<div class="qtde_tres">
+													<%=f.hidden_field :price, :value => t.price - t.ticket_type.discount%>
+													<%=f.hidden_field :ticket_id, :value => t.id%>
+													<% if t.above > 0 %>
+														<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2", :onclick =>"ShowDesconto(#{t.above+1})"%>
+													<% else %>
+														<%=f.text_field :amount, :value => "0", :class => "Form", :maxlength => "2"%>
+													<% end %>
+												</div>
+											</div>
+										</div>
+										<div class='btn_add_cart' id="btn_<%=t.id%>">
+											<%if @carts_hash.values.include?(t.id)%>
+												<%=image_tag("btn_adicionado.jpg", :width=>"91", :height=>"107", :border=>"0")%>
+											<%else%>
+												<%=image_submit_tag('btn_add_cart.jpg', :width=>"91", :height=>"107", :border=>"0")%>
+											<%end%>
 										</div>
 									</div>
-								</div>
-								<div class='btn_add_cart' id="btn_<%=t.id%>">
-									<%if @carts_hash.values.include?(t.id)%>
-										<%=image_tag("btn_adicionado.jpg", :width=>"91", :height=>"107", :border=>"0")%>
-									<%else%>
-										<%=image_submit_tag('btn_add_cart.jpg', :width=>"91", :height=>"107", :border=>"0")%>
-									<%end%>
-								</div>
-							</div>
-							<%end%><!--Fim do Form-->
+									<%
+									data_anterior = t.ticket_date.strftime('%d')
+									end
+									%><!--Fim do Form-->
+								</td>
+								</tr>
+							</table>		
+							
 						</td>
 						<td>&nbsp;</td>
 					</tr>
