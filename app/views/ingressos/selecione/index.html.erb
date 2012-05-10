@@ -45,18 +45,15 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
 	<%@tickets.each do |t|
 		if atual != t.ticket_category_id %>
 			<% if controle > 0 %>       
-				</table>
-				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
-				<table width="345" border="0" cellspacing="0" cellpadding="0" <%="style='display:inline-block;'" if Ticket.all(:conditions => ['ticket_date = ?', t.ticket_date]).count > 1 %>>					
+				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1><br />		
 			<%else%>				
-				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1>
-				<table width="345" border="0" cellspacing="0" cellpadding="0" <%="style='display:inline-block;'" if Ticket.all(:conditions => ['ticket_date = ?', t.ticket_date]).count > 1 %>>
+				<h1 class="Title_item_orange_week"><%= t.ticket_category.name %></h1><br />
+
 			<%end%>
-				<tr>
-					<td>
+
 		<%end%>
 					
-							<table border="1" cellspacing="0" cellpadding="0" <%="style='display:inline-block;'" if Ticket.all(:conditions => ['ticket_date = ?', t.ticket_date]).count > 1 %>>
+							<table border="0" width="345" cellspacing="0" cellpadding="0" <%="style='display:inline-block;'" if Ticket.all(:conditions => ['ticket_date = ?', t.ticket_date]).count > 1 %>>
 								<tr>
 								<td>
 									<%=form_for @cart, :remote => true do |f|%>
@@ -114,16 +111,12 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
 								</td>
 								</tr>
 							</table>		
-							
-						</td>
-						<td>&nbsp;</td>
-					</tr>
 		<%if atual != t.ticket_category_id          
 			controle = controle +1
 		end%>
 		<% atual = t.ticket_category_id %>
 	<%end%>
-</table>
+
 <table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">
 	<tr>
 		<td width="215"><%#=link_to(image_tag("btn_prev_cart.png", :width=>"160", :height=>"52", :border=>"0"),'#')%></td>
