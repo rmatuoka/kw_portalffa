@@ -10,7 +10,7 @@ class Ingressos::SelecioneController < ApplicationController
     @tickets = Ticket.all(
                           :conditions => ['active = 1 and published = 1 and ticket_date >= curdate() + 1'],
                           :include => [:ticket_category, :ticket_type],
-                          :order => 'ticket_date, ticket_category_id')
+                          :order => 'ticket_category_id, ticket_date, ticket_type_id')
     carts = current_user.carts.all
     @carts_hash = Hash.new
      i = 1
