@@ -194,16 +194,17 @@ img {
 				text-decoration:none;
 			}
 			.Box_midle
-			{
+			{					
 				position:relative;
 				display:inline-block;
 				*display:block;
 				*float:left;
 				background:#fff;
 				width: 241px;
-				height: 262px;
+				height: 190px;
 				margin-right:2px;
 				margin-bottom:10px;
+				vertical-align: top;				
 			}
 			p.Text_boz_midle 
 			{
