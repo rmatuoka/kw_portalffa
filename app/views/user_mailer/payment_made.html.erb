@@ -1,0 +1,144 @@
+<html>
+<head>
+<title>PAGAMENTO CONFIRMADO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+img {display:block;}
+</style>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01">
+	<tr>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_01.jpg" width="51" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_02.jpg" width="19" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_03.jpg" width="87" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_04.jpg" width="99" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_05.jpg" width="83" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_06.jpg" width="166" height="220"></td>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_07.jpg" width="45" height="220"></td>
+	</tr>
+	<tr>
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_16.jpg" width="51" height="200"></td> 
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_17.jpg" colspan="6" height="200">
+          <font face="Verdana, Geneva, sans-serif" size="2" >
+			Parabéns <%= @order.user.name %>.<br />
+			Você acaba de adquirir nosso ingresso.<br />
+
+			Imprima esse comprovante e apresente no guichê: <br />
+			</font>
+			<font face="Verdana, Geneva, sans-serif" size="3" >
+			“COMPREI NA INTERNET” <br />
+			</font>
+			<font face="Verdana, Geneva, sans-serif" size="2" >
+			Será necessária comprovação dos dados do comprador. (RG, CPF ou CNH)<br /><br />
+			
+            Itens Comprados:<br />
+          </font>
+        </td>
+	</tr>
+</table>
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_02">
+<!--INICIO DO LOOP-->
+	<% @order_itens.each do |item|%>
+	<tr>
+		<td width="51"></td>
+	    <td width="19"></td>
+		<td width="87" align="center" valign="middle" style="padding-top:2px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#060; margin-left:5px; margin-top:10px;">
+            Quantidade</font></td>
+		<td width="99" align="center" valign="middle" >
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#900;">
+			Dia
+          </font>
+        </td>
+		<td width="83" align="center" valign="middle" style="padding-top:3px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#405078; margin-left:-10px;">
+            Total
+          </font>
+        </td>
+		<td width="166" align="center" valign="middle"  style="padding-top:6px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#000; margin-left:-10px;">
+            Tipo
+          </font>
+        </td>
+		<td width="45"></td>
+	</tr>	
+	<tr>
+		<td width="51" height="70"></td>
+	    <td width="19" height="70"></td>
+		<td width="87" height="70" align="center" valign="middle" style="padding-top:2px;">
+          <font face="Verdana, Geneva, sans-serif" size="6" style="color:#060; margin-left:5px; margin-top:10px;">
+            <%= item.amount %></font></td>
+		<td width="99" height="70" align="center" valign="middle" >
+          <font face="Verdana, Geneva, sans-serif" size="4" style="color:#900;">
+            <p style="margin-top:3px;">
+              <%= item.ticket.ticket_date.strftime("%d") %><br>
+		      <%= I18n.localize(item.ticket.ticket_date, :format => "%A") %>
+            </p>
+          </font>
+        </td>
+		<td width="83" height="70" align="center" valign="middle" style="padding-top:3px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#405078; margin-left:-10px;">
+            <%=number_with_delimiter(item.price * item.amount)%>
+          </font>
+        </td>
+		<td width="166" height="70" align="center" valign="middle"  style="padding-top:6px;">
+          <font face="Verdana, Geneva, sans-serif" size="3" style="color:#000; margin-left:-10px;">
+            <%= item.ticket.ticket_type.name %>
+          </font>
+        </td>
+		<td width="45" height="70"></td>
+	</tr>
+	<tr height="15"></tr>
+	<% end %>
+<!--FIM DO LOOP -->
+</table>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_03">
+	<tr>
+		<td height="19" align="center">
+          <font face="Verdana, Geneva, sans-serif" size="2" style="color:#000;">
+            *Imprima e apresente este código de barras na portaria da festa.
+          </font>
+        </td>
+	</tr>
+	<tr>	
+		<td height="100" align="center">
+			<img style="-webkit-user-select: none" src="http://www.festadasfloresdeatibaia.com.br/images/email/codbarras/barcode.php?bdata=<%= @order.id %>&amp;scale=2&amp;type=png&amp;encode=CODE39">
+		</td>
+	</tr>
+	<tr>
+		<td height="19" align="center">
+			<font face="Verdana, Geneva, sans-serif" size="2" style="color:#000;">
+				<%= @order.pagseguro_id %>
+			</font>
+		</td>
+	</tr>	
+</table>
+<br />
+<br />
+<br />
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_04">
+	<tr>
+		<td width="550" align="justify">
+			<font face="Verdana, Geneva, sans-serif" size="2" >
+				Os ingressos adquiridos através de internet estarão sujeitos ao acréscimo da taxa de entrega, no caso da entrega em domicílio.<br />
+				<br />
+				Não haverá devolução das taxas de entrega cobradas no caso de cancelamento da compra de ingressos.<br />
+				<br />
+				A Associação Hortolândia de Atibaia não fornecerá outros ingressos se os mesmos forem perdidos, roubados ou danificados, sendo estes de total responsabilidade do cliente.<br />
+				<br />
+				A Associação Hortolândia de Atibaia não se responsabiliza por possíveis problemas nos sistemas de compra online.<br />
+				<br />
+				<b>Meia Entrada e Promocionais.</b><br />
+				<br />
+				<b>Meia Entrada:</b> será obrigatória a apresentação do documento que comprove o direito ao benefício na entrada do evento.<br />
+				<b>Promocional:</b> serão aceitos somente nos dias definidos.<br />
+				<br />
+				No caso de não respeitar as normas acima, o produtor do evento se reserva ao direito de solicitar o pagamento do valor de complemento do ingresso referente ao preço de inteira.<br />
+			</font>
+        </td>
+	</tr>
+</table>
+</body>
+
+</html>
