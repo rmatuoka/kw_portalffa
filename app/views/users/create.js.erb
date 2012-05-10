@@ -1,5 +1,4 @@
 <%if @user.errors.any?%>
-	alert('Ocorreu um erro erro! Tente novamente');
 	jQuery('#Show_Box_Error_Cad').show();
 	erro = "";
 	erro += "<div class='Error_box_cad'>";
@@ -8,7 +7,7 @@
 <%end%>
 	erro += "</div>";
 	jQuery('#Show_Box_Error_Cad').html(erro);
+	jQuery('html,body').animate({scrollTop:jQuery('#Show_Box_Error_Cad').offset().top}, 'slow');	
 <%else%>
-	alert('Não deu erro');
 	window.location.href = "<%= login_path %>";
 <%end%>

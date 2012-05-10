@@ -141,9 +141,11 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
 
 
            </div><!-- end Content_midle -->
+			<% if (!@Position16.blank? or !@Position17.blank? or !@Position18.blank?)%>
             <div class="Content_bottom">
 				<h1 class="Title_item_orange">Veja também</h1>	
                 <div class="Box_imprensa_content">
+					<%if !@Position16.blank?%> 
                     <div class="Box_bottom_imprensa">
                     	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
                     	<div class="Content_box_bot_imprensa">
@@ -152,6 +154,8 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
                         </div>                        
                         <span class="Date_box_bot_imprensa">02/12/2011</span>
                     </div> 
+					<%end%>
+					<%if !@Position17.blank?%>
                     <div class="Box_bottom_imprensa">
                     	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
                     	<div class="Content_box_bot_imprensa">
@@ -160,6 +164,8 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
                         </div>                        
                         <span class="Date_box_bot_imprensa">02/12/2011</span>
                     </div> 
+					<%end%>
+					<%if !@Position18.blank?%>
                     <div class="Box_bottom_imprensa">
                     	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
                     	<div class="Content_box_bot_imprensa">
@@ -167,35 +173,56 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
                             <div class="Text_info_box_imprensa">Me! I should've known way back when... You know why,</div>          
                         </div>                        
                         <span class="Date_box_bot_imprensa">02/12/2011</span>
-                    </div>                                        
+                    </div>   
+                    <%end%>                 
                 </div>        
             </div>            
+			<%end%>
         </div><!-- end Box_left -->
         <div id="Box_right">        
-             <div class="Content_pub">
-        		public 
-        	 </div>
-             <div class="Content_pub">
-        		public 
-        	 </div>             
-             <div class="Content_pull">
-        		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
-                <div class="Pull_item_box">
-                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
-                    <div class="clear"></div>
-                </div>   
-                <div class="Pull_item_box">    
-                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam </p>  
-                    <div class="clear"></div>                                
-                </div>   
-                <div class="Pull_item_box">
-                    <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
-                    <div class="clear"></div>
-                </div>   
-                <a class="Btn_pull_send"></a>      	
-             </div>  
-             <div class="Content_weather">
-        		<h1 class="Title_weat_red">Previsão do Tempo</h1>
-        	 </div>   
+			<% if (!@Position12.blank? or !@Position13.blank? or !@Position14.blank? or !@Position15.blank?)%>        
+			    <%if !@Position12.blank?%> 
+				<div class="Content_pub">
+					<%=render_webpart(@Position12)%> 
+				 </div>
+				<%end%>
+
+			    <%if !@Position13.blank?%> 
+				<div class="Content_pub">
+					<%=render_webpart(@Position13)%> 
+				</div>             
+			    <%end%>
+
+				<!-- ENQUETE --> 
+				<%if !@Position14.blank?%> 
+
+					<%=render_webpart(@Position14)%> 
+				<!-- <div class="Content_pull">
+					<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
+			        <div class="Pull_item_box">
+			            <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+			            <div class="clear"></div>
+			        </div>   
+			        <div class="Pull_item_box">    
+			            <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam </p>  
+			            <div class="clear"></div>                                
+			        </div>   
+			        <div class="Pull_item_box">
+			            <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
+			            <div class="clear"></div>
+			        </div>   
+			        <a class="Btn_pull_send"></a>     	
+			     </div>  -->
+				<%end%>
+			    <!-- ENQUETE --> 
+
+				<%if !@Position15.blank?%>
+					<%=render_webpart(@Position15)%>
+					<!-- <div class="Content_weather">
+			    		<h1 class="Title_weat_red">Previsão do Tempo</h1>
+			    	 </div> -->
+				<%end%> 
+
+			<% end %>
              <div class="clear"></div>                         
         </div><!-- end Box_right -->
