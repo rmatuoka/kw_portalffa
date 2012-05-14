@@ -183,6 +183,7 @@
       less_than_or_equal_to: "deve ser menor ou igual a %{count}"
       odd: "deve ser ímpar"
       even: "deve ser par"
+      check_over_18: "deve ter mais de 18 anos"
       
 # Campos que são comuns para todas as tabelas e atributos de form  
   attributes: &active_model_default
@@ -419,4 +420,11 @@
       notice_to_delete: "Esta operação não poderá ser desfeita, deseja continuar?"
       edit_form: "Utilize os campos abaixo para editar as informações."
       index_form: "Verifique abaixo a lista dos %{model} cadastrados no sistema."
+  system_record:
+    name: "nome" 
+    email: "seu@email"
+    cpf: "000.000.000-00"
+    rg: "00.000.000-0"
+    estado: "estado"
+    cidade: "cidade"
 #Fim Mensagens do sistema          

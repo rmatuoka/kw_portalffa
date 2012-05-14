@@ -2,6 +2,7 @@
 	<%= stylesheet_link_tag "cadastre_se"%>
 	<%= stylesheet_link_tag "cadastre_se_screen_768", :media=>"screen and (max-width:768px)"%>
 	<%= stylesheet_link_tag "cadastre_se_screen_480", :media=>"screen and (max-width:480px)"%>
+	<%= javascript_include_tag "jquery.meio.mask.js" %>	
 	<%#= javascript_include_tag "carousel_principal.js" %>
 	<script>
 		var htmlold = "";
@@ -58,6 +59,9 @@
 		    if(obj.value=='')
 		        obj.value = obj.defaultValue;
 		}
+		jQuery(document).ready(function(){
+			jQuery('input[name="user[cpf]"]').setMask('cpf');
+		});		
 	</script>	
 <%end%>    
 <div id="Box_left">
@@ -111,13 +115,13 @@
 					<div class="Field_box_cad">
 						<div class="Label_cad"><%= f.label :name, "Nome:" %></div>
 						<div class="Bg_input">
-							<%= f.text_field :name, :value => "nome", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
+							<%= f.text_field :name, :value => t('system_record.name'), :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div> 
 					<div class="Field_box_cad">
 						<div class="Label_cad"><%= f.label :email, "E-mail:" %></div>
 						<div class="Bg_input">
-							<%= f.text_field :email, :value => "seu@email", :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
+							<%= f.text_field :email, :value => t('system_record.email'), :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div>					     
 					<div class="Field_box_cad">
@@ -135,13 +139,13 @@
 					<div class="Field_box_cad">
 						<div class="Label_cad"><%= f.label :cpf, "CPF:" %></div>
 						<div class="Bg_input">
-							<%= f.text_field :cpf, :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
+							<%= f.text_field :cpf, :value => t('system_record.cpf'), :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div> 
 					<div class="Field_box_cad">
 						<div class="Label_cad"><%= f.label :rg, "RG:" %></div>
 						<div class="Bg_input">
-							<%= f.text_field :rg, :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
+							<%= f.text_field :rg, :value => t('system_record.rg'), :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div>  
 					<div class="Field_box_cad">
@@ -160,13 +164,13 @@
 					<div class="Field_box_cad">
 						<div class="Label_cad"><%= f.label :estado, "Estado:" %></div>
 						<div class="Bg_input">
-							<%= f.text_field :estado, :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
+							<%= f.text_field :estado, :value => t('system_record.estado'), :class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div>   
 					<div class="Field_box_cad">
 						<div class="Label_cad"><%= f.label :cidade, "Cidade:" %></div>
 						<div class="Bg_input">
-							<%= f.text_field :cidade,:class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
+							<%= f.text_field :cidade, :value => t('system_record.cidade'),:class => "Input_cad", :onfocus => "javascript:check_text_onfocus(this)", :onblur => "javascript:check_text_onblur(this)"%>
 						</div>
 					</div> 
 					<div class="Field_box_cad">
