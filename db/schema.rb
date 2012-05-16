@@ -206,7 +206,7 @@ ActiveRecord::Schema.define(:version => 20120510002321) do
 
   create_table "ticket_types", :force => true do |t|
     t.string   "name"
-    t.decimal  "discount",   :precision => 10, :scale => 2
+    t.decimal  "discount",   :precision => 10, :scale => 0
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"
