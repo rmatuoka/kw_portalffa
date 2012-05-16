@@ -43,116 +43,28 @@ img {
 {
 	position:relative;
 	width:100%;
-	height:414px;/*414px*/
+	height:187px;/*414px*/
 	background: #CCC;
 	margin: 0 auto;
 	border-bottom:#88b747 solid 5px;
-	z-index:1000;
+	z-index:3000;
 }
 	 .Header_top
 	 {
 		 position:relative;
 		 background:#f4f5f6;
-		 width:983px;
-		 height:87px;
+		 width:100%;
+		 height:187px;
 		 margin:0 auto;
 		 
 	 }
 	 .Logo
 	 {
 		 position:relative;
-		 top:5px;	
-		 left:43px;
+		 float:left;
+		 left:15px;
+		 width:780px;
 	 }
-	 .Menu
-	 {
-		 position:absolute;
-		 bottom:0px;
-		 right:0px;
-		 width:641px;
-		 height:31px;
-		 border-bottom:#FF0000 6px solid;		 
-		 z-index:10000;
-	 }
-		 ul
-		 {
-			 position:relative;
-			 clear:both;
-		 }	 
-		 ul li
-		 {
-			 display:list-item;
-			 position:relative;
-			 font-family:DaxCompactMedium;
-			 font-size:16px;
-			 font-weight:normal;
-			 color:#5e5e5e;
-			 margin-right:25px;
-			 display:inline;
-			 z-index:10000;
-		 }	
-			 ul li a
-			 {
-				 text-decoration:none !important;
-			 }	
-				 ul li a:hover
-				 {
-				   text-decoration:underline !important;
-				 }	
-		.Submenu_afesta
-		{
-			position:absolute;
-			top:20px;
-			left:0px;
-			display:block;
-			width:642px;
-			height:280px;
-			z-index:40000;
-			border-top:#88b747 6px solid;
-			border-bottom:#88b747 6px solid;
-			background:#FFF;
-			visibility:hidden;
-		}
-			.Img_arrow_afesta
-			{
-				position:absolute;
-				top:-1px;
-				left:16px;
-				display:block;
-				background:url(../images/img_Imgbuttoms.png) no-repeat -4px -194px;
-				width:15px;
-				height:7px;									
-			}	
-			.Img_arrow_flores
-			{
-				position:absolute;
-				top30px;
-				left:0px;
-				display:block;
-				background:url(../images/img_Imgbuttoms.png) no-repeat -20px -194px;
-				width:15px;
-				height:7px;								
-			}
-			.Img_arrow_morangos
-			{
-				position:absolute;
-				top:55px;
-				left:0px;
-				display:block;
-				background:url(../images/img_Imgbuttoms.png) no-repeat -36px -194px;
-				width:15px;
-				height:7px;									
-			}
-			.Img_arrow_imprensa
-			{
-				position:absolute;
-				top:75px;
-				left:0px;
-				display:block;
-				background:url(../images/img_Imgbuttoms.png) no-repeat -53px -194px;
-				width:15px;
-				height:7px;								
-			}										
 /*End - Header*/
 
 /*Container*/				 	 		 		 
@@ -566,7 +478,7 @@ img {
 		height:100px;
 		background:#fff;
 		margin-top:9px;
-		margin-bottom:170px;
+		margin-bottom:215px;
 	}
 		.Content_title_emp_2
 		{
