@@ -126,6 +126,29 @@ img {
 					background:#fff;
 					margin-bottom:9px;
 				}
+				.Item_tabs_top a
+				{
+					text-decoration:none;					
+				}
+				.plus_hover
+				{
+					display:none;
+					position:absolute;
+					left:329px;
+					top:97px;
+					background-image:url('../images/hover_tab.png');
+					background-repeat:none;
+					background-position:0px 0px ;
+					height:24px;
+					width:24px;
+					
+										
+				}				
+				.Item_tabs_top:hover .plus_hover
+				{
+					display:block !important;
+				}
+				
 				h1.Title_item_orange
 				{
 					position:relative;
