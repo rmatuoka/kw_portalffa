@@ -1,0 +1,156 @@
+.Shadow 
+{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 0;
+	visibility:hidden;
+	top: 0;
+	left: 0;
+	background:url(../images/bg_shadow.png);
+}
+#Header .Shadow 
+{
+	height: 190px !important;
+}
+.ShadowShow
+{
+	visibility:visible;
+	z-index:2000;
+}
+
+#Menu
+{
+	 position:absolute;
+	 bottom:15px;
+	 right:16px;
+	 width:641px;
+	 height:31px;
+	 border-bottom:#FF0000 6px solid;		 
+	 z-index:3000;
+	 border:green 1px dashed;
+}
+	#Menu ul
+	 {
+		 position:relative;
+		 clear:both;
+	 }
+		#Menu ul li:hover .Submenu_show 
+		 {
+			 visibility:visible !important;
+			 top:31px;
+			 /*overflow: auto;*/
+		 }
+		#Menu ul li:hover .Img_arrow_afesta
+		{
+			visibility:visible !important;
+		}	 	 
+	 #Menu ul li
+	 {
+		 float:left;
+		 display:list-item;
+		 margin-right:0px;
+		 display:inline;
+		 z-index:1000;
+	 }
+
+		#Menu ul li a
+		 {
+			 text-decoration:none;
+			 /* min-width:50px; */
+			 width:auto;
+			 height:37px ;
+			 font-family:DaxCompactMedium;
+			 font-size:16px;
+			 font-weight:normal;
+			 color:#5e5e5e;	
+		 }	
+			.Box_Submenu_show
+			{
+				width: 620px;
+				position: relative;
+				min-height: 100px;
+				height: 100%;
+			}
+	a.Padrao
+	{
+		/*padding-left:18px;
+		padding-right:10px;*/
+		margin: 0px 15px;
+		display:block;
+		text-transform:uppercase;
+	}
+		 a.Padrao:hover
+		 {
+		   text-decoration: underline !important;
+		 }
+	.Submenu_padrao
+	{
+		position:absolute;
+		top:22px;
+		left:0px;
+		display:block;
+		width:642px;
+		min-height:280px;
+		z-index:4000;
+		background:#FFF;
+		visibility:hidden;
+		height:auto;
+	}
+		.Img_arrow_afesta
+		{
+			position:relative;	
+			left: 50%;
+			display: block;
+			background: url(../images/img_bg_arrow.png) no-repeat;
+			width: 14px;
+			height: 7px;
+			margin-left: -7px;
+			z-index: 5000;
+			visibility:hidden;	
+					
+		}
+				.Tit_box
+				{
+					position: relative;
+					width: 615px;
+					height: 23px;
+					font-size: 12px !important;
+					position: relative;
+					top: 6px;
+					left: 10px;
+					height: 15px !important;
+				}
+					.Tit_box a
+					{
+
+					}
+				.Submenu_box
+				{
+					position: relative;
+					float: left;
+					width: 129px;
+					height: 113px;
+				}														
+				.Image_submenubox
+				{
+					position:absolute;
+					left:8px;
+					top:0px;
+					height:95px;
+					width:109px;
+					background-image:url(../images/img_bg_image_submenubox.png);
+					background-repeat:no-repeat;
+					background-position:center;
+					margin:0 auto;
+				}
+				.Text_submenubox
+				{
+					position:absolute;
+					top:89px;
+					left:25px;
+					font-family:DaxCompactMedium;
+					font-size:14px;
+					font-weight:normal;
+					color:#a3a3a3;					
+				}
