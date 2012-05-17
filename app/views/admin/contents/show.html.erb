@@ -23,6 +23,10 @@
   <%= @content.summary%>
 </p>
 <p>
+  <strong><%=t('activerecord.attributes.content.icon_menu') %>:</strong><br />
+  <%= image_tag(@content.icon_menu.url(:menu_size))%>
+</p>
+<p>
   <strong><%=t 'attributes.published' %>:</strong>
   <%= print_active(@content.published) %>
 </p>

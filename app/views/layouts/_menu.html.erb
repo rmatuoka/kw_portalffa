@@ -21,7 +21,7 @@
 						<% conteudos.each do |conteudo|%>
 						<a href="/<%= conteudo.subcategory.category.url_slug%>/<%= conteudo.subcategory.url_slug%>/<%= conteudo.url_slug%>">
 	                    <div class="Submenu_box">
-	                        <div class="Image_submenubox"></div>
+	                        <div class="Image_submenubox"><%= image_tag(conteudo.icon_menu.url(:menu_size))%></div>
 	                        <h2 class="Text_submenubox"><%= conteudo.name%></h2>
 	                    </div>
 						</a>
