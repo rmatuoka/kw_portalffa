@@ -34,6 +34,7 @@ module ApplicationHelper
       when 1 then return t('activerecord.attributes.template.types.one')
       when 2 then return t('activerecord.attributes.template.types.two')
       when 3 then return t('activerecord.attributes.template.types.three')
+      when 4 then return t('activerecord.attributes.template.types.four')
     end
   end
   
