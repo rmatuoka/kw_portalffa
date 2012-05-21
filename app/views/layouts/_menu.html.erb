@@ -15,19 +15,20 @@
 						conteudos = subcategoria.contents.all_published_menu
 						if conteudos.count > 0
 				 %>
-				 <div class="Box_Submenu_show">
-					 <div class="Tit_box" style="color:#<%=categoria.color%>!important;"><%=subcategoria.name%></div>
-	                 <div class="Content_submenu_top"><!-- start Content_submenu_top-->
+				<div class="Box_Submenu_show">
+					<div class="Tit_box" style="color:#<%=categoria.color%>!important;"><%=subcategoria.name%></div>
+	                <div class="Content_submenu_top"><!-- start Content_submenu_top-->
 						<% conteudos.each do |conteudo|%>
 						<a href="/<%= conteudo.subcategory.category.url_slug%>/<%= conteudo.subcategory.url_slug%>/<%= conteudo.url_slug%>">
 	                    <div class="Submenu_box">
 	                        <div class="Image_submenubox"><%= image_tag(conteudo.icon_menu.url(:menu_size))%></div>
 	                        <h2 class="Text_submenubox"><%= conteudo.name%></h2>
 	                    </div>
-						</a>
+						</a>						
 						<% end %>
-						<div class="clear"></div>                                             
-                 </div><!-- end Content_submenu_top-->
+						<div class="clear"></div>                                           
+					</div><!-- end Content_submenu_top-->
+				</div>	
 				<%  end
 					end %>
             </div>  

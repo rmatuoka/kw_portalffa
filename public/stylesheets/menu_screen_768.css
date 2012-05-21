@@ -11,7 +11,7 @@
 }
 #Header .Shadow 
 {
-	height: 190px !important;
+	height: 419px !important;
 }
 .ShadowShow
 {
@@ -23,12 +23,11 @@
 {
 	 position:absolute;
 	 bottom:15px;
-	 right:16px;
-	 width:641px;
+	 left:16px;
+	 width:740px;
 	 height:31px;
 	 border-bottom:#FF0000 6px solid;		 
 	 z-index:3000;
-	 border:green 1px dashed;
 }
 	#Menu ul
 	 {
@@ -154,3 +153,4 @@
 					font-weight:normal;
 					color:#a3a3a3;					
 				}
+

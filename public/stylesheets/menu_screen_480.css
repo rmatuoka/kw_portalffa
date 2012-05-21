@@ -1,5 +1,6 @@
 .Shadow 
 {
+	display:none;
 	width: 100%;
 	height: auto;
 	position: absolute;
@@ -11,11 +12,13 @@
 }
 #Header .Shadow 
 {
-	height: 190px !important;
+	display:none;
+	height: 419px !important;
 }
 .ShadowShow
 {
-	visibility:visible;
+	display:none;
+	visibility:hidden;
 	z-index:2000;
 }
 
@@ -24,11 +27,12 @@
 	 position:absolute;
 	 bottom:15px;
 	 right:16px;
-	 width:641px;
-	 height:31px;
+	 width:480px;
+	 min-height:150px;
+	 height:auto;
 	 border-bottom:#FF0000 6px solid;		 
-	 z-index:30000;
-	 border:blue 1px dashed;
+	 z-index:3000;
+	 border:red 1px dashed;
 }
 	#Menu ul
 	 {
@@ -47,10 +51,7 @@
 		}	 	 
 	 #Menu ul li
 	 {
-		 float:left;
-		 display:list-item;
 		 margin-right:0px;
-		 display:inline;
 		 z-index:1000;
 	 }
 
