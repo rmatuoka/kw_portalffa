@@ -143,6 +143,14 @@
 					background-position:center;
 					margin:0 auto;
 				}
+				
+				.Image_submenubox img
+				{
+					position: absolute;
+					left: 16px;
+					top: 17px;
+					padding: 0px;
+				}
 				.Text_submenubox
 				{
 					position:absolute;

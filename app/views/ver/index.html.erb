@@ -1,6 +1,6 @@
 <% if !@mostrarshow%>
 
-	<%= @Template = ::Template.find(:all,:conditions => ["`templates`.`id` = ?", @categoria.first.template_id])
+	<%= @Template = ::Template.find(:all,:conditions => ["`templates`.`id` = ?  and `templates`.`published` = 1 and `templates`.`active` = 1", @categoria.first.template_id])
 	     if @Template.count > 0
 	        @WebModules = @Template.first.webmodules.all_published
     
@@ -30,7 +30,7 @@
 		render "layouts/verindex.html.erb"
 	%>
 <% else %>
-	<%= @Template = ::Template.find(:all,:conditions => ["`templates`.`id` = ?", @conteudo.first.template_id])
+	<%= @Template = ::Template.find(:all,:conditions => ["`templates`.`id` = ? and `templates`.`published` = 1 and `templates`.`active` = 1", @conteudo.first.template_id])
 	     if @Template.count > 0
 	        @WebModules = @Template.first.webmodules.all_published
 

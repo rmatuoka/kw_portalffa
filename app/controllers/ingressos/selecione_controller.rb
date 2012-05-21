@@ -13,13 +13,14 @@ class Ingressos::SelecioneController < ApplicationController
                           :order => 'ticket_category_id, ticket_date, ticket_type_id')
     carts = current_user.carts.all
     @carts_hash = Hash.new
-     i = 1
-     carts.each do |c|
-       @carts_hash[i]= c.ticket_id
-       i = i+1
-     end
-     @cart = current_user.carts.build
-	
+    i = 1
+    carts.each do |c|
+      @carts_hash[i]= c.ticket_id
+      i = i+1
+    end
+    @cart = current_user.carts.build
+	  
+	  create_template(4)
   end
 
 end

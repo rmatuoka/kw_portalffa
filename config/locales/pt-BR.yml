@@ -281,6 +281,7 @@
         content:
             content: "Conteúdo"
             summary: "Resumo"
+            icon_menu: "Icone do Menu"
             messages:
                 index: "Verifique abaixo a lista dos conteúdos cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar um novo conteúdo." 
@@ -320,6 +321,7 @@
                 one: "Home"
                 two: "Interna"
                 three: "Conteudo"
+                four: "Ingresso"
         ticket:
             ticket_type_id: "Tipo de Bilhete"
             ticket_category_id: "Categoria do Bilhete"
