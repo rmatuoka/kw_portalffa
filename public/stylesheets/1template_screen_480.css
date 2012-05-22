@@ -43,20 +43,19 @@ img {
 /*Header*/
 #Header 
 {
-	position:relative;
-	width:320px;
-	height:187px;/*414px*/
+	position:relative!important;
+	width:320px !important;
+	height:auto!important;
 	background: #CCC;
 	margin: 0 auto;
-	border-bottom:#88b747 solid 5px;
 	z-index:3000;
-	margin-left:5px;
+	margin-left:5px !important;
 }
 	 .Header_top
 	 {
 		 position:relative;
 		 background:#f4f5f6;
-		 width:320px;
+		 width:320px !important;
 		 height:187px;
 		 margin:0 auto;
 		 
@@ -64,10 +63,10 @@ img {
 	 }
 	 .Logo
 	 {
-		 position:relative;
-		 display:block;
-		 float:left;
-		 width:320px;
+		 position:absolute !important;
+		 display:block !important;
+		 float:left !important;
+		 width:320px !important;
 	 }
 /*End - Header*/
 
@@ -76,7 +75,7 @@ img {
 {
 	position:relative;
 	float:left;
-	width: 980px;
+	width: 480px !important;
 	height:auto;
 	background:;
 	z-index:1000;
@@ -85,7 +84,7 @@ img {
 	#Box_left
 	{
 		position:relative;
-		width: 480px;
+		width: 480px !important;
 		height: auto;
 		float:left;
 		margin-top:10px;
@@ -93,14 +92,14 @@ img {
 		.Content_top
 		{
 			position:relative;
-			width: 480px;
+			width: 480px !important;
 			min-height: 200px;
 			float:left;
 		}
 			.Highlights_top
 			{
 				position:relative;
-				width: 320px;
+				width: 320px !important;
 				height: 390px;
 				float:left;
 				background:#fff;
@@ -111,14 +110,14 @@ img {
 					position:relative;
 					top:12px;
 					left:14px;				
-					width: 320px;
+					width: 320px !important;
 					height: 365px;
 					background:#;
 				}
 			.Tabs_top
 			{
 				position:relative;
-				width: 367px;
+				width: 367px !important;
 				/* height: 390px; */
 				float:left;
 			}	
@@ -126,7 +125,7 @@ img {
 				{
 					position:relative;
 					left:12px;
-					width: 356px;
+					width: 356px !important;
 					height: 124px;
 					background:#fff;
 					margin-bottom:21px;
@@ -139,7 +138,7 @@ img {
 				{
 					display:none;
 					position:absolute;
-					left:329px;
+					left:329px !important;
 					top:97px;
 					background-image:url('../images/hover_tab.png');
 					background-repeat:none;
@@ -211,7 +210,7 @@ img {
 		.Content_midle
 		{
 			position:relative;
-			width: 480px;
+			width: 480px !important;
 			min-height: 430px;
 			float:left;
 			margin-top:30px;
@@ -223,8 +222,8 @@ img {
 				*display:block;
 				*float:left;
 				background:#fff;
-				width: 241px;
-				height: 133px;
+				width: 241px !important;
+				height: 133px !important;
 				margin-top:10px;
 				margin-left:5px;
 			}
@@ -386,87 +385,13 @@ img {
 					margin:0 auto;
 				}							
 	/*End - Box_left*/
-	/*Box_right*/					
-	#Box_right
-	{
-		position:relative;
-		width: 227px;
-		height: 994px;	
-		float:right;
-		display:none;
-	}
-		.Content_pub
-		{
-			position:relative;
-			width:223px;
-			height:190px;
-			margin-bottom:7px;
-			background:#FFFFFF;			
-		}	
-		.Content_pull
-		{
-			position:relative;				
-			width: 223px;
-			height: 280px;
-			background:#fff;
-			margin-right:2px;
-			margin-bottom:38px;
-			padding-top:11px;
-			margin-top:50px;			
-		}
-				h1.Title_pull_red
-				{
-					position:relative;
-					left:0px;					
-					font-family:DaxCompactMedium;
-					font-size:16px;
-					font-weight:normal;
-					color:#df1a22;	
-					background-image:url(../images/bg_title_news_red241.jpg);
-					background-repeat:no-repeat;
-					background-position:center left;
-					padding-left:9px;					
-				}
-				.Img_h1_pull_1
-				{
-					position:absolute;
-					top:-35px;
-					left:150px;
-					display:block;
-					background:url(../images/img_Imgbuttoms.png) no-repeat -0px -74px;
-					width:68px;
-					height:52px;		
-				}		
-		.Content_weather
-		{
-			position:relative;				
-			width: 223px;
-			height: 218px;
-			background:#fff;
-			padding-top:11px;
-			margin-right:2px;
-			margin-bottom:19px;		
-		}
-				.Title_weat_red
-				{
-					position:relative;
-					left:0px;					
-					font-family:DaxCompactMedium;
-					font-size:16px;
-					font-weight:normal;
-					color:#df1a22;	
-					background-image:url(../images/bg_title_news_red241.jpg);
-					background-repeat:no-repeat;
-					background-position:center left;
-					padding-left:9px;					
-				}				
-	/*End - Box_right*/
+	
 	/*Box_employees_1*/						
 	#Box_employees_1
 	{
 		
 		position:relative;
-		width:580px;
+		width:480px !important;
 		height:auto;
 		background:#fff;
 		margin:0 auto;
@@ -505,7 +430,7 @@ img {
 			height:auto;
 			float:left;
 			background:#fff;
-	  	}
+	  	}	  	
 		.Content_title_emp_1
 		{
 			position:relative;
@@ -523,6 +448,13 @@ img {
 			top:1px;		
 			margin-left:20px;	
 		}
+		.Title_emp_1-2
+		{
+			position:relative;
+			top:1px;		
+			margin-left:20px;
+			width:100% !important;	
+		}		
 	/*End - Box_employees_1*/
 	/*Box_employees_2*/
 	#Box_employees_2

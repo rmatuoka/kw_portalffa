@@ -568,10 +568,11 @@ img {
 		.Content_sponsors
 		{
 			position:relative;
-			width:636px;
+			width:100%;
 			height:auto;
 			float:left;
 			background:#fff;
+			margin-top:9px;
 	  	}
 		.Content_title_emp_1
 		{

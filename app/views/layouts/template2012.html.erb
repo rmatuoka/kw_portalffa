@@ -10,8 +10,8 @@
 	jQuery.noConflict();
 </script>
 <%= stylesheet_link_tag "menu"%>
-<%= stylesheet_link_tag "menu_screen_768", :media=>"screen and (max-width:768px)"%>
-<%= stylesheet_link_tag "menu_screen_480", :media=>"screen and (max-width:480px)"%>
+<%= stylesheet_link_tag "screen_768", :media=>"screen and (max-width:768px)"%>
+<%= stylesheet_link_tag "screen_480", :media=>"screen and (max-width:480px)"%>
 <%= stylesheet_link_tag "jquery.jcarousel_gallery_home"%>
 <%= stylesheet_link_tag "skin_gallery_home"%>
 <%= javascript_include_tag "jquery.jcarousel.pack.js" %>
@@ -46,6 +46,7 @@
     	<div class="Header_top">
         	<div class="Logo"><%= link_to(image_tag("logo_ffa.png",:width=>"253", :height=>"77"), root_path)%></div>
          	<%= render "layouts/menu.html.erb"%>
+            
         </div>
     </div><!-- end Header -->
     <div id="Container">
