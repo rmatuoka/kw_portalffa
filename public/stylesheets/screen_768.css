@@ -359,6 +359,7 @@
 				display:inline-block;
 				*display:block;
 				*float:left;
+				left:15px;
 				background:#fff;
 				width: 241px;
 				height: 133px;
