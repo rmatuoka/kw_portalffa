@@ -16,10 +16,6 @@ class ApplicationController < ActionController::Base
     @Footer_site = FooterSite.all_published_order
   end
 
-  def load_template
-    @templates = Template.all_published_type($load_template_id)
-  end  
-     
   def create_template(t_type)
     #    ============== Inicio do Template ===============	  
         @Template = ::Template.find(:all,:conditions => ["`templates`.`template_type` = ? and `templates`.`published` = 1 and `templates`.`active` = 1", t_type], :limit=> 1)

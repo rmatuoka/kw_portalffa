@@ -338,7 +338,7 @@ img {
 						{
 							position:relative;
 							float:left;
-							width:103px;
+							width:auto;
 							height:79px;
 							font-size:13px;
 							color:#a0a0a0;
@@ -581,7 +581,7 @@ img {
 	{
 		position:relative;
 		width: 227px;
-		height: 994px;	
+		height: auto;	
 		float:right;	
 	}
 		.Content_pub
@@ -663,13 +663,13 @@ img {
 				}
 		.Content_weather
 		{
-			position:relative;				
+			position: relative;
 			width: 223px;
-			height: 447px;
-			background:#fff;
-			padding-top:11px;
-			margin-right:2px;
-			margin-bottom:19px;		
+			height: 218px;
+			background: white;
+			padding-top: 11px;
+			margin-right: 2px;
+			margin-bottom: 19px;	
 		}
 				.Title_weat_red
 				{
@@ -721,7 +721,7 @@ img {
 		.Content_support
 		{
 			position:relative;
-			width:175px;
+			width:811px;
 			height:auto;
 			float:left;
 			background:#fff;
@@ -729,10 +729,11 @@ img {
 		.Content_sponsors
 		{
 			position:relative;
-			width:636px;
+			width:976px !important;
 			height:auto;
 			float:left;
 			background:#fff;
+			margin-top:9px;
 	  	}
 		.Content_title_emp_1
 		{
@@ -751,6 +752,13 @@ img {
 			top:1px;		
 			margin-left:20px;	
 		}
+		.Title_emp_1-2
+		{
+			position:relative;
+			top:1px;		
+			margin-left:20px;
+			width:100% !important;	
+		}		
 	/*End - Box_employees_1*/
 	/*Box_employees_2*/
 	#Box_employees_2

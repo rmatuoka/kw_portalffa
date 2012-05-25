@@ -3,7 +3,6 @@ class Admin::CategoriesController < ApplicationController
       allow :admin, :all
   end  
   layout "inadmin"
-  $load_template_id = 2
   before_filter :load_template, :only => [:new, :edit]
 
   def index
@@ -47,4 +46,7 @@ class Admin::CategoriesController < ApplicationController
     redirect_to admin_categories_url, :notice => "Successfully destroyed category."
   end
   
+  def load_template
+    @templates = Template.all_published_type(2)
+  end
 end

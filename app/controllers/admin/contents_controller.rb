@@ -3,7 +3,6 @@ class Admin::ContentsController < ApplicationController
       allow :admin, :all
   end  
   layout "inadmin"
-  $load_template_id = 3
   before_filter :load_template, :only => [:new, :edit]  
   before_filter :load_subcategories
   uses_tiny_mce :options => {
@@ -65,6 +64,10 @@ class Admin::ContentsController < ApplicationController
   def load_subcategories
     @category = Category.find(params[:category_id])
     @subcategory = @category.subcategories.find(params[:subcategory_id])
+  end
+  
+  def load_template
+    @templates = Template.all_published_type(3)
   end
   
 end
