@@ -146,6 +146,16 @@ img {
 					margin-left:26px;
 					margin-top:5px;						
 				}
+				.Text_grey
+				{
+					position:relative;			
+					font-family:DaxCompactMedium;
+					font-size:17px;
+					font-weight:normal;
+					color:#8e8e8e;	
+					margin-left:26px;
+					margin-top:5px;						
+				}				
 				h3.Date_content_top		
 				{
 					position:relative;			
@@ -296,7 +306,12 @@ img {
 					margin-right:2px;
 					margin-right:17px;
 					margin-bottom:10px;
-				}	
+				}
+				
+				.Box_bottom_imprensa a
+				{
+					text-decoration:none;
+				}					
 					h2.Tit_box_bot_imprensa	
 					{
 						position:relative;

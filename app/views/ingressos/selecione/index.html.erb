@@ -140,33 +140,18 @@ Caso você deseje comprar ingressos para o mesmo dia da compra, dirija-se à bil
                 <div class="Box_imprensa_content">
 					<%if !@Position16.blank?%> 
                     <div class="Box_bottom_imprensa">
-                    	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
-                    	<div class="Content_box_bot_imprensa">
-         					<div class="Image_box_imprensa"> <%= image_tag("img_stand_imprensa.jpg", :width=>"109", :height=>"78" )%></div> 
-                            <div class="Text_info_box_imprensa">Me! I should've known way back when... You know why,</div>          
-                        </div>                        
-                        <span class="Date_box_bot_imprensa">02/12/2011</span>
+						<%=render_webpart(@Position16)%>
                     </div> 
 					<%end%>
 					<%if !@Position17.blank?%>
                     <div class="Box_bottom_imprensa">
-                    	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
-                    	<div class="Content_box_bot_imprensa">
-         					<div class="Image_box_imprensa"> <%= image_tag("img_stand_imprensa.jpg", :width=>"109", :height=>"78" )%></div> 
-                            <div class="Text_info_box_imprensa">Me! I should've known way back when... You know why,</div>          
-                        </div>                        
-                        <span class="Date_box_bot_imprensa">02/12/2011</span>
-                    </div> 
+						<%=render_webpart(@Position17)%>
+                    </div>
 					<%end%>
 					<%if !@Position18.blank?%>
                     <div class="Box_bottom_imprensa">
-                    	<h2 class="Tit_box_bot_imprensa">loren ipsum siamet</h2>
-                    	<div class="Content_box_bot_imprensa">
-         					<div class="Image_box_imprensa"> <%= image_tag("img_stand_imprensa.jpg", :width=>"109", :height=>"78" )%></div> 
-                            <div class="Text_info_box_imprensa">Me! I should've known way back when... You know why,</div>          
-                        </div>                        
-                        <span class="Date_box_bot_imprensa">02/12/2011</span>
-                    </div>   
+						<%=render_webpart(@Position18)%>
+                    </div> 
                     <%end%>                 
                 </div>        
             </div>            

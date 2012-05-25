@@ -1,3 +1,7 @@
+.Bg_input input{
+	border:none !important;
+}
+
 #Box_employees_2{
 	margin-bottom:15px !important;
 }

@@ -1,0 +1,2 @@
+module Ingressos::HomeHelper
+end

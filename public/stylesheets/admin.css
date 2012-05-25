@@ -540,6 +540,16 @@
 			background: url (image.png) repeat-x 0px 0px; /* Background com imagem para degradê para o Opera 10 */
 			cursor:pointer;
 		}
+			#General #Content #Right_box .Bt_enviar a
+			{
+				position:relative;
+				text-decoration:none;
+				cursor:pointer;
+				height:16px;
+				display: block;
+				padding:8px 30px;
+				color:#fff;				
+			}		
 		#General #Content #Right_box #flash_error_cadastro
 		{
 			position:relative;

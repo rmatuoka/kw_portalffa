@@ -12,6 +12,7 @@ class Ingressos::ConfiraController < ApplicationController
     		flash[:alert] = true;
     		redirect_to ingressos_selecione_index_path
       end
-      @total_final = 0    
+      @total_final = 0 
+      create_template(4)   
   end
 end

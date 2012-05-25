@@ -1,0 +1,30 @@
+<% show_model_name(::TicketHome) %>
+
+<h1><%= show_model_name(::TicketHome) %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.ticket_home.messages.show')%></p><br />
+<br />
+<p>
+  <strong><%=t 'activerecord.attributes.ticket_home.name' %>:</strong>
+  <%= @ticket_home.name %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.ticket_home.content' %>:</strong>
+</p>
+<div class="div_show_textarea">
+  <%=raw @ticket_home.content %>	
+</div>	
+<br />
+<br />
+<br />
+<p style="float:left;">
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_root_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+</p>
+<p style="float:left;">
+	<%= submit_tag t('attributes.edit'),:type=>"button",:onclick=>"window.open('"+edit_admin_ticket_home_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+</p>
+<p style="float:left;" class="Bt_enviar">
+<%= link_to t('attributes.exclude'), admin_ticket_home_path(@ticket_home), :confirm => t('system_messages.notice_to_delete'), :method => :delete%>
+</p>
+<div class"clear"></div>
+

@@ -39,10 +39,15 @@ class Ingressos::RetornoController < ApplicationController
           #  q = Quote.find(c.quote_id)
           #  q.indisponivel = true
           #  #q.save
-          #end
-        end
-      end
-        render :nothing => true
+          #end           
+        end   
+      end  
+      render :nothing => true
+
+  end
+  
+  def index
+    create_template(4)
   end
   
   def show

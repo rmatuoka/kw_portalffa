@@ -61,7 +61,8 @@ jQuery(document).ready(function()
 								<ul class="sub-menu">
 									<li><%= link_to t('attributes.manage')+ show_model_name(Ticket, true),admin_tickets_path%></li>		
 									<li><%= link_to t('attributes.manage')+ show_model_name(TicketType, true),admin_ticket_types_path%></li>								
-									<li><%= link_to t('attributes.manage')+ show_model_name(TicketCategory, true),admin_ticket_categories_path%></li>									
+									<li><%= link_to t('attributes.manage')+ show_model_name(TicketCategory, true),admin_ticket_categories_path%></li>
+									<li><%= link_to t('attributes.manage')+ show_model_name(TicketHome),admin_ticket_homes_path%></li>									
 								</ul>
 							</li>
 							<li class="parent aberto"><a href="#" title=""><h3><%= t('attributes.menuadmin.orders')%></h3></a>
