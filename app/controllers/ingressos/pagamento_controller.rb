@@ -46,6 +46,6 @@ class Ingressos::PagamentoController < ApplicationController
     end
   
     #LIMPA CARRINHO
-    
+    create_template(4)
   end  
 end

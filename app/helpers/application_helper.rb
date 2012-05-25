@@ -72,7 +72,8 @@ module ApplicationHelper
       @Encoding = @Encoding.gsub("[category]", @Dados.subcategory.category.name)
       @Encoding = @Encoding.gsub("[setcolor]", @Dados.subcategory.category.color)      
       @Encoding = @Encoding.gsub("[title]",@Dados.name)
-      @Encoding = @Encoding.gsub("[description]", @Dados.summary)      
+      @Encoding = @Encoding.gsub("[description]", @Dados.summary)    
+      @Encoding = @Encoding.gsub("[data]", I18n.localize(@Dados.created_at, :format => :pdate))      
       return raw(@Encoding)
       
     when 2

@@ -257,6 +257,9 @@
         ticket_category:
             one: "Categoria do Bilhete" 
             other: "Categorias dos Bilhetes"    
+        ticket_home:
+            one: "Home do Bilhete" 
+            other: "Home dos Bilhetes"
         ticket_type:
             one: "Tipo de Bilhete" 
             other: "Tipos de Bilhetes"                                                    
@@ -333,19 +336,27 @@
                 index: "Verifique abaixo a lista dos bilhetes cadastrados no sistema."       
                 new: "Utilize os campos abaixo para cadastrar um novo bilhete." 
                 show: "Verifique se as informações abaixo estão corretas." 
-        ticket_type:
-            <<: *active_model_default
-            messages:
-                index: "Verifique abaixo a lista dos tipos de bilhetes cadastrados no sistema."       
-                new: "Utilize os campos abaixo para cadastrar um novo tipo de bilhete." 
-                show: "Verifique se as informações abaixo estão corretas."  
+
         ticket_category:
             order: "Ordem"
             <<: *active_model_default 
             messages:
                 index: "Verifique abaixo a lista das categorias de bilhetes cadastrados no sistema."       
                 new: "Utilize os campos abaixo para cadastrar uma nova categoria de bilhete." 
-                show: "Verifique se as informações abaixo estão corretas."                              
+                show: "Verifique se as informações abaixo estão corretas."
+        ticket_home:
+            content: "Conteúdo"
+            <<: *active_model_default 
+            messages:
+                index: "Verifique abaixo a página de abertura de bilhetes cadastrada no sistema."       
+                new: "Utilize os campos abaixo para cadastrar uma nova página de abertura de bilhete." 
+                show: "Verifique se as informações abaixo estão corretas."
+        ticket_type:
+            <<: *active_model_default
+            messages:
+                index: "Verifique abaixo a lista dos tipos de bilhetes cadastrados no sistema."       
+                new: "Utilize os campos abaixo para cadastrar um novo tipo de bilhete." 
+                show: "Verifique se as informações abaixo estão corretas."                                              
         user:
             password: "Senha"
             password_confirmation: "Confirmação de Senha"

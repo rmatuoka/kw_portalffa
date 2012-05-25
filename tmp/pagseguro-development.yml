@@ -1,4 +1,17 @@
 --- 
+"23": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "23"
+  item_valor_1: "1000"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "12"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  cliente_email: bsilva@korewa.com.br
+  item_id_1: "1"
+  item_descr_1: Entrada sexta-feira promocional - 31/08/2012
+  cliente_nome: Bruno Vinicius da Silva
 "3": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
   encoding: UTF-8

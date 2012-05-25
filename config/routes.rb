@@ -1,7 +1,5 @@
 KwPortalffa::Application.routes.draw do
 
-
-
   resources :configurations
   resources :carts do 
     collection do 
@@ -23,7 +21,7 @@ KwPortalffa::Application.routes.draw do
     resources :confira
     resources :pagamento
     resources :retorno
-    root :to => "selecione#index"
+    root :to => "home#index"
   }
   #-----------------------------------------------INGRESSOS
   
@@ -45,7 +43,8 @@ KwPortalffa::Application.routes.draw do
         get 'baixa'
       end
     end
-
+    
+    resources :ticket_homes
     resources :footer_sites
     resources :newsletters
     resources :banners

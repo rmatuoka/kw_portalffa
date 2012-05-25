@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517205814) do
+ActiveRecord::Schema.define(:version => 20120525210156) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -206,6 +206,15 @@ ActiveRecord::Schema.define(:version => 20120517205814) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "ticket_homes", :force => true do |t|
+    t.text     "content"
+    t.boolean  "active"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "ticket_types", :force => true do |t|

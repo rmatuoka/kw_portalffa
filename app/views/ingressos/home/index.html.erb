@@ -6,9 +6,13 @@
 <div id="Box_left">
     <div class="Content_top">            
         <h1 class="Title_item_orange">Ingressos</h1>	
-        <h3 class="Title_item_green">Passo 4 - Pagamento Efetuado</h2>
-        <p class="Text_grey">Obrigado por utilizar nosso site para realizar sua compra. Imprima o código de seu pedido e apresente na bilheteria da festa para receber seu ingresso.</p>
-    </div>
+		<h3 class="Title_item_green"><%=@ticket_homes.first.name%></h3>
+        <div class="Text_grey">
+	        <%=raw(@ticket_homes.first.content)%>
+			<br />
+			<%= link_to(image_tag("bt_comprar_online.png"),ingressos_selecione_index_path)%>
+		</div>
+	</div>
     <div class="Content_midle">
 	  
     </div><!-- end Content_midle -->
