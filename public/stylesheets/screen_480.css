@@ -648,7 +648,427 @@ img {
 			top:1px;							
 			margin-left:20px;
 		}		
-	/*End - Box_employees_2*/	 	  
+	/*End - Box_employees_2*/
+/*-------Cadastre-se------*/
+			.Cadastre_content
+			{
+				position:relative;
+				width: 480px !important;
+				min-height: 200px;
+				height:auto;
+				background:#fff;
+				margin-bottom:10px;
+				display:inline-block;
+				*float:left;
+				*display:block;
+			}
+					h1.Title_cad_orange
+					{
+						position:relative;
+						top:11px;
+						left:0px;					
+						font-family:DaxCompactMedium;
+						font-size:16px;
+						font-weight:normal;
+						color:#e57100;	
+						background-image:url(../images/bg_title_item_orange356.jpg);
+						background-repeat:no-repeat;
+						background-position:center left;
+						padding-left:9px;	
+						margin-bottom:11px;					
+					}
+					.Social_networks
+					{
+						position:relative;
+						left:400px;
+					}
+					h2.Title_2_cad_green
+					{
+						position:relative;			
+						font-family:DaxCompactMedium;
+						font-size:20px;
+						font-weight:normal;
+						color:#6d8150;	
+						margin-left:15px;
+						margin-top:17px;
+						width::320px !important;					
+					}
+					p.Text_cad_tabs
+					{
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:17px;
+						width:335px !important;
+						font-weight:normal;
+						color:#a0a0a0;
+						margin-left:15px;
+						margin-bottom:29px;
+					}										
+			#Box_cadastre_login
+			{
+				position:relative;
+				width: 328px;
+				min-height: 200px;
+				height:auto;
+				margin-left:0px !important;
+				float:left;
+			}
+				.Tit_box_cad
+				{
+					position:relative;
+					width: 328px;
+					height: 57px;
+					background:#eef2f5;
+					margin-bottom:7px;	
+				}
+					h1.Tit_cad_green
+					{
+						position:relative;
+						top:10px;
+						display:block;			
+						font-family:DaxCompactMedium;
+						font-size:20px;
+						font-weight:bold;	
+						color:#88b747;	
+						width: 308px;
+						height: 53px;
+						padding-top:4px;
+						padding-left:20px;
+						background-image:url(../images/bg_tit_cad_box_green.jpg);
+						background-position:left top;
+						background-repeat:no-repeat;
+					}		
+				.Error_box_cad
+				{
+					position:relative;
+					width: 311px;
+					padding-left:17px;
+					padding-top:16px;
+					padding-bottom:16px;						
+					height: auto;
+					min-height:10px;
+					background:#ffeddb;
+					margin-bottom:7px;	
+				}
+					p.Text_error_box
+					{
+						position:relative;
+						display:block;			
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:15px;
+						font-weight:normal;
+						color:#f06c6c;					
+					}
+				.Field_box_cad
+				{
+					position:relative;
+					width: 316px;
+					min-height: 57px;
+					height:auto;
+					background:#eef2f5;
+					padding-top:8px;
+					padding-bottom:0px;
+					padding-left:13px;	
+				}
+					.Label_cad
+					{
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:17px;
+						font-weight:normal;
+						color:#888888;	
+						margin-left:4px;						
+					}
+					.Bg_input
+					{
+						position:relative;
+						width:300px;
+						height:39px;
+						background:#FFF;
+						border:#c5d9e7 1px solid;
+						padding-left:4px;
+						padding-top:6px;
+					}
+					 input.Input_cad
+					 {
+						position:relative;
+						top:3px;
+						font-family:DaxCompactMedium;
+						font-size:17px;
+						color:#dddddd;
+						width:295px;
+						border:none;
+						background:none;
+						font-weight:bold;						 
+					 }
+				.Buttom_box_cad
+				{
+					position:relative;
+					width: 316px;
+					min-height: 57px;
+					height:auto;
+					background:#eef2f5;
+					padding-top:8px;
+					padding-bottom:7px;
+					padding-left:13px;
+					text-align:left;
+					margin-bottom:60px;
+				}
+					.Txt_buttom_box
+					{
+						position:absolute;
+						left:19px;
+						top:22px;
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:14px;
+						font-weight:normal;
+						color:#88b747;							
+					}
+					input.Bt_submit
+					{
+						position:absolute;
+						left:161px;
+						top:7px;
+					}
+					
+			.Box_cadastre
+			{
+				position:relative;
+				width: 328px;
+				min-height: 200px;
+				height:auto;
+				margin-left:0px !important;
+				float:left;
+			}				
+					h1.Tit_cad_orange
+					{
+						position:relative;
+						top:10px;
+						display:block;			
+						font-family:DaxCompactMedium;
+						font-size:20px;
+						font-weight:bold;
+						color:#ff8100;	
+						width: 308px;
+						height: 53px;
+						padding-top:4px;
+						padding-left:20px;
+						background-image:url(../images/bg_tit_cad_box_orange.jpg);
+						background-position:left top;
+						background-repeat:no-repeat;
+					}						
+					.Checkbox_field
+					{
+						position:relative;
+						top:10px;
+						width:120px;
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:14px;
+						font-weight:normal;
+						color:#8e8e8e;						
+						float:left;					
+					}
+					input.Checkbox_cl
+					{
+						position:relative;
+					
+					}
+					.Text_field_chk
+					{
+						position:relative;
+						width:300px;
+					}
+					.Text_field_chk p
+					{
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:14px;
+						font-weight:normal;						
+						color:#ff9e3b;
+						position:relative;
+						top:0px;
+						left:30px;
+						width:250px;
+					}
+					input.Checkbox_txt
+					{
+						position:absolute;
+					
+					}
+				
+				.Options_area_cad
+				{
+					position:relative;
+					display:inline-block;
+					*display:block;
+					*float:left;
+					left:13px;
+					width:740px;
+					min-height:200px;
+					height:auto;
+				}
+				.Box_area_cad
+				{
+					position:relative;
+					display:inline-block;
+					*display:block;
+					*float:left;
+					background-image:url(../images/bg_box_guides.png);
+					background-repeat:no-repeat;
+					background-position:top center;
+					width: 230px;
+					height: 168px;
+					margin-right:-0px;
+					margin-bottom:10px;
+				}	
+				.Box_area_guides:hover .Arrow_cad
+					{
+						position:absolute;
+						left:161px;
+						top:-5px;
+						display:block;
+						width:66px;
+						height:64px;
+						background-image:url(../images/img_arrow_guides.png);
+						background-repeat:no-repeat;
+						background-position:top center;
+					}			
+					.Text_box_cad_red
+					{
+						position:relative;
+						left:23px;
+						top:23px;
+						width:145px;
+						font-family:DaxCompactMedium;
+						font-size:16px;
+						font-weight:normal;
+						color:#ff4a4a;	
+						text-align:left;	
+					}
+					.Text_box_cad_blue
+					{
+						position:relative;
+						left:23px;
+						top:23px;
+						width:145px;
+						font-family:DaxCompactMedium;
+						font-size:16px;
+						font-weight:normal;
+						color:#4a70ff;		
+					}	
+					.Text_box_cad_green
+					{
+						position:relative;
+						left:23px;
+						top:23px;
+						width:145px;
+						font-family:DaxCompactMedium;
+						font-size:16px;
+						font-weight:normal;
+						color:#88b747;		
+					}	
+/*--------------------------------------------------*/					
+					
+		.Content_see_also
+		{
+			position:relative;
+			display:inline-block;
+			*display:block;
+			*float:left;			
+			width: 741px;
+			height: 225px;
+			background:#FFF;
+			float:left;
+			margin-bottom:10px;
+		}
+			.Title_field_see_also
+			{
+				position:relative;
+				float:left;
+				border-bottom:#eaeaea 1px solid;	
+				width:685px;
+				margin-left:26px;
+				padding-bottom:12px;
+				margin-bottom:11px;
+			}
+				h1.Title_see_also_orange
+				{
+					position:relative;
+					top:11px;
+					left:0px;					
+					font-family:DaxCompactMedium;
+					font-size:16px;
+					font-weight:normal;
+					color:#e57100;	
+					background-image:url(../images/bg_title_item_orange356.jpg);
+					background-repeat:no-repeat;
+					background-position:center left;
+					padding-left:9px;	
+					margin-bottom:21px;					
+				}
+			.Box_see_also_content
+			{
+				position:relative;
+				display:inline-block;
+				*display:block;
+				*float:left;	
+				margin-left:15px;			
+			}
+				.Box_bottom_see_also
+				{
+					position:relative;
+					float:left;
+					width: 216px;
+					height: 127px;
+					margin-right:2px;
+					margin-right:17px;
+					margin-bottom:10px;
+				}	
+					h2.Tit_box_bot_see_also	
+					{
+						position:relative;
+						font-family:DaxCompactMedium;
+						font-size:16px;
+						font-weight:normal;
+						color:#88b747;							
+					}
+					.Content_box_bot_see_also	
+					{
+						position:relative;
+						width: 216px;
+						height: 80px;
+						margin-top:5px;						
+					}	
+						.Image_box_see_also
+						{
+							float:left;
+							width:105px;
+							height:79px;
+							margin-right:8px;
+						}
+						.Text_info_box_see_also
+						{
+							position:relative;
+							float:left;
+							width:103px;
+							height:79px;
+							font-size:13px;
+							color:#a0a0a0;
+						}					
+					.Date_box_bot_see_also	
+					{
+						font-family:Tahoma, Geneva, sans-serif;
+						font-size:12px;
+						font-weight:;
+						color:#a0a0a0;
+					}					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+/*-------Cadastre-se- end-----*/	 	  
 /*End - Container*/	
 /*Footer*/
 #Footer 
