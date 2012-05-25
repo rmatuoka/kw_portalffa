@@ -5,13 +5,15 @@
 
 <div id="Box_left">
     <div class="Content_top">            
-        <h1 class="Title_item_orange">Ingressos</h1>	
+        <h1 class="Title_item_orange">Ingressos</h1>
+		<% if (@ticket_homes.count > 0)%>
 		<h3 class="Title_item_green"><%=@ticket_homes.first.name%></h3>
         <div class="Text_grey">
 	        <%=raw(@ticket_homes.first.content)%>
 			<br />
 			<%= link_to(image_tag("bt_comprar_online.png"),ingressos_selecione_index_path)%>
 		</div>
+		<%end%>
 	</div>
     <div class="Content_midle">
 	  
