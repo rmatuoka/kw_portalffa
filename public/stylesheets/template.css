@@ -294,14 +294,23 @@ img {
 			.Newsletter_bottom
 			{
 				position:relative;				
-				width: 241px;
-				height: 162px;
+				width: 237px;
+				*width: 235px !important;
+				height: 157px;
 				background:#fff;
 				margin-right:2px;
 				margin-bottom:17px;
 				padding-top:11px;
-				
+				overflow:hidden !important;	
+				overflow:hidden !important;
+				overflow-y:hidden !important;				
 			}
+			.Newsletter_bottom iframe
+			{
+				background:#fff !important;
+				border:none !important;			
+			}
+			
 				h1.Title_newa_red
 				{
 					position:relative;
@@ -334,7 +343,7 @@ img {
 					color:#a0a0a0;
 					margin-left:12px;
 					margin-bottom:10px;
-					margin-top:-5px;					
+					margin-top:-9px;					
 				}
 				.Newsletter_bottom input
 				{
@@ -504,12 +513,25 @@ img {
 		{
 			position:relative;				
 			width: 223px;
-			height: 218px;
+			min-height:218px !important;
+			height:auto !important;
 			background:#fff;
 			padding-top:11px;
 			margin-right:2px;
-			margin-bottom:19px;		
+			margin-bottom:19px;
+			overflow:none !important;
+			overflow-x: hidden;	
 		}
+				}	
+		.Content_weather p
+		{
+			overflow:none !important;
+			overflow-x: hidden;	
+		}		
+		.Content_weather p iframe
+		{
+			width:250px !important;
+		}			
 				.Title_weat_red
 				{
 					position:relative;
