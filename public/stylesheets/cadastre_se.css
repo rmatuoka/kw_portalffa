@@ -410,8 +410,119 @@ img {
 						font-size:16px;
 						font-weight:normal;
 						color:#88b747;		
-					}	
-/*--------------------------------------------------*/					
+					}
+					
+
+
+					.Content_bottom
+					{
+						position:relative;
+						display:inline-block;
+						*display:block;
+						*float:left;			
+						width: 741px;
+						height: 225px;
+						background:#FFF;
+						float:left;
+					}
+						.Title_field_bottom
+						{
+							position:relative;
+							float:left;
+							border-bottom:#eaeaea 1px solid;	
+							width:685px;
+							margin-left:26px;
+							padding-bottom:12px;
+							margin-bottom:11px;
+						}
+						h1.Title_video_orange
+						{
+							position:relative;
+							top:28px;
+							left:0px;	
+							float:left;				
+							font-family:DaxCompactMedium;
+							font-size:16px;
+							font-weight:normal;
+							color:#e57100;	
+							padding-left:12px;
+
+						}	
+						.Img_h1_imprensa_int_1
+						{
+							position:relative;
+							float:left;	
+							top:0px;
+							left:0px;
+							display:block;
+							background:url(../images/img_Imgbuttoms.png) no-repeat -190px -67px;
+							width:50px;
+							height:55px;					
+						}
+						.Box_imprensa_content
+						{
+							position:relative;
+							display:inline-block;
+							*display:block;
+							*float:left;	
+							margin-left:26px;
+							margin-top:30px;			
+						}
+							.Box_bottom_imprensa
+							{
+								position:relative;
+								float:left;
+								width: 216px;
+								height: 127px;
+								margin-right:2px;
+								margin-right:17px;
+								margin-bottom:10px;
+							}
+
+							.Box_bottom_imprensa a
+							{
+								text-decoration:none;
+							}					
+								h2.Tit_box_bot_imprensa	
+								{
+									position:relative;
+									font-family:DaxCompactMedium;
+									font-size:16px;
+									font-weight:normal;
+									color:#88b747;							
+								}
+								.Content_box_bot_imprensa	
+								{
+									position:relative;
+									width: 216px;
+									height: 80px;
+									margin-top:5px;						
+								}	
+									.Image_box_imprensa
+									{
+										float:left;
+										width:105px;
+										height:79px;
+										margin-right:8px;
+									}
+									.Text_info_box_imprensa
+									{
+										position:relative;
+										float:left;
+										width:auto;
+										height:79px;
+										font-size:13px;
+										color:#a0a0a0;
+									}					
+								.Date_box_bot_imprensa	
+								{
+									font-family:Tahoma, Geneva, sans-serif;
+									font-size:12px;
+									font-weight:;
+									color:#a0a0a0;
+								}
+						
+/*--------------------------------------------------				
 					
 		.Content_see_also
 		{
@@ -515,7 +626,7 @@ img {
 					
 					
 					
-/*--------------------------------------------------*/																
+*/																
 			.Highlights_top
 			{
 				position:relative;

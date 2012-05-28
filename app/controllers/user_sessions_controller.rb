@@ -4,6 +4,7 @@ class UserSessionsController < ApplicationController
   layout "template2012" 
   before_filter :load_menu  
   def new
+    create_template(4)
     @user_session = UserSession.new
     @user = User.new(:receber_info => true, :gender => false)
   end

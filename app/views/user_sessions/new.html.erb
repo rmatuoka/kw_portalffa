@@ -188,47 +188,52 @@
 
 				<div class="clear"></div><!--end clear_bottom -->  
 				
-				<div class="Content_see_also">
-					<h1 class="Title_see_also_orange">Área de Guias</h1>
-					<div class="Box_see_also_content">
-						<div class="Box_bottom_see_also">
-							<h2 class="Tit_box_bot_see_also">loren ipsum siamet</h2>
-							<div class="Content_box_bot_see_also">
-								<div class="Image_box_see_also"> <img src="images/img_stand_videos.jpg" width="109" height="78"></div> 
-								<div class="Text_info_box_see_also">Me! I should've known way back when... You know why,</div>          
-							</div>                        
-							<span class="Date_box_bot_see_also">02/12/2011</span>
-						</div> 
-						<div class="Box_bottom_see_also">
-							<h2 class="Tit_box_bot_see_also">loren ipsum siamet</h2>
-							<div class="Content_box_bot_see_also">
-								<div class="Image_box_see_also"> <img src="images/img_stand_videos.jpg" width="109" height="78"></div> 
-								<div class="Text_info_box_see_also">Me! I should've known way back when... You know why,</div>          
-							</div>                        
-							<span class="Date_box_bot_see_also">02/12/2011</span>
-						</div> 
-						<div class="Box_bottom_see_also">
-							<h2 class="Tit_box_bot_see_also">loren ipsum siamet</h2>
-							<div class="Content_box_bot_see_also">
-								<div class="Image_box_see_also"> <img src="images/img_stand_videos.jpg" width="109" height="78"></div> 
-								<div class="Text_info_box_see_also">Me! I should've known way back when... You know why,</div>          
-							</div>                        
-							<span class="Date_box_bot_see_also">02/12/2011</span>
-						</div>                                                                     
-					</div>        
-				</div>                               					
+				<% if (!@Position16.blank? or !@Position17.blank? or !@Position18.blank?)%>
+			       <div class="Content_bottom">
+					<h1 class="Title_item_orange">Veja também</h1>	
+			           <div class="Box_imprensa_content">
+						<%if !@Position16.blank?%> 
+			               <div class="Box_bottom_imprensa">
+							<%=render_webpart(@Position16)%>
+			               </div> 
+						<%end%>
+						<%if !@Position17.blank?%>
+			               <div class="Box_bottom_imprensa">
+							<%=render_webpart(@Position17)%>
+			               </div>
+						<%end%>
+						<%if !@Position18.blank?%>
+			               <div class="Box_bottom_imprensa">
+							<%=render_webpart(@Position18)%>
+			               </div> 
+			               <%end%>                 
+			           </div>        
+			       </div>            
+				<%end%>
+
 			</div><!--end CADASTRE CONTENT --> 
 		</div><!--end Content_top--> 
 		<div class="clear"></div>                             
 </div><!-- end Box_left --> 
-<div id="Box_right">        
-     <div class="Content_pub">
-		public 
+  <div id="Box_right">        
+<% if (!@Position12.blank? or !@Position13.blank? or !@Position14.blank? or !@Position15.blank?)%>        
+    <%if !@Position12.blank?%> 
+	<div class="Content_pub">
+		<%=render_webpart(@Position12)%> 
 	 </div>
-     <div class="Content_pub">
-		public 
-	 </div>             
-     <div class="Content_pull">
+	<%end%>
+
+    <%if !@Position13.blank?%> 
+	<div class="Content_pub">
+		<%=render_webpart(@Position13)%> 
+	</div>             
+    <%end%>
+
+	<!-- ENQUETE --> 
+	<%if !@Position14.blank?%> 
+
+		<%=render_webpart(@Position14)%> 
+	<!-- <div class="Content_pull">
 		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
         <div class="Pull_item_box">
             <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
@@ -242,10 +247,18 @@
             <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
             <div class="clear"></div>
         </div>   
-        <a class="Btn_pull_send"></a>      	
-     </div>  
-     <div class="Content_weather">
-		<h1 class="Title_weat_red">Previsão do Tempo</h1>
-	 </div>   
-     <div class="clear"></div>                         
-</div><!-- end Box_right --> 
+        <a class="Btn_pull_send"></a>     	
+     </div>  -->
+	<%end%>
+    <!-- ENQUETE --> 
+
+	<%if !@Position15.blank?%>
+		<%=render_webpart(@Position15)%>
+		<!-- <div class="Content_weather">
+    		<h1 class="Title_weat_red">Previsão do Tempo</h1>
+    	 </div> -->
+	<%end%> 
+
+<% end %>
+       <div class="clear"></div>                         
+  </div><!-- end Box_right -->
