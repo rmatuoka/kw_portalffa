@@ -957,7 +957,7 @@ img {
 		.Content_support
 		{
 			position:relative;
-			width:175px;
+			width:811px;
 			height:auto;
 			float:left;
 			background:#fff;
@@ -965,10 +965,11 @@ img {
 		.Content_sponsors
 		{
 			position:relative;
-			width:636px;
+			width:976px !important;
 			height:auto;
 			float:left;
 			background:#fff;
+			margin-top:9px;
 	  	}
 		.Content_title_emp_1
 		{
@@ -987,6 +988,13 @@ img {
 			top:1px;		
 			margin-left:20px;	
 		}
+		.Title_emp_1-2
+		{
+			position:relative;
+			top:1px;		
+			margin-left:20px;
+			width:100% !important;	
+		}		
 	/*End - Box_employees_1*/
 	/*Box_employees_2*/
 	#Box_employees_2
@@ -1026,7 +1034,7 @@ img {
 			top:1px;							
 			margin-left:20px;
 		}		
-	/*End - Box_employees_2*/	  
+	/*End - Box_employees_2*/
 /*End - Container*/	
 /*Footer*/
 #Footer 

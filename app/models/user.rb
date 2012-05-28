@@ -22,8 +22,8 @@ class User < ActiveRecord::Base
   validates_exclusion_of :estado, :in => I18n.t('system_record.estado')
   validates_presence_of :email
   validates_exclusion_of :email, :in => I18n.t('system_record.email')
-  validates_presence_of :date_of_birth
-  validate :check_over_18
+  validates_presence_of :date_of_birth, :on => :create
+  validate :check_over_18, :on => :create
   
   attr_writer :role
   after_save :define_role
