@@ -97,7 +97,8 @@ img {
 		{
 			position:relative;
 			width: 741px;
-			height:200px;
+			min-height:200px;
+			height:auto;
 			background:#fff;
 			float:left;
 		}
