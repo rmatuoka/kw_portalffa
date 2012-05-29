@@ -10,7 +10,7 @@
 </p>
 <p>
   <strong>Link para o Download:</strong>
-  <%= @upload.file.path %>
+  <%= request.env['HTTP_HOST'] + @upload.file.url %>
 </p>
 <p>
   <strong>Published:</strong>
