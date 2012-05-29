@@ -32,7 +32,7 @@ class VerController < ApplicationController
                                   :conditions => [
                                     '`subcategories`.`category_id` = ? AND (`contents`.`published` = "1" and `contents`.`active` = "1" 
                                     and `subcategories`.`published` = "1" and `subcategories`.`active` = "1")', @categoria.first.id],
-                                  :order => '`contents`.`subcategory_id`'
+                                  :order => '`contents`.`subcategory_id`,`contents`.`id` desc'
                                 )
       else
         #Se a categoria não existir então mande para a pagina inicial

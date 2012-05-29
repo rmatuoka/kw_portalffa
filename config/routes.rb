@@ -1,6 +1,5 @@
 KwPortalffa::Application.routes.draw do
 
-  resources :configurations
   resources :carts do 
     collection do 
       get 'destroy_cart'
@@ -43,8 +42,7 @@ KwPortalffa::Application.routes.draw do
         get 'baixa'
       end
     end
-    
-    resources :ticket_homes
+    resources :configurations
     resources :footer_sites
     resources :newsletters
     resources :banners
@@ -54,6 +52,7 @@ KwPortalffa::Application.routes.draw do
     resources :galleries do
       resources :gallery_images
     end
+    resources :ticket_homes    
     resources :tickets
     resources :ticket_types
     resources :ticket_categories

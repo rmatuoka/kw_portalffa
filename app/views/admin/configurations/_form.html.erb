@@ -1,0 +1,50 @@
+<div id="Box_form">
+<%= form_for [:admin, @configuration] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :email_adm %>
+    <%= f.text_field :email_adm %>
+  </p>
+  <p>
+    <%= f.label :email_compras %>
+    <%= f.text_field :email_compras %>
+  </p>
+  <p>
+    <%= f.label :email_contato %>
+    <%= f.text_field :email_contato %>
+  </p>
+  <p>
+    <%= f.label :email_imprensa %>
+    <%= f.text_field :email_imprensa %>
+  </p>
+  <p>
+    <%= f.label :copyright %>
+    <%= f.text_field :copyright %>
+  </p>
+  <p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :schedule %>
+    <%= f.text_field :schedule %>
+  </p>
+  <p>
+    <%= f.label :twitter %>
+    <%= f.text_field :twitter %>
+  </p>
+  <p>
+    <%= f.label :facebook %>
+    <%= f.text_field :facebook %>
+  </p>
+  <p>
+    <%= f.label :youtube %>
+    <%= f.text_field :youtube %>
+  </p>
+  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_root_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+<% end %>
+</div>

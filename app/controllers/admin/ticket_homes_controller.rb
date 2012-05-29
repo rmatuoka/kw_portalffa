@@ -20,13 +20,11 @@ class Admin::TicketHomesController < ApplicationController
   
   def index
     @ticket_homes = TicketHome.all_active
-    puts @ticket_homes.count
     if (@ticket_homes.count > 0)
       redirect_to admin_ticket_home_path(@ticket_homes.first)
     else
       redirect_to new_admin_ticket_home_path
-    end
-    
+    end  
   end
 
   def show

@@ -9,4 +9,8 @@ class Content < ActiveRecord::Base
     "#{id}-#{name.parameterize}"
   end
   
+  def self.all_published_menu_desc
+    all(:conditions => ['active =  true and published = true and menu_display = true'], :order => '`contents`.`id` desc')
+  end
+  
 end
