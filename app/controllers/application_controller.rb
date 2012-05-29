@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     @Categorias_menu = Category.all_published_menu
     @Complementos_menu = ComplementMenu.all_published
     @Footer_site = FooterSite.all_published_order
+    @SystemConfig = Configuration.all_active
   end
 
   def create_template(t_type)

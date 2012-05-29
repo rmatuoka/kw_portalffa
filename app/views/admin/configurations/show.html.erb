@@ -1,0 +1,64 @@
+<% show_model_name(::Configuration, true) %>
+
+<h1><%= show_model_name(::Configuration, true) %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.configuration.messages.show')%></p><br />
+<br />
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.email_adm' %>:</strong>
+  <%= @configuration.email_adm %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.email_compras' %>:</strong>
+  <%= @configuration.email_compras %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.email_contato' %>:</strong>
+  <%= @configuration.email_contato %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.email_imprensa' %>:</strong>
+  <%= @configuration.email_imprensa %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.copyright' %>:</strong>
+  <%= @configuration.copyright %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.address' %>:</strong>
+  <%= @configuration.address %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.phone' %>:</strong>
+  <%= @configuration.phone %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.schedule' %>:</strong>
+  <%= @configuration.schedule %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.twitter' %>:</strong>
+  <%= @configuration.twitter %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.facebook' %>:</strong>
+  <%= @configuration.facebook %>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.youtube' %>:</strong>
+  <%= @configuration.youtube %>
+</p>
+<br />
+<br />
+<br />
+<p style="float:left;">
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_root_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+</p>
+<p style="float:left;">
+	<%= submit_tag t('attributes.edit'),:type=>"button",:onclick=>"window.open('"+edit_admin_configuration_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+</p>
+<p style="float:left;" class="Bt_enviar">
+<%= link_to t('attributes.exclude'), admin_configuration_path(@configuration), :confirm => t('system_messages.notice_to_delete'), :method => :delete%>
+</p>
+<div class"clear"></div>
+

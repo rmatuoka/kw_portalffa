@@ -230,6 +230,9 @@
         content:
             one: "Conteúdo"  
             other: "Conteúdos" 
+        configuration:
+            one: "Configuração"
+            other: "Configurações"
         footer_site:
             one: "Rodapé Site"
             other: "Rodapés Sites"
@@ -288,7 +291,24 @@
             messages:
                 index: "Verifique abaixo a lista dos conteúdos cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar um novo conteúdo." 
-                show: "Verifique se as informações abaixo estão corretas."  
+                show: "Verifique se as informações abaixo estão corretas." 
+        configuration:   
+            email_adm: "Email Administração"
+            email_compras: "Email Compras"
+            email_contato: "Email Contato"
+            email_imprensa: "Email Imprensa"
+            copyright: "Autor"
+            address: "Endereço"
+            phone: "Telefone"
+            schedule: "Horário"
+            twitter: "Endereço Twitter"
+            facebook: "Endereço Facebook"
+            youtube: "Endereço Youtube"
+            <<: *active_model_default           
+            messages:
+                index: "Verifique abaixo as configurações cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar uma nova configuração." 
+                show: "Verifique se as informações abaixo estão corretas."
         complement_menu:
             destination: "Destino"
             messages:
@@ -433,6 +453,8 @@
       notice_to_delete: "Esta operação não poderá ser desfeita, deseja continuar?"
       edit_form: "Utilize os campos abaixo para editar as informações."
       index_form: "Verifique abaixo a lista dos %{model} cadastrados no sistema."
+      service: "Central de Atendimento"
+      follow: "Siga-nos"
   system_record:
     name: "nome" 
     email: "seu@email"

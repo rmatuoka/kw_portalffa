@@ -1,0 +1,7 @@
+<% title show_model_name(::Configuration, true) %>
+
+<h1><%= show_model_name(::Configuration, true) %></h1><br />
+<p><%= t('activerecord.attributes.configuration.messages.index')%></p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_configuration_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />

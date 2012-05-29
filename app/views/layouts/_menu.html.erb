@@ -12,7 +12,7 @@
             <div class="Submenu_padrao Submenu_show" style="border-top:#<%=categoria.color%> 6px solid; border-bottom:#<%=categoria.color%> 6px solid;">
 				 <% 
 					subcategorias.each do |subcategoria| 
-						conteudos = subcategoria.contents.all_published_menu
+						conteudos = subcategoria.contents.all_published_menu_desc
 						if conteudos.count > 0
 				 %>
 				<div class="Box_Submenu_show">
