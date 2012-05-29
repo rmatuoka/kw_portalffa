@@ -2,6 +2,7 @@
 
 	<%= @Template = ::Template.find(:all,:conditions => ["`templates`.`id` = ?  and `templates`.`published` = 1 and `templates`.`active` = 1", @categoria.first.template_id])
 	     if @Template.count > 0
+			@noticiasrel = Array.new
 	        @WebModules = @Template.first.webmodules.all_published
     
 	        @WebModules.each do |modulo|
@@ -25,6 +26,9 @@
 	            else
 	              puts "Fodeu"
 	          end
+			  if (modulo.webpart.webtype.to_i == 1)
+				@noticiasrel.push(modulo.module_key)
+			  end
 	        end
 	    end		
 		render "layouts/verindex.html.erb"

@@ -1,7 +1,5 @@
 <%content_for :head do%>
 	<%= stylesheet_link_tag "noticia"%>
-	<%= stylesheet_link_tag "noticia_screen_768", :media=>"screen and (max-width:768px)"%>
-	<%= stylesheet_link_tag "noticia_screen_480", :media=>"screen and (max-width:480px)"%>
 	<%= javascript_include_tag "carousel_principal.js" %>	
 <%end%>
 <% title @categoria.first.name %>
@@ -43,6 +41,7 @@
 	 <% if @conteudos.count > 0 %>	
 	 <div class="Content_midle">	
 	 <% @conteudos.each do |show|%>
+		<% if !(@noticiasrel.include?(show.id.to_s))%>
 		 <a href="/<%= show.subcategory.category.url_slug%>/<%= show.subcategory.url_slug%>/<%= show.url_slug%>">
 		 <div class="Box_midle">
          	<div class="Bg_title_medium" style="background-color:#<%= cor %>;"><h1 class="Title_item" style="color:#<%= cor %>;"><%=show.subcategory.name%></h1></div>
@@ -50,6 +49,7 @@
 			<p class="Text_boz_midle"><%=show.summary%></p>
          </div>
 		 </a>
+		<%end%>
 	<% end %>
 	 </div><!-- end Content_midle -->
 	<% end %>
