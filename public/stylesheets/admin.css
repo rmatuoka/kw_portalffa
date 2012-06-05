@@ -81,7 +81,7 @@
 			
 		#Logo
 		{
-			position:relative;
+			position:relative;f
 			width:auto;
 			height:auto;
 			float:left;
@@ -305,7 +305,59 @@
 		{
 			width: 600px;
 			margin: auto;
-		}						
+		}
+		/*Error  Box*/
+		.error_messages
+		{
+			background: url(../images/bg_ops.png);
+			min-height:10px;
+			text-align:left !important;
+			padding:10px 20px 10px  132px !important;
+		}
+		.error_messages span
+		{
+			position: absolute;
+			left: 65px;
+			top: 43px;
+			height: 70px;
+			width: 71px;
+			background: url(../images/img_ops.png);
+			background-position: 0px 0px;
+			background-repeat: no-repeat;	
+		}
+		.error_messages h2
+		{
+			position: relative;
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 12px;
+			font-weight: bold;
+			color: #999;
+		}
+		.error_messages p
+		{
+			position: relative;
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 12px;
+			font-weight: normal;
+			color: #999;		
+		}
+		.error_messages ul
+		{
+			text-align:left !important;		
+			padding-left:17px;
+		
+		}
+		.error_messages ul li
+		{	
+			position: relative;
+			font-family: Verdana, Geneva, sans-serif;
+			font-size: 12px;
+			font-weight: normal;
+			color: #999;				
+			text-align:left !important;
+		}
+		/*Error  Box End*/
+								
 		#General #Content #Right_box form
 		{
 			position:relative;
