@@ -25,6 +25,124 @@
   item_id_1: "16"
   item_descr_1: Entrada sexta-feira promocional - 21/09/2012
   cliente_nome: Bruno Vinicius da Silva
+"47": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada domingo inteira 02/09/2012
+  encoding: UTF-8
+  ref_transacao: "47"
+  item_valor_1: "1000"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "10"
+  item_valor_2: "1500"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  item_quant_2: "1"
+  item_valor_3: "1500"
+  item_quant_3: "3"
+  cliente_email: bsilva@korewa.com.br
+  item_id_1: "1"
+  item_id_2: "2"
+  item_descr_1: Entrada sexta-feira promocional - 31/08/2012
+  item_id_3: "4"
+  item_descr_2: "Entrada s\xC3\xA1bado inteira 01/09/2012"
+  cliente_nome: Bruno Vinicius da Silva
+"36": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada domingo inteira 02/09/2012
+  encoding: UTF-8
+  ref_transacao: "36"
+  item_valor_1: "1000"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "10"
+  item_valor_2: "1500"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  item_quant_2: "1"
+  item_valor_3: "1500"
+  item_quant_3: "3"
+  cliente_email: bsilva@korewa.com.br
+  item_id_1: "1"
+  item_id_2: "2"
+  item_descr_1: Entrada sexta-feira promocional - 31/08/2012
+  item_id_3: "4"
+  item_descr_2: "Entrada s\xC3\xA1bado inteira 01/09/2012"
+  cliente_nome: Bruno Vinicius da Silva
+"48": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada domingo inteira 02/09/2012
+  encoding: UTF-8
+  ref_transacao: "48"
+  item_valor_1: "1000"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "10"
+  item_valor_2: "1500"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  item_quant_2: "1"
+  item_valor_3: "1500"
+  item_quant_3: "3"
+  cliente_email: bsilva@korewa.com.br
+  item_id_1: "1"
+  item_id_2: "2"
+  item_descr_1: Entrada sexta-feira promocional - 31/08/2012
+  item_id_3: "4"
+  item_descr_2: "Entrada s\xC3\xA1bado inteira 01/09/2012"
+  cliente_nome: Bruno Vinicius da Silva
+"49": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: Entrada domingo inteira 02/09/2012
+  encoding: UTF-8
+  ref_transacao: "49"
+  item_valor_1: "1000"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "10"
+  item_valor_2: "1500"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  item_quant_2: "1"
+  item_valor_3: "1500"
+  item_quant_3: "3"
+  cliente_email: bsilva@korewa.com.br
+  item_id_1: "1"
+  item_id_2: "2"
+  item_descr_1: Entrada sexta-feira promocional - 31/08/2012
+  item_id_3: "4"
+  item_descr_2: "Entrada s\xC3\xA1bado inteira 01/09/2012"
+  cliente_nome: Bruno Vinicius da Silva
+"51": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  encoding: UTF-8
+  ref_transacao: "51"
+  item_valor_1: "1500"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "10"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  cliente_email: bsilva@korewa.com.br
+  item_id_1: "16"
+  item_descr_1: Entrada sexta-feira promocional - 21/09/2012
+  cliente_nome: Bruno Vinicius da Silva
+"52": !map:ActiveSupport::HashWithIndifferentAccess 
+  tipo: CP
+  item_descr_3: "Entrada s\xC3\xA1bado meia 01/09/2012"
+  encoding: UTF-8
+  ref_transacao: "52"
+  item_valor_1: "1000"
+  commit: ""
+  moeda: BRL
+  item_quant_1: "10"
+  item_valor_2: "1500"
+  email_cobranca: rmatuoka@agenciaeconomica.com.br
+  item_quant_2: "5"
+  item_valor_3: "1100"
+  item_quant_3: "8"
+  cliente_email: bsilva@korewa.com.br
+  item_id_1: "1"
+  item_id_2: "2"
+  item_descr_1: Entrada sexta-feira promocional - 31/08/2012
+  item_id_3: "3"
+  item_descr_2: "Entrada s\xC3\xA1bado inteira 01/09/2012"
+  cliente_nome: Bruno Vinicius da Silva
 "3": !map:ActiveSupport::HashWithIndifferentAccess 
   tipo: CP
   encoding: UTF-8

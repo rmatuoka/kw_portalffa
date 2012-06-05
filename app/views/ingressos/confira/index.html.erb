@@ -82,6 +82,12 @@
 							controle = controle +1
 						end%>
 						<% atual = c.ticket.ticket_category_id %>
+						<%
+							if c.completed
+						        c.completed = false
+						        c.save
+					      	end
+						%>
 					<%end%>
 						</table>
 				<%end%>

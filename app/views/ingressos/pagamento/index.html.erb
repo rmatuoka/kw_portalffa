@@ -14,7 +14,12 @@
     </div>
     <div class="Content_midle">
 	  <h1 class="Title_item_orange_week">Dados Pessoais</h1>
-      	<p class="Text_grey" style="margin-top:20px;">N. do Pedido: 0001<br>Nome: Rafael Matuoka Chiocchetti<br>E-mail: rmatuoka@korewa.com.br<br>CPF: 32782928805</p>
+      	<p class="Text_grey" style="margin-top:20px;">
+			<!-- N. do Pedido: <%#=  @order.id %><br> -->
+			Nome: <%=  @order.user.name %><br>
+			E-mail: <%=  @order.user.email %><br>
+			CPF: <%=  @order.user.cpf %>
+		</p>
 
 		<table width="690" border="0" cellspacing="0" cellpadding="0" class="Btn_table_ingresso">	
 			<tr>

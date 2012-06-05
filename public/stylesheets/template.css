@@ -32,6 +32,7 @@ img {
 	height:auto;
 	margin:0 auto;
 	overflow:hidden;
+	z-index:1000;
 }
 #Bg_general
 {

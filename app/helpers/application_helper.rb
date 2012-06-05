@@ -122,12 +122,11 @@ module ApplicationHelper
         else
           retorno +=                            "<li class='p#{counter}'>"
         end
-      #  retorno +=                                "<a href='#'>"
-        #retorno +=                                    "<img src='images/1_big.gif' width='476' height='312' alt=''/>"
+        retorno +=                                "<a href='#{image.upload.file.url}' class='light_gallery'>"
         retorno +=                                    image_tag image.upload.file.url(:gallery)
         retorno +=                                    "<span class='opacity'></span>"
         retorno +=                                    "<span class='content'><h1></h1><p></p></span>"
-       # retorno +=                                "</a>"
+        retorno +=                                "</a>"
         retorno +=                            "</li>"
         #-----FIM LOOP 1
         counter = counter + 1

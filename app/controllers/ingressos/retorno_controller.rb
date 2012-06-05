@@ -39,8 +39,15 @@ class Ingressos::RetornoController < ApplicationController
           #  q = Quote.find(c.quote_id)
           #  q.indisponivel = true
           #  #q.save
-          #end           
-        end   
+          #end   
+          carts = order.user.carts.all(:conditions =>['completed = true'])  
+          if carts.count > 0
+            carts.each do |cart|
+              cart.destroy
+            end
+          end                  
+        end
+
       end  
       render :nothing => true
 

@@ -17,6 +17,10 @@ class Ingressos::SelecioneController < ApplicationController
     carts.each do |c|
       @carts_hash[i]= c.ticket_id
       i = i+1
+      if c.completed
+        c.completed = false
+        c.save
+      end
     end
     @cart = current_user.carts.build
 	  

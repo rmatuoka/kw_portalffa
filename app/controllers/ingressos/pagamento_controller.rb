@@ -40,7 +40,10 @@ class Ingressos::PagamentoController < ApplicationController
             :email                 => current_user.email
           }
           @order_product.add :id => cart_item.ticket_id, :quantity => cart_item.amount, :price => cart_item.price, :description => cart_item.ticket.name
-          cart_item.destroy
+          if !(cart_item.completed)
+            cart_item.completed = true
+            cart_item.save
+          end
         end
       end
     end
