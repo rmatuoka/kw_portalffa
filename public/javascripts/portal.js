@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
 			submenuoff = false;			
 			}
     }	
-	
+
 	(function() {
 
 	         var navlinks = jQuery('#Menu li:lt(4) a');

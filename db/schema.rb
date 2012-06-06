@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605140851) do
+ActiveRecord::Schema.define(:version => 20120606153358) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -126,6 +126,8 @@ ActiveRecord::Schema.define(:version => 20120605140851) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "link"
+    t.string   "link_target"
   end
 
   create_table "movies", :force => true do |t|

@@ -122,7 +122,7 @@ module ApplicationHelper
         else
           retorno +=                            "<li class='p#{counter}'>"
         end
-        retorno +=                                "<a href='#{image.upload.file.url}' class='light_gallery'>"
+        retorno +=                                "<a href='#{image.upload.file.url(:large_image)}' class='light_gallery'>"
         retorno +=                                    image_tag image.upload.file.url(:gallery)
         retorno +=                                    "<span class='opacity'></span>"
         retorno +=                                    "<span class='content'><h1></h1><p></p></span>"
@@ -149,6 +149,29 @@ module ApplicationHelper
       retorno +=               "</div> <!--End Gallery_home_box-->"
       
       return raw(retorno)
+      
+    when 9
+      #----------GALERIA CARROSSEL
+      @Galeria = Gallery.find(modulo.module_key)
+      @GaleriaImagens = @Galeria.gallery_images.all
+      counter = 1    
+      retorno = ""
+      retorno += "<div id='slide_box'>"      
+      retorno += "  <div id='slideshow'>"
+      @GaleriaImagens.each do |image|
+        retorno += "  <div id='slide#{counter}' class='slide_item'>"
+        retorno +=      link_to(image_tag(image.upload.file.url(:gallery_highlight)), image.link, :target=>image.link_target)        
+        retorno +=   	  "<h1>#{image.legend}.</h1>"	
+        retorno += "  </div>"
+        counter = counter + 1
+      end      
+      retorno += "  </div>"
+      retorno += "</div>"      
+      retorno += "<div id='nav'>"
+      retorno += "</div>" 
+
+      return raw(retorno) 
+                                  
     else
       puts "Fodeu"
     end

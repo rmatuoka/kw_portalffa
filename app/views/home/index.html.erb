@@ -3,9 +3,20 @@
 	<%= javascript_include_tag "carousel_principal.js" %>
 	<%= stylesheet_link_tag "jquery.lightbox-0.5"%>
 	<%= javascript_include_tag "jquery.lightbox-0.5.js" %>
+	<%= stylesheet_link_tag "slide_cycle"%>	
+	<%= javascript_include_tag "jquery.cycle.all.js" %>
 	<script>
 		jQuery(document).ready(function() {	
 			jQuery('.light_gallery').lightBox({fixedNavigation:true});
+			
+			jQuery('#slideshow') 
+				.cycle({ 
+				    fx:     'fade', 
+					speed:    3500, 
+					timeout:  10000,
+				    pager:  '#nav' 
+			});
+			
 	 	});
 	</script>
 <%end%>    
