@@ -412,7 +412,7 @@
                six: "Banners Publicos"
                seven: "Enquete"
                eight: "Previsão Tempo"
-               nine: "Nada Ainda"
+               nine: "Galeria Carrossel"
         #Fim dos campos especificos
     errors:
       template:

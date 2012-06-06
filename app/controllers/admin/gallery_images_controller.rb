@@ -14,11 +14,12 @@ class Admin::GalleryImagesController < ApplicationController
   end
 
   def new
-    @gallery_image = @gallery.gallery_images.build
+    @gallery_image = @gallery.gallery_images.build(:published=> true)
   end
 
   def create
     @gallery_image = @gallery.gallery_images.new(params[:gallery_image])
+    @gallery_image.active = true
     if @gallery_image.save
       redirect_to [:admin, @gallery, @gallery_image], :notice => "Successfully created gallery image."
     else

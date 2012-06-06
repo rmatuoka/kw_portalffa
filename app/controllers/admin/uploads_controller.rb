@@ -14,11 +14,12 @@ class Admin::UploadsController < ApplicationController
   end
 
   def new
-    @upload = Upload.new
+    @upload = Upload.new(:published=> true)
   end
 
   def create
     @upload = Upload.new(params[:upload])
+    @upload.active = true
     if @upload.save
       redirect_to [:admin, @upload], :notice => "Successfully created upload."
     else

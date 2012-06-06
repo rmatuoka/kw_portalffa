@@ -16,5 +16,14 @@
     <%= f.label :published %><br />
     <%= f.check_box :published %>
   </p>
+  <p>Atenção: Os links abaixo só serão processados se a Galeria for do tipo Carrossel!</p>
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.label :link_target %><br />
+    <%= f.text_field :link_target %>
+  </p>
   <p><%= f.submit %></p>
 <% end %>
