@@ -5,6 +5,10 @@
 <p><%= t('activerecord.attributes.configuration.messages.show')%></p><br />
 <br />
 <p>
+  <strong><%=t 'activerecord.attributes.configuration.logo' %>:</strong>
+  <%= image_tag(@configuration.logo.url) %>
+</p>
+<p>
   <strong><%=t 'activerecord.attributes.configuration.email_adm' %>:</strong>
   <%= @configuration.email_adm %>
 </p>

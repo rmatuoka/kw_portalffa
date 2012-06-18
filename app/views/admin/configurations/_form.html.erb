@@ -1,6 +1,10 @@
 <div id="Box_form">
-<%= form_for [:admin, @configuration] do |f| %>
+<%= form_for ([:admin, @configuration], :html => { :multipart => :true }) do |f| %>
   <%= f.error_messages %>
+  <p>
+    <%= f.label :logo %>
+    <%= f.file_field :logo %>
+  </p>
   <p>
     <%= f.label :email_adm %>
     <%= f.text_field :email_adm %>

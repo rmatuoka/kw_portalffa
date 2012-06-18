@@ -1,8 +1,10 @@
 <% title "Admin/Footer Sites" %>
 
-<table>
+<table class="tablesorter" width="80%">
+  <thead> 
   <tr>
     <th>Name</th>
+	<th>Order</th>
     <th>Legend</th>
     <th>Destination</th>
     <th>Link Target</th>
@@ -13,9 +15,12 @@
     <th>Active</th>
     <th>Published</th>
   </tr>
+  	</thead> 
+	<tbody>
   <% for footer_site in @footer_sites %>
     <tr>
       <td><%= footer_site.name %></td>
+	  <td><%= footer_site.footer_order %></td>
       <td><%= footer_site.legend %></td>
       <td><%= footer_site.destination %></td>
       <td><%= footer_site.link_target %></td>
@@ -30,6 +35,7 @@
       <td><%= link_to "Destroy", [:admin, footer_site], :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
+</tbody>
 </table>
 
 <p><%= link_to "New Admin/Footer Site", new_admin_footer_site_path %></p>

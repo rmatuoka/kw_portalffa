@@ -3,6 +3,6 @@ class FooterSite < ActiveRecord::Base
     has_attached_file :image, :styles => { :pb => "100% x 100%" },:convert_options => { :pb => '-colorspace gray'}
     
     def self.all_published_order(orderasc = true)
-      all(:conditions => ['active =  true and published = true'], :order => "footer_type")
+      all(:conditions => ['active =  true and published = true'], :order => "footer_type, footer_order ASC")
     end    
 end
