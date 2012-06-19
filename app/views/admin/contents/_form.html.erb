@@ -1,13 +1,49 @@
 <%content_for :head do%>
 	<%= include_tiny_mce_if_needed %>
 	<%= javascript_include_tag "jquery.limit-1.2.source.js" %>
+	<%= javascript_include_tag "colorpicker.js" %>
+	<%= stylesheet_link_tag "colorpicker"%>
+	<% 	if @content.color.blank?
+			@cor = 'e5e5e5'
+		else
+			@cor = @content.color
+		end
+	%>
 	<script>
-		jQuery(document).ready(function() 
-		    { 
-		        jQuery('#text_summary').limit('140','#left');
-		    } 
-		);
+		jQuery(document).ready(function() {
+	/*		jQuery('#category_color').ColorPicker({
+	            onSubmit: function(hsb, hex, rgb, el) {
+	                jQuery(el).val(hex);
+	                jQuery(el).ColorPickerHide();
+	            },
+	            onBeforeShow: function () {
+	                jQuery(this).ColorPickerSetColor(this.value);
+	            }
+	        }) */
+			jQuery('#colorSelector').ColorPicker({
+	            color: '<%= @cor %>',	
+				onSubmit: function(hsb, hex, rgb, el) {
+	                jQuery(el).val(hex);
+	                jQuery(el).ColorPickerHide();
+	            },
+	            onShow: function (colpkr) {
+	                jQuery(colpkr).fadeIn(500);
+	                return false;
+	            },
+	            onHide: function (colpkr) {
+	                jQuery(colpkr).fadeOut(500);
+	                return false;
+	            },
+	            onChange: function (hsb, hex, rgb) {
+	                jQuery('#colorSelector div').css('backgroundColor','#' + hex);
+					jQuery('#category_color').val(hex);
+	            }
+	        });
+	
+			jQuery('#text_summary').limit('140','#left');
+		});
 	</script>
+
 <%end%>
 <div id="Box_form">
 <%= form_for ([:admin, @category, @subcategory, @content], :html => { :multipart => :true }) do |f| %>
@@ -37,6 +73,10 @@
     <%= f.file_field :icon_menu %>
   </p>
   <p>
+    <%= f.label :icon_home %><br />
+    <%= f.file_field :icon_home %>
+  </p>
+  <p>
     <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
@@ -44,6 +84,15 @@
     <%= f.label :menu_display %>
     <%= f.check_box :menu_display %>
   </p>
+   <div style="position: relative; height: 40px;">
+	<div id="colorSelector">
+		<div style="background-color: #<%= @cor %>; "></div>
+	</div>
+	<div id="colorLabel">
+		<%= f.label :color, :style=>"position: absolute; top: 10px; left: 5px;"%>
+	</div>
+	<%= f.hidden_field :color, :value=>@cor%>
+  </div>
   <br />
   <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategory_contents_path(@category, @subcategory)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>

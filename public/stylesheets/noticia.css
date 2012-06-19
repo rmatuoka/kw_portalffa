@@ -227,6 +227,16 @@ img {
 				margin-bottom:10px;
 				vertical-align: top;				
 			}
+			.Box_Top
+			{
+				height:100px;
+			}
+			.image_home
+			{
+				float:left; 
+				margin:5px 10px 5px 5px; 
+				height:90px;
+			}
 			p.Text_boz_midle 
 			{
 				font-family:Tahoma, Geneva, sans-serif;

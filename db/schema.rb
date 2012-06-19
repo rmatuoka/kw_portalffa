@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618202139) do
+ActiveRecord::Schema.define(:version => 20120619150335) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -95,6 +95,11 @@ ActiveRecord::Schema.define(:version => 20120618202139) do
     t.string   "icon_menu_content_type"
     t.integer  "icon_menu_file_size"
     t.datetime "icon_menu_updated_at"
+    t.string   "icon_home_file_name"
+    t.string   "icon_home_content_type"
+    t.integer  "icon_home_file_size"
+    t.datetime "icon_home_updated_at"
+    t.string   "color"
   end
 
   create_table "footer_sites", :force => true do |t|
