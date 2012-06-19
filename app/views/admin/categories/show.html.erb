@@ -13,6 +13,10 @@
   <%= @category.name %>
 </p>
 <p>
+  <strong><%=t 'attributes.background' %>:</strong><br>
+  <%= image_tag(@category.background.url(:thumb)) %>
+</p>
+<p>
   <strong><%=t 'attributes.published' %>:</strong>
   <%= print_active(@category.published) %>
 </p>

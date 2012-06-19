@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619160618) do
+ActiveRecord::Schema.define(:version => 20120619193948) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(:version => 20120619160618) do
     t.integer  "template_id"
     t.boolean  "menu_display"
     t.boolean  "show_date"
+    t.string   "background_file_name"
+    t.string   "background_content_type"
+    t.integer  "background_file_size"
+    t.datetime "background_updated_at"
   end
 
   create_table "complement_menus", :force => true do |t|

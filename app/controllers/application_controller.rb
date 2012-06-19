@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   end
   
   def load_menu
+    @Categoria = Category.find(params[:category]) if !params[:category].blank? 
     @Categorias_menu = Category.all_published_menu
     @Complementos_menu = ComplementMenu.all_published
     @Footer_site = FooterSite.all_published_order

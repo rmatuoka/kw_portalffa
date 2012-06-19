@@ -6,6 +6,8 @@ class Category < ActiveRecord::Base
   validates_presence_of :name  
   validates_presence_of :template_id  
   
+  has_attached_file :background, :styles => { :thumb => "150x150>"}
+  
   def url_slug()
     "#{id}-#{name.parameterize}"
   end
