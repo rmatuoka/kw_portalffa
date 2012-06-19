@@ -303,8 +303,7 @@
 		}
 		#General #Content #Right_box #Box_form
 		{
-			width: 600px;
-			margin: auto;
+			width: 100%;
 		}
 		/*Error  Box*/
 		.error_messages
@@ -363,7 +362,7 @@
 			position:relative;
 			display:block;
 			padding:33px 0px 10px 33px;
-			text-align:right;
+			text-align:left;
 		}			
 		#General #Content #Right_box form p
 		{

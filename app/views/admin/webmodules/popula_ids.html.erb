@@ -1,7 +1,7 @@
 <%if @Webpart.webtype == "1"%>
 	<!-- NOTICIAS -->
 	<%Content.all_published.each do |n|%>
-		<%=radio_button_tag :module_key, n.id%> <%=n.name%> <i>(<%=n.subcategory.name%>)</i> <br/>
+		<%=radio_button_tag :module_key, n.id, nil, :class => "input_radio"%> <%=n.name%> <i>(<%=n.subcategory.name%>)</i> <br/>
 	<%end%>
 
 <%elsif @Webpart.webtype == "2"%>
@@ -13,20 +13,20 @@
 	<!-- IMAGEM -->
 	<label>Escolha a imagem</label><br />
     <%Upload.all_images.each do |n|%>
-		<%=radio_button_tag :module_key, n.id%> <%=n.file_file_name%> <i>(<%=n.description%>)</i> <br/>
+		<%=radio_button_tag :module_key, n.id, nil, :class => "input_radio"%> <%=n.file_file_name%> <i>(<%=n.description%>)</i> <br/>
 	<%end%>
 
 <%elsif @Webpart.webtype == "6"%>
 	<!-- BANNER -->
 	<label>Escolha o Banner</label><br />
     <%Banner.all_published.each do |b|%>
-		<%=radio_button_tag :module_key, b.id%> <%=b.file_file_name%> <i>(<%=b.name%>)</i> <br/>
+		<%=radio_button_tag :module_key, b.id, nil, :class => "input_radio"%> <%=b.file_file_name%> <i>(<%=b.name%>)</i> <br/>
 	<%end%>
 
 <%elsif (@Webpart.webtype == "5") or (@Webpart.webtype == "9")%>
 	<!-- BANNER -->
 	<label>Escolha a Galeria</label><br />
     <%Gallery.all_published.each do |g|%>
-		<%=radio_button_tag :module_key, g.id%> <%=g.name%> <i>(<%=g.description%>)</i> <br/>
+		<%=radio_button_tag :module_key, g.id, nil, :class => "input_radio"%> <%=g.name%> <i>(<%=g.description%>)</i> <br/>
 	<%end%>
 <%end%>
