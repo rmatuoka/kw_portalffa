@@ -20,7 +20,7 @@
 		    <th width="200px">Tipo</th>
 	  </tr>
 	<% @Results_itens.each do |item| %>
-		<tr <%="bgcolor='Red'" if item.baixa?%>>
+		<tr <%="bgcolor='Red'" if item.reduction?%>>
 			<td align="center"><%= item.amount %></td>
 			<td align="center">
 				<%= item.ticket.ticket_date.strftime("%d") %><br/>
@@ -28,7 +28,13 @@
 			</td align="center">
 			<td align="center"><%=number_with_delimiter(item.price * item.amount)%></td>
 			<td align="center"><%= item.ticket.ticket_type.name %></td>
-			<td align="center"><%=link_to("Dar baixa", baixa_admin_search_path(item)) if !item.baixa?%></td>
+			<td align="center">
+				<% if !item.reduction?%>
+					<%=link_to("Dar baixa", baixa_admin_search_path(item))%>
+				<% else %>
+					<%= I18n.localize(item.ticket.updated_at, :format => :short)%>
+				<%end%>
+			</td>
 		</tr>
 	<%end%>
 	</table>

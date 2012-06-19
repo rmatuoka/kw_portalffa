@@ -67,7 +67,7 @@ class Admin::SearchsController < ApplicationController
   
   def baixa
     @Baixa = OrderTicket.find(params[:id])
-    @Baixa.baixa = true
+    @Baixa.reduction = true
     @Baixa.save
     redirect_to request.env['HTTP_REFERER']
   end
