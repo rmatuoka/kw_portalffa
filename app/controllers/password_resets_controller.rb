@@ -25,8 +25,9 @@ class PasswordResetsController < ApplicationController
 	    flash[:temerro] = " "
 			flash[:error] = "O link expirou! Tente novamente."
 			redirect_to login_path
+		else
+		  @user.reset_persistence_token
 	  end
-	  @user.reset_persistence_token
 	end
 
 	def update
