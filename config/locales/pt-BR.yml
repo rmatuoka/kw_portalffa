@@ -280,6 +280,7 @@
         #Campos especificos de acordo com cada tabela
         category:
             color: "Cor"
+            show_date: "Mostar Data"
             messages:
                 index: "Verifique abaixo a lista das categorías cadastrados no sistema."  
                 new: "Utilize os campos abaixo para cadastrar uma nova categoría." 

@@ -10,14 +10,20 @@
 </style>
 <div id="Box_left">
     <div class="Content_top">
-	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.festadefloresemorangos.com.br&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=228638123874618" scrolling="no" frameborder="0" style="border:none; float:right; overflow:hidden; width:150px; height:21px; margin-top:20px;" allowTransparency="true">
-	</iframe>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-		</script>
+		<div id="Show_Twitter_Face">
+			<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.festadefloresemorangos.com.br&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=228638123874618" scrolling="no" frameborder="0" class="facebook-share-button" allowTransparency="true">
+			</iframe>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+			</script>
+		</div>
         <div class="Bg_title_big" style="background-color:#<%= cor %>;"><h1 class="Title_item"  style="color:#<%= cor %>;" ><%= @conteudo.first.subcategory.name %></h1></div>
+		<% if @conteudo.first.subcategory.category.show_date %>
         <h2 class="Title_2_item" style="color:#<%= cor %>;"><%= @conteudo.first.name %></h2>
         <h3 class="Date_content_top" style="color:#<%= cor %>;"><%= I18n.localize(@conteudo.first.created_at, :format => :pdate) %></h3>
+		<% else %>
+        <h2 class="Title_2_item" style="color:#<%= cor %>;margin-bottom: 15px;"><%= @conteudo.first.name %></h2>		
+		<% end %>
 		<div id="Content_top_Box_Conteudo">
         	<%=raw @conteudo.first.content %>
 		</div>

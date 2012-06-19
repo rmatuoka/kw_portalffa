@@ -104,10 +104,31 @@ img {
 			height: auto;
 			padding-bottom: 20px;
 		}
+				#Show_Twitter_Face
+				{
+					display: block;
+					width: auto;
+					height: auto;
+					margin-top: 15px;
+					height:21px; 					
+				}
+					.twitter-share-button
+					{
+						float: right;
+						margin-right: 10px;
+					}
+					.facebook-share-button
+					{
+						border:none; 
+						float:right; 
+						overflow:hidden; 
+						width:150px; 
+						height:21px; 						
+					}
 				.Bg_title_big
 				{
 					position:relative;
-					top:20px;
+					top:15px;
 					left:0px;
 					width:342px;
 					height:17px;
@@ -130,6 +151,7 @@ img {
 					padding-left:9px;	
 					margin-bottom:11px;		
 				}
+
 				h1.Title_item
 
 				{
@@ -148,7 +170,7 @@ img {
 					font-size:20px;
 					font-weight:normal;
 					margin-left:26px;
-					margin-top:35px;						
+					margin-top:30px;						
 				}	
 				h3.Date_content_top		
 				{
@@ -157,7 +179,7 @@ img {
 					font-size:12px;
 					font-weight:normal;
 					margin-left:26px;
-					margin-bottom:50px;
+					margin-bottom:15px;
 					font-smooth:always;					
 				}
 				#Content_top_Box_Conteudo
