@@ -1,7 +1,7 @@
 <%if !@Results.blank?%>
 	<br />
 	<br />
-	<label>Nome: </label><strong class="f_dados"><%= @Results.last.user.nome%></strong><br />
+	<label>Nome: </label><strong class="f_dados"><%= @Results.last.user.name%></strong><br />
 	<label>E-mail: </label><strong class="f_dados"><%= @Results.last.user.email%></strong><br />
 	<label>Status do Pedido: </label><strong class="f_dados"><%= traduz_status_do_pedido(@Results.last.status)%></strong><br />
 	<label>Forma de Pagamento: </label><strong class="f_dados"><%= traduz_tipo_do_pagamento(@Results.last.payment_type)%></strong><br />	
