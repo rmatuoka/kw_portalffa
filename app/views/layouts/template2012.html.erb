@@ -40,7 +40,7 @@
 <div id="Bg_general" >
 	<div class="Shadow">
 	</div>
-    <div id="Header" <%="style='background-image:url("+ raw(@Categoria.background.url()) +")'" if @Categoria%>>
+    <div id="Header" <%="style='background-image:url("+ raw(@Categoria.background.url()) +")'" if @Categoria && @Categoria.background.url != "/backgrounds/original/missing.png"%>>
     	<div class="Shadow">
 		</div>
     	<div class="Header_top">
