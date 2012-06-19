@@ -1,5 +1,7 @@
 class Content < ActiveRecord::Base
   has_attached_file :icon_menu, :styles => { :menu_size => "77x63>"}, :default_url => "/system/icon_menus/default.jpg"
+  
+  has_attached_file :icon_home, :styles => { :menu_size => "90x90>"}
   #attr_accessible :subcategory_id, :template_id, :content, :active, :published
   belongs_to :subcategory
   belongs_to :template 

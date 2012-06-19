@@ -43,11 +43,23 @@
 	 <% @conteudos.each do |show|%>
 		<% if !(@noticiasrel.include?(show.id.to_s))%>
 		 <a href="/<%= show.subcategory.category.url_slug%>/<%= show.subcategory.url_slug%>/<%= show.url_slug%>">
-		 <div class="Box_midle">
-         	<div class="Bg_title_medium" style="background-color:#<%= cor %>;"><h1 class="Title_item" style="color:#<%= cor %>;"><%=show.subcategory.name%></h1></div>
-            <h2 class="Title_2_item" style="color:#<%= cor %>;"><%=show.name%></h2>
-			<p class="Text_boz_midle"><%=show.summary%></p>
-         </div>
+		 <div class="Box_midle" style="">
+	         	<div class="Bg_title_medium" style="background-color:#<%= cor %>;"><h1 class="Title_item" style="color:#<%= cor %>;"><%=show.subcategory.name%></h1></div>
+			
+				<div class="Box_Top" style="background-color:#<%=show.color%>; " >
+					<%if show.icon_home.url(:menu_size) != "/icon_homes/menu_size/missing.png"%>
+						<div class="image_home">
+			         		<%=image_tag(show.icon_home.url(:menu_size))%>
+			         	</div>
+					<%end%>
+		
+					<h2 class="Title_2_item" style="float:left; color:#<%= cor %>;"><%=show.name%></h2>
+				</div>
+				
+				
+	            
+				<p class="Text_boz_midle"><%=show.summary%></p>
+		</div>
 		 </a>
 		<%end%>
 	<% end %>
