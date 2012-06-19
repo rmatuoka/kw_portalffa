@@ -8,7 +8,7 @@
     <%= f.label :upload_id %><br />
     <div id="UploadImages">
     	<%@upload_images.each do |u|%>
-			<%=f.radio_button :upload_id, u.id%> <%=image_tag u.file(:thumb)%> <br>
+			<%=f.radio_button :upload_id, u.id, :class => "input_radio"%> <%=image_tag u.file(:thumb)%> <br>
 		<%end%>
     </div>
   </p>
