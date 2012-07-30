@@ -1,8 +1,14 @@
 class Admin::UsersController < ApplicationController
+  access_control do
+      allow :admin, :all
+      allow :supervisor, :to => [:index, :search]
+      
+  end  
+  
   layout "inadmin"
   
   def index
-    @users = User.all.paginate :page => params[:page],:per_page => 20
+    @users = User.all.paginate :page => params[:page],:per_page => 50
   end
 
   def show
@@ -31,7 +37,7 @@ class Admin::UsersController < ApplicationController
   
   def search
     if !params[:keyword].blank?
-      @Results = User.search_for(params[:keyword]).paginate :page => params[:page],:per_page => 20
+      @Results = User.search_for(params[:keyword]).paginate :page => params[:page],:per_page => 50
     end
   end
     

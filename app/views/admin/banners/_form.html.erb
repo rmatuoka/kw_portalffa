@@ -1,28 +1,31 @@
+<div id="Box_form">
 <%= form_for ([:admin, @banner], :html => { :multipart => :true }) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :description %><br />
+    <%= f.label :description %>
     <%= f.text_field :description %>
   </p>
   <p>
-    <%= f.label :link %><br />
+    <%= f.label :link %>
     <%= f.text_field :link %>
   </p>
   <p>
-    <%= f.label :link_target %><br />
+    <%= f.label :link_target %>
     <%= f.text_field :link_target %>
   </p>
 	<p>
-	    <%= f.label :file %><br />
+	    <%= f.label :file %>
 	    <%= f.file_field :file %>
 	  </p>
 	<p>
-	    <%= f.label :published %><br />
+	    <%= f.label :published %>
 	    <%= f.check_box :published %>
-	  </p>
-  <p><%= f.submit %></p>
+  	</p>
+  	<br />
+  	<p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_banners_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>
+</div>

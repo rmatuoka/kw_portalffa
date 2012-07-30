@@ -5,7 +5,7 @@ class Admin::BannersController < ApplicationController
   layout "inadmin"
   
   def index
-    @banners = Banner.all
+    @banners = Banner.all_active
   end
 
   def show
@@ -13,11 +13,12 @@ class Admin::BannersController < ApplicationController
   end
 
   def new
-    @banner = Banner.new
+    @banner = Banner.new(:published => true)
   end
 
   def create
     @banner = Banner.new(params[:banner])
+    @banner.active = true
     if @banner.save
       redirect_to [:admin, @banner], :notice => "Successfully created banner."
     else
@@ -40,7 +41,7 @@ class Admin::BannersController < ApplicationController
 
   def destroy
     @banner = Banner.find(params[:id])
-    @banner.destroy
+    @banner.newdestroy
     redirect_to admin_banners_url, :notice => "Successfully destroyed banner."
   end
 end

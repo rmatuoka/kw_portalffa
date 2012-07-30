@@ -1,6 +1,7 @@
 class Admin::SearchsController < ApplicationController
   access_control do
       allow :admin, :all
+      allow :supervisor, :all
   end
   
   layout "inadmin"

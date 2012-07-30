@@ -1,24 +1,30 @@
-<% title "Admin/Banner" %>
+<% title @banner.name %>
+
+<h1><%= @banner.name %></h1><br />
+<br />
+<p><%= t('activerecord.attributes.banner.messages.show')%></p><br />
+<br />
 
 <p>
-  <strong>Name:</strong>
+  <strong><%=t 'activerecord.attributes.banner.name' %></strong>
   <%= @banner.name %>
 </p>
 <p>
-  <strong>Description:</strong>
+  <strong><%=t 'activerecord.attributes.banner.description' %></strong>
   <%= @banner.description %>
 </p>
 <p>
-  <strong>Link:</strong>
+  <strong><%=t 'activerecord.attributes.banner.link' %></strong>
   <%= @banner.link %>
 </p>
 <p>
-  <strong>Link Target:</strong>
+  <strong><%=t 'activerecord.attributes.banner.link_target' %></strong>
   <%= @banner.link_target %>
 </p>
-
+<br />
+<br />
+<br />
 <p>
-  <%= link_to "Edit", edit_admin_banner_path(@banner) %> |
-  <%= link_to "Destroy", [:admin, @banner], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_banners_path %>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_banners_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
 </p>
+

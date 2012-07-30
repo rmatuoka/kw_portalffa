@@ -375,7 +375,24 @@
 			font-size:20px;
 			font-weight:normal;
 			color:#999;
-		}	
+		}
+		/* Pagina de busca */
+		#search
+		{
+			display:block;
+			float:left;
+		}
+		#filtrar
+		{
+			display:block;
+			float:right;
+		}
+			#filtrar form
+			{
+				padding: 0px !important;
+			}
+		/* Fim Pagina de busca */
+			
 		.Form_title
 		{
 			position:relative;

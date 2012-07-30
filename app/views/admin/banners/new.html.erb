@@ -1,5 +1,8 @@
-<% title "New Admin/Banner" %>
+<% title t('attributes.new') +" "+show_model_name(::Banner, true) %>
+
+<h1><%= t('attributes.new') +" "+show_model_name(::Banner)%></h1><br />
+<br />
+<p><%= t('activerecord.attributes.banner.messages.new')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p><%= link_to "Back to List", admin_banners_path %></p>

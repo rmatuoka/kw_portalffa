@@ -1,5 +1,6 @@
     <div id="Box_register_form">	
 		<%= form_for [:admin, @user] do |f| %>
+		<%= f.error_messages %>
 		<div class="field">
 			<%= f.label :name, "Nome" %>
 			<%= f.text_field :name %>

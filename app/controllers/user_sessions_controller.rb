@@ -13,7 +13,7 @@ class UserSessionsController < ApplicationController
     @admin = false
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      if (User.find(@user_session.user).has_role? :admin)
+      if !(User.find(@user_session.user).has_role? :user) # Se o nivel do usuário for diferente  de user mande para admin
         @admin = true
       end
     else

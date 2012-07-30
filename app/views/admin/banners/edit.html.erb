@@ -1,8 +1,8 @@
-<% title "Edit Admin/Banner" %>
+<% title @banner.name %>
+
+<h1><%= @banner.name %></h1><br />
+<br />
+<p><%= t('system_messages.edit_form')%></p><br />
+<br />
 
 <%= render 'form' %>
-
-<p>
-  <%= link_to "Show", [:admin, @banner] %> |
-  <%= link_to "View All", admin_banners_path %>
-</p>

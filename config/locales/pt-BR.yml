@@ -224,6 +224,9 @@
 
   activerecord:
     models:
+        banner: 
+            one: "Banner"
+            other: "Banners"        
         category: 
             one: "Categoria"
             other: "Categorias" 
@@ -278,6 +281,15 @@
             other: "WebParts"
     attributes:
         #Campos especificos de acordo com cada tabela
+        banner:
+            <<: *active_model_default 
+            description: "Descrição" 
+            link: "Link"
+            link_target: "Alvo do Link"
+            messages:
+                index: "Verifique abaixo a lista dos banners cadastrados no sistema."  
+                new: "Utilize os campos abaixo para cadastrar um novo banner." 
+                show: "Verifique se as informações abaixo estão corretas."                 
         category:
             color: "Cor"
             show_date: "Mostar Data"

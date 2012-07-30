@@ -1,12 +1,12 @@
 <div style="margin-bottom:20px;">
-	<div id="search" style="display:block;float:left;">
+	<div id="search">
 		<p>Informe o número da autorização do Pag Seguro</p>
 		<%=form_tag '/admin/searchs/results', :method => :get, :name=>"formkeyword"%>
-			<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
-			<%=submit_tag "Buscar"%>
+			<%=text_field_tag :keyword, nil ,:style => "width:350px;"%>
+			<%=submit_tag "Buscar", :class => "Bt_enviar"%>
 		</form>
 	</div>
-	<div id="filtrar" style="display:block;float:right;">
+	<div id="filtrar">
 		<% if $pag == 0 %>
 			<%=form_tag '/admin/searchs', :method => :get %>
 		<% else %>
@@ -32,30 +32,34 @@
               <option value="online_transfer">Pagamento Online</option>
               <option value="donation">Doação</option>
           </select><br /><br />
-		<%= submit_tag "Filtrar...", :style=>"text-align:right;" %>
+		<%= submit_tag "Filtrar..." , :class => "Bt_enviar", :style=>"float: right;" %>
 		</form>
 	</div>
 <div class="clear"></div>
 </div>
 <br />
 <div id="orders">
-	<table>
-	  <tr>
-		<th width="100px">Ordem</th>
-	    <th width="250px">Usuário</th>
-	    <th width="150px">Status</th>
-	    <th width="150px">Tipo de Pagamento</th>
-	    <th width="250px">ID Pagseguro</th>
-	  </tr>
-	  <% for order in @Orders %>
-	    <tr>
-		  <td align="center"><%= order.id %></td>
-	      <td><%= order.user.name if !order.user.name.empty? %></td>
-	      <td align="center"><%= traduz_status_do_pedido(order.status) %></td>
-	      <td align="center"><%= traduz_tipo_do_pagamento(order.payment_type) %></td>
-	      <td align="center"><%= link_to(order.pagseguro_id, '/admin/searchs/results?utf8=✓&keyword='+order.pagseguro_id+'&commit=Buscar') if !order.pagseguro_id.blank? %></td>
-	    </tr>
-	  <% end %>
+	<table cellspacing="0" class="tablesorter" width="100%">
+		<thead> 
+			<tr>
+				<th width="100px">Ordem</th>
+	    		<th width="250px">Usuário</th>
+	    		<th width="150px">Status</th>
+	    		<th width="150px">Tipo de Pagamento</th>
+	    		<th width="250px">ID Pagseguro</th>
+			</tr>
+		</thead> 
+		<tbody>
+	  		<% for order in @Orders %>
+	    	<tr>
+		  		<td align="center"><%= order.id %></td>
+	      		<td><%= order.user.name if !order.user.name.empty? %></td>
+	      		<td align="center"><%= traduz_status_do_pedido(order.status) %></td>
+	      		<td align="center"><%= traduz_tipo_do_pagamento(order.payment_type) %></td>
+	      		<td align="center"><%= link_to(order.pagseguro_id, '/admin/searchs/results?utf8=✓&keyword='+order.pagseguro_id+'&commit=Buscar') if !order.pagseguro_id.blank? %></td>
+	    	</tr>
+	  		<% end %>
+		</tbody>
 	</table>
 	<br />
 	<%= will_paginate @Orders %>
