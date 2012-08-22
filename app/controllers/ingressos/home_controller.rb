@@ -1,7 +1,8 @@
 class Ingressos::HomeController < ApplicationController
-  access_control do
-      allow logged_in, :all
-  end  
+ # access_control do
+ #      allow logged_in, :all
+ #  end  
+ 
   layout "template2012" 
   before_filter :load_menu  
   
