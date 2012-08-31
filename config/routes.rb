@@ -36,7 +36,8 @@ KwPortalffa::Application.routes.draw do
     resources :searchs do
       collection do
         get 'results'
-        get 'resend'  
+        get 'resend'
+        get 'search'      
       end
       member do
         get 'baixa'
