@@ -1,4 +1,5 @@
 class Admin::WebpartsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => [:destroy]  
   access_control do
       allow :admin, :all
   end  
