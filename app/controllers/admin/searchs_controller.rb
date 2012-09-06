@@ -75,16 +75,37 @@ class Admin::SearchsController < ApplicationController
     pesquisa = pesquisa.gsub(".","")
     pesquisa = pesquisa.gsub("-","")
     
+    i = 0
+    contador = pesquisa.split(' ')
+    
+    puts contador.count    
+    if (contador.count > 1)
+      buscauser = '('
+        contador.each do |informacao|
+          if (i != 0)
+            buscauser += ' AND '
+          end
+          buscauser += '`users`.`name` LIKE "%'+informacao+'%"'
+          i = i + 1
+        end
+      buscauser += ')'
+    else
+      buscauser = '(`users`.`name` LIKE "%'+pesquisa+'%")'
+    end
+    
+    
+    
     @Orders = Order.find( :all,
                           :select => "`orders`.* ,`users`.`name`",
                           :joins => "INNER JOIN `users` ON `orders`.`user_id` = `users`.`id`",
-                          :conditions => ['(trim(replace(replace(`users`.`cpf`, ".", ""), "-", "")) = ?) 
+                          :conditions => ['(trim(replace(replace(`users`.`cpf`, ".", ""), "-", "")) LIKE "%'+pesquisa+'%") 
                         	OR
-                        	(trim(replace(replace(`users`.`rg`, ".", ""), "-", "")) = ?)
+                        	(trim(replace(replace(`users`.`rg`, ".", ""), "-", "")) LIKE "%'+pesquisa+'%")
                         	OR
-                        	(`users`.`name` LIKE "%'+pesquisa+'%")
+                        	'+buscauser+'
                         	OR
-                        	(trim(replace(replace(`users`.`email`, ".", ""), "-", "")) = ?)', pesquisa,pesquisa,pesquisa],
+                        	(trim(replace(replace(`users`.`email`, ".", ""), "-", "")) LIKE "%'+pesquisa+'%")
+                        	AND `users`.`id` > ?', 0],
                           :order => 'id DESC'
                         ).paginate :page => params[:page],:per_page => 50
   end
