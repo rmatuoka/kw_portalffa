@@ -46,7 +46,7 @@
 
 <%end%>
 <div id="Box_form">
-<%= form_for ([:admin, @category, @subcategory, @content], :html => { :multipart => :true }) do |f| %>
+<%= form_for([:admin, @category, @subcategory, @content], :html => { :multipart => :true }) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :name %>
