@@ -1,27 +1,78 @@
-<% title "Relatório de Vendas" %>
-<table border="1" align="center">
-	<tr>
-	    <th width="150px">Quantidade</th>
-	    <th width="150px">Dia</th>
-	    <th width="150px">Tipo</th>
-	    <th width="250px">Total</th>	
-  	</tr>
-
-<% 	$total = 0
+<%
+	$total = 0
 	$subtotal = 0
-	@reports.each do |relatorio| %>
-	<tr />
-		<td align="center"><%= relatorio.qtde.to_i %></td>
-		<td align="center"><%= relatorio.ticket.ticket_date.strftime("%d") %><br/>
-		<%= I18n.localize(relatorio.ticket.ticket_date, :format => "%A") %></td>
-		<td align="center"><%= relatorio.ticket.ticket_type.name %></td>		
-		<td align="center"><%= number_to_currency($subtotal = relatorio.total)%></td>				
-	<tr />
-<% 	$total = $total + $subtotal
-	end %>
+	$ano = @reports.first.ticket.ticket_date.year
+%>
+<style type="text/css">
+h2 {text-align: center;font-size: 20px;}
+</style>
+<% title "Relatório de Vendas" %>
+<h2><%= $ano %></h2>
+<table border="1" align="center" class="tablesorter" width="80%">
+	<thead> 
+		<tr>
+		    <th width="150px">Quantidade</th>
+		    <th width="150px">Dia</th>
+		    <th width="150px">Tipo</th>
+		    <th width="250px">Total</th>	
+  		</tr>
+	</thead> 
+	<tbody>
+<% 	@reports.each do |relatorio| %>
+
+	<% if $ano != relatorio.ticket.ticket_date.year%>
+			</tbody>
+			<tr height="50px">
+				<td colspan="3" align="right"><font size="6">Total:</font></td>
+				<td align="right"><font size="6"><%= number_to_currency($total) %>*</font></td>
+			</tr>
+		</table>
+		<p style="font-size:12px;font-style:italic;">* Valor bruto, não está considerando a porcentagem descontada pelo pag seguro para gerenciar a transação!</p>
+		<%	$total = 0
+			$subtotal = 0 %>
+			
+		<br /><br /><br /><br />
+		<%	$ano = relatorio.ticket.ticket_date.year%>		
+		<h2><%= $ano %></h2>
+		<table border="1" align="center" class="tablesorter" width="80%">
+			<thead> 
+				<tr>
+				    <th width="150px">Quantidade</th>
+				    <th width="150px">Dia</th>
+				    <th width="150px">Tipo</th>
+				    <th width="250px">Total</th>	
+			  	</tr>
+			</thead> 
+			<tbody>
+				<tr>
+					<td align="center"><%= relatorio.qtde.to_i %></td>
+					<td align="center"><%= relatorio.ticket.ticket_date.strftime("%d") %><br/>
+					<%= I18n.localize(relatorio.ticket.ticket_date, :format => "%A") %></td>
+					<td align="center"><%= relatorio.ticket.ticket_type.name %></td>		
+					<td align="center"><%= number_to_currency($subtotal = relatorio.total)%></td>				
+				<tr />
+	
+			<%	$total = $total + $subtotal %>
+
+	<% else %>
+		<tr>
+			<td align="center"><%= relatorio.qtde.to_i %></td>
+			<td align="center"><%= relatorio.ticket.ticket_date.strftime("%d") %><br/>
+			<%= I18n.localize(relatorio.ticket.ticket_date, :format => "%A") %></td>
+			<td align="center"><%= relatorio.ticket.ticket_type.name %></td>		
+			<td align="center"><%= number_to_currency($subtotal = relatorio.total)%></td>				
+		<tr />
+
+		<% 	$total = $total + $subtotal %>
+		<%	$ano = relatorio.ticket.ticket_date.year%>
+	<% end %>
+		
+<% end %>
+	</tbody>
 	<tr height="50px">
 		<td colspan="3" align="right"><font size="6">Total:</font></td>
 		<td align="right"><font size="6"><%= number_to_currency($total) %>*</font></td>
-	</tr>
+	</tr>	
 </table>
-<p style="font-size:12px;font-style:italic;">* Valor bruto, não está considerando a porcentagem descontada pelo pag seguro para gerenciar a transação!</p> 
+<p style="font-size:12px;font-style:italic;">* Valor bruto, não está considerando a porcentagem descontada pelo pag seguro para gerenciar a transação!</p>
+<br /><br />

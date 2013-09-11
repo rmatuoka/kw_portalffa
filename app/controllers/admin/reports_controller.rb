@@ -1,4 +1,7 @@
 class Admin::ReportsController < ApplicationController
+  access_control do
+      allow :admin
+  end
   layout "inadmin"
   def index 
     @reports = OrderTicket.find(  :all,
