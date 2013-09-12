@@ -30,7 +30,9 @@ class UserMailer < ActionMailer::Base
   #Enviado quando o pagamento for concluido!
   def order_completed(order)
     @order = order
-    @order_itens = OrderTicket.all(:conditions => ['order_id = ?', @order.id])    
+    @order_itens = OrderTicket.all(:conditions => ['order_id = ?', @order.id])   
+    #@payment_type = ActionController::Base.traduz_tipo_do_pagamento(@order.payment_type) 
+    #@status = ActionController::Base.traduz_status_do_pedido(@order.status)
     mail(:to=>"compras@festadasfloresdeatibaia.com.br", :bcc => "log@korewa.com.br", :subject => @order.user.name + " - Pagamento Efetuado")    
   end
 end

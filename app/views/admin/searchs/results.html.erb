@@ -29,7 +29,7 @@
 			<td align="center"><%=number_with_delimiter(item.price * item.amount)%></td>
 			<td align="center"><%= item.ticket.ticket_type.name %></td>
 			<td align="center">
-				<% if !item.reduction?%>
+				<% if !item.reduction? and (@Results.status == "completed") || (@Results.status == "approved")%>
 					<%=link_to("Dar baixa", baixa_admin_search_path(item))%>
 				<% else %>
 					<%= I18n.localize(item.ticket.updated_at, :format => :short)%>

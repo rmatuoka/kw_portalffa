@@ -19,7 +19,7 @@ img {display:block;}
 	</tr>
 	<tr>
 		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_16.jpg" width="51" height="200"></td> 
-		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_17.jpg" colspan="5" height="200" align="justify">
+		<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_17.jpg" colspan="6" height="200">
 		  	<font face="Verdana, Geneva, sans-serif" size="2" >
 				<br />
 				<br />
@@ -35,74 +35,70 @@ img {display:block;}
 				<b>CPF:</b> <%= @order.user.cpf %>
 				<br />
 				<b>E-MAIL:</b> <%= @order.user.email %>
-				<b>TIPO DE PAGAMENTO:</b> <%= @order.payment_type%>
 				<br />
-				<b>STATUS DO PAGAMENTO:</b> <%= @order.status%>
+				<b>TIPO DE PAGAMENTO:</b> <%= traduz_tipo_do_pagamento(@order.payment_type) %>
+				<br />
+				<b>STATUS DO PAGAMENTO:</b> <%= traduz_status_do_pedido(@order.status) %>
 				<br />
 				<b>ID PAGSEGURO:</b> <%= @order.pagseguro_id%>
 				<br />
 				<br />
 				Pedido:
 				<br />
-				<br />
-				<table align="center" border="0" cellpadding="0" cellspacing="0" width="400">
-					<tr>
-						<th width="80" align="center">
-							Quantidade
-						</th>
-						<th width="250" align="center">
-							Produto
-						</th>
-						<th width="100" align="center">
-							Valor Unitário
-						</th>
-						<th width="150" align="center">
-							Sub Total
-						</th>
-					</tr>
-					<tr height="10">
-
-					</tr>
-					<% 
-						$subtotal = 0
-						$valor_total = 0
-						@order_itens.each do |item|
-					%>			
-						<tr>
-							<td align="center">
-								<%= item.amount %>
-							</td>
-							<td align="center">
-								<%= item.ticket.name %>
-							</td>
-							<td align="right">
-								<%= number_to_currency(item.price) %>
-							</td>
-							<td align="right">
-								<%= number_to_currency($subtotal = (item.price * item.amount)) %>
-							</td>
-						</tr>
-						<tr height="5">
-
-						</tr>
-					<%
-						$valor_total += $subtotal
-						end
-					%>
-					<tr height="30" style="font-size:14px;">
-						<td colspan="3" align="right">
-							<b>Total</b>
-						</td>
-						<td align="right">
-							<b><%= number_to_currency($valor_total) %></b>
-						<td>
-					</tr>			
-				</table>
-				<br />
-				<br />
-
-          	</font>
         </td>
-	 	<td background="http://www.festadasfloresdeatibaia.com.br/images/email/barcode_10.jpg" width="45" height="159"></td> 
 	</tr>
 </table>
+
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_02">
+	<tr>
+		<th width="80" align="center">
+			Quantidade
+		</th>
+		<th width="220" align="center">
+			Produto
+		</th>
+		<th width="100" align="center">
+			Valor Unitário
+		</th>
+		<th width="100" align="center">
+			Sub Total
+		</th>
+	</tr>
+	<tr height="10">
+
+	</tr>
+	<% 
+		$subtotal = 0
+		$valor_total = 0
+		@order_itens.each do |item|
+	%>
+		<tr>
+			<td align="center">
+				<%= item.amount %>
+			</td>
+			<td align="center">
+				<%= item.ticket.name %>
+			</td>
+			<td align="right">
+				<%= number_to_currency(item.price) %>
+			</td>
+			<td align="right">
+				<%= number_to_currency($subtotal = (item.price * item.amount)) %>
+			</td>
+		</tr>
+		<tr height="5">
+
+		</tr>
+	<%
+		$valor_total += $subtotal
+		end
+	%>
+	<tr height="30" style="font-size:14px;">
+		<td colspan="3" align="right">
+			<b>Total</b>
+		</td>
+		<td align="right">
+			<b><%= number_to_currency($valor_total) %></b>
+		<td>
+	</tr>			
+</table>	

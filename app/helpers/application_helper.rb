@@ -180,7 +180,8 @@ module ApplicationHelper
   end
   #------------------------------------------------------------------------------ HELPERS WEBPARTS
   def traduz_status_do_pedido(status)
-    
+    status = status.to_s
+    status = status.gsub(' ', '')   
     retorno = ""
     case status
       when "completed"
@@ -203,12 +204,16 @@ module ApplicationHelper
         
       when "refunded"
         retorno = "Devolvido"
+      else
+        retorno = "Status Desconhecido"
     end
     
     return retorno
   end
   
   def traduz_tipo_do_pagamento(tipo)
+    tipo = tipo.to_s
+    tipo = tipo.gsub(' ', '')
     retorno = ""
     case tipo 
       when "credit_card"
@@ -225,6 +230,8 @@ module ApplicationHelper
         
       when "donation"
         retorno = "Doação"
+      else
+        retorno = "Pagamento Desconhecido"        
 
     end
     
