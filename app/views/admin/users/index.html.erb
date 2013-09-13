@@ -36,7 +36,11 @@
 	</tbody>
 </table>
 <%= will_paginate @users %>
-
+<br /><br />
+<%= link_to "Exportar CSV", export_admin_users_path(:format => :csv), :class => "Bt_enviar" %>
+<%= link_to "Exportar XML", export_admin_users_path(:format => :xml), :class => "Bt_enviar" %>
+<%= link_to "Exportar Excel", export_admin_users_path(:format => :xls), :class => "Bt_enviar" %>
+<br /><br /><br /><br />
 <script>
 	document.getElementById('keyword').focus();
 </script>

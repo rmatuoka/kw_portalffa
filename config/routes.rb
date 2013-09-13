@@ -80,6 +80,7 @@ KwPortalffa::Application.routes.draw do
     resources :users do
       collection do
         get 'search'
+        get 'export'
       end
     end
     

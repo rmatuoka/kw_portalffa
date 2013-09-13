@@ -3,10 +3,18 @@
 	<br />
 	<label>Nome: </label><strong class="f_dados"><%= @Results.user.name%></strong><br />
 	<label>E-mail: </label><strong class="f_dados"><%= @Results.user.email%></strong><br />
-	<label>Status do Pedido: </label><strong class="f_dados"><%= traduz_status_do_pedido(@Results.status)%></strong><br />
-	<label>Forma de Pagamento: </label><strong class="f_dados"><%= traduz_tipo_do_pagamento(@Results.payment_type)%></strong><br />	
 	<label>CPF: </label><strong class="f_dados"><%= @Results.user.cpf%></strong><br />
-	<label>RG: </label><strong class="f_dados"><%= @Results.user.rg%></strong><br />		
+	<label>RG: </label><strong class="f_dados"><%= @Results.user.rg%></strong><br />	
+	<label>Cidade:</label><strong class="f_dados"><%= @Results.user.cidade %></strong><br />
+	<label>Estado:</label><strong class="f_dados"><%= @Results.user.estado %></strong><br />
+	<label>Deseja receber informações:</label><strong class="f_dados"><%= print_active(@Results.user.receber_info) %></strong><br />
+	<label>Sexo:</label><strong class="f_dados"><%= func_sex(@Results.user.gender) %></strong><br />
+	<label>Data de Nascimento:</label><strong class="f_dados"><%= I18n.localize(@Results.user.date_of_birth) %></strong><br />	
+	<br />
+	<%=link_to("Editar Usuário", edit_admin_user_path(@Results.user_id))%><br />
+	<br />
+	<label>Status do Pedido: </label><strong class="f_dados"><%= traduz_status_do_pedido(@Results.status)%></strong><br />
+	<label>Forma de Pagamento: </label><strong class="f_dados"><%= traduz_tipo_do_pagamento(@Results.payment_type)%></strong><br />		
 	<br />
 	<br />
 	<% if (@Results.status == "completed") || (@Results.status == "approved")%>

@@ -1,0 +1,19 @@
+<h1>Lista de usuários</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+	<th>Deseja receber informações</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= print_active(user.receber_info) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

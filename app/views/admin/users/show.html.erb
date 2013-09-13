@@ -7,15 +7,40 @@
   <%= @user.name %>
 </p>
 <p>
-  <strong>Sobrenome:</strong>
-  <%= @user.last_name %>
-</p>
-<p>
-  <strong>E-mail:</strong>
+  <strong>Email:</strong>
   <%= @user.email %>
 </p>
 <p>
-  <%= link_to t('attributes.editing'), edit_admin_user_path(@user) %> |
-  <%= link_to t('attributes.exclude'), admin_user_path(@user), :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
-  <%= link_to "View All", admin_users_path %>
+  <strong>Cpf:</strong>
+  <%= @user.cpf %>
+</p>
+<p>
+  <strong>RG:</strong>
+  <%= @user.rg %>
+</p>
+<p>
+  <strong>Cidade:</strong>
+  <%= @user.cidade %>
+</p>
+<p>
+  <strong>Estado:</strong>
+  <%= @user.estado %>
+</p>
+<p>
+  <strong>Deseja receber informações:</strong>
+  <%= print_active(@user.receber_info) %>
+</p>
+<p>
+  <strong>Sexo:</strong>
+  <%= func_sex(@user.gender) %>
+</p>
+<p>
+  <strong>Data de Nascimento:</strong>
+  <%= I18n.localize(@user.date_of_birth) %>
+</p>
+<br /><br />
+<p>
+  <%= link_to t('attributes.editing'), edit_admin_user_path(@user) %> 
+  <%#= link_to t('attributes.exclude'), admin_user_path(@user), :confirm => 'Esta operação não poderá ser desfeita, deseja continuar?', :method => :delete %> |
+  <%= link_to t('attributes.go_back'), admin_users_path %>
 </p>

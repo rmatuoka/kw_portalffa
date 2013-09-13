@@ -1,29 +1,59 @@
-    <div id="Box_register_form">	
+<%content_for :head do%>
+	<%= javascript_include_tag "jquery.meio.mask.js" %>
+	<script>
+		jQuery(document).ready(function(){
+			jQuery('input[name="user[cpf]"]').setMask('cpf');
+		});		
+	</script>
+<%end%>    	
+<div id="Box_form">	
 		<%= form_for [:admin, @user] do |f| %>
-		<%= f.error_messages %>
-		<div class="field">
+		<%= f.error_messages %>	
+		<p>
 			<%= f.label :name, "Nome" %>
 			<%= f.text_field :name %>
-		</div>
-		<div class="field">
+		</p>
+		<p>
 			<%= f.label :email, "E-mail" %>
 			<%= f.text_field :email %>
-		</div>
-		<div class="field">
-			<%= f.label :password, "Senha" %>
-			<%= f.password_field :password %>
-		</div>
-		<div class="field">
-			<%= f.label :password_confirmation, "Confirmar Senha" %>
-			<%= f.password_field :password_confirmation %>
-		</div>		
+		</p>
+		<p>
+			<%= f.label :cpf, "CPF" %>
+			<%= f.text_field :cpf %>
+		</p>		
+		<p>
+			<%= f.label :rg, "RG" %>
+			<%= f.text_field :rg %>
+		</p>		
+		<p>
+			<%= f.label :gender, "Sexo :" %><br/>
+			<%= f.radio_button :gender, false, :class =>"radio_input" %>Feminino<br/>
+			<%= f.radio_button :gender, true, :class =>"radio_input" %>Masculino
+		</p>		
+		<p>
+			<%= f.label :date_of_birth, "Data de Nascimento" %>
+			<%= f.date_select :date_of_birth %>
+		</p>		
+		<p>
+			<%= f.label :estado, "Estado" %>
+			<%= f.text_field :estado %>
+		</p>	
+		<p>
+			<%= f.label :cidade, "Cidade" %>
+			<%= f.text_field :cidade %>
+		</p>	
+		<p>
+			<%= f.label :receber_info, "Deseja receber informações?" %>
+			<%= f.check_box :receber_info %>
+		</p>				
+		
 		<div id="Box_register_form_regras">
 		  <h1>Regras</h1><br />
 		  <p>
 			Tipo:<br />
-			<%= f.radio_button :role, :admin%>Administrador<br/>
-			<%= f.radio_button :role, :supervisor %>Supervisor<br/>
-			<%= f.radio_button :role, :user %>Usuário<br/>
+			<%= f.radio_button :role, :admin, :class =>"radio_input"%>Administrador<br/>
+			<%= f.radio_button :role, :supervisor, :class =>"radio_input" %>Supervisor<br/>
+			<%= f.radio_button :role, :user, :class =>"radio_input" %>Usuário<br/>
 		  </p><br />
 		</div>
   		<p><%= f.submit "Atualizar", :class => "Bt_enviar" %></p>

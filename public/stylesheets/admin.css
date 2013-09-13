@@ -782,4 +782,8 @@
 		padding: 10px 10px 5px 10px;				
 	}
 				
-.clear{clear:both;}				
+.clear{clear:both;}	
+.radio_input{
+	width:30px !important;
+	height: 17px !important;
+}			

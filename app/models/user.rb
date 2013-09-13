@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
   
   def check_over_18
     errors.add(:date_of_birth, I18n.t("activerecord.errors.messages.check_over_18")) if age < 18
-  end
+  end  
   
 end
 
