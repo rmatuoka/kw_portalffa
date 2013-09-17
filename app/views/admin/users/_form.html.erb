@@ -56,6 +56,19 @@
 			<%= f.radio_button :role, :user, :class =>"radio_input" %>Usuário<br/>
 		  </p><br />
 		</div>
+		
+		<div id="Box_register_form_regras">
+			<h1>Senha</h1><br />
+			<p>
+				<%= f.label :password, "Senha:" %>
+				<%= f.password_field :password %>	
+			</p>	
+			<p>
+				<%= f.label :password_confirmation, "Confirmar:" %>
+				<%= f.password_field :password_confirmation %>	
+			</p>				
+		</div>		
+		
   		<p><%= f.submit "Atualizar", :class => "Bt_enviar" %></p>
 		<%end%>
 	</div>
