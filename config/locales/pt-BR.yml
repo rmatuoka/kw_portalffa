@@ -318,6 +318,8 @@
             twitter: "Endereço Twitter"
             facebook: "Endereço Facebook"
             youtube: "Endereço Youtube"
+            logo: "Logo"
+            highlighted: "Destaque"
             <<: *active_model_default           
             messages:
                 index: "Verifique abaixo as configurações cadastrados no sistema."  

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619193948) do
+ActiveRecord::Schema.define(:version => 20131023143835) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -83,6 +83,10 @@ ActiveRecord::Schema.define(:version => 20120619193948) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "highlighted_file_name"
+    t.string   "highlighted_content_type"
+    t.integer  "highlighted_file_size"
+    t.datetime "highlighted_updated_at"
   end
 
   create_table "contents", :force => true do |t|
@@ -172,7 +176,7 @@ ActiveRecord::Schema.define(:version => 20120619193948) do
     t.boolean  "used"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "reduction"
+    t.boolean  "reduction",                                 :default => false, :null => false
   end
 
   create_table "orders", :force => true do |t|
@@ -253,8 +257,8 @@ ActiveRecord::Schema.define(:version => 20120619193948) do
     t.decimal  "price",              :precision => 10, :scale => 2
     t.integer  "ticket_type_id"
     t.integer  "ticket_category_id"
-    t.integer  "above"
-    t.decimal  "discount",           :precision => 10, :scale => 2
+    t.integer  "above",                                             :default => 0, :null => false
+    t.decimal  "discount",           :precision => 10, :scale => 2,                :null => false
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"

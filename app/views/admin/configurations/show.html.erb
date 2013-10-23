@@ -6,7 +6,11 @@
 <br />
 <p>
   <strong><%=t 'activerecord.attributes.configuration.logo' %>:</strong>
-  <%= image_tag(@configuration.logo.url) %>
+  <%= image_tag(@configuration.logo.url) if @configuration.logo.file?%>
+</p>
+<p>
+  <strong><%=t 'activerecord.attributes.configuration.highlighted' %>:</strong><br />
+  <%= image_tag(@configuration.highlighted.url) if @configuration.highlighted.file?%>
 </p>
 <p>
   <strong><%=t 'activerecord.attributes.configuration.email_adm' %>:</strong>

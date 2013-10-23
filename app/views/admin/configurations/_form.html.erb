@@ -5,6 +5,12 @@
     <%= f.label :logo %>
     <%= f.file_field :logo %>
   </p>
+  <%= raw("<p>" + image_tag(@configuration.logo.url) +"</p>") if @configuration.logo.file?%>
+  <p>
+    <%= f.label :highlighted %>
+    <%= f.file_field :highlighted %>
+  </p>
+  <%= raw("<p>" + image_tag(@configuration.highlighted.url) +"</p>") if @configuration.highlighted.file?%>
   <p>
     <%= f.label :email_adm %>
     <%= f.text_field :email_adm %>

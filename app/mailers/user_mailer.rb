@@ -17,7 +17,7 @@ class UserMailer < ActionMailer::Base
   def payment_made(order)
     @order = order
     @order_itens = OrderTicket.all(:conditions => ['order_id = ?', @order.id])
-    mail(:to => order.user.email, :bcc => "log@korewa.com.br", :subject => "Pedido Efetuado")
+    mail(:to => order.user.email, :bcc => "log@korewa.com.br, compras@festadasfloresdeatibaia.com.br", :subject => "Pedido Efetuado")
   end
   
   #Enviado quando o pedido entrar no sistema!
