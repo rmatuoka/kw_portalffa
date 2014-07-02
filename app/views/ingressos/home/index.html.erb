@@ -11,13 +11,13 @@
         <div class="Text_grey">
 	        <%=raw(@ticket_homes.first.content)%>
 			<br />
-			<%= link_to(image_tag("bt_comprar_online.png"),ingressos_selecione_index_path)%>
+			<%= link_to(image_tag("bt_comprar_online.png"),ingressos_selecione_index_path) if @tickets.count > 0%>
 		</div>
 		<%else%>
 		<h3 class="Title_item_green">Compre seu ingresso!</h3>
         <div class="Text_grey">
 			<br />
-			<%= link_to(image_tag("bt_comprar_online.png"),ingressos_selecione_index_path)%>
+			<%= link_to(image_tag("bt_comprar_online.png"),ingressos_selecione_index_path)  if @tickets.count > 0%>
 		</div>		
 		<%end%>
 	</div>
