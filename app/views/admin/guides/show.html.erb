@@ -1,0 +1,76 @@
+<% title @guide.name %>
+
+<h1><%= @guide.name %></h1><br />
+<p><%= t('activerecord.attributes.guide.messages.show')%></p><br />
+
+<p>
+  <strong>Nome:</strong>
+  <%= @guide.name %>
+</p>
+<p>
+  <strong>Departamento:</strong>
+  <%= @guide.department %>
+</p>
+<p>
+  <strong>Endereço:</strong>
+  <%= @guide.address %>
+</p>
+<p>
+  <strong>Bairro:</strong>
+  <%= @guide.district %>
+</p>
+<p>
+  <strong>Cidade:</strong>
+  <%= @guide.city %>
+</p>
+<p>
+  <strong>Estado:</strong>
+  <%= @guide.state %>
+</p>
+<p>
+  <strong>CEP:</strong>
+  <%= @guide.zip_code %>
+</p>
+<p>
+  <strong>Telefone:</strong>
+  <%= @guide.phone %>
+</p>
+<p>
+  <strong>Fax:</strong>
+  <%= @guide.fax %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @guide.email %>
+</p>
+<p>
+  <strong>Internet:</strong>
+  <%= @guide.internet %>
+</p>
+<p>
+  <br /><strong>Obs:</strong>
+  <%= @guide.obs %><br /><br /><br />
+</p>
+<p>
+  <strong>Tipo:</strong>
+  <%= @guide.guide_type_id %>
+</p>
+<p>
+  <strong>Reminder:</strong>
+  <%= @guide.reminder %>
+</p>
+<p>
+  <strong>Correio:</strong>
+  <%= @guide.mail %>
+</p>
+<p>
+  <strong>Data:</strong>
+  <%= @guide.year %>
+</p>
+
+<p>
+<br /><br />
+</p>
+<p>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guides_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+</p>

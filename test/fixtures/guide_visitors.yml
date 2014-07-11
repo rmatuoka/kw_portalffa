@@ -1,0 +1,11 @@
+one:
+  guide_id: 1
+  year: 2014-07-08 14:13:47
+  visit: false
+  passengers: 1
+
+two:
+  guide_id: 1
+  year: 2014-07-08 14:13:47
+  visit: false
+  passengers: 1

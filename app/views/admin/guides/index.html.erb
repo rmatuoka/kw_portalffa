@@ -1,0 +1,32 @@
+<% title show_model_name(::Guide, true) %>
+
+<h1><%= show_model_name(::Guide, true) %></h1><br />
+<p><%= t('activerecord.attributes.guide.messages.index')%></p><br />
+<br />
+
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_guide_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+    <thead>
+      <tr>
+        <th style="width:18%;"><%=t 'attributes.name' %></th>
+        <th style="width:18%;"><%=t 'activerecord.attributes.guide.email' %></th>
+        <th style="width:18%;"><%=t 'activerecord.attributes.guide.reminder' %></th>
+        <th style="width:18%;"><%=t 'activerecord.attributes.guide.mail' %></th>
+        <th colspan="3" style="width:30%;"><%=t 'attributes.actions' %></th>
+      </tr>
+    </thead>
+    <tbody>
+  <% for guide in @guides %>
+    <tr>
+      <td><%= guide.name %></td>
+      <td><%= guide.email %></td>
+      <td><%= print_active(guide.reminder) %></td>
+      <td><%= print_active(guide.mail) %></td>
+      <td><%= link_to "Visualizar", [:admin, guide] %></td>
+      <td><%= link_to "Editar", edit_admin_guide_path(guide) %></td>
+      <td><%= link_to "Excluir", [:admin, guide], :confirm => 'Tem certeza?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  <tbody>
+</table>

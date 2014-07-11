@@ -221,6 +221,7 @@
         orders: "Compras"
         banners: "Propagandas"
         newsletters: "Informativo"
+        guides: "Guias"
 #Fim dos campos comuns
 
   activerecord:
@@ -245,7 +246,16 @@
             other: "Galerias"
         gallery_image:
             one: "Galeria de Imagens"  
-            other: "Galerias de Imagens"   
+            other: "Galerias de Imagens"
+        guide:
+            one: "Guia"
+            other: "Guias"
+        guide_type:
+            one: "Tipo de Guia"
+            other: "Tipos de Guias"
+        guide_visitor:
+            one: "Visita"
+            other: "Visitas"               
         movie: 
             one: "Video" 
             other: "Videos"
@@ -371,6 +381,33 @@
             messages:
                 index: "Verifique abaixo a lista dos bilhetes cadastrados no sistema."       
                 new: "Utilize os campos abaixo para cadastrar um novo bilhete." 
+                show: "Verifique se as informações abaixo estão corretas."
+        guide:
+            email: "Email"
+            reminder: "Lembrete"
+            mail: "Correio"
+            <<: *active_model_default
+            messages:
+                index: "Verifique abaixo a lista dos guias cadastrados no sistema."       
+                new: "Utilize os campos abaixo para cadastrar um novo guia." 
+                show: "Verifique se as informações abaixo estão corretas."        
+        guide_type:
+            code: "Código"
+            description: "Descrição"
+            <<: *active_model_default
+            messages:
+                index: "Verifique abaixo a lista dos guias cadastrados no sistema."       
+                new: "Utilize os campos abaixo para cadastrar um novo guia." 
+                show: "Verifique se as informações abaixo estão corretas."        
+        guide_visitor:
+            guide_id: "Código"
+            year: "Data"
+            visit: "Visita"
+            passengers: "Número de passageiros"
+            <<: *active_model_default
+            messages:
+                index: "Verifique abaixo a lista das visitas cadastradas no sistema."       
+                new: "Utilize os campos abaixo para cadastrar uma nova visita." 
                 show: "Verifique se as informações abaixo estão corretas." 
 
         ticket_category:

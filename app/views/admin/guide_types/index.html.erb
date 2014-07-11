@@ -1,0 +1,24 @@
+<% title show_model_name(::GuideType, true) %>
+
+<h1><%= show_model_name(::GuideType, true) %></h1><br />
+<p><%= t('activerecord.attributes.guide_type.messages.index')%></p><br />
+<br />
+<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_guide_type_path+"','_self');", :class => "Bt_enviar"%> </p>
+<br />
+<table cellspacing="0" class="tablesorter" width="80%">
+  <tr>
+    <th style="width:35%;"><%=t 'activerecord.attributes.guide_type.code' %></th>
+    <th style="width:35%;"><%=t 'activerecord.attributes.guide_type.description' %></th>
+    <th colspan="3" style="width:30%;"><%=t 'attributes.actions' %></th>
+  </tr>
+  <% for guide_type in @guide_types %>
+    <tr>
+      <td><%= guide_type.code %></td>
+      <td><%= guide_type.description %></td>
+      <td><%= link_to t('attributes.showing'), [:admin, guide_type] %></td>
+		<td><%= link_to t('attributes.editing'), edit_admin_guide_type_path(guide_type) %></td>
+		<td><%= link_to t('attributes.exclude'), [:admin, guide_type], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+

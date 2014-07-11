@@ -1,0 +1,13 @@
+<%= form_for [:admin, @guide_type] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :codigo%><br />
+    <%= f.text_field :code %>
+  </p>
+  <p>
+    <%= f.label :descricao %><br />
+    <%= f.text_field :description %>
+  </p>
+  <br />
+  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guide_types_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+<% end %>

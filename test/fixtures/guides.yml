@@ -1,0 +1,35 @@
+one:
+  name: MyString
+  department: MyString
+  address: MyString
+  district: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  phone: MyString
+  fax: MyString
+  email: MyString
+  internet: MyString
+  obs: MyText
+  guide_type_id: 1
+  reminder: false
+  mail: false
+  year: 2014-07-08 13:05:06
+
+two:
+  name: MyString
+  department: MyString
+  address: MyString
+  district: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  phone: MyString
+  fax: MyString
+  email: MyString
+  internet: MyString
+  obs: MyText
+  guide_type_id: 1
+  reminder: false
+  mail: false
+  year: 2014-07-08 13:05:06

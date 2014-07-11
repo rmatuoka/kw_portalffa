@@ -1,8 +1,9 @@
-<% title @ticket.name %>
+<% title @guide_type.code %>
 
-<h1><%= @ticket.name %></h1><br />
+<h1><%= @guide_type.code %></h1><br />
 <br />
 <p><%= t('system_messages.edit_form')%></p><br />
 <br />
-
 <%= render 'form' %>
+
+

@@ -1,5 +1,11 @@
 KwPortalffa::Application.routes.draw do
 
+  namespace(:admin){ resources :guide_types }
+
+  namespace(:admin){ resources :guide_visitors }
+
+  namespace(:admin){ resources :guides }
+
   resources :carts do 
     collection do 
       get 'destroy_cart'

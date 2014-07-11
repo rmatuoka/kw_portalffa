@@ -1,0 +1,69 @@
+<%= form_for [:admin, @guide] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :departamento %><br />
+    <%= f.text_field :department %>
+  </p>
+  <p>
+    <%= f.label :endereco %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :bairro %><br />
+    <%= f.text_field :district %>
+  </p>
+  <p>
+    <%= f.label :cidade %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :estado %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :cep %><br />
+    <%= f.text_field :zip_code %>
+  </p>
+  <p>
+    <%= f.label :telefone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :internet %><br />
+    <%= f.text_field :internet %>
+  </p>
+  <p>
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </p>
+  <p>
+    <%= f.label :tipo %><br />
+    <%= f.text_field :guide_type_id %>
+  </p>
+  <p>
+    <%= f.label :lembrete %><br />
+    <%= f.check_box :reminder %>
+  </p>
+  <p>
+    <%= f.label :correio %><br />
+    <%= f.check_box :mail %>
+  </p>
+  <p>
+    <%= f.label :data %><br />
+    <%= f.datetime_select :year %>
+  </p>
+  <br />
+  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guides_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+<% end %>

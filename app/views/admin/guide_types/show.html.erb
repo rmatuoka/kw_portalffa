@@ -1,0 +1,20 @@
+<% title @guide_type.code %>
+
+<h1><%= @guide_type.code %></h1><br />
+<p><%= t('activerecord.attributes.guide_type.messages.show')%></p><br />
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @guide_type.code %>
+</p>
+<p>
+  <strong>Descrição:</strong>
+  <%= @guide_type.description %>
+</p>
+
+<br />
+<br />
+<br />
+<p>
+	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guide_types_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+</p>

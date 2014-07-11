@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131023143835) do
+ActiveRecord::Schema.define(:version => 20140711174034) do
 
   create_table "banners", :force => true do |t|
     t.string   "name"
@@ -147,6 +147,46 @@ ActiveRecord::Schema.define(:version => 20131023143835) do
     t.datetime "updated_at"
     t.string   "link"
     t.string   "link_target"
+  end
+
+  create_table "guide_types", :force => true do |t|
+    t.string   "code"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",      :default => true
+  end
+
+  create_table "guide_visitors", :force => true do |t|
+    t.integer  "guide_id"
+    t.datetime "year"
+    t.boolean  "visit"
+    t.integer  "passengers"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",     :default => true
+  end
+
+  create_table "guides", :force => true do |t|
+    t.string   "name"
+    t.string   "department"
+    t.string   "address"
+    t.string   "district"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.string   "internet"
+    t.text     "obs"
+    t.integer  "guide_type_id"
+    t.boolean  "reminder"
+    t.boolean  "mail"
+    t.datetime "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "active",        :default => true
   end
 
   create_table "movies", :force => true do |t|

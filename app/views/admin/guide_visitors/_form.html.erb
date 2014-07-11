@@ -1,0 +1,21 @@
+<%= form_for [:admin, @guide_visitor] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :guide_id %><br />
+    <%= f.text_field :guide_id %>
+  </p>
+  <p>
+    <%= f.label :year %><br />
+    <%= f.datetime_select :year %>
+  </p>
+  <p>
+    <%= f.label :visit %><br />
+    <%= f.check_box :visit %>
+  </p>
+  <p>
+    <%= f.label :passengers %><br />
+    <%= f.text_field :passengers %>
+  </p>
+  <br />
+  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guide_visitors_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+<% end %>
