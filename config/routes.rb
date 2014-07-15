@@ -1,10 +1,6 @@
 KwPortalffa::Application.routes.draw do
 
-  namespace(:admin){ resources :guide_types }
 
-  namespace(:admin){ resources :guide_visitors }
-
-  namespace(:admin){ resources :guides }
 
   resources :carts do 
     collection do 
@@ -89,6 +85,14 @@ KwPortalffa::Application.routes.draw do
         get 'export'
       end
     end
+    resources :guides do
+      collection do
+        get 'search'
+      end
+    end
+    resources :guide_types 
+    resources :guide_visitors 
+
     
     #Fim do Padrão Administrador
     root :to => "static_contents#index"

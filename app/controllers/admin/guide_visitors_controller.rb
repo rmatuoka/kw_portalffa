@@ -4,13 +4,13 @@ skip_before_filter :verify_authenticity_token, :only => [:destroy]
       allow :admin, :all
   end  
   layout "inadmin"
-
+  before_filter :load_guide
   def index
     @guide_visitors = GuideVisitor.all_active
   end
 
   def show
-    @guide_visitor = GuideVisitor.find(params[:id])
+    @guide_visitor = GuideVisitor.find(params[:id]) 
   end
 
   def new
@@ -19,6 +19,9 @@ skip_before_filter :verify_authenticity_token, :only => [:destroy]
 
   def create
     @guide_visitor = GuideVisitor.new(params[:guide_visitor])
+    if @guide_visitor.year.blank?
+      @guide_visitor.year = Time.now
+    end
     if @guide_visitor.save
       redirect_to [:admin, @guide_visitor], :notice => "Successfully created guide visitor."
     else
@@ -43,5 +46,9 @@ skip_before_filter :verify_authenticity_token, :only => [:destroy]
     @guide_visitor = GuideVisitor.find(params[:id])
     @guide_visitor.newdestroy
     redirect_to admin_guide_visitors_url, :notice => "Successfully destroyed guide visitor."
+  end
+  
+  def load_guide
+    @guides = Guide.all_active.collect { |c| [c.name, c.id] } 
   end
 end

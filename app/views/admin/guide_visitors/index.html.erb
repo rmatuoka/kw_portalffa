@@ -7,21 +7,20 @@
 <br />
 <table cellspacing="0" class="tablesorter" width="80%">
   <tr>
-    <th style="width:30%;"><%=t 'activerecord.attributes.guide_visitor.guide_id' %></th>
+    <th style="width:50%;"><%=t 'activerecord.attributes.guide_visitor.guide_id' %></th>
     <th style="width:20%;"><%=t 'activerecord.attributes.guide_visitor.year' %></th>
-    <th style="width:10%;"><%=t 'activerecord.attributes.guide_visitor.visit' %></th>
     <th style="width:20%;"><%=t 'activerecord.attributes.guide_visitor.passengers' %></th>
-    <th colspan="3" style="width:20%;"><%=t 'attributes.actions' %></th>
+    <th colspan="3" style="width:10%;"><%=t 'attributes.actions' %></th>
   </tr>
   <% for guide_visitor in @guide_visitors %>
     <tr>
-      <td><%= guide_visitor.guide_id %></td>
-      <td><%= guide_visitor.year %></td>
-      <td><%= guide_visitor.visit %></td>
+      <td><%= guide_visitor.guide.name %></td>
+      <td><%= I18n.localize(guide_visitor.year, :format => :pdatetime) %></td>
       <td><%= guide_visitor.passengers %></td>
-      <td><%= link_to t('attributes.showing'), [:admin, guide_visitor] %></td>
-		<td><%= link_to t('attributes.editing'), edit_admin_guide_visitor_path(guide_visitor) %></td>
-		<td><%= link_to t('attributes.exclude'), [:admin, guide_visitor], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+      <%if (User.find(current_user.id).has_role? :admin) %>
+		  <td><%= link_to t('attributes.editing'), edit_admin_guide_visitor_path(guide_visitor) %></td>
+		  <td><%= link_to t('attributes.exclude'), [:admin, guide_visitor], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td> 
+		  <%end%>
     </tr>
   <% end %>
 </table>

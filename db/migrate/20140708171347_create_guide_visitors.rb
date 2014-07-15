@@ -3,7 +3,7 @@ class CreateGuideVisitors < ActiveRecord::Migration
     create_table :guide_visitors do |t|
       t.integer :guide_id
       t.datetime :year
-      t.boolean :visit
+      t.boolean :visit, :default => 1 
       t.integer :passengers
       t.timestamps
     end

@@ -2,15 +2,15 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :guide_id %><br />
-    <%= f.text_field :guide_id %>
+    <%= f.select :guide_id, @guides, :prompt => "Escolha o Guia" %> <%=link_to t('attributes.add_new'), new_admin_guide_type_path%>
   </p>
   <p>
     <%= f.label :year %><br />
-    <%= f.datetime_select :year %>
-  </p>
-  <p>
-    <%= f.label :visit %><br />
-    <%= f.check_box :visit %>
+    <%if (User.find(current_user.id).has_role? :admin) %>
+      <%= f.datetime_select :year%> 
+    <%else%>
+      <%= f.datetime_select :year , :disabled => true%>
+    <%end%>
   </p>
   <p>
     <%= f.label :passengers %><br />

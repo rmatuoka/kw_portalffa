@@ -160,7 +160,7 @@ ActiveRecord::Schema.define(:version => 20140711174034) do
   create_table "guide_visitors", :force => true do |t|
     t.integer  "guide_id"
     t.datetime "year"
-    t.boolean  "visit"
+    t.boolean  "visit",      :default => true
     t.integer  "passengers"
     t.datetime "created_at"
     t.datetime "updated_at"

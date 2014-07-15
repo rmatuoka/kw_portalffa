@@ -25,6 +25,7 @@
       short: "%d/%m, %H:%M h"
       long: "%A, %d de %B de %Y, %H:%M h"
       pdate: "%d/%m/%Y"
+      pdatetime: "%d/%m/%Y - %H:%M h"
     am: ''
     pm: ''
 
@@ -386,6 +387,9 @@
             email: "Email"
             reminder: "Lembrete"
             mail: "Correio"
+            city: "Cidade"
+            state: "Estado"
+            guide_type_id: "Tipo de Guia"
             <<: *active_model_default
             messages:
                 index: "Verifique abaixo a lista dos guias cadastrados no sistema."       
@@ -400,7 +404,7 @@
                 new: "Utilize os campos abaixo para cadastrar um novo guia." 
                 show: "Verifique se as informações abaixo estão corretas."        
         guide_visitor:
-            guide_id: "Código"
+            guide_id: "Guia"
             year: "Data"
             visit: "Visita"
             passengers: "Número de passageiros"

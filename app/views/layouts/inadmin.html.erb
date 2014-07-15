@@ -58,12 +58,19 @@ jQuery(document).ready(function()
 									<li><%= link_to t('attributes.manage')+ show_model_name(Gallery, true),admin_galleries_path%></li>						
 								</ul>
 							</li>
-							<li class="parent aberto"><a href="#" title=""><h3><%= t('attributes.menuadmin.tickets')%></h3></a>
+							<li class="parent"><a href="#" title=""><h3><%= t('attributes.menuadmin.tickets')%></h3></a>
 								<ul class="sub-menu">
 									<li><%= link_to t('attributes.manage')+ show_model_name(Ticket, true),admin_tickets_path%></li>		
 									<li><%= link_to t('attributes.manage')+ show_model_name(TicketType, true),admin_ticket_types_path%></li>								
 									<li><%= link_to t('attributes.manage')+ show_model_name(TicketCategory, true),admin_ticket_categories_path%></li>
 									<li><%= link_to t('attributes.manage')+ show_model_name(TicketHome),admin_ticket_homes_path%></li>									
+								</ul>
+							</li>
+							<li class="parent aberto"><a href="#" title=""><h3><%= t('attributes.menuadmin.guides')%></h3></a>
+								<ul class="sub-menu">
+									<li><%= link_to t('attributes.manage')+ show_model_name(Guide, true),admin_guides_path%></li>		
+									<li><%= link_to t('attributes.manage')+ show_model_name(GuideType, true),admin_guide_types_path%></li>								
+									<li><%= link_to t('attributes.manage')+ show_model_name(GuideVisitor, true),admin_guide_visitors_path%></li> 						
 								</ul>
 							</li>
 							<%end%>

@@ -5,6 +5,10 @@
     <%= f.text_field :name %>
   </p>
   <p>
+    <%= f.label :tipo %><br />
+    <%= f.select :guide_type_id, @guide_types, :prompt => "Escolha o tipo" %> <%=link_to t('attributes.add_new'), new_admin_guide_type_path%> 
+  </p>  
+  <p>
     <%= f.label :departamento %><br />
     <%= f.text_field :department %>
   </p>
@@ -49,21 +53,32 @@
     <%= f.text_area :obs %>
   </p>
   <p>
-    <%= f.label :tipo %><br />
-    <%= f.text_field :guide_type_id %>
-  </p>
-  <p>
     <%= f.label :lembrete %><br />
     <%= f.check_box :reminder %>
   </p>
-  <p>
-    <%= f.label :correio %><br />
-    <%= f.check_box :mail %>
-  </p>
-  <p>
-    <%= f.label :data %><br />
-    <%= f.datetime_select :year %>
-  </p>
+  <% if @guide.id.blank?%>
+    <p>
+      <%= label_tag :has_visit, "Está em visita?" %><br />
+      <%= check_box_tag :has_visit %>
+    </p>
+    <div id="show_visit_quantity" style="display: none;">
+      <p>
+        <%= label_tag :visit_quantity %><br />
+        <%= text_field_tag :visit_quantity %>
+      </p>         
+    </div>
+    <script>
+    jQuery("#has_visit").click(function(){
+      if(jQuery("#has_visit").is(':checked'))
+          jQuery("#show_visit_quantity").show();  // checked
+      else
+          jQuery("#show_visit_quantity").hide();  // unchecked 
+    });
+
+    </script> 
+  <%end%>    
   <br />
   <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guides_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>
+
+
