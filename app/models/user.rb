@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
       @role = :supervisor
     elsif self.has_role? :user
       @role = :user
+    elsif self.has_role? :register
+      @role = :register
     end
   end
 

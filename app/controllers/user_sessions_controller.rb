@@ -15,6 +15,9 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       if !(User.find(@user_session.user).has_role? :user) # Se o nivel do usuário for diferente  de user mande para admin
         @admin = true
+      end 
+      if (User.find(@user_session.user).has_role? :register) # Se o nivel do usuário for
+        @register = true
       end
     else
       flash[:error] = "Usuário e/ou senha inválidos!"

@@ -1,14 +1,18 @@
-<%if @admin%>
-	window.location.href = "<%= admin_root_path %>";
+<%if @register%>
+	window.location.href = "<%= admin_guides_path %>";
 <%else%>
-	<%if !flash[:error].blank?%>
-		jQuery('#Show_Box_Error_Login').show();
-		erro = "";
-		erro += "		<div class='Error_box_cad'>";
-		erro += "			<p class='Text_error_box'><%= flash[:error];%></p>";
-		erro += "		</div>";		
-		jQuery('#Show_Box_Error_Login').html(erro);
-	<%else%>
-		window.location.href = "<%= ingressos_selecione_index_path %>";
-	<%end%>
+  <%if @admin%>
+  	window.location.href = "<%= admin_root_path %>";
+  <%else%>
+  	<%if !flash[:error].blank?%>
+  		jQuery('#Show_Box_Error_Login').show();
+  		erro = "";
+  		erro += "		<div class='Error_box_cad'>";
+  		erro += "			<p class='Text_error_box'><%= flash[:error];%></p>";
+  		erro += "		</div>";		
+  		jQuery('#Show_Box_Error_Login').html(erro);
+  	<%else%>
+  		window.location.href = "<%= ingressos_selecione_index_path %>";
+  	<%end%> 
+  <%end%>  
 <%end%>

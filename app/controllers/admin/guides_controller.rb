@@ -2,6 +2,7 @@ class Admin::GuidesController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:destroy]
   access_control do
       allow :admin, :all
+      allow :register, :all
   end  
   layout "new_admin"
   before_filter :load_types
