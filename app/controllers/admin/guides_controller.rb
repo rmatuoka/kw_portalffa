@@ -3,7 +3,7 @@ class Admin::GuidesController < ApplicationController
   access_control do
       allow :admin, :all
   end  
-  layout "inadmin"
+  layout "new_admin"
   before_filter :load_types
   def index
     @guides = Guide.all_active.paginate :page => params[:page],:per_page => 100 
@@ -60,10 +60,11 @@ class Admin::GuidesController < ApplicationController
   def search
     if !params[:keyword].blank?
       @guides = Guide.search_for(params[:keyword]).paginate :page => params[:page],:per_page => 100 
+      render :action => 'index'
     else
-      @guides = Guide.all_active 
+      redirect_to admin_guides_path 
     end
-    render :action => 'index' 
+     
   end
   
   def load_types

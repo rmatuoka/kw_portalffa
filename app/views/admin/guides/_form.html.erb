@@ -1,88 +1,92 @@
+<% content_for :footer do%>
+<script>
+jQuery("#has_visit").click(function(){
+  if(jQuery("#has_visit").is(':checked'))
+      jQuery("#show_visit_quantity").show();  // checked
+  else
+      jQuery("#show_visit_quantity").hide();  // unchecked 
+});
+
+</script>
+<%end%>
+
 <%= form_for [:admin, @guide] do |f| %>
   <%= f.error_messages %>
-  <p>
+  <div class="form-group">
     <%= f.label :nome %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :tipo %><br />
-    <%= f.select :guide_type_id, @guide_types, :prompt => "Escolha o tipo" %> <%=link_to t('attributes.add_new'), new_admin_guide_type_path%> 
-  </p>  
-  <p>
-    <%= f.label :departamento %><br />
-    <%= f.text_field :department %>
-  </p>
-  <p>
-    <%= f.label :endereco %><br />
-    <%= f.text_field :address %>
-  </p>
-  <p>
-    <%= f.label :bairro %><br />
-    <%= f.text_field :district %>
-  </p>
-  <p>
-    <%= f.label :cidade %><br />
-    <%= f.text_field :city %>
-  </p>
-  <p>
-    <%= f.label :estado %><br />
-    <%= f.text_field :state %>
-  </p>
-  <p>
-    <%= f.label :cep %><br />
-    <%= f.text_field :zip_code %>
-  </p>
-  <p>
-    <%= f.label :telefone %><br />
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :fax %><br />
-    <%= f.text_field :fax %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :internet %><br />
-    <%= f.text_field :internet %>
-  </p>
-  <p>
-    <%= f.label :obs %><br />
-    <%= f.text_area :obs %>
-  </p>
-  <p>
-    <%= f.label :lembrete %><br />
-    <%= f.check_box :reminder %>
-  </p>
-
-  <p>
-    <%= label_tag :has_visit, "Está em visita?" %><br />
-    <%= check_box_tag :has_visit %>
-  </p>
-  <div id="show_visit_quantity" style="display: none;">
-    <p>
-      <%= label_tag :visit_quantity, "Quantidade de passageiros" %><br />
-      <%= text_field_tag :visit_quantity %>
-    </p>         
+    <%= f.text_field :name, :class=>"form-control" %>
   </div>
-  <script>
-  jQuery("#has_visit").click(function(){
-    if(jQuery("#has_visit").is(':checked'))
-        jQuery("#show_visit_quantity").show();  // checked
-    else
-        jQuery("#show_visit_quantity").hide();  // unchecked 
-  });
+  <div class="form-group">
+    <%= f.label :tipo %><br />
+    <%= f.select :guide_type_id, @guide_types, {:prompt => "Escolha o tipo"},{:class=>"form-control"} %> <%#=link_to t('attributes.add_new'), new_admin_guide_type_path%> 
+  </div>  
+  <div class="form-group">
+    <%= f.label :departamento %><br />
+    <%= f.text_field :department, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :endereco %><br />
+    <%= f.text_field :address, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bairro %><br />
+    <%= f.text_field :district, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cidade %><br />
+    <%= f.text_field :city, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado %><br />
+    <%= f.text_field :state, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cep %><br />
+    <%= f.text_field :zip_code, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telefone %><br />
+    <%= f.text_field :phone, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :internet %><br />
+    <%= f.text_field :internet, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :obs %>
+    <%= f.text_area :obs, :class=>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :lembrete %>
+    <%= f.check_box :reminder, :class=>"form-control" %>
+  </div>
 
-  </script> 
- 
-  <br />
-  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guides_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  <div class="form-group">
+    <%= label_tag :has_visit, "Está em visita?" %><br />
+    <%= check_box_tag :has_visit, :class=>"form-control" %>
+  </div>
+  <div id="show_visit_quantity" style="display: none;">
+    <div class="form-group">
+      <%= label_tag :visit_quantity, "Quantidade de passageiros" %>
+      <%= text_field_tag :visit_quantity,nil, :class=>"form-control" %>
+    </div>         
+  </div> 
+  <div class="form-group">
+    <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guides_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> 
+    <%= f.submit nil, :class => "Bt_enviar" %>
+  </div>
 <% end %>
 <br /><br />
 <% if !@guide_visitors.blank?%>
-<h2>Visita Cadastrada:</h2>
+<h2>Visitas Cadastradas:</h2>
 <table cellspacing="0" class="tablesorter" width="80%">
   <tr>
     <th style="width:20%;"><%=t 'activerecord.attributes.guide_visitor.year' %></th>

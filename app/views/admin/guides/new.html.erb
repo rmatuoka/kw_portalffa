@@ -1,10 +1,6 @@
 <% title t('attributes.new') +" "+show_model_name(::Guide, true) %>
-
-<h1><%= t('attributes.new') +" "+show_model_name(::Guide)%></h1><br />
-<br />
-<p><%= t('activerecord.attributes.guide.messages.new')%></p><br />
-<br />
-
+<h1><%= t('attributes.new') +" "+show_model_name(::Guide)%></h1>
+<p><%= t('activerecord.attributes.guide.messages.new')%></p>
 <%= render 'form' %>
 
 
