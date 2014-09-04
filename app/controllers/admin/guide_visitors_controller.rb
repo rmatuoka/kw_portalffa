@@ -2,8 +2,9 @@ class Admin::GuideVisitorsController < ApplicationController
 skip_before_filter :verify_authenticity_token, :only => [:destroy]
   access_control do
       allow :admin, :all
-  end  
-  layout "inadmin"
+      allow :register, :all
+  end
+  layout "new_admin"  
   before_filter :load_guide
   def index
     @guide_visitors = GuideVisitor.all_active
@@ -50,5 +51,6 @@ skip_before_filter :verify_authenticity_token, :only => [:destroy]
   
   def load_guide
     @guides = Guide.all_active.collect { |c| [c.name, c.id] } 
+    @pag_show = 3
   end
 end

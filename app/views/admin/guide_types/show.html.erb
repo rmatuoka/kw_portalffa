@@ -11,10 +11,4 @@
   <strong>Descrição:</strong>
   <%= @guide_type.description %>
 </p>
-
-<br />
-<br />
-<br />
-<p>
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guide_types_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
-</p>
+<p><%= link_to(t('attributes.go_back'),admin_guide_types_path, :class => "btn btn-lg btn-default" )%></p>

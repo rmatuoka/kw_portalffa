@@ -2,11 +2,13 @@ class Admin::GuideTypesController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:destroy]
   access_control do
       allow :admin, :all
-  end  
-  layout "inadmin"
+      allow :register, :all
+  end 
+  before_filter :load_pag  
+  layout "new_admin" 
 
   def index
-    @guide_types = GuideType.all_active
+    @guide_types = GuideType.all(:conditions => ['active =  true'], :order => "code")
   end
 
   def show
@@ -44,4 +46,8 @@ class Admin::GuideTypesController < ApplicationController
     @guide_type.newdestroy
     redirect_to admin_guide_types_url, :notice => "Successfully destroyed guide type."
   end
+  
+  def load_pag
+    @pag_show = 1 
+  end 
 end

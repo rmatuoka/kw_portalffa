@@ -1,5 +1,5 @@
 <% title show_model_name(::Guide, true) %>
-<h1><%= show_model_name(::Guide, true) %></h1><br />
+<h1><%= show_model_name(::Guide, true) %></h1>
 <p><%= t('activerecord.attributes.guide.messages.index')%></p>
 <div id="search">
   <p>Informe o codigo, nome, endereço, cidade, estado ou cep do guia.</p>
@@ -15,9 +15,6 @@
   	<%#=submit_tag "Todos",:type=>"button",:onclick=>"window.open('"+admin_guides_path()+"','_self');", :class => "Bt_enviar btn btn-default btn-lg"%>
   </form>  
 </div>
-
-
-<br />
 <table class="table table-striped">
     <thead>
       <tr>

@@ -30,9 +30,9 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><%= link_to("Guias", admin_guides_path())%></li>
-            <li><%= link_to("Tipo de Guias", admin_guide_types_path())%></li>
-            <li><a href="#contact">Visitas</a></li>
+            <li <%= "class='active'" if @pag_show == 2 %>><%= link_to("Guias", admin_guides_path())%></li>
+            <li <%= "class='active'" if @pag_show == 1 %>><%= link_to("Tipo de Guias", admin_guide_types_path())%></li>
+            <li <%= "class='active'" if @pag_show == 3 %>><%= link_to("Visitas", admin_guide_visitors_path())%></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

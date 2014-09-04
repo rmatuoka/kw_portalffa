@@ -70,6 +70,7 @@ class Admin::GuidesController < ApplicationController
   
   def load_types
     @guide_types = GuideType.all_active.collect { |c| ["#{c.code} - #{c.description}", c.id] } 
+    @pag_show = 2
   end
   
 end

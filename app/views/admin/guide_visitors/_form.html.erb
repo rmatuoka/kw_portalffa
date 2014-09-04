@@ -1,21 +1,23 @@
 <%= form_for [:admin, @guide_visitor] do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :guide_id %><br />
-    <%= f.select :guide_id, @guides, :prompt => "Escolha o Guia" %> <%=link_to t('attributes.add_new'), new_admin_guide_type_path%>
+    Guia:<br />
+    <%= @guide_visitor.guide.name %>
   </p>
-  <p>
+  <div class="form-group form-group-lg">
     <%= f.label :year %><br />
     <%if (User.find(current_user.id).has_role? :admin) %>
-      <%= f.datetime_select :year%> 
+      <%= f.datetime_select :year, :class=>"form-control"%> 
     <%else%>
       <%= f.datetime_select :year , :disabled => true%>
     <%end%>
-  </p>
-  <p>
-    <%= f.label :passengers %><br />
-    <%= f.text_field :passengers %>
-  </p>
-  <br />
-  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guide_visitors_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  </div>
+  <div class="form-group form-group-lg">
+    <%= f.label :passengers %>
+    <%= f.text_field :passengers, :class=>"form-control" %>
+  </div>
+  <div class="form-group form-group-lg">
+    <%= link_to(t('attributes.go_back'),admin_guide_visitors_path, :class => "btn btn-lg btn-primary" )%>
+    <%= f.submit nil, :class => "btn btn-lg btn-success" %>
+  </div>
 <% end %>

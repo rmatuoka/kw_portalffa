@@ -1,19 +1,16 @@
-<% title @guide_visitor.guide_id %>
+<% title @guide_visitor.guide.name %>
 
-<h1><%= @guide_visitor.guide_id %></h1><br />
+<h1><%= @guide_visitor.guide.name %></h1><br />
 <p><%= t('activerecord.attributes.guide_visitor.messages.show')%></p><br />
 
 <p>
   <strong>Guia:</strong>
-  <%= @guide_visitor.guide_id %>
+  <%= @guide_visitor.guide.name%>
 </p>
 <p>
   <strong>Data:</strong>
-  <%= @guide_visitor.year %>
-</p>
-<p>
-  <strong>Visita:</strong>
-  <%= @guide_visitor.visit %>
+  <%=I18n.localize(@guide_visitor.year, :format => :pdatetime)  %>
+  
 </p>
 <p>
   <strong>Passageiros:</strong>
@@ -23,6 +20,6 @@
 <br />
 <br />
 <br />
-<p>
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guide_visitors_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+<p> 
+  <p><%= link_to(t('attributes.go_back'),admin_guide_visitors_path(), :class => "btn btn-lg btn-default" )%></p>  
 </p>
