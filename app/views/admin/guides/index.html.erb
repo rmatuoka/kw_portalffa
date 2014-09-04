@@ -35,10 +35,11 @@
       <td><%= guide.city %></td>
       <td><%= guide.state %></td>      
       <td><%= print_active(guide.reminder) %></td>
-      <td><%= link_to "Visualizar", [:admin, guide] %></td>
+      <!-- <td><%#= link_to "Visualizar", [:admin, guide] %></td>-->
       <td><%= link_to "Editar", edit_admin_guide_path(guide) %></td>
       <td><%= link_to "Excluir", [:admin, guide], :confirm => 'Tem certeza?', :method => :delete %></td>
     </tr>
   <% end %>
   <tbody>
 </table>
+<%= will_paginate @posts %>

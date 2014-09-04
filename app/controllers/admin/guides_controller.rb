@@ -6,7 +6,7 @@ class Admin::GuidesController < ApplicationController
   layout "inadmin"
   before_filter :load_types
   def index
-    @guides = Guide.all_active 
+    @guides = Guide.all_active.paginate :page => params[:page],:per_page => 100 
   end
 
   def show
@@ -33,12 +33,18 @@ class Admin::GuidesController < ApplicationController
   end
 
   def edit
-    @guide = Guide.find(params[:id]) 
+    @guide = Guide.find(params[:id])
+    @guide_visitors = @guide.guide_visitors.all_active 
   end
 
   def update
     @guide = Guide.find(params[:id])
     if @guide.update_attributes(params[:guide])
+      if ((params[:has_visit] == "1") && (params[:visit_quantity].to_i > 0)) 
+        puts "Passou"
+        @guide_visitor = GuideVisitor.new(:guide_id => @guide.id, :year => Time.now, :passengers => params[:visit_quantity])
+        @guide_visitor.save 
+      end            
       redirect_to [:admin, @guide], :notice  => "Successfully updated guide."
     else
       render :action => 'edit'

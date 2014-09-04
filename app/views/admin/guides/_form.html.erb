@@ -56,29 +56,51 @@
     <%= f.label :lembrete %><br />
     <%= f.check_box :reminder %>
   </p>
-  <% if @guide.id.blank?%>
-    <p>
-      <%= label_tag :has_visit, "Está em visita?" %><br />
-      <%= check_box_tag :has_visit %>
-    </p>
-    <div id="show_visit_quantity" style="display: none;">
-      <p>
-        <%= label_tag :visit_quantity %><br />
-        <%= text_field_tag :visit_quantity %>
-      </p>         
-    </div>
-    <script>
-    jQuery("#has_visit").click(function(){
-      if(jQuery("#has_visit").is(':checked'))
-          jQuery("#show_visit_quantity").show();  // checked
-      else
-          jQuery("#show_visit_quantity").hide();  // unchecked 
-    });
 
-    </script> 
-  <%end%>    
+  <p>
+    <%= label_tag :has_visit, "Está em visita?" %><br />
+    <%= check_box_tag :has_visit %>
+  </p>
+  <div id="show_visit_quantity" style="display: none;">
+    <p>
+      <%= label_tag :visit_quantity, "Quantidade de passageiros" %><br />
+      <%= text_field_tag :visit_quantity %>
+    </p>         
+  </div>
+  <script>
+  jQuery("#has_visit").click(function(){
+    if(jQuery("#has_visit").is(':checked'))
+        jQuery("#show_visit_quantity").show();  // checked
+    else
+        jQuery("#show_visit_quantity").hide();  // unchecked 
+  });
+
+  </script> 
+ 
   <br />
   <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_guides_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
 <% end %>
+<br /><br />
+<% if !@guide_visitors.blank?%>
+<h2>Visita Cadastrada:</h2>
+<table cellspacing="0" class="tablesorter" width="80%">
+  <tr>
+    <th style="width:20%;"><%=t 'activerecord.attributes.guide_visitor.year' %></th>
+    <th style="width:20%;"><%=t 'activerecord.attributes.guide_visitor.passengers' %></th>
+    <th colspan="3" style="width:10%;"><%=t 'attributes.actions' %></th>
+  </tr>
+  <% for guide_visitor in @guide_visitors %>
+    <tr>
+      <td><%= I18n.localize(guide_visitor.year, :format => :pdatetime) %></td>
+      <td><%= guide_visitor.passengers %></td>
+      <%if (User.find(current_user.id).has_role? :admin) %>
+		  <td><%= link_to t('attributes.editing'), edit_admin_guide_visitor_path(guide_visitor) %></td>
+		  <td><%= link_to t('attributes.exclude'), [:admin, guide_visitor], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td> 
+		  <%end%>
+    </tr>
+  <% end %>
+</table> 
+<%end%>  
+
 
 
