@@ -3,6 +3,31 @@
 <h1><%= show_model_name(::GuideVisitor, true) %></h1>
 <p><%= t('activerecord.attributes.guide_visitor.messages.index')%></p> 
 <p style="text-align: right;"><%= link_to("Cadastrar Nova Visita",admin_guides_path(),:class => "btn btn-lg btn-success ")%></p> 
+<h2>Relatório Sintético de Visitas</h2>
+<table class="table table-striped">
+  <tr>
+    <th class="col-md-4">Dia</th>
+    <th class="col-md-4">Quantidade de Registros inseridos</th>
+    <th class="col-md-4">Total de Passageiros do dia</th>
+  </tr>
+	<% register_total = 0%>
+	<% register_passenger = 0%>
+	<% for guide_report in @guide_report %>
+		<tr>
+			<td><%= I18n.localize(guide_report.date) %></td>
+			<td><%= guide_report.register%></td>
+			<td><%= number_with_precision(guide_report.all_passengers, :precision => 0) %></td>
+		</tr>
+		<% register_total = register_total + guide_report.register%>
+		<% register_passenger = register_passenger + guide_report.all_passengers%>
+	<%end%>
+	<tr>
+		<td>Total</td>
+		<td><%= register_total%></td>
+		<td><%= number_with_precision(register_passenger, :precision => 0) %></td>
+	</tr>
+</table>
+<h2>Relatório Analítico de Visitas</h2>
 <table class="table table-striped">
   <tr>
     <th class="col-md-3"><%=t 'activerecord.attributes.guide_visitor.guide_id' %></th>

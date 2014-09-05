@@ -8,6 +8,7 @@ skip_before_filter :verify_authenticity_token, :only => [:destroy]
   before_filter :load_guide
   def index
     @guide_visitors = GuideVisitor.all_active
+    @guide_report = GuideVisitor.all(:select =>"count(*) as register, date(`guide_visitors`.`created_at`) as date, sum(`guide_visitors`.`passengers`) as all_passengers", :group =>"date(`guide_visitors`.`created_at`)")
   end
 
   def show
