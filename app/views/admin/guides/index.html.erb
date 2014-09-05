@@ -18,22 +18,22 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th class="col-md-2 col-xs-6"><%=t 'attributes.name' %></th>
-        <th class="col-md-2 hidden-sm"><%=t 'activerecord.attributes.guide.email' %></th>
-        <th class="col-md-2 hidden-sm"><%=t 'activerecord.attributes.guide.city' %></th>
-        <th class="col-md-2 hidden-sm"><%=t 'activerecord.attributes.guide.state' %></th>
+        <th class="col-md-2 col-xs-2"><%=t 'attributes.name' %></th>
+        <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.email' %></th>
+        <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.city' %></th>
+        <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.state' %></th>
         <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.reminder' %></th>
-        <th class="col-md-2 col-xs-4"><%=t 'attributes.actions' %></th>
+        <th class="col-md-2 col-xs-2"><%=t 'attributes.actions' %></th>
       </tr>
     </thead>
     <tbody>
   <% for guide in @guides %>
     <tr <%='class=danger' if guide.reminder%>>
-      <td class="col-md-2 col-xs-5"><%= guide.name %></td>
-      <td class="col-md-2 hidden-sm"><%= guide.email %></td>
-      <td class="col-md-2 hidden-sm"><%= guide.city %></td>
-      <td class="col-md-2 hidden-sm"><%= guide.state %></td>      
-      <td class="col-md-2 col-xs-2"><%= print_active(guide.reminder) %></td>
+      <td ><%= guide.name %></td>
+      <td ><%= guide.email %></td>
+      <td ><%= guide.city %></td>
+      <td ><%= guide.state %></td>      
+      <td ><%= print_active(guide.reminder) %></td>
       <!-- <td><%#= link_to "Visualizar", [:admin, guide] %></td>-->
       <td class="col-md-2 col-xs-5">
         <%= link_to "Editar", edit_admin_guide_path(guide), :class => "btn btn-default btn-lg" %>
