@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :legend %><br />
-    <%= f.text_field :legend %>
+    <%= f.text_field :legend, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :upload_id %><br />
@@ -14,16 +14,19 @@
   </p>
   <p>
     <%= f.label :published %><br />
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=>"form-control" %>
   </p>
   <p>Atenção: Os links abaixo só serão processados se a Galeria for do tipo Carrossel!</p>
   <p>
     <%= f.label :link %><br />
-    <%= f.text_field :link %>
+    <%= f.text_field :link, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :link_target %><br />
-    <%= f.text_field :link_target %>
+    <%= f.text_field :link_target, :class=>"form-control" %>
   </p>
-  <p><%= f.submit %></p>
+  <p class="box-footer">
+    <%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_gallery_gallery_images_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+    <%= f.submit nil, :class => "btn btn-default" %>
+  </p>
 <% end %>

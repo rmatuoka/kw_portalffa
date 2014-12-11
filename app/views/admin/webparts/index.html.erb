@@ -1,30 +1,57 @@
 <% title show_model_name(Webpart,true) %>
+<section class="content-header">
+  <h1>
+    <%= show_model_name(Webpart, true)%>
+    <br/>
+    <small><%= t('activerecord.attributes.webpart.messages.index')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= show_model_name(Webpart, true)%> </li> 
+  </ol>
+</section>
 
-<h1><%= show_model_name(Webpart, true)%></h1><br />
-<p><%= t('activerecord.attributes.webpart.messages.index')%></p><br />
+<section class="content">
+  <p><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_webpart_path+"','_self');", :class => "btn btn-primary"%> </p>
+  <div class="box">
+    <div class="box-body table-responsive no-padding">
+      <table cellspacing="0" class="table table-hover" width="80%">
+	      <thead> 
+		      <tr>
+			      <th style="width:30%;"><%=t 'attributes.name' %></th>
+			      <th style="width:15%;"><%=t 'attributes.published' %> ?</th>
+			      <th style="width:25%;"><%=t 'activerecord.attributes.webpart.webtype' %></th>
+			      <th colspan="3" style="width:30%;"><%=t 'attributes.actions' %></th>
+		      </tr>
+	      </thead> 
+	      <tbody>
+	      <% for webpart in @webparts %>
+	      <tr <%='class=notactive' if !webpart.published%>>
+		      <td><%= webpart.name %></td>
+		      <td><%= print_active(webpart.published) %></td>
+		      <td><%= webpart.webtype %></td>
+		      <td><%= link_to t('attributes.showing'), [:admin, webpart], :class=>"btn btn-default" %></td>
+		      <td><%= link_to t('attributes.editing'), edit_admin_webpart_path(webpart), :class=>"btn btn-default" %></td>
+		      <td><%= link_to t('attributes.exclude'), [:admin, webpart], :confirm => t('system_messages.notice_to_delete'), :method => :delete, :class=>"btn btn-default" %></td>
+	      </tr>
+	      <% end %>
+	      </tbody>
+      </table>
+    </div>    
+  </div>
+</section>
+
+
+
+<h1></h1><br />
+<p></p><br />
 <br />
-<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_webpart_path+"','_self');", :class => "Bt_enviar"%> </p>
+
 <br />
-<table cellspacing="0" class="tablesorter" width="80%">
-	<thead> 
-		<tr>
-			<th style="width:30%;"><%=t 'attributes.name' %></th>
-			<th style="width:15%;"><%=t 'attributes.published' %> ?</th>
-			<th style="width:25%;"><%=t 'activerecord.attributes.webpart.webtype' %></th>
-			<th colspan="3" style="width:30%;"><%=t 'attributes.actions' %></th>
-		</tr>
-	</thead> 
-	<tbody>
-	<% for webpart in @webparts %>
-	<tr <%='class=notactive' if !webpart.published%>>
-		<td><%= webpart.name %></td>
-		<td><%= print_active(webpart.published) %></td>
-		<td><%= webpart.webtype %></td>
-		<td><%= link_to t('attributes.showing'), [:admin, webpart] %></td>
-		<td><%= link_to t('attributes.editing'), edit_admin_webpart_path(webpart) %></td>
-		<td><%= link_to t('attributes.exclude'), [:admin, webpart], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
-	</tr>
-	<% end %>
-	</tbody>
-</table>
+
 

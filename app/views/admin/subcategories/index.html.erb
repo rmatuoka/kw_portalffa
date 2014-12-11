@@ -1,33 +1,61 @@
 <% title (@category.name)+" - "+ show_model_name(::Subcategory, true) %>
+<section class="content-header">
+  <h1>
+    <%= (@category.name)+" - "+ show_model_name(::Subcategory, true) %>
+    <br/>
+    <small><%= t('activerecord.attributes.subcategory.messages.index')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= (@category.name)+" - "+ show_model_name(::Subcategory, true) %> </li> 
+  </ol>
+</section>
 
-<h1><%= (@category.name)+" - "+ show_model_name(::Subcategory, true) %></h1><br />
-<p><%= t('activerecord.attributes.subcategory.messages.index')%></p><br />
+<section class="content">
+  <p>
+    <%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_category_subcategory_path(@category)+"','_self');", :class => "btn btn-primary"%>
+    <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_categories_path()+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+  </p>  
+  <div class="box">
+    <div class="box-body table-responsive no-padding">
+      <table cellspacing="0" class="table table-hover" width="80%">
+	      <thead> 
+		      <tr>
+			      <th style="width:20%;"><%=t('attributes.name') %></th>		
+			      <th style="width:20%;"><%=t('attributes.published') %> ?</th>
+			      <th style="width:20%;"><%=t 'attributes.menu_display' %> ?</th>
+			      <th colspan="4" style="width:40%;"><%=t 'attributes.actions' %></th>
+		      </tr>
+	      </thead> 
+	      <tbody>
+	        <% for subcategory in @subcategories %>
+	      <tr <%='class=notactive' if !subcategory.published%>>
+	            <td><%= subcategory.name %></td>
+	            <td><%= print_active(subcategory.published) %></td>
+		        <td><%= print_active(subcategory.menu_display) %></td>
+	            <td><%= link_to t('attributes.showing'), admin_category_subcategory_path(@category, subcategory), :class => "btn btn-default" %></td>
+	            <td><%= link_to t('attributes.editing'), edit_admin_category_subcategory_path(@category,subcategory), :class => "btn btn-default" %></td>
+	            <td><%= link_to t('attributes.exclude'), admin_category_subcategory_path(@category, subcategory), :confirm => t('system_messages.notice_to_delete'), :method => :delete, :class => "btn btn-default" %></td>
+	            <td><%= link_to show_model_name(::Content, true), admin_category_subcategory_contents_path(@category, subcategory), :class => "btn btn-primary"%></td>	
+	          </tr>
+	        <% end %>
+	      </tbody>
+      </table>
+    </div>    
+  </div>
+</section>
+
+
+
+
+<h1></h1><br />
+<p></p><br />
 <br />
-<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_category_subcategory_path(@category)+"','_self');", :class => "Bt_enviar"%> </p>
+
 <br />
-<table cellspacing="0" class="tablesorter" width="80%">
-	<thead> 
-		<tr>
-			<th style="width:20%;"><%=t('attributes.name') %></th>		
-			<th style="width:20%;"><%=t('attributes.published') %> ?</th>
-			<th style="width:20%;"><%=t 'attributes.menu_display' %> ?</th>
-			<th colspan="4" style="width:40%;"><%=t 'attributes.actions' %></th>
-		</tr>
-	</thead> 
-	<tbody>
-	  <% for subcategory in @subcategories %>
-	<tr <%='class=notactive' if !subcategory.published%>>
-	      <td><%= subcategory.name %></td>
-	      <td><%= print_active(subcategory.published) %></td>
-		  <td><%= print_active(subcategory.menu_display) %></td>
-	      <td><%= link_to t('attributes.showing'), admin_category_subcategory_path(@category, subcategory) %></td>
-	      <td><%= link_to t('attributes.editing'), edit_admin_category_subcategory_path(@category,subcategory) %></td>
-	      <td><%= link_to t('attributes.exclude'), admin_category_subcategory_path(@category, subcategory), :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
-	      <td><%= link_to show_model_name(::Content, true), admin_category_subcategory_contents_path(@category, subcategory) %></td>	
-	    </tr>
-	  <% end %>
-	</tbody>
-</table>
-<p class="p_index">
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_categories_path(@category)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
-</p>
+

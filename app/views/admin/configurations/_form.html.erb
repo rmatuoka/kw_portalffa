@@ -3,58 +3,58 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :logo %>
-    <%= f.file_field :logo %>
+    <%= f.file_field :logo, :class=>"form-control" %>
   </p>
   <%= raw("<p>" + image_tag(@configuration.logo.url) +"</p>") if @configuration.logo.file?%>
   <p>
     <%= f.label :highlighted %>
-    <%= f.file_field :highlighted %>
+    <%= f.file_field :highlighted, :class=>"form-control" %>
   </p>
   <%= raw("<p>" + image_tag(@configuration.highlighted.url) +"</p>") if @configuration.highlighted.file?%>
   <p>
     <%= f.label :email_adm %>
-    <%= f.text_field :email_adm %>
+    <%= f.text_field :email_adm, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :email_compras %>
-    <%= f.text_field :email_compras %>
+    <%= f.text_field :email_compras, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :email_contato %>
-    <%= f.text_field :email_contato %>
+    <%= f.text_field :email_contato, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :email_imprensa %>
-    <%= f.text_field :email_imprensa %>
+    <%= f.text_field :email_imprensa, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :copyright %>
-    <%= f.text_field :copyright %>
+    <%= f.text_field :copyright, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :phone %>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :schedule %>
-    <%= f.text_field :schedule %>
+    <%= f.text_field :schedule, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :twitter %>
-    <%= f.text_field :twitter %>
+    <%= f.text_field :twitter, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :facebook %>
-    <%= f.text_field :facebook %>
+    <%= f.text_field :facebook, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :youtube %>
-    <%= f.text_field :youtube %>
+    <%= f.text_field :youtube, :class=>"form-control" %>
   </p>
-  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_root_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  <p class="box-footer"><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_root_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "btn btn-default" %></p>
 <% end %>
 </div>

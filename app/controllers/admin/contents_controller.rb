@@ -3,7 +3,8 @@ class Admin::ContentsController < ApplicationController
   access_control do
       allow :admin, :all
   end  
-  layout "inadmin"
+  #layout "inadmin"
+  layout "admin_20141208"
   before_filter :load_template, :only => [:new, :edit]  
   before_filter :load_subcategories
   uses_tiny_mce :options => {

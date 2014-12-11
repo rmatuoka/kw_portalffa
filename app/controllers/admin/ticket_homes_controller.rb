@@ -3,7 +3,8 @@ class Admin::TicketHomesController < ApplicationController
   access_control do
       allow :admin, :all
   end  
-  layout "inadmin"  
+  #layout "inadmin"  
+  layout "admin_20141208"
   uses_tiny_mce :options => {
                               :theme => 'advanced',
                               :theme_advanced_resizing => true,

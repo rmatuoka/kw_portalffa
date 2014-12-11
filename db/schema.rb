@@ -216,7 +216,7 @@ ActiveRecord::Schema.define(:version => 20140711174034) do
     t.boolean  "used"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "reduction",                                 :default => false, :null => false
+    t.boolean  "reduction"
   end
 
   create_table "orders", :force => true do |t|
@@ -284,7 +284,7 @@ ActiveRecord::Schema.define(:version => 20140711174034) do
 
   create_table "ticket_types", :force => true do |t|
     t.string   "name"
-    t.decimal  "discount",   :precision => 10, :scale => 2
+    t.decimal  "discount",   :precision => 10, :scale => 0
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"
@@ -297,8 +297,8 @@ ActiveRecord::Schema.define(:version => 20140711174034) do
     t.decimal  "price",              :precision => 10, :scale => 2
     t.integer  "ticket_type_id"
     t.integer  "ticket_category_id"
-    t.integer  "above",                                             :default => 0, :null => false
-    t.decimal  "discount",           :precision => 10, :scale => 2,                :null => false
+    t.integer  "above"
+    t.decimal  "discount",           :precision => 10, :scale => 2
     t.boolean  "active"
     t.boolean  "published"
     t.datetime "created_at"

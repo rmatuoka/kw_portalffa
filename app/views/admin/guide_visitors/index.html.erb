@@ -1,52 +1,74 @@
 <% title show_model_name(::GuideVisitor, true) %>
+<section class="content-header">
+  <h1><%= show_model_name(::GuideVisitor, true) %>
+    <br/>
+    <small><%= t('activerecord.attributes.guide_visitor.messages.index')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= show_model_name(::GuideVisitor, true) %> </li> 
+  </ol>
+</section>
 
-<h1><%= show_model_name(::GuideVisitor, true) %></h1>
-<p><%= t('activerecord.attributes.guide_visitor.messages.index')%></p> 
-<p style="text-align: right;"><%= link_to("Cadastrar Nova Visita",admin_guides_path(),:class => "btn btn-lg btn-success ")%></p> 
-<h2>Relatório Sintético de Visitas</h2>
-<table class="table table-striped">
-  <tr>
-    <th class="col-md-4">Dia</th>
-    <th class="col-md-4">Quantidade de Registros inseridos</th>
-    <th class="col-md-4">Total de Passageiros do dia</th>
-  </tr>
-	<% register_total = 0%>
-	<% register_passenger = 0%>
-	<% for guide_report in @guide_report %>
-		<tr>
-			<td><%= I18n.localize(guide_report.date) %></td>
-			<td><%= guide_report.register%></td>
-			<td><%= number_with_precision(guide_report.all_passengers, :precision => 0) %></td>
-		</tr>
-		<% register_total = register_total + guide_report.register%>
-		<% register_passenger = register_passenger + guide_report.all_passengers%>
-	<%end%>
-	<tr>
-		<td>Total</td>
-		<td><%= register_total%></td>
-		<td><%= number_with_precision(register_passenger, :precision => 0) %></td>
-	</tr>
-</table>
-<h2>Relatório Analítico de Visitas</h2>
-<table class="table table-striped">
-  <tr>
-    <th class="col-md-3"><%=t 'activerecord.attributes.guide_visitor.guide_id' %></th>
-    <th class="col-md-3"><%=t 'activerecord.attributes.guide_visitor.year' %></th>
-    <th class="col-md-3"><%=t 'activerecord.attributes.guide_visitor.passengers' %></th>
-    <th class="col-md-3"><%=t 'attributes.actions' %></th>
-  </tr>
-  <% for guide_visitor in @guide_visitors %>
-    <tr>
-      <td><%= guide_visitor.guide.name %></td>
-      <td><%= I18n.localize(guide_visitor.year, :format => :pdatetime) %></td>
-      <td><%= guide_visitor.passengers %></td>
-      <td>
-        <%= link_to t('attributes.editing'), edit_admin_guide_visitor_path(guide_visitor), :class => "btn btn-default btn-lg" %>
-        <%if (User.find(current_user.id).has_role? :admin) %>
-  		    <%= link_to t('attributes.exclude'), [:admin, guide_visitor], :confirm => t('system_messages.notice_to_delete'), :method => :delete, :class => "btn btn-danger btn-lg" %> 
-  		  <%end%>
-  		</td>
-    </tr>
-  <% end %>
-</table>
-
+<section class="content">
+  <p style="text-align: right;"><%= link_to("Cadastrar Nova Visita",admin_guides_path(),:class => "btn btn-lg btn-success ")%></p> 
+  <div class="box">
+    <div class="box-header">
+      <h2>  Relatório Sintético de Visitas</h2>
+    </div>
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-striped">
+        <tr>
+          <th class="col-md-4">Dia</th>
+          <th class="col-md-4">Quantidade de Registros inseridos</th>
+          <th class="col-md-4">Total de Passageiros do dia</th>
+        </tr>
+	      <% register_total = 0%>
+	      <% register_passenger = 0%>
+	      <% for guide_report in @guide_report %>
+		      <tr>
+			      <td><%= I18n.localize(guide_report.date) %></td>
+			      <td><%= guide_report.register%></td>
+			      <td><%= number_with_precision(guide_report.all_passengers, :precision => 0) %></td>
+		      </tr>
+		      <% register_total = register_total + guide_report.register%>
+		      <% register_passenger = register_passenger + guide_report.all_passengers%>
+	      <%end%>
+	      <tr>
+		      <td>Total</td>
+		      <td><%= register_total%></td>
+		      <td><%= number_with_precision(register_passenger, :precision => 0) %></td>
+	      </tr>
+      </table>
+      <div class="box-header table-responsive no-padding">
+        <h2>Relatório Analítico de Visitas</h2>
+      </div>
+      <table class="table table-striped">
+        <tr>
+          <th class="col-md-3"><%=t 'activerecord.attributes.guide_visitor.guide_id' %></th>
+          <th class="col-md-3"><%=t 'activerecord.attributes.guide_visitor.year' %></th>
+          <th class="col-md-3"><%=t 'activerecord.attributes.guide_visitor.passengers' %></th>
+          <th class="col-md-3"><%=t 'attributes.actions' %></th>
+        </tr>
+        <% for guide_visitor in @guide_visitors %>
+          <tr>
+            <td><%= guide_visitor.guide.name %></td>
+            <td><%= I18n.localize(guide_visitor.year, :format => :pdatetime) %></td>
+            <td><%= guide_visitor.passengers %></td>
+            <td>
+              <%= link_to t('attributes.editing'), edit_admin_guide_visitor_path(guide_visitor), :class => "btn btn-default btn-lg" %>
+              <%if (User.find(current_user.id).has_role? :admin) %>
+        		    <%= link_to t('attributes.exclude'), [:admin, guide_visitor], :confirm => t('system_messages.notice_to_delete'), :method => :delete, :class => "btn btn-danger btn-lg" %> 
+        		  <%end%>
+        		</td>
+          </tr>
+        <% end %>
+      </table>
+    </div>    
+  </div>
+</section>

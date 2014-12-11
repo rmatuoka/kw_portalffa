@@ -1,6 +1,26 @@
 <% title @guide.name %>
-<h1><%= @guide.name %></h1>
-<p><%= t('system_messages.edit_form')%></p>
-<%= render 'form' %>
+<section class="content-header">
+  <h1><%= @guide.name %>
+    <br/>
+    <small><%= t('system_messages.edit_form')%></small>    
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= show_model_name(::Guide, true) %> </li> 
+  </ol>
+</section>
+
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+     <%= render 'form' %>
+    </div>    
+  </div>
+</section>
 
 

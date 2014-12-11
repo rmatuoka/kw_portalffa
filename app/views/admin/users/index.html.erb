@@ -1,46 +1,74 @@
-<% 
-	content_for :title do "Usuários" end
-%>
-<div id="search">
-<p>Informe o nome, sobrenome ou e-mail do usuário.</p>
-<%=form_tag '/admin/users/search', :method => :get, :name=>"formkeyword"%>
-	<%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
-	<%=submit_tag "Buscar", :class => "Bt_enviar"%>
-</form>
-<br><br>
-</div>
+<% 	content_for :title do "Usuários" end%>
+
+<section class="content-header">
+  <h1> <%="Usuários"%>
+    <br/>
+    <small>Verifique abaixo os Usuários cadastrados</small>
+  </h1>
+
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Usuários </li> 
+  </ol>
+</section>
+
+<section class="content">
+  <div id="search" class="box">  
+    <div class="box-header">
+     <p>  Informe o nome, sobrenome ou e-mail do usuário.</p>   
+      
+      <%=form_tag '/admin/users/search', :method => :get, :name=>"formkeyword"%>
+        <%=text_field_tag :keyword, nil ,:style => "width:400px;"%>
+        <%=submit_tag "Buscar", :class => "btn btn-default"%>
+      </form>
+      <br><br>
+      <div class="box-body table-responsive no-padding">
+        <table cellspacing="0" class="table table-hover" width="80%">
+	        <thead> 
+		        <tr>
+            		<th style="width:35%;"><%=t 'attributes.name' %></th>
+			        <th style="width:30%;">Email</th>
+			
+			        <th colspan="4" style="width:35%;"><%=t 'attributes.actions' %></th>
+		        </tr>
+	        </thead> 
+	        <tbody>
+	          <% for user in @users %>
+	            <tr>
+	              <td><%= user.name %></td>
+	              <td><%= user.email%></td>
+			
+		          <%if User.find(current_user.id).has_role? :admin %>
+	              <td><%= link_to t('attributes.showing'), admin_user_path(user),:class=>"btn btn-default" %>
+	              <%= link_to t('attributes.editing'), edit_admin_user_path(user),:class=>"btn btn-default" %>
+	              <%#= link_to t('attributes.exclude'), admin_user_path(user), :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
+		          <%end%>
+		          <td><%= link_to "Verificar Ingressos!", admin_search_path(user),:class=>"btn btn-primary" %>
+		          </td>
+	            </tr>
+	          <% end %>
+	        </tbody>
+        </table>
+        <%= will_paginate @users %>
+        <br /><br />
+        <p class="box-footer">
+        <%= link_to "Exportar CSV", export_admin_users_path(:format => :csv), :class => "btn btn-default" %>
+        <%= link_to "Exportar XML", export_admin_users_path(:format => :xml), :class => "btn btn-default" %>
+        <%= link_to "Exportar Excel", export_admin_users_path(:format => :xls), :class => "btn btn-default" %>
+        <br /><br /><br /><br />
+        </p>
+        <script>
+	        document.getElementById('keyword').focus();
+        </script>
+      </div>
+    </div>   
+  </div>
+</section>
 
 <table cellspacing="0" class="tablesorter" width="80%">
-	<thead> 
-		<tr>
-    		<th style="width:35%;"><%=t 'attributes.name' %></th>
-			<th style="width:30%;">Email</th>
-			
-			<th colspan="4" style="width:35%;"><%=t 'attributes.actions' %></th>
-		</tr>
-	</thead> 
-	<tbody>
-	  <% for user in @users %>
-	    <tr>
-	      <td><%= user.name %></td>
-	      <td><%= user.email%></td>
-			
-		  <%if User.find(current_user.id).has_role? :admin %>
-	      <td><%= link_to t('attributes.showing'), admin_user_path(user) %></td>
-	      <td><%= link_to t('attributes.editing'), edit_admin_user_path(user) %></td>
-	      <td><%#= link_to t('attributes.exclude'), admin_user_path(user), :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
-		  <%end%>
-		  <td><%= link_to "Verificar Ingressos!", admin_search_path(user) %></td>
-	    </tr>
-	  <% end %>
-	</tbody>
-</table>
-<%= will_paginate @users %>
-<br /><br />
-<%= link_to "Exportar CSV", export_admin_users_path(:format => :csv), :class => "Bt_enviar" %>
-<%= link_to "Exportar XML", export_admin_users_path(:format => :xml), :class => "Bt_enviar" %>
-<%= link_to "Exportar Excel", export_admin_users_path(:format => :xls), :class => "Bt_enviar" %>
-<br /><br /><br /><br />
-<script>
-	document.getElementById('keyword').focus();
-</script>
+

@@ -1,0 +1,149 @@
+<section class="sidebar">
+  <div class="user-panel">
+    <div class="pull-left image">
+      <%=image_tag("admin_img/avatar3.png", :class => "img-circle")%>    
+    </div>
+    <div class="pull-left info">
+      <p>
+        <%="Olá " + current_user.name%> 
+      </p>        
+      <%=link_to("Sair", logout_path(), :class=>"glyphicon glyphcon-off")%>
+    </div>
+  </div>
+  <form action="#" class="sidebar-form" method="get">
+    <div class="input-group">
+      <input class="form-control" name ="q", placeholder= "Search...", :type= "text"/>
+      <span class="input-group-btn">
+        <button id="search-btn" class="btn btn-flat" name="search" type="submit">
+          <i class="fa fa-search"></i>
+        </button>      
+      </span>
+    </div>
+  </form>
+
+  <ul class="sidebar-menu">
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i> 
+        <span>Estrutura</span>
+        <i class="fa fa-angle-left pull-right"></i>      
+        <ul class="treeview-menu">
+          <li>
+            <a href="/admin/templates"><span> Gerencias Templates</span></a>
+          </li>
+          <li>
+            <a href="/admin/webparts"><span> Gerenciar Webparts</span></a>
+          </li>
+        </ul>
+      </a>
+    </li>
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i> Menu<i class="fa fa-angle-left pull-right"></i>
+      
+        <ul class="treeview-menu">
+          <li>
+            <a href="/admin/categories"><span>Gerenciar Categorais</span></a> 
+          </li>
+          <li>
+            <a href="/admin/complement_menus"><span>Gerenciar Menus Complementares</span></a> 
+          </li>
+          <li>
+            <a href="/admin/uploads"><span>Gerenciar Uploads</span></a> 
+          </li>
+          <li>
+            <a href="/admin/galleries"><span>Gerenciar Galerias</span></a> 
+          </li>
+        </ul>
+      </a>
+    </li>
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i>
+        <span> Bilhetes</span>
+        <i class="fa fa-angle-left pull-right"></i>
+        <ul class="treeview-menu">
+          <li>
+            <a href="/admin/tickets">Gerenciar Bilhetes</a> 
+          </li>
+          <li>
+            <a href="/admin/ticket_types">Gerenciar Tipos de Bilhetes</a> 
+          </li>
+          <li>
+            <a href="/admin/ticket_categories">Gerenciar Categorias dos Bilhetes</a> 
+          </li>
+          <li>
+            <a href="/admin/ticket_homes">Gerenciar Home do Bilhete</a> 
+          </li>
+        </ul>
+      </a>
+    </li>
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i> Guias<i class="fa fa-angle-left pull-right"></i>
+        <ul class="treeview-menu">
+          <li>
+            <a href="/admin/guides"><span>Gerenciar Guias</span></a> 
+          </li>
+          <li>
+            <a href="/admin/guide_types">Gerenciar Tipos de Guias</a> 
+          </li>
+          <li>
+            <a href="/admin/guide_visitors">Gerenciar Visitas</a> 
+          </li>
+        </ul>
+      </a>        
+    </li>
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i> Compras<i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li>
+          <a href="/admin/searchs">Gerenciar Order</a> 
+        </li>
+      </ul>
+    </li>
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i> Propagandas<i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li>
+          <a href="/admin/banners">Gerenciar Banners</a> 
+        </li>
+      </ul>
+    </li>
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i> Informativo<i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li>
+          <a href="/admin/newsletters">Gerenciar Newsletter</a> 
+        </li>
+      </ul>
+    </li>
+    <li class="treeview">
+      <a href="#"> 
+        <i class="fa fa-desktop"></i> Administrador do Site<i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li>
+          <a href="/admin/users">Gerenciar Usuários</a> 
+        </li>
+        <li>
+          <a href="/admin/footer_sites">Gerenciar Rodapés Sites</a> 
+        </li>
+        <li>
+          <a href="/admin/configurations">Gerenciar Configurações</a> 
+        </li>
+        <li>
+          <a href="/admin/reports">Gerenciar Relatório de Vendas</a> 
+        </li>
+      </ul>
+    </li>
+  </ul>
+  
+
+</section>

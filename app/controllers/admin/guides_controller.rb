@@ -4,7 +4,8 @@ class Admin::GuidesController < ApplicationController
       allow :admin, :all
       allow :register, :all
   end  
-  layout "new_admin"
+  #layout "new_admin"
+  layout "admin_20141208"
   before_filter :load_types
   def index
     @guides = Guide.all_active.paginate :page => params[:page],:per_page => 100 

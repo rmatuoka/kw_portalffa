@@ -4,8 +4,9 @@ class Admin::UsersController < ApplicationController
       allow :admin, :all
       allow :supervisor, :to => [:index, :search]      
   end  
-  layout "inadmin"
-  
+  #layout "inadmin"
+  layout "admin_20141208"
+    
   def index
     @users = User.all(:order => "id DESC").paginate :page => params[:page],:per_page => 100
   end

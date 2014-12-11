@@ -4,7 +4,8 @@ skip_before_filter :verify_authenticity_token, :only => [:destroy]
       allow :admin, :all
       allow :register, :all
   end
-  layout "new_admin"  
+  #layout "new_admin"
+  layout "admin_20141208"  
   before_filter :load_guide
   def index
     @guide_visitors = GuideVisitor.all_active

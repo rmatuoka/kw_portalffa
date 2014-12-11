@@ -1,28 +1,48 @@
 <% title "Admin/Gallery Image" %>
+<section class="content-header">
+  <h1> Imagens de<%= @gallery.name%>
+    <br/>
+    <small>Verifique se as informçãoes abaixo estão corretas</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Galerias </li> 
+  </ol>
+</section>
 
-<p>
-  <strong>Gallery:</strong>
-  <%= @gallery_image.gallery_id %>
-</p>
-<p>
-  <strong>Legend:</strong>
-  <%= @gallery_image.legend %>
-</p>
-<p>
-  <strong>Upload:</strong>
-  <%= @gallery_image.upload_id %>
-</p>
-<p>
-  <strong>Active:</strong>
-  <%= @gallery_image.active %>
-</p>
-<p>
-  <strong>Published:</strong>
-  <%= @gallery_image.published %>
-</p>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <p>
+        <strong>Gallery:</strong>
+        <%= @gallery_image.gallery_id %>
+      </p>
+      <p>
+        <strong>Legend:</strong>
+        <%= @gallery_image.legend %>
+      </p>
+      <p>
+        <strong>Upload:</strong>
+        <%= @gallery_image.upload_id %>
+      </p>
+      <p>
+        <strong>Active:</strong>
+        <%= @gallery_image.active %>
+      </p>
+      <p>
+        <strong>Published:</strong>
+        <%= @gallery_image.published %>
+      </p>
 
-<p>
-  <%= link_to "Edit", edit_admin_gallery_gallery_image_path(@gallery, @gallery_image) %> |
-  <%= link_to "Destroy", [:admin,@gallery, @gallery_image], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_gallery_gallery_images_path(@gallery) %>
-</p>
+      <p class="box-footer">
+        <%= link_to "Voltar", admin_gallery_gallery_images_path(@gallery),:class=>"btn btn-default" %>
+      </p>
+    </div>    
+  </div>
+</section>
+

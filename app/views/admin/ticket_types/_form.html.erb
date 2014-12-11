@@ -3,17 +3,20 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :discount %>
-    <%= f.text_field :discount %>
+    <%= f.text_field :discount, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :published %>
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=>"form-control" %>
   </p>
   <br />
-  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_ticket_types_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  <p class="box-footer">
+    <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_ticket_types_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%> 
+    <%= f.submit nil, :class => "btn btn-default" %>
+  </p>
 <% end %>
 </div>

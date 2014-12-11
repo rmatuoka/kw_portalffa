@@ -2,31 +2,31 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class=>"form-control" %>
   </p>
 <p>
     <%= f.label :footer_order %><br />
-    <%= f.text_field :footer_order %>
+    <%= f.text_field :footer_order, :class=>"form-control" %>
   </p>  
 <p>
     <%= f.label :legend %><br />
-    <%= f.text_field :legend %>
+    <%= f.text_field :legend, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :destination %><br />
-    <%= f.text_field :destination %>
+    <%= f.text_field :destination, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :link_target %><br />
-    <%= f.text_field :link_target %>
+    <%= f.text_field :link_target, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :image %><br />
-    <%= f.file_field :image %>
+    <%= f.file_field :image, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :published %><br />
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :footer_type %>
@@ -38,5 +38,8 @@
 								[t('activerecord.attributes.footer_site.types.four'), "4"]								
 							  ]), :class => 'genForm_dropBox' %>
   </p>
-  <p><%= f.submit %></p>
+  <p class="box-footer">
+    <%= link_to "Voltar", admin_footer_sites_path, :class=>"btn btn-default" %>
+    <%= f.submit nil, :class=>"btn btn-default"%>   
+  </p>
 <% end %>

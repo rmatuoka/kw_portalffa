@@ -1,25 +1,54 @@
 <% title show_model_name(::GuideType, true) %>
-<h1><%= show_model_name(::GuideType, true) %></h1>
-<p><%= t('activerecord.attributes.guide_type.messages.index')%></p>
-<p style="text-align: right;"><%= link_to("Cadastrar Novo Guia",new_admin_guide_type_path(),:class => "btn btn-lg btn-success ")%></p>
-<table class="table table-striped">
-  <tr>
-    <th class="col-md-4"><%=t 'activerecord.attributes.guide_type.code' %></th>
-    <th class="col-md-4"><%=t 'activerecord.attributes.guide_type.description' %></th>
-    <th class="col-md-4"><%=t 'attributes.actions' %></th>
-  </tr>
-  <% for guide_type in @guide_types %>
-    <tr>
-      <td><%= guide_type.code %></td>
-      <td><%= guide_type.description %></td>
-      <td>
-        <%= link_to t('attributes.showing'), [:admin, guide_type], :class => "btn btn-default btn-lg" %>
-		    <%= link_to t('attributes.editing'), edit_admin_guide_type_path(guide_type), :class => "btn btn-default btn-lg" %> 
-		    <%if (User.find(current_user.id).has_role? :admin) %> 
-		      <%= link_to t('attributes.exclude'), [:admin, guide_type], :confirm => t('system_messages.notice_to_delete'), :method => :delete, :class => "btn btn-danger btn-lg" %> 
-		    <%end%>
-		  </td>
-    </tr>
-  <% end %>
+<section class="content-header">
+  <h1><%= show_model_name(::GuideType, true) %>
+    <br/>
+    <small><%= t('activerecord.attributes.guide_type.messages.index')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= show_model_name(::GuideType, true) %> </li> 
+  </ol>
+</section>
+
+<section class="content">
+  <p style="text-align: right;"><%= link_to("Cadastrar Novo Guia",new_admin_guide_type_path(),:class => "btn btn-lg btn-success ")%></p>
+  <div class="box">
+    <div class="box-body">
+      <table class="table table-striped">
+        <tr>
+          <th class="col-md-4"><%=t 'activerecord.attributes.guide_type.code' %></th>
+          <th class="col-md-4"><%=t 'activerecord.attributes.guide_type.description' %></th>
+          <th class="col-md-4"><%=t 'attributes.actions' %></th>
+        </tr>
+        <% for guide_type in @guide_types %>
+          <tr>
+            <td><%= guide_type.code %></td>
+            <td><%= guide_type.description %></td>
+            <td>
+              <%= link_to t('attributes.showing'), [:admin, guide_type], :class => "btn btn-default btn-lg" %>
+		          <%= link_to t('attributes.editing'), edit_admin_guide_type_path(guide_type), :class => "btn btn-default btn-lg" %> 
+		          <%if (User.find(current_user.id).has_role? :admin) %> 
+		            <%= link_to t('attributes.exclude'), [:admin, guide_type], :confirm => t('system_messages.notice_to_delete'), :method => :delete, :class => "btn btn-danger btn-lg" %> 
+		          <%end%>
+		        </td>
+          </tr>
+        <% end %>
 </table>
+    </div>    
+  </div>
+</section>
+
+
+
+
+
+
+<h1></h1>
+<p></p>
+
 

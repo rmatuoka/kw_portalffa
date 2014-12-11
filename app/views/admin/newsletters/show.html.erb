@@ -1,20 +1,39 @@
 <% title "Admin/Newsletter" %>
+<section class="content-header">
+  <h1>Newsletters
+    <br/>
+    <small>Verifique se as informaçoes abaixo estão corretas</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Newsletters </li> 
+  </ol>
+</section>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+     <p>
+        <strong>Email:</strong>
+        <%= @newsletter.email %>
+      </p>
+      <p>
+        <strong>Active:</strong>
+        <%= @newsletter.active %>
+      </p>
+      <p>
+        <strong>Published:</strong>
+        <%= @newsletter.published %>
+      </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @newsletter.email %>
-</p>
-<p>
-  <strong>Active:</strong>
-  <%= @newsletter.active %>
-</p>
-<p>
-  <strong>Published:</strong>
-  <%= @newsletter.published %>
-</p>
+      <p class="box-footer">
+        <%= link_to "Volar", admin_newsletters_path, :class=>"btn btn-default" %>
+      </p>
+    </div>    
+  </div>
+</section>
 
-<p>
-  <%= link_to "Edit", edit_admin_newsletter_path(@newsletter) %> |
-  <%= link_to "Destroy", [:admin, @newsletter], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_newsletters_path %>
-</p>

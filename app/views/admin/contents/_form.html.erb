@@ -1,7 +1,7 @@
 <%content_for :head do%>
 	<%= include_tiny_mce_if_needed %>
-	<%= javascript_include_tag "jquery.limit-1.2.source.js" %>
-	<%= javascript_include_tag "colorpicker.js" %>
+	
+
 	<%= stylesheet_link_tag "colorpicker"%>
 	<% 	if @content.color.blank?
 			@cor = 'e5e5e5'
@@ -9,8 +9,11 @@
 			@cor = @content.color
 		end
 	%>
+<%end%>
+<%content_for :footer do%>
+	<%= javascript_include_tag "colorpicker.js" %>
+	<%= javascript_include_tag "jquery.limit-1.2.source.js" %>
 	<script>
-		jQuery(document).ready(function() {
 	/*		jQuery('#category_color').ColorPicker({
 	            onSubmit: function(hsb, hex, rgb, el) {
 	                jQuery(el).val(hex);
@@ -41,7 +44,6 @@
 	        });
 	
 			jQuery('#text_summary').limit('140','#left');
-		});
 	</script>
 
 <%end%>
@@ -50,50 +52,50 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :template_id %>
-	<%= f.collection_select :template_id,@templates,:id,:name%> 
+	<%= f.collection_select :template_id,@templates,:id,:name, :class=>"form-control"%> 
   </p>
   <p>
     <%= f.label :content %><br />
-    <%= f.text_area :content, :class => "mceEditor"%>
+    <%= f.text_area :content, :class => "mceEditor form-control"%>
   </p>
 
   <p>
     <%= f.label :summary %><br />
-    <%= f.text_area :summary, :id=>"text_summary" %>
+    <%= f.text_area :summary, :id=>"text_summary", :class=>"form-control" %>
   </p>
   <p>
 	Ainda restam <span id="left"></span> caracteres a serem digitados.
   </p>
   <p>
     <%= f.label :icon_menu %><br />
-    <%= f.file_field :icon_menu %>
+    <%= f.file_field :icon_menu, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :icon_home %><br />
-    <%= f.file_field :icon_home %>
+    <%= f.file_field :icon_home, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :published %>
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :menu_display %>
-    <%= f.check_box :menu_display %>
+    <%= f.check_box :menu_display, :class=>"form-control" %>
   </p>
-   <div style="position: relative; height: 40px;">
-	<div id="colorSelector">
+   <div style="position: relative; height: 40px;" align="left">
+	<div id="colorSelector" style="left: 40px;float: left;">
 		<div style="background-color: #<%= @cor %>; "></div>
 	</div>
-	<div id="colorLabel">
+	<div id="colorLabel" style="float:none;">
 		<%= f.label :color, :style=>"position: absolute; top: 10px; left: 5px;"%>
 	</div>
 	<%= f.hidden_field :color, :value=>@cor%>
   </div>
   <br />
-  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategory_contents_path(@category, @subcategory)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  <p class="box-footer"><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategory_contents_path(@category, @subcategory)+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "btn btn-default" %></p>
 <% end %>
 </div>

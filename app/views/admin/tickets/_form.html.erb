@@ -3,23 +3,23 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :ticket_date %>
-    <%= f.date_select :ticket_date %>
+    <%= f.date_select :ticket_date, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :price %>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :ticket_type_id %>
-    <%= f.select :ticket_type_id, @ticket_types, :prompt => "Escolha o tipo" %> <%=link_to t('attributes.add_new'), new_admin_ticket_type_path%>
+    <%= f.select :ticket_type_id, @ticket_types, :prompt => "Escolha o tipo", :class=>"form-control" %> <%=link_to t('attributes.add_new'), new_admin_ticket_type_path, :class=>"btn btn-primary"%>
   </p>
   <p>
     <%= f.label :ticket_category_id %>
-    <%= f.select :ticket_category_id, @ticket_categories, :prompt => "Escolha a categoria" %> <%=link_to t('attributes.add_newf'), new_admin_ticket_category_path%>
+    <%= f.select :ticket_category_id, @ticket_categories, :prompt => "Escolha a categoria" %> <%=link_to t('attributes.add_newf'), new_admin_ticket_category_path, :class=>"btn btn-primary"%>
   </p>
   <p>
     <%= f.label :above %>
@@ -33,6 +33,9 @@
     <%= f.check_box :published %>
   </p>
   <br />
-  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_tickets_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  <p class="box-footer">
+    <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_tickets_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%> 
+    <%= f.submit nil, :class => "btn btn-default" %>
+  </p>
 <% end %>
 </div>

@@ -1,31 +1,46 @@
 <% title @webpart.name %>
+<section class="content-header">
+  <h1>
+    <%= @webpart.name %>
+    <br/>
+    <small><%= t('activerecord.attributes.category.messages.show')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= show_model_name(Webpart, true)%> </li> 
+  </ol>
+</section>
 
-<h1><%= @webpart.name %></h1><br />
-<br />
-<p><%= t('activerecord.attributes.category.messages.show')%></p><br />
-<br />
-<p>
-  <strong><%=t 'attributes.name' %>:</strong>
-  <%= @webpart.name %>
-</p>
-<p>
-  <strong><%=t 'activerecord.attributes.webpart.webtype' %>:</strong>
-  <%= @webpart.webtype %>
-</p>
-
-<p>
-  <strong><%=t 'activerecord.attributes.webpart.encoding' %>:</strong>	
-</p>
-<div class="div_show_textarea">
-	<%=raw @webpart.encoding %>
-</div>
-<p>
-  <strong><%=t 'attributes.published' %>:</strong>
-  <%= print_active(@webpart.published) %>
-</p>
-<br />
-<br />
-<br />
-<p>
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_webparts_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
-</p>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <p>
+        <strong><%=t 'attributes.name' %>:</strong>
+        <%= @webpart.name %>
+      </p>
+      <p>
+        <strong><%=t 'activerecord.attributes.webpart.webtype' %>:</strong>
+        <%= @webpart.webtype %>
+      </p>
+      <p>
+        <strong><%=t 'activerecord.attributes.webpart.encoding' %>:</strong>	
+      </p>
+      <div class="div_show_textarea">
+	      <%=raw @webpart.encoding %>
+      </div>
+      <p>
+        <strong><%=t 'attributes.published' %>:</strong>
+        <%= print_active(@webpart.published) %>
+      </p>
+      <br />
+      <p class="box-footer">
+	      <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_webparts_path()+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+      </p>
+    </div>    
+  </div>
+</section>

@@ -5,8 +5,8 @@ class Admin::GuideTypesController < ApplicationController
       allow :register, :all
   end 
   before_filter :load_pag  
-  layout "new_admin" 
-
+  #layout "new_admin" 
+  layout "admin_20141208"
   def index
     @guide_types = GuideType.all(:conditions => ['active =  true'], :order => "code")
   end

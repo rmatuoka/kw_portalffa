@@ -1,5 +1,5 @@
 <%content_for :head do%>
-<%= javascript_include_tag "colorpicker.js" %>
+
 <%= stylesheet_link_tag "colorpicker"%>
 <% 	if @category.color.blank?
 		@cor = 'ffffff'
@@ -7,8 +7,10 @@
 		@cor = @category.color
 	end
 %>
+<%end%>
+<%content_for :footer do%>
+<%= javascript_include_tag "colorpicker.js" %>
 <script>
-	jQuery(document).ready(function() {
 /*		jQuery('#category_color').ColorPicker({
             onSubmit: function(hsb, hex, rgb, el) {
                 jQuery(el).val(hex);
@@ -37,7 +39,6 @@
 				jQuery('#category_color').val(hex);
             }
         });
-	});
 </script>
 <% end %>
 <div id="Box_form">
@@ -45,38 +46,38 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :template_id %>
-	<%= f.collection_select :template_id,@templates,:id,:name%> 
+	<%= f.collection_select :template_id,@templates,:id,:name, :class=> "form-control"%> 
   </p>
   <p>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class=> "form-control" %>
   </p>
   <p>
     <%= f.label :background %>
-    <%= f.file_field :background %>
+    <%= f.file_field :background, :class=> "form-control" %>
   </p>
   <p>
     <%= f.label :published %>
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=> "form-control" %>
   </p>
   <p>
     <%= f.label :menu_display %>
-    <%= f.check_box :menu_display %>
+    <%= f.check_box :menu_display, :class=> "form-control" %>
   </p>
   <p>
     <%= f.label :show_date %>
-    <%= f.check_box :show_date %>
+    <%= f.check_box :show_date, :class=> "form-control" %>
   </p>
-  <div style="position: relative; height: 40px;">
-	<div id="colorSelector">
+  <div style="position: relative; height: 40px;" align="left">
+	<div id="colorSelector" style="left: 40px;float: left;">
 		<div style="background-color: #<%= @cor %>; "></div>
 	</div>
-	<div id="colorLabel">
+	<div>
 		<%= f.label :color, :style=>"position: absolute; top: 10px; left: 5px;"%>
 	</div>
 	<%= f.hidden_field :color, :value=>@cor%>
   </div>
   <br />
-  <p><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_categories_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  <p class="box-footer"><%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_categories_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "btn btn-default" %></p>
 <% end %>
 </div>

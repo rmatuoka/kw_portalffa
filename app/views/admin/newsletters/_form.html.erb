@@ -2,15 +2,17 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :active %><br />
-    <%= f.check_box :active %>
+    <%= f.check_box :active, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :published %><br />
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=>"form-control" %>
   </p>
-  <p><%= f.submit %></p>
+  <p class="box-footer">
+  <%= link_to "Voltar", admin_newsletters_path, :class=>"btn btn-default" %>
+  <%= f.submit nil, :class=>"btn btn-default" %></p>
 <% end %>

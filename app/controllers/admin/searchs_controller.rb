@@ -4,7 +4,8 @@ class Admin::SearchsController < ApplicationController
       allow :supervisor, :all
   end
   
-  layout "inadmin"
+  #layout "inadmin"
+  layout "admin_20141208"
 
   def index
     fstatus = ' '

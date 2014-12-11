@@ -2,19 +2,20 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :upload_category_id %><br />
-    <%= f.select :upload_category_id, @upload_categories, :prompt => "Escolha a categoria" %> <%=link_to "[Adicionar Nova]", new_admin_upload_category_path%>
+    <%= f.select :upload_category_id, @upload_categories, :prompt => "Escolha a categoria" %> <%=link_to "Adicionar Nova", new_admin_upload_category_path, :class=>"btn btn-primary"%>
   </p>
   <p>
     <%= f.label :file %><br />
-    <%= f.file_field :file %>
+    <%= f.file_field :file, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :published %><br />
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=>"form-control" %>
   </p>
-  <p><%= f.submit %></p>
+  <p class="box-footer">
+    <%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_uploads_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%><%= f.submit nil, :class => "btn btn-default"%></p>
 <% end %>

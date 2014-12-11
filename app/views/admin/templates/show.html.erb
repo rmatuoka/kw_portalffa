@@ -1,24 +1,40 @@
 <% title @template.name %>
+<section class="content-header">
+  <h1>
+    <%= @template.name %>
+    <br/>
+    <small><%= t('activerecord.attributes.webpart.messages.show')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= show_model_name(::Template, true) %> </li> 
+  </ol>
+</section>
 
-<h1><%= @template.name %></h1><br />
-<br />
-<p><%= t('activerecord.attributes.webpart.messages.show')%></p><br />
-<br />
-<p>
-  <strong><%=t 'attributes.name' %>:</strong>
-  <%= @template.name %>
-</p>
-<p>
-  <strong><%=t 'attributes.published' %>:</strong>
-  <%= print_active(@template.published) %>
-</p>
-<p>
-  <strong><%=t 'activerecord.attributes.template.template_type' %>:</strong>
-  <%= traduz_template(@template.template_type) %>
-</p>
-<br />
-<br />
-<br />
-<p>
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_templates_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
-</p>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <p>
+        <strong><%=t 'attributes.name' %>:</strong>
+        <%= @template.name %>
+      </p>
+      <p>
+        <strong><%=t 'attributes.published' %>:</strong>
+        <%= print_active(@template.published) %>
+      </p>
+      <p>
+        <strong><%=t 'activerecord.attributes.template.template_type' %>:</strong>
+        <%= traduz_template(@template.template_type) %>
+      </p>
+      <br />
+        <p>
+	        <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_templates_path()+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+        </p>
+    </div>    
+  </div>
+</section>

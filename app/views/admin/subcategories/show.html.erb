@@ -1,24 +1,48 @@
 <% title @category.name+" / "+ @subcategory.name%>
+<section class="content-header">
+  <h1>
+    <%= @category.name+"  / "+ @subcategory.name %></h1>
+    <br/>
+    <small><%= t('activerecord.attributes.subcategory.messages.show')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= (@category.name)+" - "+ show_model_name(::Subcategory, true) %> </li> 
+  </ol>
+</section>
 
-<h1><%= @category.name+"  / "+ @subcategory.name %></h1><br />
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <p>
+        <strong><%=t('attributes.name') %>:</strong>
+        <%= @subcategory.name %>
+      </p>
+      <p>
+        <strong><%=t 'attributes.published' %>:</strong>
+        <%= print_active(@subcategory.published) %>
+      </p>
+      <p>
+        <strong><%=t 'attributes.menu_display' %>:</strong>
+        <%= print_active(@subcategory.menu_display) %>
+      </p>
+      <br />
+      <p>
+	      <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategories_path(@category)+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+      </p>
+    </div>    
+  </div>
+</section>
+
+
+
+<h1><br />
 <br />
-<p><%= t('activerecord.attributes.subcategory.messages.show')%></p><br />
+<p></p><br />
 <br />
-<p>
-  <strong><%=t('attributes.name') %>:</strong>
-  <%= @subcategory.name %>
-</p>
-<p>
-  <strong><%=t 'attributes.published' %>:</strong>
-  <%= print_active(@subcategory.published) %>
-</p>
-<p>
-  <strong><%=t 'attributes.menu_display' %>:</strong>
-  <%= print_active(@subcategory.menu_display) %>
-</p>
-<br />
-<br />
-<br />
-<p>
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategories_path(@category)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
-</p>
+

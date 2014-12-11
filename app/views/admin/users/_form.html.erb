@@ -11,19 +11,19 @@
 		<%= f.error_messages %>	
 		<p>
 			<%= f.label :name, "Nome" %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name, :class=>"form-control" %>
 		</p>
 		<p>
 			<%= f.label :email, "E-mail" %>
-			<%= f.text_field :email %>
+			<%= f.text_field :email, :class=>"form-control" %>
 		</p>
 		<p>
 			<%= f.label :cpf, "CPF" %>
-			<%= f.text_field :cpf %>
+			<%= f.text_field :cpf, :class=>"form-control" %>
 		</p>		
 		<p>
 			<%= f.label :rg, "RG" %>
-			<%= f.text_field :rg %>
+			<%= f.text_field :rg, :class=>"form-control" %>
 		</p>		
 		<p>
 			<%= f.label :gender, "Sexo :" %><br/>
@@ -32,19 +32,19 @@
 		</p>		
 		<p>
 			<%= f.label :date_of_birth, "Data de Nascimento" %>
-			<%= f.date_select :date_of_birth %>
+			<%= f.date_select :date_of_birth, :class=>"form-control" %>
 		</p>		
 		<p>
 			<%= f.label :estado, "Estado" %>
-			<%= f.text_field :estado %>
+			<%= f.text_field :estado, :class=>"form-control" %>
 		</p>	
 		<p>
 			<%= f.label :cidade, "Cidade" %>
-			<%= f.text_field :cidade %>
+			<%= f.text_field :cidade, :class=>"form-control" %>
 		</p>	
 		<p>
 			<%= f.label :receber_info, "Deseja receber informações?" %>
-			<%= f.check_box :receber_info %>
+			<%= f.check_box :receber_info, :class=>"form-control" %>
 		</p>				
 		
 		<div id="Box_register_form_regras">
@@ -62,14 +62,14 @@
 			<h1>Senha</h1><br />
 			<p>
 				<%= f.label :password, "Senha:" %>
-				<%= f.password_field :password %>	
+				<%= f.password_field :password, :class=>"form-control" %>	
 			</p>	
 			<p>
 				<%= f.label :password_confirmation, "Confirmar:" %>
-				<%= f.password_field :password_confirmation %>	
+				<%= f.password_field :password_confirmation, :class=>"form-control" %>	
 			</p>				
 		</div>		
 		
-  		<p><%= f.submit "Atualizar", :class => "Bt_enviar" %></p>
+  		<p class="box-footer"><%= f.submit "Atualizar", :class => "btn btn-default" %></p>
 		<%end%>
 	</div>

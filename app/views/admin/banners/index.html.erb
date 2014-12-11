@@ -1,31 +1,51 @@
-<% title show_model_name(::Banner, true) %>
+<section class="content-header">
+  <h1>Banners
+    <br/>
+    <small><%= t('activerecord.attributes.banner.messages.index')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Categorias </li> 
+  </ol>
+</section>
 
-<h1><%= show_model_name(::Banner, true) %></h1><br />
-<p><%= t('activerecord.attributes.banner.messages.index')%></p><br />
-<br />
-<p style="text-align: right;"><%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_banner_path+"','_self');", :class => "Bt_enviar"%> </p>
-<br />
-<table cellspacing="0" class="tablesorter" width="80%">
-	<thead> 
-		<tr>
-			<th style="width:20%;"><%=t 'activerecord.attributes.banner.name' %></th>
-			<th style="width:25%;"><%=t 'activerecord.attributes.banner.description' %></th>
-			<th style="width:20%;"><%=t 'activerecord.attributes.banner.link' %></th>											
-			<th style="width:15%;"><%=t 'activerecord.attributes.banner.published' %> ?</th>
-			<th colspan="3" style="width:20%;"><%=t 'attributes.actions' %></th>
-		</tr>
-	</thead> 
-	<tbody>
-	<% for banner in @banners %>
-	<tr <%='class=notactive' if !banner.published%>>
-		<td><%= banner.name %></td>
-		<td><%= banner.description %></td>
-      	<td><%= banner.link %></td>				
-		<td><%= print_active(banner.published) %></td>
-		<td><%= link_to t('attributes.showing'), [:admin, banner] %></td>
-		<td><%= link_to t('attributes.editing'), edit_admin_banner_path(banner) %></td>
-		<td><%= link_to t('attributes.exclude'), [:admin, banner], :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>
-	</tr>
-	<% end %>
-	</tbody>
-</table>
+<sectin class="content">
+  <div class="col-xs-12">
+    <p>
+      <%= submit_tag t('attributes.create_new'),:type=>"button",:onclick=>"window.open('"+new_admin_banner_path+"','_self');", :class => "btn btn-primary"%>
+    </p>
+    <div class="box">
+      <div class="box-body table-responsive no-padding">
+        <table cellspacing="0" class="table table-hover" width="80%">
+            <thead> 
+	            <tr>
+		            <th style="width:20%;"><%=t 'activerecord.attributes.banner.name' %></th>
+		            <th style="width:25%;"><%=t 'activerecord.attributes.banner.description' %></th>
+		            <th style="width:20%;"><%=t 'activerecord.attributes.banner.link' %></th>											
+		            <th style="width:15%;"><%=t 'activerecord.attributes.banner.published' %> ?</th>
+		            <th colspan="3" style="width:20%;"><%=t 'attributes.actions' %></th>
+	            </tr>
+            </thead> 
+            <tbody>
+            <% for banner in @banners %>
+            <tr <%='class=notactive' if !banner.published%>>
+	            <td><%= banner.name %></td>
+	            <td><%= banner.description %></td>
+              	<td><%= banner.link %></td>				
+	            <td><%= print_active(banner.published) %></td>
+	            <td><%= link_to t('attributes.showing'), [:admin, banner], :class=>"btn btn-default" %></td>
+	            <td><%= link_to t('attributes.editing'), edit_admin_banner_path(banner), :class=>"btn btn-default" %></td>
+	            <td><%= link_to t('attributes.exclude'), [:admin, banner], :confirm => t('system_messages.notice_to_delete'), :method => :delete, :class=>"btn btn-default" %></td>
+            </tr>
+            <% end %>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

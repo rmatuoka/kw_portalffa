@@ -1,21 +1,43 @@
 <% title "Admin/Newsletters" %>
+<section class="content-header">
+  <h1>Newsletters
+    <br/>
+    <small>Verifique abaixo as Nesletters cadastradas</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Newsletters </li> 
+  </ol>
+</section>
 
-<table>
-  <tr>
-    <th>Email</th>
-    <th>Active</th>
-    <th>Published</th>
-  </tr>
-  <% for newsletter in @newsletters %>
-    <tr>
-      <td><%= newsletter.email %></td>
-      <td><%= newsletter.active %></td>
-      <td><%= newsletter.published %></td>
-      <td><%= link_to "Show", [:admin, newsletter] %></td>
-      <td><%= link_to "Edit", edit_admin_newsletter_path(newsletter) %></td>
-      <td><%= link_to "Destroy", [:admin, newsletter], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Admin/Newsletter", new_admin_newsletter_path %></p>
+<section class="content">
+  <p><%= link_to "Nova Newsletter", new_admin_newsletter_path,:class=>"btn btn-primary" %></p>
+  <div class="box">
+    <div class="box-body table-responsive no-padding">
+      <table cellspacing="0" class="table table-hover" width="80%">
+        <tr>
+          <th>Email</th>
+          <th>Active</th>
+          <th>Published</th>
+        </tr>
+        <% for newsletter in @newsletters %>
+          <tr>
+            <td><%= newsletter.email %></td>
+            <td><%= newsletter.active %></td>
+            <td><%= newsletter.published %></td>
+            <td>
+              <%= link_to "Visualizar", [:admin, newsletter], :class=>"btn btn-default" %>
+              <%= link_to "Editar", edit_admin_newsletter_path(newsletter), :class=>"btn btn-default" %>
+              <%= link_to "Excluir", [:admin, newsletter], :confirm => 'Are you sure?', :method => :delete, :class=>"btn btn-default" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>    
+  </div>
+</section>

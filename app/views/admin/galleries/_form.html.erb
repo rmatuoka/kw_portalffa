@@ -2,15 +2,18 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :class=>"form-control"  %>
   </p>
   <p>
     <%= f.label :published %><br />
-    <%= f.check_box :published %>
+    <%= f.check_box :published, :class=>"form-control"  %>
   </p>
-  <p><%= f.submit %></p>
+  <p class="box-footer">
+    
+    <%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_galleries_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%><%= f.submit nil, :class => "btn btn-default"%>
+  </p>
 <% end %>

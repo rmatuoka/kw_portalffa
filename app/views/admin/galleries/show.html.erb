@@ -1,24 +1,44 @@
 <% title "Admin/Gallery" %>
+<section class="content-header">
+  <h1>Galerias
+    <br/>
+    <small>Verifique se as informações abaixo estão corretas</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Galerias </li> 
+  </ol>
+</section>
 
-<p>
-  <strong>Name:</strong>
-  <%= @gallery.name %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @gallery.description %>
-</p>
-<p>
-  <strong>Active:</strong>
-  <%= @gallery.active %>
-</p>
-<p>
-  <strong>Published:</strong>
-  <%= @gallery.published %>
-</p>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <p>
+        <strong>Name:</strong>
+        <%= @gallery.name %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @gallery.description %>
+      </p>
+      <p>
+        <strong>Active:</strong>
+        <%= @gallery.active %>
+      </p>
+      <p>
+        <strong>Published:</strong>
+        <%= @gallery.published %>
+      </p>
 
-<p>
-  <%= link_to "Edit", edit_admin_gallery_path(@gallery) %> |
-  <%= link_to "Destroy", [:admin, @gallery], :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", admin_galleries_path %>
-</p>
+      <p class="box-footer">
+ 	      <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_galleries_path()+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+ 	      <%= link_to "Imagens", admin_gallery_gallery_images_path(@gallery), :class=>"btn btn-primary" %>
+      </p>    
+    </div>    
+  </div>
+</section>

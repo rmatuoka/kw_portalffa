@@ -1,8 +1,25 @@
-<% title "Edit Admin/Gallery" %>
+<% title "Edit Admin/Gallery" %><section class="content-header">
+  <h1>Galerias
+    <br/>
+    <small>Utilize os campos abaixo para editar a Galeria</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Galerias </li> 
+  </ol>
+</section>
 
-<%= render 'form' %>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <%= render 'form' %>
+    </div>    
+  </div>
+</section>
 
-<p>
-  <%= link_to "Show", [:admin, @gallery] %> |
-  <%= link_to "View All", admin_galleries_path %>
-</p>
+

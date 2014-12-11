@@ -1,8 +1,24 @@
 <% title "Edit Admin/Newsletter" %>
+<section class="content-header">
+  <h1>Newsletters
+    <br/>
+    <small>Utilize os campos abaixo para editar a Newsletter</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Newsletters </li> 
+  </ol>
+</section>
 
-<%= render 'form' %>
-
-<p>
-  <%= link_to "Show", [:admin, @newsletter] %> |
-  <%= link_to "View All", admin_newsletters_path %>
-</p>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+     <%= render 'form' %>
+    </div>    
+  </div>
+</section>

@@ -3,7 +3,8 @@ class Admin::NewslettersController < ApplicationController
   access_control do
       allow :admin, :all
   end  
-  layout "inadmin"
+  #layout "inadmin"
+  layout "admin_20141208"
   
   def index
     @newsletters = Newsletter.all

@@ -1,49 +1,68 @@
 <% title show_model_name(::Guide, true) %>
-<h1><%= show_model_name(::Guide, true) %></h1>
-<p><%= t('activerecord.attributes.guide.messages.index')%></p>
-<div id="search">
-  <p>Informe o codigo, nome, endereço, cidade, estado ou cep do guia.</p>
-  <%=form_tag '/admin/guides/search', :method => :get, :name=>"formkeyword"%>
-    <div class="form-group">
-  	  <%=text_field_tag :keyword, nil ,:class => "form-control"%>
-  	</div>
-    <p style="text-align: right;">
-    	<%=submit_tag "Buscar", :class => "Bt_enviar btn btn-lg btn-primary"%> 
-    	<%=link_to("Listar Todos", admin_guides_path(), :class => "Bt_enviar btn btn-default btn-lg")%>
-      <%= link_to("Cadastrar Novo Guia",new_admin_guide_path(),:class => "btn btn-lg btn-success ")%>
-    </p>  	
-  	<%#=submit_tag "Todos",:type=>"button",:onclick=>"window.open('"+admin_guides_path()+"','_self');", :class => "Bt_enviar btn btn-default btn-lg"%>
-  </form>  
-</div>
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th class="col-md-2 col-xs-2"><%=t 'attributes.name' %></th>
-        <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.email' %></th>
-        <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.city' %></th>
-        <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.state' %></th>
-        <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.reminder' %></th>
-        <th class="col-md-2 col-xs-2"><%=t 'attributes.actions' %></th>
-      </tr>
-    </thead>
-    <tbody>
-  <% for guide in @guides %>
-    <tr <%='class=danger' if guide.reminder%>>
-      <td ><%= guide.name %></td>
-      <td ><%= guide.email %></td>
-      <td ><%= guide.city %></td>
-      <td ><%= guide.state %></td>      
-      <td ><%= print_active(guide.reminder) %></td>
-      <!-- <td><%#= link_to "Visualizar", [:admin, guide] %></td>-->
-      <td class="col-md-2 col-xs-5">
-        <%= link_to "Editar", edit_admin_guide_path(guide), :class => "btn btn-default btn-lg" %>
-        <%if (User.find(current_user.id).has_role? :admin) %>
-          <%= link_to "Excluir", [:admin, guide], :confirm => 'Tem certeza?', :method => :delete, :class => "btn btn-danger btn-lg" %>
-        <%end%>
-      </td>
-    </tr>
-  <% end %>
-  <tbody>
-</table>
-<%= will_paginate @posts %>
+<section class="content-header">
+  <h1><%= show_model_name(::Guide, true) %>
+    <br/>
+    <small><%= t('activerecord.attributes.guide.messages.index')%></small>    
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= show_model_name(::Guide, true) %> </li> 
+  </ol>
+</section>
 
+<section class="content">
+  <div id="search">
+    <p>Informe o codigo, nome, endereço, cidade, estado ou cep do guia.</p>
+    <%=form_tag '/admin/guides/search', :method => :get, :name=>"formkeyword"%>
+      <div class="form-group">
+    	  <%=text_field_tag :keyword, nil ,:class => "form-control"%>
+    	</div>
+      <p style="text-align: right;">
+      	<%=submit_tag "Buscar", :class => "Bt_enviar btn btn-lg btn-primary"%> 
+      	<%=link_to("Listar Todos", admin_guides_path(), :class => "Bt_enviar btn btn-default btn-lg")%>
+        <%= link_to("Cadastrar Novo Guia",new_admin_guide_path(),:class => "btn btn-lg btn-success ")%>
+      </p>  	
+    	<%#=submit_tag "Todos",:type=>"button",:onclick=>"window.open('"+admin_guides_path()+"','_self');", :class => "Bt_enviar btn btn-default btn-lg"%>
+    </form>  
+  </div>
+  <div class="box">
+    <div class="box-body">
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="col-md-2 col-xs-2"><%=t 'attributes.name' %></th>
+              <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.email' %></th>
+              <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.city' %></th>
+              <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.state' %></th>
+              <th class="col-md-2 col-xs-2"><%=t 'activerecord.attributes.guide.reminder' %></th>
+              <th class="col-md-2 col-xs-2"><%=t 'attributes.actions' %></th>
+            </tr>
+          </thead>
+          <tbody>
+        <% for guide in @guides %>
+          <tr <%='class=danger' if guide.reminder%>>
+            <td ><%= guide.name %></td>
+            <td ><%= guide.email %></td>
+            <td ><%= guide.city %></td>
+            <td ><%= guide.state %></td>      
+            <td ><%= print_active(guide.reminder) %></td>
+            <!-- <td><%#= link_to "Visualizar", [:admin, guide] %></td>-->
+            <td class="col-md-2 col-xs-5">
+              <%= link_to "Editar", edit_admin_guide_path(guide), :class => "btn btn-default btn-lg" %>
+              <%if (User.find(current_user.id).has_role? :admin) %>
+                <%= link_to "Excluir", [:admin, guide], :confirm => 'Tem certeza?', :method => :delete, :class => "btn btn-danger btn-lg" %>
+              <%end%>
+            </td>
+          </tr>
+        <% end %>
+        <tbody>
+      </table>
+      <%= will_paginate @posts %>    
+    </div>    
+  </div>
+</section>

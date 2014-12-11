@@ -1,46 +1,62 @@
 <% title @category.name+" / "+ @content.name%>
+<section class="content-header">
+  <h1>
+    <%= @category.name+"  / "+ @content.name %>
+    <br/>
+    <small><%= t('activerecord.attributes.content.messages.show')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> <%= (@subcategory.name)+" - "+ show_model_name(::Content, true) %> </li> 
+  </ol>
+</section>
 
-<h1><%= @category.name+"  / "+ @content.name %></h1><br />
-<br />
-<p><%= t('activerecord.attributes.content.messages.show')%></p><br />
-<br />
-<p>
-  <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
-  <%= @content.template.name if !@content.template.blank?%>
-</p>
-<p>
-  <strong><%=t('attributes.name') %>:</strong>
-  <%= @content.name %>
-</p>
-<p>
-  <strong><%=t('activerecord.attributes.content.content') %>:</strong>
-</p>
-<div class="div_show_textarea">
-  <%=raw @content.content %>	
-</div>
-<p>
-  <strong><%=t('activerecord.attributes.content.summary') %>:</strong><br />
-  <%= @content.summary%>
-</p>
-<p>
-  <strong><%=t('activerecord.attributes.content.icon_menu') %>:</strong><br />
-  <%= image_tag(@content.icon_menu.url(:menu_size))%>
-</p>
-<p>
-  <strong><%=t('activerecord.attributes.content.icon_home') %>:</strong><br />
-  <%= image_tag(@content.icon_home.url(:menu_size))%>
-</p>
-<p>
-  <strong><%=t 'attributes.published' %>:</strong>
-  <%= print_active(@content.published) %>
-</p>
-<p>
-  <strong><%=t 'attributes.menu_display' %>:</strong>
-  <%= print_active(@content.menu_display) %>
-</p>
-<br />
-<br />
-<br />
-<p>
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategory_contents_path(@category, @subcategory)+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
-</p>
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <p>
+        <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
+        <%= @content.template.name if !@content.template.blank?%>
+      </p>
+      <p>
+        <strong><%=t('attributes.name') %>:</strong>
+        <%= @content.name %>
+      </p>
+      <p>
+        <strong><%=t('activerecord.attributes.content.content') %>:</strong>
+      </p>
+      <div class="div_show_textarea">
+        <%=raw @content.content %>	
+      </div>
+      <p>
+        <strong><%=t('activerecord.attributes.content.summary') %>:</strong><br />
+        <%= @content.summary%>
+      </p>
+      <p>
+        <strong><%=t('activerecord.attributes.content.icon_menu') %>:</strong><br />
+        <%= image_tag(@content.icon_menu.url(:menu_size))%>
+      </p>
+      <p>
+        <strong><%=t('activerecord.attributes.content.icon_home') %>:</strong><br />
+        <%= image_tag(@content.icon_home.url(:menu_size))%>
+      </p>
+      <p>
+        <strong><%=t 'attributes.published' %>:</strong>
+        <%= print_active(@content.published) %>
+      </p>
+      <p>
+        <strong><%=t 'attributes.menu_display' %>:</strong>
+        <%= print_active(@content.menu_display) %>
+      </p>
+      <br />
+      <p class="box-footer">
+	      <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_category_subcategory_contents_path(@category, @subcategory)+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+      </p>
+    </div>    
+  </div>
+</section>

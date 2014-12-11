@@ -1,40 +1,57 @@
 <% title @category.name %>
 
-<h1><%= @category.name %></h1><br />
-<br />
-<p><%= t('activerecord.attributes.webpart.messages.show')%></p><br />
-<br />
-<p>
-  <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
-  <%= @category.template.name if !@category.template.blank?%>
-</p>
-<p>
-  <strong><%=t 'attributes.name' %>:</strong>
-  <%= @category.name %>
-</p>
-<p>
-  <strong><%=t 'attributes.background' %>:</strong><br>
-  <%= image_tag(@category.background.url(:thumb)) %>
-</p>
-<p>
-  <strong><%=t 'attributes.published' %>:</strong>
-  <%= print_active(@category.published) %>
-</p>
-<p>
-  <strong><%=t 'attributes.menu_display' %>:</strong>
-  <%= print_active(@category.menu_display) %>
-</p>
-<p>
-  <strong><%=t 'activerecord.attributes.category.show_date' %>:</strong>
-  <%= print_active(@category.show_date) %>
-</p>
-<p>
-  <strong><%=t 'activerecord.attributes.category.color' %>:</strong>
-</p>
-<div style="width:18px; height:18px; background-color:#<%= @category.color %>; border:1px solid"></div>
-<br />
-<br />
-<br />
-<p>
-	<%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_categories_path()+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
-</p>
+<section class="content-header">
+  <h1>
+    <%= @category.name %>
+    <br/>
+    <small><%= t('activerecord.attributes.webpart.messages.show')%></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> </li> 
+  </ol>
+</section>
+
+<section class="content">
+  <div class="box">
+    <div class="box-body">
+      <p>
+        <strong><%=show_model_name(::Template)+" "+t('attributes.name') %>:</strong>
+        <%= @category.template.name if !@category.template.blank?%>
+      </p>
+        <p>
+          <strong><%=t 'attributes.name' %>:</strong>
+          <%= @category.name %>
+        </p>
+        <p>
+          <strong><%=t 'attributes.background' %>:</strong><br>
+          <%= image_tag(@category.background.url(:thumb)) %>
+        </p>
+        <p>
+          <strong><%=t 'attributes.published' %>:</strong>
+          <%= print_active(@category.published) %>
+        </p>
+        <p>
+          <strong><%=t 'attributes.menu_display' %>:</strong>
+          <%= print_active(@category.menu_display) %>
+        </p>
+        <p>
+          <strong><%=t 'activerecord.attributes.category.show_date' %>:</strong>
+          <%= print_active(@category.show_date) %>
+        </p>
+        <p>
+          <strong><%=t 'activerecord.attributes.category.color' %>:</strong>
+        </p>
+        <div style="width:18px; height:18px; background-color:#<%= @category.color %>; border:1px solid"></div>
+        <br />
+        <p class="box-footer">
+	        <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_categories_path()+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+        </p>
+    </div>    
+  </div>
+</section>

@@ -3,7 +3,8 @@ class Admin::WebmodulesController < ApplicationController
   access_control do
       allow :admin, :all
   end  
-  layout "inadmin", :except => :popula_ids
+  #layout "inadmin", :except => :popula_ids
+  layout "admin_20141208", :except => :popula_ids
   before_filter :load_template   
   def index
     @webmodules = @template.webmodules.all_active

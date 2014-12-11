@@ -4,7 +4,8 @@ class Admin::StaticContentsController < ApplicationController
       allow :supervisor, :to => [:index]
   end
   
-  layout "inadmin"  
+  #layout "inadmin" 
+  layout "admin_20141208" 
     
   def index
     

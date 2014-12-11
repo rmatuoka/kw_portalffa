@@ -1,31 +1,53 @@
-<% 
-	content_for :title do "Resultado da Busca por: #{params[:keyword]}" end
-%>
+<%	content_for :title do "Resultado da Busca por: #{params[:keyword]}" end%>
+<section class="content-header">
+  <h1> <%="Resultado da Busca por: #{params[:keyword]}"%>
+    <br/>
+    <br/>    
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Usuários </li> 
+  </ol>
+</section>
 
-<table cellspacing="0" class="tablesorter" width="80%">
-	<thead> 
-		<tr>
-    		<th style="width:35%;"><%=t 'attributes.name' %></th>
-			<th style="width:30%;">Email</th>
-			
-			<th colspan="4" style="width:35%;"><%=t 'attributes.actions' %></th>
-		</tr>
-	</thead> 
-	<tbody>
-	  <% @Results.each do |user| %>
-	    <tr>
-	      <td><%= user.name %></td>
-	      <td><%= user.email%></td>
+<section class="content">
+  <div class="box">
+    <div class="box-body table-responsive no-padding">
+      <table cellspacing="0" class="table table-hover" width="80%">
+        <thead> 
+	          <tr>
+            	<th style="width:35%;"><%=t 'attributes.name' %></th>
+		          <th style="width:30%;">Email</th>
+		
+		          <th colspan="4" style="width:35%;"><%=t 'attributes.actions' %></th>
+	          </tr>
+          </thead> 
+          <tbody>
+            <% @Results.each do |user| %>
+              <tr>
+                <td><%= user.name %></td>
+                <td><%= user.email%></td>
 
-		  <%if User.find(current_user.id).has_role? :admin %>
-	      <td><%= link_to t('attributes.showing'), admin_user_path(user) %></td>
-	      <td><%= link_to t('attributes.editing'), edit_admin_user_path(user) %></td>
-	      <!-- <td><%#= link_to t('attributes.exclude'), admin_user_path(user), :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>-->
-		  <%end%>		  
-		  <td><%= link_to "Verificar Ingressos!", admin_search_path(user) %></td>
-	    </tr>
-	  <% end %>
-	</tbody>
-</table>
-<br><br>
-<%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_users_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%>
+	            <%if User.find(current_user.id).has_role? :admin %>
+                <td><%= link_to t('attributes.showing'), admin_user_path(user), :class => "btn btn-default" %>
+                <%= link_to t('attributes.editing'), edit_admin_user_path(user), :class => "btn btn-default" %>
+                <!-- <td><%#= link_to t('attributes.exclude'), admin_user_path(user), :confirm => t('system_messages.notice_to_delete'), :method => :delete %></td>-->
+	            <%end%>		  
+	            <%= link_to "Verificar Ingressos!", admin_search_path(user), :class => "btn btn-primary" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br><br>
+      <p class="box-footer">
+        <%= submit_tag "Voltar",:type=>"button",:onclick=>"window.open('"+admin_users_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+      </p>
+    </div>    
+  </div>
+</section>	

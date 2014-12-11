@@ -1,28 +1,51 @@
 <% title "Admin/Galleries" %>
+<section class="content-header">
+  <h1>Galerias
+    <br/>
+    <small>Verifique abaixo a lista de Galerias</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Galerias </li> 
+  </ol>
+</section>
 
-<table cellspacing="0" class="tablesorter" width="80%">
-  <thead> 
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Active</th>
-    <th>Published</th>
-  </tr>
-  </thead> 
-  <tbody>
-  <% for gallery in @galleries %>
-    <tr>
-      <td><%= gallery.name %></td>
-      <td><%= gallery.description %></td>
-      <td><%= gallery.active %></td>
-      <td><%= gallery.published %></td>
-	  <td><%= link_to "Imagens", admin_gallery_gallery_images_path(gallery) %></td>
-      <td><%= link_to "Show", [:admin, gallery] %></td>
-      <td><%= link_to "Edit", edit_admin_gallery_path(gallery) %></td>
-      <td><%= link_to "Destroy", [:admin, gallery], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<section class="content">
+  <p><%= link_to "Nova Galeria", new_admin_gallery_path, :class=>"btn btn-primary" %></p>
+  <div class="box">
+    <div class="box-body table-responsive no-padding">
+      <table cellspacing="0" class="table table-hover" width="80%">
+        <thead> 
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Active</th>
+          <th>Published</th>
+        </tr>
+        </thead> 
+        <tbody>
+        <% for gallery in @galleries %>
+          <tr>
+            <td><%= gallery.name %></td>
+            <td><%= gallery.description %></td>
+            <td><%= gallery.active %></td>
+            <td><%= gallery.published %></td>            
+            <td>
+              <%= link_to "Visualizar", [:admin, gallery], :class=>"btn btn-default"%>
+              <%= link_to "Editar", edit_admin_gallery_path(gallery), :class=>"btn btn-default" %>
+              <%= link_to "Excluir", [:admin, gallery], :confirm => 'Are you sure?', :method => :delete, :class=>"btn btn-default" %>
+              <%= link_to "Imagens", admin_gallery_gallery_images_path(gallery), :class=>"btn btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>         
+    </div>    
+  </div>
+</section>
 
-<p><%= link_to "New Admin/Gallery", new_admin_gallery_path %></p>

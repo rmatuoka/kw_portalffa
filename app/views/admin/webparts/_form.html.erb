@@ -4,11 +4,11 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class=>"form-control" %>
   </p>
   <p>
     <%= f.label :encoding %><br />
-    <%= f.text_area :encoding, :class => "mceEditor" %>
+    <%= f.text_area :encoding, :class => "mceEditor form-control" %>
   </p>
   <br />
   <p>
@@ -24,13 +24,13 @@
 			[t('activerecord.attributes.webpart.types.seven'), "7"],
 			[t('activerecord.attributes.webpart.types.eight'), "8"],
 			[t('activerecord.attributes.webpart.types.nine'), "9"]						
-			]), :class => 'genForm_dropBox' %>
+			]), :class => 'genForm_dropBox form-control' %>
   </p>
   <p>
     <%= f.label :published %>
     <%= f.check_box :published %>
   </p>
   <br />
-  <p><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_webparts_path+"','_self');", :class => "Bt_enviar", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "Bt_enviar" %></p>
+  <p class="box-footer"><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_webparts_path+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "btn btn-default" %></p>
 <% end %>
 </div>

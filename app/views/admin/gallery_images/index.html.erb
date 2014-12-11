@@ -1,27 +1,55 @@
 <% title "Admin/Gallery Images" %>
+<section class="content-header">
+  <h1> Imagens de<%= @gallery.name%>
+    <br/>
+    <small>Verifique abaixo as imagens da Galeria</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a href="/admin">
+        <i class="fa fa-dashboard"></i>
+        Home
+      </a>
+    </li>
+    <li class="active"> Galerias </li> 
+  </ol>
+</section>
 
-<table cellspacing="0" class="tablesorter" width="80%">
-  <thead> 
-  <tr>
-    <th>Galeria</th>
-    <th>Legenda</th>
-    <th>Arquivo</th>
-    <th>Publicado?</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% for gallery_image in @gallery_images %>
-    <tr>
-      <td><%= gallery_image.gallery.name %></td>
-      <td><%= gallery_image.legend %></td>
-      <td><%= image_tag gallery_image.upload.file(:thumb) %></td>
-      <td><%= gallery_image.published %></td>
-      <td><%= link_to "Show", [:admin, @gallery, gallery_image] %></td>
-      <td><%= link_to "Edit", edit_admin_gallery_gallery_image_path(@gallery, gallery_image) %></td>
-      <td><%= link_to "Destroy", [:admin, @gallery, gallery_image], :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<section class="content">
+  <p>
+    <%= link_to "Nova Imagem", new_admin_gallery_gallery_image_path(@gallery), :class=>"btn btn-primary" %>
+    <%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_galleries_path()+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%>
+  </p>
+  <div class="box">
+    <div class="box-body table-responsive no-padding">
+      <table cellspacing="0" class="table table-hover" width="80%">
+        <thead> 
+        <tr>
+          <th>Galeria</th>
+          <th>Legenda</th>
+          <th>Arquivo</th>
+          <th>Publicado?</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for gallery_image in @gallery_images %>
+          <tr>
+            <td><%= gallery_image.gallery.name %></td>
+            <td><%= gallery_image.legend %></td>
+            <td><%= image_tag gallery_image.upload.file(:thumb) %></td>
+            <td><%= gallery_image.published %></td>
+              <td>
+              <%= link_to "Show", [:admin, @gallery, gallery_image], :class=>"btn btn-default" %>
+              <%= link_to "Edit", edit_admin_gallery_gallery_image_path(@gallery, gallery_image), :class=>"btn btn-default" %>
+              <%= link_to "Destroy", [:admin, @gallery, gallery_image], :confirm => 'Are you sure?', :method => :delete, :class=>"btn btn-default" %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>    
+  </div>
+</section>
 
-<p><%= link_to "New Admin/Gallery Image", new_admin_gallery_gallery_image_path(@gallery) %></p>
+
+
