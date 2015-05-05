@@ -90,7 +90,11 @@ module ApplicationHelper
       #----------BANNER
       puts "RENDER BANNER"
       @Dados = Banner.find(modulo.module_key)
-      return link_to(image_tag(@Dados.file.url), banner_path(@Dados), :target => @Dados.link_target)
+      if @Dados.active and @Dados.published
+        return link_to(image_tag(@Dados.file.url), banner_path(@Dados), :target => @Dados.link_target)
+      else
+        return nil
+      end
     when 8
       #----------CLIMA TEMPO
       puts "RENDER CLIMA TEMPO"    
