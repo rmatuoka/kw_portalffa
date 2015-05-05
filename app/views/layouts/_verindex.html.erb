@@ -74,10 +74,10 @@
 		<%=render_webpart(@Position12)%> 
 	 </div>
 	<%end%>
-
-    <%if !@Position13.blank?%> 
+    <% banner13 = render_webpart(@Position13)%>
+    <%if !@Position13.blank? and !banner13.blank?%> 
 	<div class="Content_pub">
-		<%=render_webpart(@Position13)%> 
+		<%=banner13%> 
 	</div>             
     <%end%>
 
