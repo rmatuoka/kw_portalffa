@@ -123,17 +123,18 @@
 
 <div id="Box_right">      
 	<% if (!@Position12.blank? or !@Position13.blank? or !@Position14.blank? or !@Position15.blank?)%>  
-    <%if !@Position12.blank?%> 
-	<div class="Content_pub">
-		<%=render_webpart(@Position12)%> 
-	 </div>
-	<%end%>
-
-    <% banner13 = render_webpart(@Position13)%>
+    <% banner12 = render_webpart(@Position12) if !@Position12.blank?%>   
+    <%if !@Position12.blank? and !banner12.blank?%> 
+    	<div class="Content_pub">
+    		<%=banner12%> 
+    	</div>             
+    <%end%>
+    
+    <% banner13 = render_webpart(@Position13) if !@Position13.blank?%>   
     <%if !@Position13.blank? and !banner13.blank?%> 
-	<div class="Content_pub">
-		<%=banner13%> 
-	</div>             
+    	<div class="Content_pub">
+    		<%=banner13%> 
+    	</div>             
     <%end%>
 
 	<!-- ENQUETE --> 
