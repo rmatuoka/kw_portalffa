@@ -44,13 +44,11 @@
       </aside>
       
     </div>
-    
-    <%= javascript_include_tag "admin_20141208/js/jquery.min.js"%>
-    <%= javascript_include_tag "admin_20141208/js/application"%>
+    <%= javascript_include_tag :defaults %>
     <%= javascript_include_tag "admin_20141208/js/jquery-ui-1.10.3.min.js"%>
     <%= javascript_include_tag "admin_20141208/js/bootstrap.min.js"%>
     <%= javascript_include_tag "admin_20141208/js/raphael-min.js"%>
-    <%= javascript_include_tag "admin_20141208/js/plugins/morris/morris.min.js"%>
+    <%#= javascript_include_tag "admin_20141208/js/plugins/morris/morris.min.js"%>
     <%= javascript_include_tag "admin_20141208/js/plugins/sparkline/jquery.sparkline.min.js"%>
     <%= javascript_include_tag "admin_20141208/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"%>
     <%= javascript_include_tag "admin_20141208/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"%>
@@ -60,6 +58,6 @@
     <%= javascript_include_tag "admin_20141208/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"%>
     <%= javascript_include_tag "admin_20141208/js/plugins/iCheck/icheck.min.js"%>
     <%= javascript_include_tag "admin_20141208/js/AdminLTE/app.js"%>
-    <%= javascript_include_tag "admin_20141208/js/AdminLTE/dashboard.js" %>
+    <%#= javascript_include_tag "admin_20141208/js/AdminLTE/dashboard.js" %>
     <%=yield :footer%>
   </body>

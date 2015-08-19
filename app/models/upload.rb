@@ -7,6 +7,6 @@ class Upload < ActiveRecord::Base
   has_many :gallery_images
   
   def self.all_images
-    Upload.all(:conditions => ["file_content_type = 'image/jpeg'"])
+    Upload.all(:conditions => ["file_content_type = 'image/jpeg'"], :order => "id desc")
   end
 end

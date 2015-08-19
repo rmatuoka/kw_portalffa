@@ -11,10 +11,28 @@
 
 <%elsif @Webpart.webtype == "3"%>
 	<!-- IMAGEM -->
-	<label>Escolha a imagem</label><br />
-    <%Upload.all_images.each do |n|%>
-		<%=radio_button_tag :module_key, n.id, nil, :class => "input_radio"%> <%=n.file_file_name%> <i>(<%=n.description%>)</i> <br/>
-	<%end%>
+	<div class="col-md-12">
+	  <label>Escolha a imagem</label>
+	  <div class="row">
+	    <%Upload.all_images.each do |n|%>
+  	    <div class="col-md-4 show_image_box"> 
+  		    <div class="row">
+  		      <div class="col-md-6">
+  		        <div class="row">
+  		          <%=image_tag n.file.url("original"), :class =>"img-responsive"%>
+  		        </div>
+  		      </div>
+  		      <div class="col-md-6">
+  		        <div class="row">
+        		    <%=radio_button_tag :module_key, n.id, nil, :class => "input_radio"%> 
+        		    <i><%=n.description%></i> <br/>
+  		        </div>
+  		      </div>
+          </div>
+  	    </div>
+	    <%end%>
+	  </div>
+	</div>
 
 <%elsif @Webpart.webtype == "6"%>
 	<!-- BANNER -->

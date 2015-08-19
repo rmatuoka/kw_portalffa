@@ -2,3 +2,6 @@
 {
   border:1px solid red;
 }
+.show_image_box{
+	min-height:200px;
+}

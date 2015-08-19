@@ -483,21 +483,25 @@ img {
 			width:auto;
 			height:auto;
 			vertical-align:middle;
-			margin-left:16px;
+			margin-left:5px;
 			margin-bottom:-25px;
 		}	
 		.Content_realization
 		{
 			position:relative;
-			width:165px;
+			width:350px;
 			height:auto;
 			float:left;
 			background:#fff;
-	  	}
+			text-align: right;
+	  }
+		.Content_realization .Title_emp_1{
+			margin-right:20px;
+		}
 		.Content_support
 		{
 			position:relative;
-			width:811px;
+			width:626px;
 			height:auto;
 			float:left;
 			background:#fff;
@@ -511,6 +515,10 @@ img {
 			background:#fff;
 			margin-top:9px;
 	  	}
+			.Content_sponsors .Item_employees_1_logos{
+				margin-top:10px;
+				margin-bottom:-10px;
+			}
 		.Content_title_emp_1
 		{
 			position:relative;
@@ -533,7 +541,8 @@ img {
 			position:relative;
 			top:1px;		
 			margin-left:20px;
-			width:100% !important;	
+			width:100% !important;
+			text-align: center;	
 		}		
 	/*End - Box_employees_1*/
 	/*Box_employees_2*/

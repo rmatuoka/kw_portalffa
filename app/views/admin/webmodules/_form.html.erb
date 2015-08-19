@@ -24,10 +24,10 @@
   <p class="box-footer"><%= submit_tag t('attributes.go_back'),:type=>"button",:onclick=>"window.open('"+admin_template_webmodules_path(@template)+"','_self');", :class => "btn btn-default", :style=>"margin-right: 5px;"%> <%= f.submit nil, :class => "btn btn-default" %></p>
 <% end %>
 </div>
-
-<script type="text/javascript">
-
-  jQuery(function() { 
-    changeSelects("webmodule_webpart_id", "ModuleKeys", <%=@template.id%>); 
-  });
-</script>
+<% content_for :footer do%>
+  <script type="text/javascript">
+    $(function() { 
+      changeSelects("webmodule_webpart_id", "ModuleKeys", <%=@template.id%>); 
+    });
+  </script>
+<% end %>
