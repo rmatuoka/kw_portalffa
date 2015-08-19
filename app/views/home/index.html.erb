@@ -135,26 +135,11 @@
     	</div>             
         <%end%>
 
-		<!-- ENQUETE --> 
 		<%if !@Position14.blank?%> 
-		<div class="Content_pull">
-    		<h1 class="Title_pull_red">Enquete<span class="Img_h1_pull_1"></span></h1>
-            <div class="Pull_item_box">
-                <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
-                <div class="clear"></div>
-            </div>   
-            <div class="Pull_item_box">    
-                <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam </p>  
-                <div class="clear"></div>                                
-            </div>   
-            <div class="Pull_item_box">
-                <input type="checkbox" class="chk" name="chkbox1" value="1" /></input><p class="Text_checkbox_p">Lorem ipsum dolor sit amet,consectetuer </p>
-                <div class="clear"></div>
-            </div>   
-            <a class="Btn_pull_send"></a>      	
-         </div> 
+      <div class="Content_pub">
+      		<%=render_webpart(@Position14)%> 
+      </div>
 		<%end%>
-        <!-- ENQUETE --> 
 
 		<%if !@Position15.blank?%>
 			<%=render_webpart(@Position15)%>
